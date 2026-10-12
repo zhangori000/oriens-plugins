@@ -1,0 +1,12 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "oriens-plugins",
+  "version": "1.0.0",
+  "description": "Orien's skills for clear explanations and detailed, step-by-step teaching.",
+  "author": {
+    "name": "Orien Zhang"
+  },
+  "homepage": "https://github.com/zhangori000/oriens-plugins",
+  "repository": "https://github.com/zhangori000/oriens-plugins",
+  "keywords": ["skills", "explanations", "teaching", "writing"]
+}

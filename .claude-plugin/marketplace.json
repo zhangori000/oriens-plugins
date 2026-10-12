@@ -1,0 +1,15 @@
+{
+  "name": "oriens-plugins",
+  "description": "Orien's explanation and step-by-step teaching skills.",
+  "owner": {
+    "name": "Orien Zhang"
+  },
+  "plugins": [
+    {
+      "name": "oriens-plugins",
+      "source": "./",
+      "description": "Clear explanations and detailed, step-by-step teaching.",
+      "version": "1.0.0"
+    }
+  ]
+}
