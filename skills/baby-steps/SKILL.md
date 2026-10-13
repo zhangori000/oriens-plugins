@@ -225,6 +225,8 @@ Verbs such as "navigates to", "routes to", "listens to", "dispatches", "emits", 
 - Before the first use of such a verb, write the mechanism as a chain of concrete steps: who calls what, what value changes, who observes that change, and what component or function results.
 - For client-side routing, the chain is: a component calls `history.push(url)`, which writes the new URL into the browser's history without a page load; the router subscribed to that history object re-renders; it compares the new pathname against each `<Route path>` in declaration order; the first matching Route renders its child component, and the previous Route's child unmounts.
 - For an event bus, the chain is: a module calls `emit(name, payload)`; the bus looks up every function registered under `name`; it calls each with `payload`; those functions were registered by components that called `subscribe` on mount.
+- For data that "flows down" in React, the chain is every hop, named: the store field, the selector that reads it, the component that calls the selector, the prop name it passes, the next component, the context object it places the value in, and the hook that reads the context. "Flows down from the container" is not a chain; it is the verb the chain replaces.
+- Define "in flight" the first time: a request is in flight when its function has been called and its Promise has neither resolved nor rejected, so the store still holds the values from before the request.
 - Do not write "the route renders X" or "the switcher listens to the URL" until the chain exists earlier in the reply.
 
 ## Avoid
