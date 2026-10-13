@@ -95,6 +95,59 @@ A preposition is a word that links a noun to the rest of the sentence and states
 - When a word such as "object", "intersection", or "union" appears, show a tiny literal example of it before defining it.
 - Write one idea per sentence. Never pack several type terms, fields, and consequences into one sentence. If a sentence contains a list of three or more technical nouns, split it.
 
+## Short replies: fewer steps, each fully explained
+
+Long replies skim. When a reply covers many steps, each line stops being explained and the reader cannot ask follow-ups easily.
+
+- Cover at most two or three code lines or names per reply, then stop. The user will ask for the next one.
+- Every line shown gets explained. If a step shows a snippet, every identifier and operator in it is defined, or the snippet is cut down to what is explained.
+- For each identifier, say what kind of thing it is in computer-science terms: a local variable, a module-level exported constant (imported by other files, not a global), a function parameter, a property on an object, a global on `window`, a method, or a type. Then say what it holds, using one concrete value.
+- Locate an identifier by its enclosing construct before you explain its purpose. Show the line that declares it inside the code that encloses it, and trim the middle with `// ...`. Say what the enclosing code is, such as a React function component, a hook, a Redux selector, or a method of a class. Do not give file paths or line numbers. When the reader could confuse the kind, say which kinds it is not: "It isn't a class field, it isn't a method, and it isn't stored in Redux." Then say its lifetime and its visibility: "It gets created fresh on every re-render, and no other file can see it." When other files use the same source under the same name, say that each file creates its own local variable.
+- For each array method or operator, such as `.filter`, `===`, or `?.`, say what it does to this specific input and show the output.
+- After the literal reading, always give the significance. Say which real-world question the line answers, such as "has this user ever purchased a subscription?" Say why the data has this shape, such as why it is an array. Say why the code compares against this particular constant. Say what the program does differently with each answer. The literal reading alone ("checks that `e.id` equals X") is not an explanation.
+
+## Teach the transferable concept
+
+The reader will not reopen the file. What carries over to the next codebase is the algorithm, the system-design idea, and the computer science concept that this code is one instance of. That concept is the payoff of every step.
+
+- Do not give file paths or line numbers in teaching prose. Name the construct instead, such as a React function component, a Redux selector, or an async thunk.
+- Do not spend a step on syntax trivia, such as an import line, the spelling of a type annotation, or formatting, unless the syntax changes the behavior.
+- After the literal reading of a line, name the general concept that the line is an instance of, using its standard name, such as read-your-writes consistency, three-valued logic, a finite state machine, the observer pattern, or memoization.
+- Be specific about the concept. Give its standard name, the exact condition it describes, and one specific source where it is taught, such as a named book chapter, a paper, or a conference talk. Do not write "this is a common pattern" or "this is a race condition" without saying which race and between which two operations.
+- Then map the concept back onto this code. Say which part of this code plays which role in the concept.
+
+Wrong: "This line prevents a race condition."
+
+That sentence names a category without saying which two operations race or which guarantee breaks, so the reader learns nothing that transfers.
+
+Right: "The Redux store is the app's client-side copy of server data. Right after the app creates a profile, that copy lags behind the server until the refetch finishes. A decision that reads the copy during that window violates read-your-writes consistency, which is the guarantee that a user always sees the effects of their own writes (Martin Kleppmann, *Designing Data-Intensive Applications*, 1st edition, Chapter 5, 'Reading Your Own Writes'). The early return `if (isUpdatingAccount) return false` restores that guarantee by refusing to decide until the copy includes the new profile."
+
+## Show where every name in a snippet comes from
+
+A snippet that uses a name it does not define forces the reader to guess. `return [{ sku: planID, price: sku.displayPrice }]` alone leaves `planID`, `sku`, and `displayPrice` unexplained.
+
+- Above the snippet, show the real lines that create each name, trimmed with `// ...`. Read the file to find them.
+
+  ```ts
+  const planID = isEligibleForFreeTrial ? FREE_TRIAL_PLAN_ID : REGULAR_PLAN_ID;
+  const result = await window.storeSdk.getProductInfo(planID);
+  // ...
+  const sku = result[0].skus[0];
+  // ...
+  return [{ sku: planID, price: sku.displayPrice }];
+  ```
+
+- When a name comes from far away or from another file, add a typed comment header above the snippet instead, and label it as a summary rather than source:
+
+  ```ts
+  // planID: string, which is 'PLAN_TRIAL' or 'PLAN_MONTHLY', chosen a few lines up
+  // sku: Sku, which is { id, name, price: number, displayPrice: string, ... }, declared in store-sdk.d.ts
+  ```
+
+- For each name, the prose then states its type, one concrete value, and its owner. The owner is our code, an npm package, or the platform runtime, such as a console store SDK exposed on `window`.
+- Explain those origins before the line that uses them.
+- Never leave a name for the reader to infer from its spelling.
+
 ## Re-introduce names; do not rely on memory
 
 - When a step uses a function, type, or variable from an earlier step or an earlier reply, give a short recap first: one sentence on what it is and a two-to-five-line code reminder.
@@ -113,6 +166,66 @@ A preposition is a word that links a noun to the rest of the sentence and states
 
 - Open the reply with one sentence that starts "My intention with this response is to".
 - Open each step with one sentence that starts "My intention with this step is to".
+
+## "So far" recaps
+
+The reader forgets the earlier steps by the time a later step arrives. An intention sentence looks forward to the current step. A "So far" recap looks back at the facts the earlier steps established, so that the reader does not have to scroll up.
+
+- From the second step on, open each step with a recap that starts "So far, we have covered".
+- Open a reply that continues an earlier walkthrough the same way, so that the recap also covers the steps from earlier replies.
+- Recap facts, not topics. Each earlier step gets one clause or sentence that names the concrete thing it established, such as the file, the construct, the value, or the function that wrote the value.
+- When three or more steps came before, write the recap as a short numbered list with one grammatical sentence per earlier step, instead of one long sentence.
+- The recap does not replace "Re-introduce names; do not rely on memory." When the current step uses a name, still give that name's code reminder.
+
+Wrong: "So far, we have covered the file, the component, and the hook."
+
+That sentence lists step titles. The reader still has to scroll up to learn which file and which component.
+
+Right, for the third step: "So far, we have covered that `isUpdatingAccount` is a local `const` inside a React function component, which React calls again on every re-render, and that its value comes from the Redux store, which is the app's client-side copy of server data."
+
+Right, for the fifth step:
+
+> So far, we have covered these facts:
+>
+> 1. `isUpdatingAccount` is a local `const` inside a React function component, which React calls again on every re-render.
+> 2. Its value comes from a selector, which is a pure function that reads one field out of the Redux store.
+> 3. `useAppSelector` subscribes the component to that field, which is the observer pattern: the store notifies the component, and the component re-renders.
+> 4. The field is a four-state request lifecycle (`IDLE`, `LOADING`, `SUCCEEDED`, `FAILED`), which is a small finite state machine, and the selector returns `true` only in `LOADING`.
+>
+> My intention with this step is to show which transition moves that state machine into `LOADING`.
+
+## Similar names: draw the tree before using either
+
+Two identifiers that differ only by a suffix, a plural, or one word, such as `Switcher` and `Switch`, `Item` and `Items`, or `Provider` and `Provide`, cannot be told apart from prose alone. The reader loses which one is the parent, which one owns the data, and which one draws the screen.
+
+- Before the first sentence that uses either name, draw the render tree or call tree in ASCII. Give each node its name, its kind (route component, container, presentational child, hook, reducer), the folder it lives in, and a one-line role.
+- After the drawing, refer to each one by role plus name every time, such as "the container `MultiProfileSwitcher`" and "the child `MultiProfileSwitch`", never by name alone.
+- When the two names are the same word in two folders, say which folder each use refers to.
+
+Wrong: "`MultiProfileSwitcher` calls a hook and passes the value to `MultiProfileSwitch`, which captures it in state."
+
+That sentence uses both names before the reader has a picture of which contains which.
+
+Right:
+
+```text
+<Route path="/multi-profile-switcher">
+└── MultiProfileSwitcher      container, folder shared/MultiProfileSwitcher
+    │                          loads the account, decides skeleton vs. real list
+    └── MultiProfileSwitch    presentational child, folder shared/MultiProfileSwitch
+                               draws the tiles and the local toast
+```
+
+"The container `MultiProfileSwitcher` reads the URL flag and passes it as a prop to the child `MultiProfileSwitch`, which captures it in state."
+
+## Explain the mechanism that moves control before using its verb
+
+Verbs such as "navigates to", "routes to", "listens to", "dispatches", "emits", and "subscribes" each hide a mechanism. The reader who does not already know the mechanism reads the verb as magic and cannot follow the next step.
+
+- Before the first use of such a verb, write the mechanism as a chain of concrete steps: who calls what, what value changes, who observes that change, and what component or function results.
+- For client-side routing, the chain is: a component calls `history.push(url)`, which writes the new URL into the browser's history without a page load; the router subscribed to that history object re-renders; it compares the new pathname against each `<Route path>` in declaration order; the first matching Route renders its child component, and the previous Route's child unmounts.
+- For an event bus, the chain is: a module calls `emit(name, payload)`; the bus looks up every function registered under `name`; it calls each with `payload`; those functions were registered by components that called `subscribe` on mount.
+- Do not write "the route renders X" or "the switcher listens to the URL" until the chain exists earlier in the reply.
 
 ## Avoid
 

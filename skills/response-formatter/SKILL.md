@@ -55,6 +55,8 @@ The principles below are an index. Read the full named principle before applying
 - **No analogy.** Use precise technical terms rather than metaphors.
 - **No borrowed slang.** Avoid ambiguous jargon and marketing shorthand.
 - **No tables.** Use prose, lists, or code instead of comparison tables.
+- **No backticks inside inline code.** Any expression with a backtick or `${}` goes in a fenced block, never in an inline span.
+- **No bare repository adjectives.** "Shared", "core", "default", "platform": say which folder, which build, which consumers, the first time.
 
 **Screens**
 
@@ -238,6 +240,30 @@ Do not use "copy" to mean words on a screen. Write "The screen says..." or "The 
 Use prose, lists, or TypeScript instead of tables. Comparisons need complete sentences that preserve who does what and why.
 
 When two implementations differ, show each implementation's relevant behavior and explain the difference in prose.
+
+## No backticks inside inline code
+
+A template literal, a tagged template, or any expression that contains a backtick cannot go inside a single-backtick inline code span. The inner backtick closes the span early, and the rest of the paragraph renders as broken code.
+
+- Put any expression containing a backtick or a `${}` placeholder in a fenced code block.
+- In prose, describe the expression in words or show its evaluated value instead.
+
+Wrong: The expression `playheadSecs !== null && \`playheadSecs=${playheadSecs}\`` uses the `&&` operator.
+
+Right: The third element is built by this expression, which uses the `&&` operator:
+
+```ts
+playheadSecs !== null && `playheadSecs=${playheadSecs}`
+```
+
+For the input `'120'`, it evaluates to the string `'playheadSecs=120'`.
+
+## No bare repository adjectives
+
+Words such as "shared", "core", "default", "platform", "legacy", and "common" are folder names or team shorthand, not descriptions. A reader outside the team reads "the shared parser" as "a parser that is somehow shared" and learns nothing.
+
+- The first time such a word modifies a noun, say what it means concretely: which folder, which build, which consumers. "The parser in `shared/Utils` is compiled into every platform's bundle, so Tizen, webOS, Xbox and PS5 all run the same copy. Editing it risks all four."
+- After that definition, prefer the concrete phrase ("the parser every platform runs") over the bare adjective.
 
 ## Name the real input
 

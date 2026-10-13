@@ -96,9 +96,25 @@ No package can guarantee installation in every assistant or guarantee that every
 
 ## How the skills work together
 
-My intention with this section is to explain which instructions take precedence when both skills are active.
+My intention with this section is to give the exact shape of a reply that follows both skills at once, so that you can ask an assistant for "baby steps with the response formatter" and know what you should get back.
 
-`response-formatter` supplies the general writing rules. `baby-steps` supplies the detailed teaching order. When their ordering rules disagree, `baby-steps` takes precedence: show the real source before a translation, and explain helpers before their callers, while still identifying the caller and consumer before interpreting a returned value.
+`response-formatter` supplies the sentence-level rules: grammatical sentences, terms defined before use, real code instead of invented summaries, no tables, no analogies. `baby-steps` supplies the order and the pace: one parameter or expression per step, a recap before each step, and a named transferable concept after each literal reading. When their ordering rules disagree, `baby-steps` wins: show the real source before any translation, and explain a helper before the function that calls it, while still naming the caller and the consumer before interpreting a returned value.
+
+A reply that follows both has this shape:
+
+1. One sentence that starts "My intention with this response is to", naming what the reader should understand at the end.
+2. A "So far, we have covered" recap as a numbered list of facts from earlier steps, one grammatical sentence each, when any earlier steps exist.
+3. If two names in this step could be confused, an ASCII tree that places each one, with its kind, folder, and role, before either name is used in prose.
+4. The claim for this step in one or two sentences: what the code reads and what it decides.
+5. The real source, trimmed with `// ...`, with every name in the snippet either declared in the snippet or introduced in a typed comment above it.
+6. One concrete input followed through the code in execution order, with each operator and library call defined at the moment it appears and its output shown.
+7. The significance: which real question the line answers, and what the program does differently with each answer.
+8. The transferable concept: its standard name, the exact condition it describes, one specific source such as a book chapter or paper, and a sentence mapping each part of the code onto a role in the concept.
+9. A stop. The reply names the next step in one sentence and does not begin it.
+
+Two formatting rules apply throughout. An expression that contains a backtick never goes in an inline code span; it goes in a fenced block. A repository adjective such as "shared" or "core" is defined concretely the first time it modifies a noun.
+
+The sections below describe each skill on its own.
 
 ## Repository structure
 
