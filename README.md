@@ -96,7 +96,9 @@ No package can guarantee installation in every assistant or guarantee that every
 
 ## How the skills work together
 
-My intention with this section is to give the exact shape of a reply that follows both skills at once, so that you can ask an assistant for "baby steps with the response formatter" and know what you should get back.
+My intention with this section is to give the exact shape of a reply that follows both skills at once, so that you can ask an assistant for `/response-formatter` and know what you should get back.
+
+You never need to name both. Loading `response-formatter` also loads `baby-steps`: the formatter's first section says so, and an assistant that follows it applies both skills in the same turn. Naming `baby-steps` alone also pulls in `response-formatter` when it is installed.
 
 `response-formatter` supplies the sentence-level rules: grammatical sentences, terms defined before use, real code instead of invented summaries, no tables, no analogies. `baby-steps` supplies the order and the pace: one parameter or expression per step, a recap before each step, and a named transferable concept after each literal reading. When their ordering rules disagree, `baby-steps` wins: show the real source before any translation, and explain a helper before the function that calls it, while still naming the caller and the consumer before interpreting a returned value.
 
