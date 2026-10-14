@@ -64,6 +64,7 @@ The principles below are an index. Read the full named principle before applying
 - **No tables.** Use prose, lists, or code instead of comparison tables.
 - **No backticks inside inline code.** Any expression with a backtick or `${}` goes in a fenced block, never in an inline span.
 - **No bare repository adjectives.** "Shared", "core", "default", "platform": say which folder, which build, which consumers, the first time.
+- **Name what "same" and "different" refer to.** Any sentence with "same", "different", "other", "each", or "both". Name the one thing that stays fixed and list the things that vary, then show them side by side. Search this file for the heading `Name what "same" and "different" refer to`.
 
 **Screens**
 
@@ -283,6 +284,28 @@ Words such as "shared", "core", "default", "platform", "legacy", and "common" ar
 
 - The first time such a word modifies a noun, say what it means concretely: which folder, which build, which consumers. "The parser in `shared/Utils` is compiled into every platform's bundle, so Tizen, webOS, Xbox and PS5 all run the same copy. Editing it risks all four."
 - After that definition, prefer the concrete phrase ("the parser every platform runs") over the bare adjective.
+
+## Name what "same" and "different" refer to
+
+Any sentence that uses a comparative word: "same", "different", "other", "another", "each", "both", "the former", "the latter".
+
+A comparative word has no meaning on its own. "The same link" means nothing until the reader knows which link, and "different labels" means nothing until the reader knows how many there are and what each one says. When you write one of these words, do three things in the same paragraph. Name the one thing that stays fixed. Count and name the things that vary. Then show them side by side, as a list or a code block, so the reader can see the fixed part repeated and the varying part change.
+
+Wrong: "Marketing teams put different labels on the same link in a newsletter, an ad and a QR code, and the analytics tool then reports how many visits each one produced."
+
+The reader asks: the same link as what? One link, or one per place? Different from what? Which part is the label? The sentence has three comparative words and zero referents.
+
+Right: "The destination is one page, `https://www.example.com/series/ABC`. It is advertised in three places: an email newsletter, a paid ad, and a QR code on a poster. Each place gets its own URL. The path is identical in all three, and only the query string differs:
+
+```text
+newsletter: https://www.example.com/series/ABC?utm_source=newsletter&utm_medium=email
+paid ad:    https://www.example.com/series/ABC?utm_source=facebook&utm_medium=paid_ad
+poster QR:  https://www.example.com/series/ABC?utm_source=qr&utm_medium=poster
+```
+
+The server ignores the query string and serves the same page to all three. The analytics code reads it and records which of the three URLs the visitor used."
+
+Now "same" points at the path, "three" replaces "different", and the reader can see the variation instead of being told about it.
 
 ## Name the real input
 

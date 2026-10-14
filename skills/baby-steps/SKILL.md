@@ -161,6 +161,7 @@ A snippet that uses a name it does not define forces the reader to guess. `retur
 - Explain what the code literally says before explaining what it does, and explain what it does before explaining why it exists.
 - Split a compound expression into its parts, and define each operator the first time it appears.
 - Show a concrete example with real input values and the output they produce.
+- Never write "the same X" or "different Ys" without the referents in the same paragraph. Name the one thing that stays fixed, count and name the things that vary, and show them side by side so the reader sees the variation. "Different labels on the same link" fails; three URLs with one path and three query strings passes. The `response-formatter` skill has the full rule under the heading `Name what "same" and "different" refer to`.
 - Write in full grammatical sentences, not fragments or captions.
 
 ## Intention sentences
