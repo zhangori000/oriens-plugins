@@ -1,12 +1,16 @@
 ---
 name: response-formatter
-description: "Read this before explanations, teaching replies, and markdown. Open with a one-sentence intention. Use grammatical sentences. Define a computer science term before using it. Show the real branches in TypeScript. Put the caller that uses a return value before the function that returns it. Do not invent a summary return value."
+description: "Read this before explanations, teaching replies, and markdown. Loading it also loads baby-steps: every explanation walks one parameter, expression, or helper at a time. Open with a one-sentence intention. Use grammatical sentences. Define a computer science term before using it. Show the real branches in TypeScript. Put the caller that uses a return value before the function that returns it. Do not invent a summary return value."
 user-invocable: true
 ---
 
 # Response formatter
 
 Use this skill when formatting responses or writing markdown.
+
+## Baby-steps always applies
+
+This skill never runs alone. When this skill is active, load and follow the `baby-steps` skill in the same turn, even when the user named only this one. `baby-steps` sets the pace and the order (one parameter, expression, or helper per step; a recap before each step; the real source before any translation; a helper before its caller), and this skill sets the sentence-level rules. When the two disagree about order, `baby-steps` wins. The user should never have to ask for both by name.
 
 Use TypeScript for code samples in explanations. When the file on disk is TypeScript, show that file's actual signature and branches. When the file uses another language, translate the real branches into TypeScript and explicitly say that the block is a translation. Use Python when the file being explained is Python. If `baby-steps` is also active, its instruction to show the real source before a translation takes precedence.
 
@@ -23,6 +27,8 @@ The principles below are an index. Read the full named principle before applying
 **Order**
 
 - **Open with the intention.** Begin a longer reply or document with its purpose. Begin each document section with an intention sentence.
+- **Recap before the intention.** From the second step or section on, put a "So far, we have covered" recap of the earlier facts before the intention sentence. The full rule is under `Open with the intention`.
+- **Teach the transferable concept.** In any code explanation, name the algorithm, system-design idea, or computer science concept the code instantiates, by its standard name and with one specific source, then map it back onto the code. The `baby-steps` skill has the full rule.
 - **Dependency order.** Define a term before making the reader use it to understand another term.
 - **Start at the top.** Begin a walkthrough with the high-level behavior, then explain the requested layer.
 - **Completeness.** Give every concept already introduced the same explanatory depth.
@@ -33,6 +39,7 @@ The principles below are an index. Read the full named principle before applying
 
 - **Show the real implementation.** Preserve actual branches, fields, and writes.
 - **Show the algorithm.** Show the conditions that produce a decision, not a boolean parameter that hides them.
+- **Walk through every code block.** A code block is evidence, not teaching. Right under it, write one short sentence per line or branch with one concrete value. Cut any line you will not walk. The full rule is under `Walk through every code block`.
 - **Name the step.** Name a step for what it does before introducing its code identifier.
 - **Caller before callee.** Show how a caller uses a return value before showing the function that produces it.
 - **Reasoning above the function.** Explain a branch in prose above the code, not in a long inline comment.
@@ -71,6 +78,8 @@ For a reply or document longer than a few sentences, open with one sentence that
 Do not merely announce the topic. "Here is a summary of the request handling" is not an intention. "My intention is to show you which failures cause another request, so that you can decide whether this operation is safe to repeat" gives the reader a purpose.
 
 Under every markdown section heading, begin with a sentence that starts "My intention with this section is to".
+
+By the fifth step or section, the reader has forgotten the first four. The intention sentence looks forward, so from the second step or section on, put a recap before it. The recap starts "So far, we have covered" and names the facts the earlier steps established, such as the construct, the value, and the concept. It does not name the step titles. When three or more steps came before, write the recap as a short numbered list. A reply that continues an earlier walkthrough starts with the same recap. The `baby-steps` skill has the full rule with wrong and right examples.
 
 ## Dependency order
 
@@ -111,6 +120,16 @@ When code exists, show its real signature, branches, fields, and writes. Do not 
 For a teaching sketch that is not a production signature, give parameters concrete sample defaults. Do not use `undefined` merely because a type allows it. For a real function, preserve the signature and put example values at the call site.
 
 Explain how the actual caller consumes the actual return value. Do not invent a result such as `{ action: "keep" }` when the implementation writes state and returns nothing.
+
+## Walk through every code block
+
+Any code you show, in any reply, not only in baby-steps.
+
+A code block is evidence, not teaching. The reader can see the characters, but the branch order, the operator meaning, and the concrete values are still in your head. After every block, walk it: one short sentence per line or branch, in execution order, each sentence naming what that line reads, what it compares or calls, and what it returns, with one concrete value. Then say what the result means for the screen or the request. This is not a license for a long reply. A four-line block gets four or five sentences. If you will not walk a line, cut it from the block, or replace it with `// ...`.
+
+Wrong: a function named `resolve` with four `if` lines and trailing comments such as `// 1. the URL named an episode`, followed by a new paragraph that starts "The store saves the result". The comments are labels, not a walk. The reader does not know what `find(episodes, episodeId)` returns when the id is absent, why `seasonId` is checked second, or what `resumeTarget` returns.
+
+Right: the same block, followed by: "The first line asks whether the URL carried an episode id. For the sample, `episodeId` is `"EP-123"`, so `find` returns that episode object and the function returns it with the word `"episodeId"`; nothing below runs. If the URL had carried only a season id, the second line would take the first non-clip episode of that season and return the word `"seasonId"`. With neither, the third line calls `resumeTarget`, which reads each episode's progress and returns the most recently watched episode with `"resume"`, the one after it with `"upNext"`, or the last one with `"completed"`, or `null` when nothing was watched. Only then does the last line fall back to the first non-clip episode with `"seriesFallback"`. The word is what the label hook maps to the button text, so the first line firing is why the button says Start Watching."
 
 ## Show the algorithm
 
