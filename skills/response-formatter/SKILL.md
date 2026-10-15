@@ -48,7 +48,7 @@ The principles below are an index. Read the full named principle before applying
 
 - **Define the term first.** Explain unfamiliar technical terms, libraries, and identifiers before using them.
 - **Name code in this shape.** Say its kind, its name, and what it does, then show code.
-- **Show the enclosing scope.** Show the line that declares an identifier inside the construct that encloses it, say what kind of binding it is, and name who creates the value and who reads it.
+- **Show the enclosing scope.** Show the line that declares an identifier inside the construct that encloses it, say what kind of binding it is, say where the name is visible and how long the value lives, and name who creates the value and who reads it.
 - **Show the type you just named.** Show the declaration and a concrete value when introducing a type.
 - **Do not coin a stand-in.** Do not replace actual predicates or fields with unexplained shorthand.
 - **Unpack the call chain.** Explain each function and each call rather than compressing them into an arrow.
@@ -193,10 +193,11 @@ Do not place `Object.method` in parentheses as though the reader already underst
 
 You name an identifier, such as a field, a variable, a parameter, or a constant.
 
-A name on its own line cannot be reasoned about. The reader needs four facts before the meaning of the value makes sense: what kind of binding the name is, which construct encloses it, who writes the value, and who reads it later. A value is created so that someone can use it, so the reader is part of the definition.
+A name on its own line cannot be reasoned about. Scope is the region of code in which a name can be seen. A variable is a named storage location that one piece of code writes so that another piece of code can read it later. The reader needs five facts before the meaning of the value makes sense: what kind of binding the name is, which construct encloses it, where the name is visible and how long the value lives, who writes the value, and who reads it later. A value is created so that someone can use it, so the reader is part of the definition.
 
 - Show the line that declares or assigns the identifier inside the code that encloses it, and trim the middle with `// ...`. Name the enclosing construct: the object literal a function returns, a React function component, a Redux reducer, a class, or the module itself.
 - Say what kind of binding it is: a property on an object literal, a module-level exported constant, a function parameter, a local `const` inside a function, a class field, or a global on `window`. When the kind is easy to confuse, say what it is not.
+- Say the scope in words, then the lifetime. "Visible only inside this function body, and gone when the function returns." "Exported from the module, so any file that imports it can read it." "On `window`, so every script on the page can read it." Name the concept once, lexical scope, and point at one source, such as *You Don't Know JS Yet: Scope & Closures*, Chapter 1.
 - Name the writer and the reader by name. Say which function creates the value and which function or component reads it, and show the expression that reads it.
 
 Wrong:
@@ -225,7 +226,7 @@ export const getThirdPartyPlans = async (): Promise<Plans[] | null> => {
 };
 ```
 
-"`benefitType` is a property on the object literal that the function `getThirdPartyPlans` returns inside a one-element array. It is not a variable, so nothing reassigns it later. Its type is `BenefitTier`, a union of the strings `'premium'`, `'fanpack'`, and `'super_fan_pack'`. This `return` is the only writer. The reader is the component `PlanChooserView`, which looks the value up with `BENEFITS_MAP[plan.benefitType]` and passes the resulting list as the `benefits` prop."
+"`benefitType` is a property on the object literal that the function `getThirdPartyPlans` returns inside a one-element array. It is not a variable, so nothing reassigns it later. The property is visible to any code that holds the returned array, and it lives as long as that array does; inside this function nothing reads it. Its type is `BenefitTier`, a union of the strings `'premium'`, `'fanpack'`, and `'super_fan_pack'`. This `return` is the only writer. The reader is the component `PlanChooserView`, which looks the value up with `BENEFITS_MAP[plan.benefitType]` and passes the resulting list as the `benefits` prop."
 
 ## Show the type you just named
 
