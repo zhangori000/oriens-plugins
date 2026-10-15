@@ -22,6 +22,8 @@ Write complete grammatical sentences with subjects and finite verbs. Concision m
 
 The principles below are an index. Read the full named principle before applying it; do not rely only on its one-line description.
 
+Do not characterize code before its lines appear in the reply. A label such as "display bug" or "data bug" comes after the real snippets, never instead of them. When two implementations differ, show each one's lines, walk both with the same concrete input, and only then say how they differ.
+
 ## Principles
 
 **Order**
