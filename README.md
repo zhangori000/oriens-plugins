@@ -12,7 +12,7 @@ These are public editions of my personal skills. Work-specific examples have bee
 
 ## Install the plugin in GitHub Copilot CLI
 
-My intention with this section is to install both skills with one command.
+My intention with this section is to install all three skills with one command.
 
 Run this command in your terminal:
 
@@ -26,13 +26,13 @@ In an interactive Copilot CLI session, you can instead run:
 /plugin install zhangori000/oriens-plugins
 ```
 
-Start a new session after installation. Use `/skills list` to see the available skills, and use `/baby-steps` or `/response-formatter` to request one explicitly. The assistant can also select a skill when your request matches its description.
+Start a new session after installation. Use `/skills list` to see the available skills, and use `/baby-steps`, `/response-formatter`, or `/lsat-response-formatter` to request one explicitly. The assistant can also select a skill when your request matches its description.
 
 ## Install the skills without the plugin
 
 My intention with this section is to let you use the same instructions in other assistants supported by the Skills CLI.
 
-Install both skills with:
+Install all three skills with:
 
 ```sh
 npx skills add zhangori000/oriens-plugins
@@ -43,17 +43,18 @@ Install just one skill with:
 ```sh
 npx skills add zhangori000/oriens-plugins --skill response-formatter
 npx skills add zhangori000/oriens-plugins --skill baby-steps
+npx skills add zhangori000/oriens-plugins --skill lsat-response-formatter
 ```
 
 The installer lets you choose which assistants receive the skills. Its supported assistants include Claude Code, Codex, Cursor, Gemini CLI, GitHub Copilot, Grok Build, OpenCode, and Windsurf.
 
-For example, install both skills for Grok Build with:
+For example, install all three skills for Grok Build with:
 
 ```sh
 npx skills add zhangori000/oriens-plugins --agent grok --skill '*'
 ```
 
-Install both for several assistants with:
+Install all three for several assistants with:
 
 ```sh
 npx skills add zhangori000/oriens-plugins --agent claude-code codex cursor gemini-cli grok opencode --skill '*'
@@ -63,7 +64,7 @@ Add `--global` if you want the skills available across projects instead of only 
 
 ## Install the plugin in Claude Code
 
-My intention with this section is to install both skills through Claude Code's native plugin system.
+My intention with this section is to install all three skills through Claude Code's native plugin system.
 
 Run these commands in your terminal:
 
@@ -79,7 +80,7 @@ The same commands are available inside Claude Code with the `/plugin` prefix:
 /plugin install oriens-plugins@oriens-plugins
 ```
 
-After installation, start a new session and invoke `/oriens-plugins:baby-steps` or `/oriens-plugins:response-formatter`. Claude Code prefixes plugin skills with the plugin's name.
+After installation, start a new session and invoke `/oriens-plugins:baby-steps`, `/oriens-plugins:response-formatter`, or `/oriens-plugins:lsat-response-formatter`. Claude Code prefixes plugin skills with the plugin's name.
 
 Choose either the plugin installation or the separate skill installation for a given assistant to avoid loading duplicate copies.
 
@@ -87,23 +88,23 @@ Choose either the plugin installation or the separate skill installation for a g
 
 My intention with this section is to distinguish installable support from using the same instructions manually.
 
-Both skills use the open [Agent Skills format](https://agentskills.io), with instructions in `skills/<name>/SKILL.md`. They require no particular model, executable, server, API key, or account.
+All three skills use the open [Agent Skills format](https://agentskills.io), with instructions in `skills/<name>/SKILL.md`. They require no particular model, executable, server, API key, or account.
 
 GitHub Copilot CLI and Claude Code have native plugin packaging in this repository. Other assistants that support Agent Skills can install the skills with the [Skills CLI](https://github.com/vercel-labs/skills), or receive the skill folders in their documented skill directory.
 
-Grok Build is listed as `grok` in the Skills CLI. This does not mean that the Grok website or every third-party Grok client has a plugin installer. For a chat application without skill support, paste the instructions below the opening metadata block from either `SKILL.md` into its custom instructions, project instructions, or the conversation. This is manual instruction use, not native plugin support.
+Grok Build is listed as `grok` in the Skills CLI. This does not mean that the Grok website or every third-party Grok client has a plugin installer. For a chat application without skill support, paste the instructions below the opening metadata block from any `SKILL.md` into its custom instructions, project instructions, or the conversation. This is manual instruction use, not native plugin support.
 
 No package can guarantee installation in every assistant or guarantee that every model follows every instruction. The instructions remain readable and reusable even when an application has no plugin or skill system.
 
 ## How the skills work together
 
-My intention with this section is to give the exact shape of a reply that follows both skills at once, so that you can ask an assistant for `/response-formatter` and know what you should get back.
+My intention with this section is to give the exact shape of a reply that follows `response-formatter` and `baby-steps` at once, so that you can ask an assistant for `/response-formatter` and know what you should get back.
 
-You never need to name both. Loading `response-formatter` also loads `baby-steps`: the formatter's first section says so, and an assistant that follows it applies both skills in the same turn. Naming `baby-steps` alone also pulls in `response-formatter` when it is installed.
+You never need to name more than one. Loading `response-formatter` also loads `baby-steps`: the formatter's first section says so, and an assistant that follows it applies both skills in the same turn. Naming `baby-steps` alone also pulls in `response-formatter` when it is installed. Naming `lsat-response-formatter` loads `response-formatter`, and through it `baby-steps`, and then replaces their code rules with its own reading rules, described at the end of this section.
 
 `response-formatter` supplies the sentence-level rules: grammatical sentences, terms defined before use, real code instead of invented summaries, no tables, no analogies. `baby-steps` supplies the order and the pace: one parameter or expression per step, a recap before each step, and a named transferable concept after each literal reading. When their ordering rules disagree, `baby-steps` wins: show the real source before any translation, and explain a helper before the function that calls it, while still naming the caller and the consumer before interpreting a returned value.
 
-A reply that follows both has this shape:
+A reply that follows `response-formatter` and `baby-steps` has this shape:
 
 1. One sentence that starts "My intention with this response is to", naming what the reader should understand at the end.
 2. A "So far, we have covered" recap as a numbered list of facts from earlier steps, one grammatical sentence each, when any earlier steps exist.
@@ -116,6 +117,8 @@ A reply that follows both has this shape:
 9. A stop. The reply names the next step in one sentence and does not begin it.
 
 Two formatting rules apply throughout. An expression that contains a backtick never goes in an inline code span; it goes in a fenced block. A repository adjective such as "shared" or "core" is defined concretely the first time it modifies a noun.
+
+A reply that follows `lsat-response-formatter` keeps steps 1, 2, and 9 of that shape and swaps the code steps for argument steps. The real source becomes the stimulus, quoted one sentence at a time before any paraphrase, with the conclusion marked and restated in plain words. The concrete input becomes one specific world in which a choice is true or false, read against the author's sentences. The transferable concept step is dropped, because any habit worth keeping is taught inside the step where it is used. The skill's `SKILL.md` gives the reading rules in full, together with the standing rules for grading one of my practice sections.
 
 The sections below describe each skill on its own.
 
@@ -133,7 +136,9 @@ oriens-plugins/
 `-- skills/
     |-- response-formatter/
     |   `-- SKILL.md
-    `-- baby-steps/
+    |-- baby-steps/
+    |   `-- SKILL.md
+    `-- lsat-response-formatter/
         `-- SKILL.md
 ```
 
