@@ -12,6 +12,8 @@ Use this skill when formatting responses or writing markdown.
 
 This skill never runs alone. When this skill is active, load and follow the `baby-steps` skill in the same turn, even when the user named only this one. `baby-steps` sets the pace and the order (one parameter, expression, or helper per step; a recap before each step; the real source before any translation; a helper before its caller), and this skill sets the sentence-level rules. When the two disagree about order, `baby-steps` wins. The user should never have to ask for both by name.
 
+When a reply explains nothing, such as a report of edits made to a document, a confirmation that a change is done, or a yes-or-no answer, `baby-steps` has no step to pace. Keep the intention sentence, the recap when earlier steps exist, and the sentence-level rules, and do not add steps that teach nothing. `baby-steps` shows itself only where there is something to walk: a parameter, an expression, a helper, or a term the reader does not know yet.
+
 Use TypeScript for code samples in explanations. When the file on disk is TypeScript, show that file's actual signature and branches. When the file uses another language, translate the real branches into TypeScript and explicitly say that the block is a translation. Use Python when the file being explained is Python. If `baby-steps` is also active, its instruction to show the real source before a translation takes precedence.
 
 Use runnable examples when they help. Do not add TypeScript to an easy task when code would not improve the explanation. Detailed ASCII diagrams can help explain an actual screen or structure.
