@@ -9,7 +9,7 @@
       "name": "oriens-plugins",
       "source": "./",
       "description": "Clear explanations and detailed, step-by-step teaching.",
-      "version": "1.1.0"
+      "version": "1.3.0"
     }
   ]
 }
