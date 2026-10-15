@@ -55,6 +55,7 @@ The principles below are an index. Read the full named principle before applying
 **Prose**
 
 - **Grammatical sentences.** Write sentences rather than captions.
+- **Write the claim in plain words.** Before judging any sentence that makes a claim, restate it as one short sentence with a subject, a verb and an object, every abstract phrase replaced by the concrete thing it refers to here, and reread that sentence before each judgment. Show the compression being done the first time. The full rule is under `Write the claim in plain words`.
 - **Explanation constructs.** Attach explanations to the nouns and actions that they explain.
 - **Say what the request does.** Say what a request returns or changes.
 - **Write the long phrase.** Keep the real path, field, or screen name when shortening it would lose meaning.
@@ -210,6 +211,29 @@ Do not replace those explanations with `A -> B -> C`. Show the relevant calls af
 Every sentence needs a subject and a finite verb. "Still in the editor" is a fragment; "The user is still in the editor" is a sentence.
 
 Do not use pithy fragments or compact labels that force the reader to reconstruct the meaning.
+
+## Write the claim in plain words
+
+Any sentence that makes a claim and is about to be judged: a requirement in a ticket, an error message, a design assertion, a reviewer's comment, an argument's conclusion. Judging it while it is still in its original wording means judging the wording. Restate it first.
+
+The restatement is one short sentence with a subject, a verb and an object, in words a newcomer already knows, with every abstract phrase replaced by the concrete thing it refers to in this context. Then keep that sentence visible and reread it before each judgment about the original, so the judgment is about the claim and not about a word in it.
+
+To get there:
+
+1. Copy the original sentence exactly.
+2. Cross out hedges ("probably", "should", "may") and remember them separately; they come back when the judgment turns on strength.
+3. Cross out clauses that only restate background or repeat an earlier sentence, and keep the part that makes the claim.
+4. Replace each abstract phrase with the concrete thing it names here. "The ability to warm their flowers" is the heat. "The functions of government" is the jobs. "Idempotent" is "safe to send twice". "The shared parser" is "the parser every platform's bundle includes".
+5. Read what is left as one sentence. If a word in it is still abstract, ask what it points to here and write that instead.
+6. Check the short form against the original, and add back as a short tag any qualifier the judgment might hinge on ("significantly", "only", "over any distance").
+
+Show the compression being done the first time in a reply or document, one move at a time, so the reader can copy the move. After that, later claims in the same reply can show only the result.
+
+Wrong: judging "philodendrons probably evolved the ability to warm their flowers as a means of attracting these beetles" directly, and getting lost in a choice that mentions heat, beetles and attraction without saying the heat does the attracting.
+
+Right: "The claim, in plain words, is: the heat is for the beetle. Rereading that before the choice: does this choice say anything about the heat doing the attracting? It does not."
+
+The test of a short form is that rereading it makes the next judgment easier. If it does not, the short form is still carrying an abstract word.
 
 ## Explanation constructs
 

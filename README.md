@@ -2,10 +2,11 @@
 
 My intention is to make my explanation and teaching preferences easy to install across assistants, together or separately.
 
-A skill is a set of written instructions that an assistant follows for a particular task. A plugin is an installable package that bundles skills. This repository contains one plugin, `oriens-plugins`, with two skills:
+A skill is a set of written instructions that an assistant follows for a particular task. A plugin is an installable package that bundles skills. This repository contains one plugin, `oriens-plugins`, with three skills:
 
 - `response-formatter` makes explanations grammatical, defines unfamiliar terms before using them, and shows actual code behavior instead of invented summaries.
 - `baby-steps` teaches one parameter, expression, or helper at a time, with concrete inputs, outputs, and recursively defined terms.
+- `lsat-response-formatter` applies the same rules to LSAT explanations: it reads the stimulus one sentence at a time, writes the claim in plain words, reads the choices in test order with the verdict last, and diagnoses the reader's own reasoning. It loads `response-formatter`, which loads `baby-steps`.
 
 These are public editions of my personal skills. Work-specific examples have been replaced with generic guidance and examples.
 
