@@ -191,7 +191,7 @@ The reader forgets the earlier steps by the time a later step arrives. An intent
 - From the second step on, open each step with a recap that starts "So far, we have covered".
 - Open a reply that continues an earlier walkthrough the same way, so that the recap also covers the steps from earlier replies.
 - Recap facts, not topics. Each earlier step gets one clause or sentence that names the concrete thing it established, such as the file, the construct, the value, or the function that wrote the value.
-- When three or more steps came before, write the recap as a short numbered list with one grammatical sentence per earlier step, instead of one long sentence.
+- When three or more steps came before, write the recap as a short paragraph with one grammatical sentence per earlier step, instead of one long sentence. Do not use a numbered list; the `response-formatter` rule `Prose, not numbered lists` applies.
 - The recap does not replace "Re-introduce names; do not rely on memory." When the current step uses a name, still give that name's code reminder.
 
 Wrong: "So far, we have covered the file, the component, and the hook."
