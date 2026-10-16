@@ -78,7 +78,7 @@ Do not characterize code before its lines appear in the reply. A label such as "
 
 - **Show the real implementation.** Preserve actual branches, fields, and writes.
 - **Show the algorithm.** Show the conditions that produce a decision, not a boolean parameter that hides them.
-- **Walk through every code block.** A code block is evidence, not teaching. Right under it, write one short sentence per line or branch with one concrete value. A one-line block and a function's signature line count. Define every keyword and operator a line uses. Cut any line you will not walk, and show fewer blocks rather than walk them thinly. The full rule is under `Walk through every code block`.
+- **Walk through every code block.** A code block is evidence, not teaching. Right under it, write one short sentence per line or branch with one concrete value. A one-line block and a function's signature line count. Define every keyword and operator a line uses. Cut any line you will not walk, and show fewer blocks rather than walk them thinly. Never follow a code block or a diagram with a numbered list; walk it in sentences or bullets. The full rule is under `Walk through every code block`.
 - **Name the step.** Name a step for what it does before introducing its code identifier.
 - **Caller before callee.** Show how a caller uses a return value before showing the function that produces it.
 - **Reasoning above the function.** Explain a branch in prose above the code, not in a long inline comment.
@@ -146,7 +146,7 @@ Any walkthrough that names more than about four parts, such as packages, classes
 Facts given one per paragraph do not add up to a picture. By the third reply the reader holds a definition of each part and still cannot say how the parts connect, which they will describe as "scattered". Give the reader one place to look.
 
 - Right after the intention sentence and the recap, draw one ASCII diagram that puts every part named so far in a single picture. Each box gives the part's name, what kind of thing it is (an npm package, a class, an interface, an object built at run time), and which repository its code is in. Label each arrow with the real call that connects two boxes, such as `new HeartbeatPluginCreator(...)` or `creator.create(events, callbacks)`. Never label an arrow with a verb such as "hands off to" or "talks to".
-- Directly under the diagram, give a short glossary list with one line per part, in the order the diagram reads. Each line is a full sentence that says what the part is and what it does.
+- Directly under the diagram, give a short bulleted glossary, not a numbered list, with one line per part, in the order the diagram reads. Each line is a full sentence that says what the part is and what it does.
 - In each later reply of the same walkthrough, redraw the map with the new part added and marked `(new)`, so that the reader sees where it attaches. Do not point back at an earlier reply's map.
 - Each step after the map explains one part or one arrow of it, and says which one by repeating the part's name or the arrow's call, never by a number. Do not number the arrows or boxes; see `No pointers to labels`.
 
@@ -183,6 +183,8 @@ Explain how the actual caller consumes the actual return value. Do not invent a 
 Any code you show, in any reply, not only in baby-steps.
 
 A code block is evidence, not teaching. The reader can see the characters, but the branch order, the operator meaning, and the concrete values are still in your head. After every block, walk it: one short sentence per line or branch, in execution order, each sentence naming what that line reads, what it compares or calls, and what it returns, with one concrete value. Then say what the result means for the screen or the request. This is not a license for a long reply. A four-line block gets four or five sentences. If you will not walk a line, cut it from the block, or replace it with `// ...`.
+
+Write the walk as sentences, or as bullets with one sentence each. Never write it as a numbered list. Numbers under a block take a line of their own each, read as a second set of labels next to the code's own lines, and invite a later "see 3" pointer. The same holds under a diagram.
 
 Wrong: a function named `resolve` with four `if` lines and trailing comments such as `// 1. the URL named an episode`, followed by a new paragraph that starts "The store saves the result". The comments are labels, not a walk. The reader does not know what `find(episodes, episodeId)` returns when the id is absent, why `seasonId` is checked second, or what `resumeTarget` returns.
 
@@ -464,7 +466,7 @@ The reader will not scroll up to resolve a label, so a label in a sentence carri
 
 - Write the thing itself every time: the call, the object, or the fact. "The constructor runs at ⑨" becomes "The constructor runs when `HeartbeatPluginCreator.create` calls `new HeartbeatPlugin(events, ...)`."
 - Do not number the arrows or boxes in a diagram, because a number in a diagram invites a pointer to it later. Label an arrow with its real call instead.
-- Numbered lists are fine for order, such as the steps of a sequence or a recap, as long as no later sentence refers to an item by its number.
+- Numbered lists are fine for order, such as the steps of a sequence or a recap, as long as no later sentence refers to an item by its number. They are never fine directly under a code block or a diagram; see `Walk through every code block`.
 - A heading such as "Step 2: `playerOrchestrator` calls `emit` on `eventBus`" may keep its number, because the words after the number say what the step is. Later text still names the content, never "see step 2".
 - Repeating the call or fact costs a few words. Making the reader scroll costs their place in the explanation.
 
