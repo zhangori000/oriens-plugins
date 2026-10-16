@@ -82,7 +82,7 @@ The same commands are available inside Claude Code with the `/plugin` prefix:
 
 After installation, start a new session and invoke `/oriens-plugins:baby-steps`, `/oriens-plugins:response-formatter`, or `/oriens-plugins:lsat-response-formatter`. Claude Code prefixes plugin skills with the plugin's name.
 
-Choose either the plugin installation or the separate skill installation for a given assistant to avoid loading duplicate copies.
+Choose either the plugin installation or the separate skill installation for a given assistant to avoid loading duplicate copies. The same applies to a skill uploaded by hand to an assistant's account, such as a personal skill in claude.ai. That copy does not update when this repository changes, so two copies with the same name drift apart, and which rules you get depends on which copy loads.
 
 ## Compatibility and other chat applications
 
@@ -100,7 +100,7 @@ No package can guarantee installation in every assistant or guarantee that every
 
 My intention with this section is to give the exact shape of a reply that follows `response-formatter` and `baby-steps` at once, so that you can ask an assistant for `/response-formatter` and know what you should get back.
 
-You never need to name more than one. Loading `response-formatter` also loads `baby-steps`: the formatter's first section says so, and an assistant that follows it applies both skills in the same turn. Naming `baby-steps` alone also pulls in `response-formatter` when it is installed. Naming `lsat-response-formatter` loads `response-formatter`, and through it `baby-steps`, and then replaces their code rules with its own reading rules, described at the end of this section.
+You never need to name more than one. Loading `response-formatter` also loads `baby-steps`: the formatter's first section says so, and an assistant that follows it applies both skills in the same turn. Because one skill cannot import another, that load depends on the assistant making a second call, so `response-formatter` also carries a copy of the five `baby-steps` rules that matter most (the intention sentences, the "So far" recap, chained definitions, one small thing per step, and a stop after a few steps). Those rules hold even when the second call does not happen, and both skills keep applying to every later teaching reply in the conversation, including follow-up questions. Naming `baby-steps` alone also pulls in `response-formatter` when it is installed. Naming `lsat-response-formatter` loads `response-formatter`, and through it `baby-steps`, and then replaces their code rules with its own reading rules, described at the end of this section.
 
 `response-formatter` supplies the sentence-level rules: grammatical sentences, terms defined before use, real code instead of invented summaries, no tables, no analogies. `baby-steps` supplies the order and the pace: one parameter or expression per step, a recap before each step, and a named transferable concept after each literal reading. When their ordering rules disagree, `baby-steps` wins: show the real source before any translation, and explain a helper before the function that calls it, while still naming the caller and the consumer before interpreting a returned value.
 
@@ -119,6 +119,8 @@ A reply that follows `response-formatter` and `baby-steps` has this shape:
 Two formatting rules apply throughout. An expression that contains a backtick never goes in an inline code span; it goes in a fenced block. A repository adjective such as "shared" or "core" is defined concretely the first time it modifies a noun.
 
 A reply that follows `lsat-response-formatter` keeps steps 1, 2, and 9 of that shape and swaps the code steps for argument steps. The real source becomes the stimulus, quoted one sentence at a time before any paraphrase, with the conclusion marked and restated in plain words. The concrete input becomes one specific world in which a choice is true or false, read against the author's sentences. The transferable concept step is dropped, because any habit worth keeping is taught inside the step where it is used. The skill's `SKILL.md` gives the reading rules in full, together with the standing rules for grading one of my practice sections.
+
+A reply about a book passage, a science idea, or a calculation follows the same two skills without code. It quotes the sentence it is explaining, defines every term, unit, and symbol before a number uses it, follows one concrete thing through the idea with the arithmetic shown, and adds no code unless the reader asks. `response-formatter` lists how each code rule translates under "Explanations that are not about code", and `baby-steps` gives the order under "Walk order for passages, science, and math".
 
 The sections below describe each skill on its own.
 

@@ -1,6 +1,6 @@
 ---
 name: response-formatter
-description: "Read this before explanations, teaching replies, and markdown. Loading it also loads baby-steps: every explanation walks one parameter, expression, or helper at a time. Open with a one-sentence intention. Use grammatical sentences. Define a computer science term before using it. Show the real branches in TypeScript. Put the caller that uses a return value before the function that returns it. Do not invent a summary return value."
+description: "Read this before explanations, teaching replies, and markdown, including book, science, and math explanations, and keep following it for every later teaching reply in the conversation. Loading it also loads baby-steps: every explanation walks one parameter, expression, sentence, or term at a time. Open with a one-sentence intention. Use grammatical sentences. Define a computer science term before using it. Show the real branches in TypeScript. Put the caller that uses a return value before the function that returns it. Do not invent a summary return value."
 user-invocable: true
 ---
 
@@ -14,9 +14,41 @@ This skill never runs alone. When this skill is active, load and follow the `bab
 
 When a reply explains nothing, such as a report of edits made to a document, a confirmation that a change is done, or a yes-or-no answer, `baby-steps` has no step to pace. Keep the intention sentence, the recap when earlier steps exist, and the sentence-level rules, and do not add steps that teach nothing. `baby-steps` shows itself only where there is something to walk: a parameter, an expression, a helper, or a term the reader does not know yet.
 
+### The baby-steps rules that hold even when baby-steps is not loaded
+
+Loading `baby-steps` takes a second skill call, because one skill cannot import another. If that call does not happen, or if the text of `baby-steps` is no longer in context for a later reply, these five rules from it still apply, because they are copied here:
+
+1. Open a teaching reply with one sentence that starts "My intention with this response is to", and open each step with one that starts "My intention with this step is to".
+2. From the second step on, put a "So far, we have covered" recap of facts, not step titles, before the step's intention sentence. A reply that continues a walkthrough opens with the same recap, and so does a side question asked in the middle of one.
+3. Define every unfamiliar term with chained relative clauses ("X is a Y, which is a Z, which does W") until the last clause uses only words the reader already knows. One clause is not enough when that clause contains another unfamiliar term.
+4. Explain one small thing per step, such as one parameter, expression, sentence, symbol, unit, or term, and follow one concrete value through it.
+5. Cover only a few steps per reply, explain each one fully, name the next step in one sentence, and stop.
+
+### The rules last for the whole conversation
+
+Once this skill has been loaded in a conversation, it governs every later teaching reply in that conversation, not only the reply in which the user named it. A short follow-up question ("why did you say that?"), a correction, or a "continue" gets the same intention sentence, recap, and definitions as the first reply. If the text of this skill or of `baby-steps` is no longer in recent context, load both again before writing the reply. Stop applying them only when the user says so, or when the conversation moves to a task that is not an explanation.
+
 Use TypeScript for code samples in explanations. When the file on disk is TypeScript, show that file's actual signature and branches. When the file uses another language, translate the real branches into TypeScript and explicitly say that the block is a translation. Use Python when the file being explained is Python. If `baby-steps` is also active, its instruction to show the real source before a translation takes precedence.
 
 Use runnable examples when they help. Do not add TypeScript to an easy task when code would not improve the explanation. Detailed ASCII diagrams can help explain an actual screen or structure.
+
+## Explanations that are not about code
+
+When the reply explains a book passage, a science or math idea, or anything else that has no code in it, every rule in this skill still applies, and the code rules turn into their reading counterparts. `lsat-response-formatter` does this for arguments; this section does it for everything else.
+
+Do not add code samples unless the reader asks for code. A quoted sentence, an equation, or a diagram takes the place of a snippet, and an ASCII diagram that resembles the real structure is still welcome.
+
+Keep these rules unchanged: the intention sentences, the "So far" recap, chained definitions, grammatical sentences, "Write the claim in plain words", the explanation constructs, no tables, no analogy, the rule on "same" and "different", short replies, and the transferable concept with its standard name and one specific source.
+
+Translate the code rules this way:
+
+- "Show the real implementation" becomes: quote the sentence, figure label, or number from the text before paraphrasing it.
+- "Walk through every code block" becomes: walk through every equation, figure, and calculation. Define each symbol with what it stands for, its unit, and one value, then substitute the numbers and show the result.
+- "Follow one concrete value in execution order" becomes: follow one concrete thing through the process, such as one photon, one molecule, or one page of text.
+- "Show the enclosing scope" and "Caller before callee" become: say where a part sits, what hands it its input, and what receives its output.
+- "Define the term first" covers units and physical quantities as well as identifiers. A volt, an electron-volt, a nanometer, or a mole is a term, so define it before any number uses it. A sentence such as "it moves from +0.45 volts to −0.43 volts" explains nothing to a reader who does not yet know what a volt measures.
+
+`baby-steps` gives the walk order for this kind of reply under "Walk order for passages, science, and math".
 
 ## Non-negotiables
 
@@ -30,6 +62,8 @@ Do not characterize code before its lines appear in the reply. A label such as "
 
 **Order**
 
+- **The rules persist.** Once loaded, this skill and the five copied baby-steps rules govern every later teaching reply in the conversation, including follow-up questions. Reload both skills when their text is out of context. The full rule is under `Baby-steps always applies`.
+- **Not about code.** For book passages, science, and math, use the reading counterparts of the code rules, and define every unit before a number uses it. The full rule is under `Explanations that are not about code`.
 - **Open with the intention.** Begin a longer reply or document with its purpose. Begin each document section with an intention sentence.
 - **Recap before the intention.** From the second step or section on, put a "So far, we have covered" recap of the earlier facts before the intention sentence. The full rule is under `Open with the intention`.
 - **Teach the transferable concept.** In any code explanation, name the algorithm, system-design idea, or computer science concept the code instantiates, by its standard name and with one specific source, then map it back onto the code. The `baby-steps` skill has the full rule.

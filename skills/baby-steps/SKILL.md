@@ -27,6 +27,21 @@ When the user says the explanation is confusing, or that the function was not br
 
 An intention sentence names the code unit. "My intention with this step is to follow `path(['data', 'access_token'])` on one response" identifies the expression being explained. It does not substitute a business conclusion for executing the code.
 
+## Walk order for passages, science, and math
+
+When there is no code, such as a book passage, a science idea, or a calculation, use this order instead of the walk order for code. Stop at the step the reader asked about.
+
+1. Quote the sentence, figure label, or equation the reader is on.
+2. Name each term, unit, or symbol in it that the reader may not know, and define each one with chained relative clauses before using it to explain anything else. A number with a unit, such as "0.45 volts" or "700 nanometers", cannot be explained until the unit has been.
+3. Follow one concrete thing through the idea with real numbers, and show each calculation.
+4. Say what the sentence claims, in plain words, now that every piece is defined.
+5. Give the significance: why the author needs this fact and what it sets up next.
+6. Name the next sentence or idea in one sentence, and stop.
+
+Do not add code to this kind of reply unless the reader asks for it. Diagrams, including ASCII diagrams, are still welcome.
+
+When the reader says they are lost at a word, such as "volts" or "potential", the next reply starts at that word and builds it from things the reader already knows. Do not reword the sentence that used it.
+
 ## Why summary-first replies fail
 
 If the user asks what the inputs are, then who calls a function, then who reads the returned object, those questions correspond to steps 3 and 6.
