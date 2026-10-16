@@ -108,6 +108,7 @@ Do not characterize code before its lines appear in the reply. A label such as "
 - **No tables.** Use prose, lists, or code instead of comparison tables.
 - **No backticks inside inline code.** Any expression with a backtick or `${}` goes in a fenced block, never in an inline span.
 - **No bare repository adjectives.** "Shared", "core", "default", "platform": say which folder, which build, which consumers, the first time.
+- **No pointers to labels.** Never make the reader look up a number, letter, or symbol defined somewhere else, such as "at ③", "step 2", "block A", or "fact 3 above". Write the call, object, or fact itself. The full rule is under `No pointers to labels`.
 - **Name what "same" and "different" refer to.** Any sentence with "same", "different", "other", "each", or "both". Name the one thing that stays fixed and list the things that vary, then show them side by side. Search this file for the heading `Name what "same" and "different" refer to`.
 
 **Screens**
@@ -147,7 +148,7 @@ Facts given one per paragraph do not add up to a picture. By the third reply the
 - Right after the intention sentence and the recap, draw one ASCII diagram that puts every part named so far in a single picture. Each box gives the part's name, what kind of thing it is (an npm package, a class, an interface, an object built at run time), and which repository its code is in. Label each arrow with the real call that connects two boxes, such as `new HeartbeatPluginCreator(...)` or `creator.create(events, callbacks)`. Never label an arrow with a verb such as "hands off to" or "talks to".
 - Directly under the diagram, give a short glossary list with one line per part, in the order the diagram reads. Each line is a full sentence that says what the part is and what it does.
 - In each later reply of the same walkthrough, redraw the map with the new part added and marked `(new)`, so that the reader sees where it attaches. Do not point back at an earlier reply's map.
-- Each step after the map explains one part or one arrow of it, and says which one.
+- Each step after the map explains one part or one arrow of it, and says which one by repeating the part's name or the arrow's call, never by a number. Do not number the arrows or boxes; see `No pointers to labels`.
 
 ## Completeness
 
@@ -454,6 +455,18 @@ Words such as "shared", "core", "default", "platform", "legacy", and "common" ar
 
 - The first time such a word modifies a noun, say what it means concretely: which folder, which build, which consumers. "The parser in `shared/Utils` is compiled into every platform's bundle, so Tizen, webOS, Xbox and PS5 all run the same copy. Editing it risks all four."
 - After that definition, prefer the concrete phrase ("the parser every platform runs") over the bare adjective.
+
+## No pointers to labels
+
+Any sentence, heading, diagram note, or list item that refers to something by a label defined elsewhere: a circled number such as ③ on a map, "step 2", "block A", "item 3 above", "the second case", or "the arrow numbered 5".
+
+The reader will not scroll up to resolve a label, so a label in a sentence carries no information. "The constructor runs at ⑨" tells the reader nothing unless they find the map, find ⑨, and come back. This holds inside one reply as well as across replies, because a long reply puts the map several screens above the step that cites it.
+
+- Write the thing itself every time: the call, the object, or the fact. "The constructor runs at ⑨" becomes "The constructor runs when `HeartbeatPluginCreator.create` calls `new HeartbeatPlugin(events, ...)`."
+- Do not number the arrows or boxes in a diagram, because a number in a diagram invites a pointer to it later. Label an arrow with its real call instead.
+- Numbered lists are fine for order, such as the steps of a sequence or a recap, as long as no later sentence refers to an item by its number.
+- A heading such as "Step 2: `playerOrchestrator` calls `emit` on `eventBus`" may keep its number, because the words after the number say what the step is. Later text still names the content, never "see step 2".
+- Repeating the call or fact costs a few words. Making the reader scroll costs their place in the explanation.
 
 ## Name what "same" and "different" refer to
 
