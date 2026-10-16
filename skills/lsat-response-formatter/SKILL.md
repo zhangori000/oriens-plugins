@@ -28,13 +28,19 @@ One deliberate exception to "no analogy": a smaller argument with the same struc
 
 ## How to read the stimulus
 
+Never open an item with Orien's note. Open a Reading Comprehension item with the question stem, quoted, then unpack it phrase by phrase as a numbered list, and put it back together as one plain question that keeps every piece. Do not swap the stem for a different, easier question: "which attitude would most likely motivate the proponents?" asks for a mindset, and "why do they want it?" asks for a reason, so replacing one with the other is a stretch. Keep the question-type words ("attitudes", "most likely", "based on the passage") and say what each one asks for. If the passage then supplies a shortcut (a "Because of" clause that gives the reason), show the shortcut as its own step, and show the move from what the passage gives (a reason) to what the question asks for (the mindset behind that reason). Then go to the passage sentences the question points to. Open a Logical Reasoning item with the stimulus as below, and quote the question stem before the first choice.
+
 Read it the way a test taker does: in order, one sentence at a time, with no answer in mind.
 
 For each sentence: quote it; say what it says in plain words; say what it does not say; and say what it tells you about each thing it names. When the answer for one of those things is "nothing" (the premise names the beetle but says nothing about what the beetle does), write that down, because that is usually the fact the reader supplied without noticing.
 
 Hold ordinary words to their weight in the sentence, not their weight in life. "Priorities" in "the priorities of the policy makers" means what that group wants, not "the important things". Say this at the sentence where it matters.
 
+Do not label structure ("paragraphs three to five are the reasons for paragraph two"). Orien reads in order without that labeling, and an explanation built on it describes a reading he did not do. Instead, point to the author's verdict words as they appear ("predictably", "just another metaphor", "absurd", "strains credulity"), say what each one is aimed at, and say what a sentence that only reports ("Over the past 2,500 years, people have employed ...") does not judge. In a passage, the author's position is what the verdict words are aimed at.
+
 Mark the conclusion by its signal word ("it follows that", "hence", "therefore", "so"), and name which sentences are the reasons. Then write the claim in plain words, following the section "Write the claim in plain words" below, and put it where the reader can reread it before every verdict. When a phrase in the conclusion was introduced earlier ("the functions of government" is what sentence one described), say so, so the reader connects the two.
+
+Never build a test or criterion for the choices before reading them ("the test for each choice: does this difference explain why ..."). A criterion written before the choices is almost always the correct answer restated, which only someone who already knows the answer could write, and a test taker does not have it. What carries into the choices is an understanding of the passage, in plain words: what it says about each thing the question names, and where the author stands. Then read each choice and ask it the question's own question, in plain words, as a yes or no (for "which attitude would most likely motivate the proponents", ask "would this attitude move someone toward that position?"), and answer from the passage. Do not write "match it against" or similar procedure words; say the yes or no and the passage sentence behind it. When a wrong choice could also get a yes in the abstract, say so first ("it could, and that is the fair case for E"), then give what makes the right choice more likely: the passage's own stated reason, and the key word in the question (such as "paternalistic") that only the right choice explains.
 
 Before the choices, hold a question, not an answer. The pre-work is noticing what the conclusion adds that no earlier sentence said, written as the question a reader would have ("wait, why is serving what citizens want better for the country than serving what policy makers want?"). Never write "the gap is", "the assumption is", or "the answer must say"; never list ways a correct answer "could" work; never compress the argument to "three nouns" or any count. Name every thing in play. Nobody predicts the answer; the reader holds the claim steady and lets each choice answer one question.
 
@@ -61,11 +67,27 @@ Use the same compression for each premise when writing a "So far" recap, and for
 
 Order and scope: read choices in the order a test taker reads them, A before E, with the verdict at the end of each choice and never before its analysis. For a wrong answer, analyze only two choices, the one Orien picked and the correct one, in reading order; Orien eliminates the other three alone. For a flagged question he got right, give the full reasoning he asked for, on every choice if he asked to "see you do it".
 
+A "So far" recap before a choice restates the passage, the question and the short form. It never states a verdict on an earlier choice ("So far, we have covered that B restates the reason the passage gives"). A test taker reading in order has not settled the earlier choice yet, so a recap that announces it was right teaches the conclusion instead of the reading.
+
 For each choice: quote it; say it in plain words; then fill every abstract word with a piece of the text before judging. "A claim", "a general claim", "a general phenomenon", "an instance", "the case", "a principle" are blanks. Say which sentence fills each one, and keep each speaker's description with that speaker (the case Karima presents is the sailors as Karima describes them, not as Michael redescribes them). If the filled-in paraphrase contradicts itself, a blank is holding the wrong piece; refill it and say so.
+
+Find the hinge words in the question ("position" and "germane"; "attitude" and "motivate") and spend most of the explanation on them: what exactly the passage's position is, in its own sentences, and what the hinge word means against it. Then the choices go quickly. Keep each item short; length goes to the hinge, not to extra cases.
+
+When the hinge word is "germane", "relevant" or "most supports", define it against the parts of the specific position, not in general. A position with an exception ("by and large a libertarian, except on prohibition") makes "germane" mean: bears on why one case is not an exception and the other is. Orien called that sentence the one that made Q26 click.
+
+When the question asks which choice is most germane, or which would do something "if true", take each choice as given. Do not eliminate a choice because the passage never states it; that is not what the question asks. Eliminate by naming what kind of difference or claim the choice is (about count and duration, about rights, about purpose) and asking whether that kind of thing is what the passage's position turns on. Orien's version for Q26: C is a difference in number (one-off versus ongoing), and passage B's line is not drawn on number.
+
+In Reading Comprehension, hold choices against the passage's own sentences, not invented scenarios. Use an invented case only when the passage gives nothing to hold a choice against, and say in one sentence what the case shows.
 
 Test by one concrete world. For a required assumption, suppose the choice false, build one specific scenario in which it is false, reread the author's sentences in that world, and say which still hold and whether "it follows" survives. For strengthen or weaken, add the choice and reread the claim, asking only whether the claim is more or less believable than before. For a sufficient assumption, add the choice and read the whole argument through, naming where the reasons stop and where the conclusion lands.
 
 Judge a clause's relevance by the claim's words. A clause is irrelevant only when it is about none of the things named in the claim. If it is about one of them, the only question left is which way it pushes; say what the clause removes or adds.
+
+When a word in a choice has two senses ("must" as necessarily or as is required to; "should"; "only"; "can"), read the choice under each sense and say what it claims under each. When Orien's note or message shows which sense he read, take his sense first, and eliminate the choice under his sense, not only under yours. A choice is out only if it fails under every sense a careful reader could take.
+
+For an attitude, position or main-point question, the right choice has to contain a verdict on the thing asked about. Test a tempting rule or principle with two readers, a fan and a critic of that thing: if both could say the choice, it states no attitude, and getting an attitude out of it requires a second sentence the choice does not contain.
+
+Do not make a choice the subject of a verb that edits text ("D drops 'Douglass did not believe' and asks whether ...", "C took a contrast and attached it to ..."). Those sentences make the reader rebuild two sentences in their head at once. Instead, put the passage sentence and the choice next to each other, as two short bullets if needed, and say in plain words what each one is about ("Passage B's sentence is about Douglass. Choice D is about the government.").
 
 Concede what is fine in a wrong choice. Say which part of it the argument allows and which single part disqualifies it. Do not counter every clause of a wrong choice; a reader who sees a fair reading of the choice trusts the verdict.
 
@@ -79,15 +101,19 @@ Say why the wrong choice felt right, in one or two sentences, in terms of the wo
 
 ## How to diagnose
 
-When Orien gives his reasoning (a note in the doc or a message), state it fairly first, in his words, and say what reading of the stimulus it would require. Then check that reading against the sentences, naming the sentence that supports or contradicts it.
+When Orien gives his reasoning (a note in the doc or a message), restate it fairly in clean, complete sentences rather than quoting it; he types fast and his notes have typos, so a verbatim quote is harder to follow than the passage. Place this step after the choices have been read, as the step that explains why the wrong choice pulled him, and say what reading of the stimulus his reasoning would require. Then check that reading against the sentences, naming the sentence that supports or contradicts it.
 
-Name the specific move, chosen from these or a new one when none fits: answered a different question (what the plan would need to work in the world, instead of what the author must believe); imported a fact about the world the text never states; read a word with its ordinary-life weight; lost the claim while inside a choice's comparison; filled a placeholder with the wrong piece of the dialogue; mistook the conclusion for a premise. Tie it to earlier occurrences by test and question number when the same move appeared before.
+Name the specific move, chosen from these or a new one when none fits: answered a different question (what the plan would need to work in the world, instead of what the author must believe); imported a fact about the world the text never states; read a word with its ordinary-life weight; lost the claim while inside a choice's comparison; filled a placeholder with the wrong piece of the dialogue; mistook the conclusion for a premise.
+
+Name an earlier question only when you can show the two side by side, following response-formatter's rule on "same" and "different". Quote the relevant stimulus phrase and the chosen answer from each question, then name the one thing that stays fixed between them (the move Orien made) and the things that vary (the topic, the words). If that does not fit in a short paragraph, leave the earlier question out. A bare reference such as "the same move as Q8 of Online Test 5" is an unsupported claim, and Orien has said such references are useless.
+
+When a diagnosis turns out to be wrong because Orien's reading was different from the one the explanation assumed, say so plainly and replace the diagnosis rather than adding to it.
 
 Never phrase a step as if the answer were obvious ("clearly", "obviously", "of course"). Never write a "transferable method", "lesson", or "takeaway" step. Any habit worth keeping is taught inside the step where it is used, in the words of that question, as one sentence of the walkthrough.
 
 ## The "What to carry forward" section
 
-Name the shape of each miss in a few words ("right words, wrong claim"), list the questions with that shape, and tie each shape to earlier tests by question number. Report how the flags did (a "???" that missed and a "hard" that held are both useful signals, and say what each means). Note position when it matters (a cluster of misses in Q19 to Q24). Keep the closest call in the key named, and invite argument on it.
+Name the shape of each miss in a few words ("right words, wrong claim"), list the questions with that shape, and tie a shape to an earlier test only under the side-by-side rule in "How to diagnose". Report how the flags did (a "???" that missed and a "hard" that held are both useful signals, and say what each means). Note position when it matters (a cluster of misses in Q19 to Q24). Keep the closest call in the key named, and invite argument on it.
 
 ## Avoid
 
