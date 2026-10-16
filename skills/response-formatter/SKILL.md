@@ -69,6 +69,7 @@ Do not characterize code before its lines appear in the reply. A label such as "
 - **Teach the transferable concept.** In any code explanation, name the algorithm, system-design idea, or computer science concept the code instantiates, by its standard name and with one specific source, then map it back onto the code. The `baby-steps` skill has the full rule.
 - **Dependency order.** Define a term before making the reader use it to understand another term.
 - **Start at the top.** Begin a walkthrough with the high-level behavior, then explain the requested layer.
+- **Keep one map.** When a walkthrough names more than about four parts, open each reply with one ASCII diagram of every part named so far, its arrows labeled with real calls, and a one-sentence glossary line per part under it. Redraw it with each new part marked. The full rule is under `Keep one map`.
 - **Completeness.** Give every concept already introduced the same explanatory depth.
 - **Show a real payload.** Show an actual request or response shape with concrete example values.
 - **Look past the ticket's sample.** Investigate relevant existing behavior beyond the examples listed in a task.
@@ -84,7 +85,8 @@ Do not characterize code before its lines appear in the reply. A label such as "
 
 **Names**
 
-- **Define the term first.** Explain unfamiliar technical terms, libraries, and identifiers before using them.
+- **Define the term first.** Explain unfamiliar technical terms, libraries, and identifiers before using them. When the reader says a defined term still confuses them, rebuild it from the code instead of rewording it.
+- **Headings are words too.** A heading may use only terms defined above it. Write it as a plain statement that names the real parts and the real call. The full rule is under `Headings are words too`.
 - **Name code in this shape.** Say its kind, its name, and what it does, then show code.
 - **Show the enclosing scope.** Show the line that declares an identifier inside the construct that encloses it, say what kind of binding it is, say where the name is visible and how long the value lives, and name who creates the value and who reads it.
 - **Show the type you just named.** Show the declaration and a concrete value when introducing a type.
@@ -100,6 +102,7 @@ Do not characterize code before its lines appear in the reply. A label such as "
 - **Write the long phrase.** Keep the real path, field, or screen name when shortening it would lose meaning.
 - **No telegram.** Write platform comparisons as complete sentences.
 - **No analogy.** Use precise technical terms rather than metaphors.
+- **Say the operation, not the workplace word.** Replace "hand-off", "wire up", "lives in", "talks to", and "owns" with the real call or declaration. Split "owns" into who declares the interface, who writes the implementation, and who constructs the object. The full rule is under `Say the operation, not the workplace word`.
 - **No borrowed slang.** Avoid ambiguous jargon and marketing shorthand.
 - **No tables.** Use prose, lists, or code instead of comparison tables.
 - **No backticks inside inline code.** Any expression with a backtick or `${}` goes in a fenced block, never in an inline span.
@@ -133,6 +136,17 @@ For example, first explain that an array holds an ordered collection of values. 
 Start a walkthrough with the easiest high-level behavior. Explain one layer at a time and follow the depth requested by the reader.
 
 Leaving the next system for later is reasonable. Leaving a term already introduced half-defined is not.
+
+## Keep one map
+
+Any walkthrough that names more than about four parts, such as packages, classes, objects, or services, in one reply or across several.
+
+Facts given one per paragraph do not add up to a picture. By the third reply the reader holds a definition of each part and still cannot say how the parts connect, which they will describe as "scattered". Give the reader one place to look.
+
+- Right after the intention sentence and the recap, draw one ASCII diagram that puts every part named so far in a single picture. Each box gives the part's name, what kind of thing it is (an npm package, a class, an interface, an object built at run time), and which repository its code is in. Label each arrow with the real call that connects two boxes, such as `new HeartbeatPluginCreator(...)` or `creator.create(events, callbacks)`. Never label an arrow with a verb such as "hands off to" or "talks to".
+- Directly under the diagram, give a short glossary list with one line per part, in the order the diagram reads. Each line is a full sentence that says what the part is and what it does.
+- In each later reply of the same walkthrough, redraw the map with the new part added and marked `(new)`, so that the reader sees where it attaches. Do not point back at an earlier reply's map.
+- Each step after the map explains one part or one arrow of it, and says which one.
 
 ## Completeness
 
@@ -218,6 +232,18 @@ Use precise computer science terminology, but define unfamiliar terms before usi
 Say what kind of thing an identifier is. Distinguish a function from an object, a method, a library, and a declaration.
 
 If a sentence lists several concepts, give each concept its own definition and a small example before moving to the next. An explanation must not introduce a new layer of unexplained jargon.
+
+When the reader says a term still confuses them after it was defined, for example "every time I hear 'facade' I am still confused", the definition did not work. Do not repeat it in other words. Rebuild it from what that part does in the code at hand: show the real lines that create it and use it, place it on the map from `Keep one map`, and say what the caller would have to do without it.
+
+## Headings are words too
+
+A heading is read before the paragraph that defines its words, and a reader who skims reads only the headings. So a heading may use only terms that are defined above it or that the reader already knew. The undefined-term rules apply to headings exactly as they apply to sentences.
+
+Write a heading as a plain statement of what the section shows, naming the real parts and the real call.
+
+Wrong: "Step 3: the hand-off happens in two stages, and the plugin gets five things". "Hand-off" was never defined, and "five things" names nothing.
+
+Right: "Step 3: the facade calls `new HeartbeatPluginCreator(...)`, and later player-core calls `create(...)` on that object". This works only once the facade and player-core have been defined above it.
 
 ## Name code in this shape
 
@@ -350,6 +376,24 @@ For platform comparisons, write who performs the action, which screen is involve
 ## No analogy
 
 Do not use metaphors or cute nicknames for technical behavior. Use precise terms and explain them.
+
+## Say the operation, not the workplace word
+
+Some words borrowed from offices and buildings describe a relationship without saying which operation creates it. Examples are "hand-off", "hands it", "wire up", "plumbing", "glue", "lives in", "sits behind", "talks to", "flows into", and "owns". A reader who does not already know the code cannot turn them back into an operation. These words break the `No analogy` rule more often than any other kind, because they sound technical.
+
+Replace each one with the operation: which function calls which function with which arguments, or which file declares what.
+
+Wrong: "The facade hands the creator the providers."
+
+Right: "The facade's constructor calls `new HeartbeatPluginCreator(apiServicesContainer, appInfoProvider, deviceInfoProvider)`, and the creator's constructor stores those three arguments in private fields."
+
+"Owns" needs the most care, because it merges three questions that can have three different answers:
+
+1. Which repository declares the interface, that is, the shape the object must have?
+2. Which repository contains the code that implements it, that is, the bodies of its methods?
+3. Which code constructs the object at run time and passes it on?
+
+For a provider in a player library, the library declares the interface, the host app writes the implementation, and the host app constructs the object and passes it to the library. "Tetsuo owns it" hides the fact that the shape came from the library. When "owns" is tempting, answer all three questions instead.
 
 ## No borrowed slang
 
