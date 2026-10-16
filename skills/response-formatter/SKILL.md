@@ -78,7 +78,7 @@ Do not characterize code before its lines appear in the reply. A label such as "
 
 - **Show the real implementation.** Preserve actual branches, fields, and writes.
 - **Show the algorithm.** Show the conditions that produce a decision, not a boolean parameter that hides them.
-- **Walk through every code block.** A code block is evidence, not teaching. Right under it, write one short sentence per line or branch with one concrete value. Cut any line you will not walk. The full rule is under `Walk through every code block`.
+- **Walk through every code block.** A code block is evidence, not teaching. Right under it, write one short sentence per line or branch with one concrete value. A one-line block and a function's signature line count. Define every keyword and operator a line uses. Cut any line you will not walk, and show fewer blocks rather than walk them thinly. The full rule is under `Walk through every code block`.
 - **Name the step.** Name a step for what it does before introducing its code identifier.
 - **Caller before callee.** Show how a caller uses a return value before showing the function that produces it.
 - **Reasoning above the function.** Explain a branch in prose above the code, not in a long inline comment.
@@ -89,6 +89,7 @@ Do not characterize code before its lines appear in the reply. A label such as "
 - **Headings are words too.** A heading may use only terms defined above it. Write it as a plain statement that names the real parts and the real call. The full rule is under `Headings are words too`.
 - **Name code in this shape.** Say its kind, its name, and what it does, then show code.
 - **Show the enclosing scope.** Show the line that declares an identifier inside the construct that encloses it, say what kind of binding it is, say where the name is visible and how long the value lives, and name who creates the value and who reads it.
+- **Resolve `this`.** Every snippet with `this` names the class whose method encloses the line and the one object `this` is at run time. Every `this._field` gets its declaration and the line that assigns it. The full rule is under `Resolve this and every field it reaches`.
 - **Show the type you just named.** Show the declaration and a concrete value when introducing a type.
 - **Do not coin a stand-in.** Do not replace actual predicates or fields with unexplained shorthand.
 - **Unpack the call chain.** Explain each function and each call rather than compressing them into an arrow.
@@ -185,6 +186,14 @@ A code block is evidence, not teaching. The reader can see the characters, but t
 Wrong: a function named `resolve` with four `if` lines and trailing comments such as `// 1. the URL named an episode`, followed by a new paragraph that starts "The store saves the result". The comments are labels, not a walk. The reader does not know what `find(episodes, episodeId)` returns when the id is absent, why `seasonId` is checked second, or what `resumeTarget` returns.
 
 Right: the same block, followed by: "The first line asks whether the URL carried an episode id. For the sample, `episodeId` is `"EP-123"`, so `find` returns that episode object and the function returns it with the word `"episodeId"`; nothing below runs. If the URL had carried only a season id, the second line would take the first non-clip episode of that season and return the word `"seasonId"`. With neither, the third line calls `resumeTarget`, which reads each episode's progress and returns the most recently watched episode with `"resume"`, the one after it with `"upNext"`, or the last one with `"completed"`, or `null` when nothing was watched. Only then does the last line fall back to the first non-clip episode with `"seriesFallback"`. The word is what the label hook maps to the button text, so the first line firing is why the button says Start Watching."
+
+Every block means every block:
+
+- A one-line block is a block. A call shown on its own, such as `this._eventBus.emit(PlayerEventType.USER_INTERACTION, data);`, gets its own walk: which object receives the call, what each argument holds, and what the call returns. A sentence such as "That calls the event bus's `emit` method", which only introduces the next block, does not walk this one.
+- A function's signature line is a line. Walk its parameters and its type parameters before the body.
+- A line is walked only when every name, keyword, and operator in it has been defined. Examples are `this`, a type parameter such as `<K extends keyof EventMap>`, the spread `...`, an arrow function `(event) => { ... }`, `switch` with `case` and `break`, `?.`, and `??`. Define each one in the walk sentence for the line where it first appears in the conversation.
+- Bullets that group lines under a label, such as "The disposed check", are a walk only if each bullet still says what each of its lines reads, calls, and returns. A label followed by a paraphrase of the outcome is not a walk.
+- When walking every block fully would make the reply too long, show fewer blocks and name the next one in a sentence. Never keep the blocks and thin the walks.
 
 ## Show the algorithm
 
@@ -291,6 +300,21 @@ export const getThirdPartyPlans = async (): Promise<Plans[] | null> => {
 ```
 
 "`benefitType` is a property on the object literal that the function `getThirdPartyPlans` returns inside a one-element array. It is not a variable, so nothing reassigns it later. The property is visible to any code that holds the returned array, and it lives as long as that array does; inside this function nothing reads it. Its type is `BenefitTier`, a union of the strings `'premium'`, `'fanpack'`, and `'super_fan_pack'`. This `return` is the only writer. The reader is the component `PlanChooserView`, which looks the value up with `BENEFITS_MAP[plan.benefitType]` and passes the resulting list as the `benefits` prop."
+
+## Resolve this and every field it reaches
+
+Any code that contains `this`, such as `this._eventBus.emit(...)`, `this.dispose()`, or `this._apiServicesContainer = ...`.
+
+`this` is a keyword, not a name declared in the block, so the reader cannot find it by reading the snippet. Inside a constructor or method of a class, `this` is the one object of that class whose constructor or method is running right now. Inside an arrow function, `this` is whatever `this` was in the code around the arrow function. Each class's `this` is a different object, so `this` in `PlayerOrchestrator` and `this` in `PlayerEventBus` are two different objects even when they appear on consecutive lines of a reply.
+
+- The first time `this` appears in a conversation, define it with the real class. Show the class declaration line and the enclosing method's signature, trimmed with `// ...`, and say which object `this` is at run time and which code created that object, such as "the one `PlayerEventBus` object that `KatamariPlayer`'s constructor created with `new PlayerEventBus()`". Name the concept once with one source, such as *You Don't Know JS Yet: Objects & Classes*, Chapter 4, "This Works".
+- In every later snippet, the walk sentence for a line with `this` names that line's class again.
+- For each `this._field` a line reads, apply `Show the enclosing scope`: show the field declaration inside the class and the line that assigns it, which is usually in the constructor, and give the value it holds in the example.
+- For each `this.method()` call, say which method of which class runs and what it returns.
+
+Wrong: "`if (this._isDisposed) return;` If the bus has been shut down, `emit` does nothing." The reader does not know what `this` is, where `_isDisposed` is declared, or what sets it.
+
+Right: "This line is inside the method `emit` of the class `PlayerEventBus`, so `this` is the one `PlayerEventBus` object that `KatamariPlayer`'s constructor created with `new PlayerEventBus()`. `_isDisposed` is a private field of that class, declared as `private _isDisposed: boolean = false;`, so it is `false` on every new bus, and only the bus's own `dispose` method sets it to `true`. While the video plays, the condition is `false`, so `return` does not run."
 
 ## Show the type you just named
 

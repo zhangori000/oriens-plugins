@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "oriens-plugins",
-  "version": "1.4.1",
+  "version": "1.4.2",
   "description": "Orien's skills for clear explanations and detailed, step-by-step teaching.",
   "author": {
     "name": "Orien Zhang"
