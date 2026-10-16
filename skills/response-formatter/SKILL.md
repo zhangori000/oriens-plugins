@@ -97,7 +97,6 @@ Do not characterize code before its lines appear in the reply. A label such as "
 **Prose**
 
 - **Grammatical sentences.** Write sentences rather than captions.
-- **Prose, not numbered lists.** Explain, compare, recap, and report findings in grammatical paragraphs. Never use a numbered list; a bulleted list is allowed only for short parallel items that are not reasoning, such as file paths, commands, or a glossary. The full rule is under `Prose, not numbered lists`.
 - **Write the claim in plain words.** Before judging any sentence that makes a claim, restate it as one short sentence with a subject, a verb and an object, every abstract phrase replaced by the concrete thing it refers to here, and reread that sentence before each judgment. Show the compression being done the first time. The full rule is under `Write the claim in plain words`.
 - **Explanation constructs.** Attach explanations to the nouns and actions that they explain.
 - **Say what the request does.** Say what a request returns or changes.
@@ -106,7 +105,7 @@ Do not characterize code before its lines appear in the reply. A label such as "
 - **No analogy.** Use precise technical terms rather than metaphors.
 - **Say the operation, not the workplace word.** Replace "hand-off", "wire up", "lives in", "talks to", and "owns" with the real call or declaration. Split "owns" into who declares the interface, who writes the implementation, and who constructs the object. The full rule is under `Say the operation, not the workplace word`.
 - **No borrowed slang.** Avoid ambiguous jargon and marketing shorthand.
-- **No tables.** Use prose or code instead of comparison tables.
+- **No tables.** Use prose, lists, or code instead of comparison tables.
 - **No backticks inside inline code.** Any expression with a backtick or `${}` goes in a fenced block, never in an inline span.
 - **No bare repository adjectives.** "Shared", "core", "default", "platform": say which folder, which build, which consumers, the first time.
 - **No pointers to labels.** Never make the reader look up a number, letter, or symbol defined somewhere else, such as "at ③", "step 2", "block A", or "fact 3 above". Write the call, object, or fact itself. The full rule is under `No pointers to labels`.
@@ -126,7 +125,7 @@ Do not merely announce the topic. "Here is a summary of the request handling" is
 
 Under every markdown section heading, begin with a sentence that starts "My intention with this section is to".
 
-By the fifth step or section, the reader has forgotten the first four. The intention sentence looks forward, so from the second step or section on, put a recap before it. The recap starts "So far, we have covered" and names the facts the earlier steps established, such as the construct, the value, and the concept. It does not name the step titles. When three or more steps came before, write the recap as a short paragraph with one grammatical sentence per earlier fact, not as a numbered list. A reply that continues an earlier walkthrough starts with the same recap. The `baby-steps` skill has the full rule with wrong and right examples.
+By the fifth step or section, the reader has forgotten the first four. The intention sentence looks forward, so from the second step or section on, put a recap before it. The recap starts "So far, we have covered" and names the facts the earlier steps established, such as the construct, the value, and the concept. It does not name the step titles. When three or more steps came before, write the recap as a short numbered list. A reply that continues an earlier walkthrough starts with the same recap. The `baby-steps` skill has the full rule with wrong and right examples.
 
 ## Dependency order
 
@@ -427,36 +426,9 @@ Avoid language-idiom verbs such as "unwrap" or "flatten" unless the next words e
 
 Do not use "copy" to mean words on a screen. Write "The screen says..." or "The heading is...". Avoid reusing words with established interface or language meanings as unexplained shorthand.
 
-## Prose, not numbered lists
-
-Any reply, document section, recap, comparison, set of findings, or set of options.
-
-A numbered list cuts reasoning into fragments. Each item gets its own line, its own indent, and usually a bolded label, so a reply of six items fills a screen while saying what two paragraphs would say. The numbers also invite pointers such as "option 2", which this skill forbids. Grammatical prose carries the connections between items, such as "because", "so", and "unlike", which a list drops.
-
-- Never use a numbered list. A sequence becomes sentences that say "first", "then", and "after that".
-- Write findings, options, trade-offs, and recaps as paragraphs. Give each option or finding its own paragraph when it needs more than two sentences, and open that paragraph with a bolded lead-in of a few words if the reader needs to scan.
-- A bulleted list is allowed only for short parallel items that carry no reasoning, such as file paths, commands, field names, or the glossary under a map. If a bullet needs a "because", it belongs in a paragraph.
-- Do not turn a paragraph into bullets to make it look shorter. Shorten it by cutting clauses that repeat or restate background.
-
-Wrong:
-
-```markdown
-1. **Production:** nobody sees it. The flags are absent.
-2. **CI tests:** they keep passing. CI reads the production config.
-3. **Staging:** testers see Katsu now.
-```
-
-Right:
-
-```markdown
-Production viewers see no change, because the series flags do not exist in the production config. CI tests keep passing for the same reason: CI builds read the production config. Only staging builds run Katsu, so QA testers and the lab TV see its behavior today.
-```
-
-The right version is three sentences instead of three list items, and the word "because" and the phrase "for the same reason" carry the link between the production config and both outcomes, which the list left implicit.
-
 ## No tables
 
-Use prose or TypeScript instead of tables. Comparisons need complete sentences that preserve who does what and why.
+Use prose, lists, or TypeScript instead of tables. Comparisons need complete sentences that preserve who does what and why.
 
 When two implementations differ, show each implementation's relevant behavior and explain the difference in prose.
 
@@ -492,7 +464,7 @@ The reader will not scroll up to resolve a label, so a label in a sentence carri
 
 - Write the thing itself every time: the call, the object, or the fact. "The constructor runs at ⑨" becomes "The constructor runs when `HeartbeatPluginCreator.create` calls `new HeartbeatPlugin(events, ...)`."
 - Do not number the arrows or boxes in a diagram, because a number in a diagram invites a pointer to it later. Label an arrow with its real call instead.
-- Do not use numbered lists, even for order; see `Prose, not numbered lists`. Write a sequence as sentences joined by "first", "then", and "after that", so that no item has a number a later sentence could point to.
+- Numbered lists are fine for order, such as the steps of a sequence or a recap, as long as no later sentence refers to an item by its number.
 - A heading such as "Step 2: `playerOrchestrator` calls `emit` on `eventBus`" may keep its number, because the words after the number say what the step is. Later text still names the content, never "see step 2".
 - Repeating the call or fact costs a few words. Making the reader scroll costs their place in the explanation.
 
