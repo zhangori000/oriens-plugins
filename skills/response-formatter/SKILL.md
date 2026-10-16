@@ -78,7 +78,7 @@ Do not characterize code before its lines appear in the reply. A label such as "
 
 - **Show the real implementation.** Preserve actual branches, fields, and writes.
 - **Show the algorithm.** Show the conditions that produce a decision, not a boolean parameter that hides them.
-- **Walk through every code block.** A code block is evidence, not teaching. Right under it, write one short sentence per line or branch with one concrete value. A one-line block and a function's signature line count. Define every keyword and operator a line uses. Cut any line you will not walk, and show fewer blocks rather than walk them thinly. Never follow a code block or a diagram with a numbered list; walk it in sentences or bullets. The full rule is under `Walk through every code block`.
+- **Walk through every code block.** A code block is evidence, not teaching. Right under it, write one short sentence per line or branch with one concrete value. A one-line block and a function's signature line count. Define every keyword and operator a line uses. Cut any line you will not walk, and show fewer blocks rather than walk them thinly. Never follow a code block or a diagram with a list or with inline markers; walk it in plain sentences. The full rule is under `Walk through every code block`.
 - **Name the step.** Name a step for what it does before introducing its code identifier.
 - **Caller before callee.** Show how a caller uses a return value before showing the function that produces it.
 - **Reasoning above the function.** Explain a branch in prose above the code, not in a long inline comment.
@@ -107,7 +107,8 @@ Do not characterize code before its lines appear in the reply. A label such as "
 - **No analogy.** Use precise technical terms rather than metaphors.
 - **Say the operation, not the workplace word.** Replace "hand-off", "wire up", "lives in", "talks to", and "owns" with the real call or declaration. Split "owns" into who declares the interface, who writes the implementation, and who constructs the object. The full rule is under `Say the operation, not the workplace word`.
 - **No borrowed slang.** Avoid ambiguous jargon and marketing shorthand.
-- **No tables.** Use prose, lists, or code instead of comparison tables.
+- **No tables.** Use prose, sentences with inline markers, or code instead of comparison tables.
+- **Inline markers, not bullets.** Enumerate inside full sentences with (1), (2), (3) for order or (a), (b), (c) for parallel items, instead of bulleted or numbered lists, so each item stays an explained sentence rather than a caption. Never directly under a code block or diagram, and never pointed back to. The full rule is under `Inline markers, not bullets`.
 - **No backticks inside inline code.** Any expression with a backtick or `${}` goes in a fenced block, never in an inline span.
 - **No bare repository adjectives.** "Shared", "core", "default", "platform": say which folder, which build, which consumers, the first time.
 - **No pointers to labels.** Never make the reader look up a number, letter, or symbol defined somewhere else, such as "at ③", "step 2", "block A", or "fact 3 above". Write the call, object, or fact itself. The full rule is under `No pointers to labels`.
@@ -127,7 +128,7 @@ Do not merely announce the topic. "Here is a summary of the request handling" is
 
 Under every markdown section heading, begin with a sentence that starts "My intention with this section is to".
 
-By the fifth step or section, the reader has forgotten the first four. The intention sentence looks forward, so from the second step or section on, put a recap before it. The recap starts "So far, we have covered" and names the facts the earlier steps established, such as the construct, the value, and the concept. It does not name the step titles. When three or more steps came before, write the recap as a short numbered list. A reply that continues an earlier walkthrough starts with the same recap. The `baby-steps` skill has the full rule with wrong and right examples.
+By the fifth step or section, the reader has forgotten the first four. The intention sentence looks forward, so from the second step or section on, put a recap before it. The recap starts "So far, we have covered" and names the facts the earlier steps established, such as the construct, the value, and the concept. It does not name the step titles. When three or more steps came before, write the recap as one paragraph with inline markers, (1), (2), (3), one full sentence per earlier step. A reply that continues an earlier walkthrough starts with the same recap. The `baby-steps` skill has the full rule with wrong and right examples.
 
 ## Dependency order
 
@@ -148,7 +149,7 @@ Any walkthrough that names more than about four parts, such as packages, classes
 Facts given one per paragraph do not add up to a picture. By the third reply the reader holds a definition of each part and still cannot say how the parts connect, which they will describe as "scattered". Give the reader one place to look.
 
 - Right after the intention sentence and the recap, draw one ASCII diagram that puts every part named so far in a single picture. Each box gives the part's name, what kind of thing it is (an npm package, a class, an interface, an object built at run time), and which repository its code is in. Label each arrow with the real call that connects two boxes, such as `new HeartbeatPluginCreator(...)` or `creator.create(events, callbacks)`. Never label an arrow with a verb such as "hands off to" or "talks to".
-- Directly under the diagram, give a short bulleted glossary, not a numbered list, with one line per part, in the order the diagram reads. Each line is a full sentence that says what the part is and what it does.
+- Directly under the diagram, give a short glossary as plain paragraphs, one per part, in the order the diagram reads, with no bullets and no markers. Each paragraph starts with the part's name and is a full sentence that says what the part is and what it does.
 - In each later reply of the same walkthrough, redraw the map with the new part added and marked `(new)`, so that the reader sees where it attaches. Do not point back at an earlier reply's map.
 - Each step after the map explains one part or one arrow of it, and says which one by repeating the part's name or the arrow's call, never by a number. Do not number the arrows or boxes; see `No pointers to labels`.
 
@@ -186,7 +187,7 @@ Any code you show, in any reply, not only in baby-steps.
 
 A code block is evidence, not teaching. The reader can see the characters, but the branch order, the operator meaning, and the concrete values are still in your head. After every block, walk it: one short sentence per line or branch, in execution order, each sentence naming what that line reads, what it compares or calls, and what it returns, with one concrete value. Then say what the result means for the screen or the request. This is not a license for a long reply. A four-line block gets four or five sentences. If you will not walk a line, cut it from the block, or replace it with `// ...`.
 
-Write the walk as sentences, or as bullets with one sentence each. Never write it as a numbered list. Numbers under a block take a line of their own each, read as a second set of labels next to the code's own lines, and invite a later "see 3" pointer. The same holds under a diagram.
+Write the walk as plain sentences in paragraphs. Never write it as a bulleted list, a numbered list, or a paragraph of inline markers. Numbers or markers under a block read as a second set of labels next to the code's own lines and invite a later "see 3" pointer, and bullets shrink each line's walk to a caption. The same holds under a diagram.
 
 Wrong: a function named `resolve` with four `if` lines and trailing comments such as `// 1. the URL named an episode`, followed by a new paragraph that starts "The store saves the result". The comments are labels, not a walk. The reader does not know what `find(episodes, episodeId)` returns when the id is absent, why `seasonId` is checked second, or what `resumeTarget` returns.
 
@@ -197,7 +198,7 @@ Every block means every block:
 - A one-line block is a block. A call shown on its own, such as `this._eventBus.emit(PlayerEventType.USER_INTERACTION, data);`, gets its own walk: which object receives the call, what each argument holds, and what the call returns. A sentence such as "That calls the event bus's `emit` method", which only introduces the next block, does not walk this one.
 - A function's signature line is a line. Walk its parameters and its type parameters before the body.
 - A line is walked only when every name, keyword, and operator in it has been defined. Examples are `this`, a type parameter such as `<K extends keyof EventMap>`, the spread `...`, an arrow function `(event) => { ... }`, `switch` with `case` and `break`, `?.`, and `??`. Define each one in the walk sentence for the line where it first appears in the conversation.
-- Bullets that group lines under a label, such as "The disposed check", are a walk only if each bullet still says what each of its lines reads, calls, and returns. A label followed by a paraphrase of the outcome is not a walk.
+- Sentences grouped under a label, such as "The disposed check", are a walk only if they still say what each of its lines reads, calls, and returns. A label followed by a paraphrase of the outcome is not a walk.
 - When walking every block fully would make the reply too long, show fewer blocks and name the next one in a sentence. Never keep the blocks and thin the walks.
 
 ## Show the algorithm
@@ -465,9 +466,30 @@ Do not use "copy" to mean words on a screen. Write "The screen says..." or "The 
 
 ## No tables
 
-Use prose, lists, or TypeScript instead of tables. Comparisons need complete sentences that preserve who does what and why.
+Use prose, sentences with inline markers, or TypeScript instead of tables. Comparisons need complete sentences that preserve who does what and why.
 
 When two implementations differ, show each implementation's relevant behavior and explain the difference in prose.
+
+## Inline markers, not bullets
+
+Any reply or document that would otherwise use a bulleted list or a numbered list.
+
+A bullet invites a fragment. Once a line starts with a dot, the writer stops writing sentences and starts writing captions, each item shrinks to a label, and the reader gets less explanation than a paragraph would have given. Keep the enumeration inside the prose instead, so that every item stays a full, explained sentence.
+
+- Mark items inside a sentence or a paragraph with parenthesized markers: (1), (2), (3) when the order matters, such as steps or a recap, and (a), (b), (c) when it does not, such as parallel options or caveats.
+- Each item is a full clause with its own subject and verb, explained as deeply as it would be in a paragraph. A fragment with a marker in front of it is still a fragment.
+- When an item needs more than one sentence, give it its own paragraph that starts with its marker, and write that paragraph in full.
+- Start the markers again at (1) or (a) in each paragraph or section. Do not nest one set of markers inside another.
+- Never refer back to an item by its marker, as in "see (2)". Write the thing itself; see `No pointers to labels`.
+- Do not use markers directly under a code block or a diagram. Walk those in plain sentences in execution order; see `Walk through every code block`.
+- This rule is about what the reader receives. The bulleted lists in this skill file are instructions to the writer, not examples of reply style.
+
+Wrong:
+
+- `parallel`: runs the agents at once
+- `agent`: starts a helper
+
+Right: "The script makes two calls: (a) `parallel(thunks)`, which calls every function in the array at the same time and waits until all of them have finished, and (b) `agent(prompt, options)`, which starts one helper conversation with that prompt and returns its final answer to the script."
 
 ## No backticks inside inline code
 
@@ -501,7 +523,7 @@ The reader will not scroll up to resolve a label, so a label in a sentence carri
 
 - Write the thing itself every time: the call, the object, or the fact. "The constructor runs at ⑨" becomes "The constructor runs when `HeartbeatPluginCreator.create` calls `new HeartbeatPlugin(events, ...)`."
 - Do not number the arrows or boxes in a diagram, because a number in a diagram invites a pointer to it later. Label an arrow with its real call instead.
-- Numbered lists are fine for order, such as the steps of a sequence or a recap, as long as no later sentence refers to an item by its number. They are never fine directly under a code block or a diagram; see `Walk through every code block`.
+- Inline markers such as (1) and (a) are fine for order inside a paragraph, such as the steps of a sequence or a recap, as long as no later sentence refers to an item by its marker. They are never fine directly under a code block or a diagram; see `Inline markers, not bullets` and `Walk through every code block`.
 - A heading such as "Step 2: `playerOrchestrator` calls `emit` on `eventBus`" may keep its number, because the words after the number say what the step is. Later text still names the content, never "see step 2".
 - Repeating the call or fact costs a few words. Making the reader scroll costs their place in the explanation.
 
@@ -509,7 +531,7 @@ The reader will not scroll up to resolve a label, so a label in a sentence carri
 
 Any sentence that uses a comparative word: "same", "different", "other", "another", "each", "both", "the former", "the latter".
 
-A comparative word has no meaning on its own. "The same link" means nothing until the reader knows which link, and "different labels" means nothing until the reader knows how many there are and what each one says. When you write one of these words, do three things in the same paragraph. Name the one thing that stays fixed. Count and name the things that vary. Then show them side by side, as a list or a code block, so the reader can see the fixed part repeated and the varying part change.
+A comparative word has no meaning on its own. "The same link" means nothing until the reader knows which link, and "different labels" means nothing until the reader knows how many there are and what each one says. When you write one of these words, do three things in the same paragraph. Name the one thing that stays fixed. Count and name the things that vary. Then show them side by side, as a code block or as one sentence with inline markers, so the reader can see the fixed part repeated and the varying part change.
 
 Wrong: "Marketing teams put different labels on the same link in a newsletter, an ad and a QR code, and the analytics tool then reports how many visits each one produced."
 

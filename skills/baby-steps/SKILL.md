@@ -191,7 +191,7 @@ The reader forgets the earlier steps by the time a later step arrives. An intent
 - From the second step on, open each step with a recap that starts "So far, we have covered".
 - Open a reply that continues an earlier walkthrough the same way, so that the recap also covers the steps from earlier replies.
 - Recap facts, not topics. Each earlier step gets one clause or sentence that names the concrete thing it established, such as the file, the construct, the value, or the function that wrote the value.
-- When three or more steps came before, write the recap as a short numbered list with one grammatical sentence per earlier step, instead of one long sentence.
+- When three or more steps came before, write the recap as one paragraph with inline markers, (1), (2), (3), with one grammatical sentence per earlier step, instead of one long run-on sentence or a bulleted list. `response-formatter` has the full rule under `Inline markers, not bullets`.
 - The recap does not replace "Re-introduce names; do not rely on memory." When the current step uses a name, still give that name's code reminder.
 
 Wrong: "So far, we have covered the file, the component, and the hook."
@@ -202,12 +202,7 @@ Right, for the third step: "So far, we have covered that `isUpdatingAccount` is 
 
 Right, for the fifth step:
 
-> So far, we have covered these facts:
->
-> 1. `isUpdatingAccount` is a local `const` inside a React function component, which React calls again on every re-render.
-> 2. Its value comes from a selector, which is a pure function that reads one field out of the Redux store.
-> 3. `useAppSelector` subscribes the component to that field, which is the observer pattern: the store notifies the component, and the component re-renders.
-> 4. The field is a four-state request lifecycle (`IDLE`, `LOADING`, `SUCCEEDED`, `FAILED`), which is a small finite state machine, and the selector returns `true` only in `LOADING`.
+> So far, we have covered these facts: (1) `isUpdatingAccount` is a local `const` inside a React function component, which React calls again on every re-render; (2) its value comes from a selector, which is a pure function that reads one field out of the Redux store; (3) `useAppSelector` subscribes the component to that field, which is the observer pattern, so the store notifies the component and the component re-renders; and (4) the field is a four-state request lifecycle (`IDLE`, `LOADING`, `SUCCEEDED`, `FAILED`), which is a small finite state machine, and the selector returns `true` only in `LOADING`.
 >
 > My intention with this step is to show which transition moves that state machine into `LOADING`.
 
@@ -248,7 +243,7 @@ Verbs such as "navigates to", "routes to", "listens to", "dispatches", "emits", 
 
 ## Avoid
 
-- Avoid tables. Use prose, lists, or code.
+- Avoid tables and bulleted lists. Use prose, sentences with inline markers such as (1) and (a), or code.
 - Avoid analogies. Use precise technical terms, and define them with relative clauses.
 - Avoid guessing about real code. Read the file on disk first when it exists.
 - Avoid leading with a translation of Go, Swift, or Kotlin. Show the real source first.
