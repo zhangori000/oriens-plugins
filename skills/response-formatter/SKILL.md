@@ -92,6 +92,7 @@ Do not characterize code before its lines appear in the reply. A label such as "
 - **Resolve `this`.** Every snippet with `this` names the class whose method encloses the line and the one object `this` is at run time. Every `this._field` gets its declaration and the line that assigns it. The full rule is under `Resolve this and every field it reaches`.
 - **Show the type you just named.** Show the declaration and a concrete value when introducing a type.
 - **Do not coin a stand-in.** Do not replace actual predicates or fields with unexplained shorthand.
+- **Call a value by its code name.** Refer to a value by its identifier every time (`upNextContent`), never by a nickname such as "the row", even one defined earlier. Words with a data-structure meaning (row, column, table, record, node, tree, list, bag, slot, tier) are reserved for that meaning. Translate nicknames from tickets, teammates, and research before writing. The full rule is under `Call a value by its code name`.
 - **Unpack the call chain.** Explain each function and each call rather than compressing them into an arrow.
 
 **Prose**
@@ -331,6 +332,22 @@ Do not invent labels such as "the tile rule" to replace a predicate, a key, or s
 
 Do not open a discussion of every field that a type leaves out. Stay with the object and behavior being explained.
 
+## Call a value by its code name
+
+Any value, object, or response that the code gives a name: a variable, a field, a parameter, a type, or one entry of a response body.
+
+A nickname for a value is a second vocabulary the reader has to keep in their head next to the code's. Defining the nickname once does not fix that. By the next paragraph the reader has forgotten the definition, and if the nickname is a word that already means something in computer science, the old meaning wins. A reply once defined "the up-next row" as the object the up-next request returns, then three paragraphs later wrote "the thunk already holds the row as `upNextContent`". The reader pictured a horizontal line of a table, could not connect it to an API response, and stopped reading.
+
+- Use the code's identifier every time the value appears, such as `upNextContent`. The first time in each section, attach what it is and where it comes from in a relative clause: "`upNextContent`, a field of the Redux series state whose value is the first entry of the up-next response".
+- Never shorten an identifier to a common noun. Do not call a value "the row", "the record", "the node", "the bag", "the payload", "the answer", or "the blob" unless the code itself uses that word for that value. Words with an established data-structure meaning, such as row, column, table, record, tuple, node, tree, list, stream, queue, bag, set, map, slot, and tier, are reserved for that meaning.
+- Translate before you write. When a ticket, a teammate, or a research agent uses a nickname, replace it with the identifier. Mention the nickname only if the reader will meet it elsewhere, and then say once "the ticket calls this the row".
+- When one value passes through several names, name each one where it appears and show the line that copies one into the next. For example, the response's `data.data[0]` becomes the state field `upNextContent`, and the thunk then copies that field into its own local `const upNextContent`.
+- Do not say a function "holds", "has", or "carries" a value. Say which line reads the value, and from which object.
+
+Wrong: "The series thunk, `fetchContentVideosMetadata`, already holds the row as `upNextContent`, so it would just pass it along."
+
+Right: "`fetchContentVideosMetadata` reads `upNextContent` from the Redux store with `const upNextContent = selectSeries(getState()).upNextContent`. `upNextContent` is the first entry of the response from `GET /content/v2/discover/up_next/{seriesId}`, which `fetchSeries` stored earlier, or `null` when that request returned no content. The change passes that same object to Katsu as one more argument."
+
 ## Unpack the call chain
 
 If a function calls a second function, which calls a third, explain all three. For each, say what kind of code it is and what it does.
@@ -406,7 +423,7 @@ Do not use metaphors or cute nicknames for technical behavior. Use precise terms
 
 ## Say the operation, not the workplace word
 
-Some words borrowed from offices and buildings describe a relationship without saying which operation creates it. Examples are "hand-off", "hands it", "wire up", "plumbing", "glue", "lives in", "sits behind", "talks to", "flows into", and "owns". A reader who does not already know the code cannot turn them back into an operation. These words break the `No analogy` rule more often than any other kind, because they sound technical.
+Some words borrowed from offices and buildings describe a relationship without saying which operation creates it. Examples are "hand-off", "hands it", "wire up", "plumbing", "glue", "lives in", "sits behind", "talks to", "flows into", "holds", "carries", and "owns". A reader who does not already know the code cannot turn them back into an operation. These words break the `No analogy` rule more often than any other kind, because they sound technical.
 
 Replace each one with the operation: which function calls which function with which arguments, or which file declares what.
 
@@ -426,7 +443,7 @@ For a provider in a player library, the library declares the interface, the host
 
 Avoid language-idiom verbs such as "unwrap" or "flatten" unless the next words explain exactly what happens to the values.
 
-Do not use "copy" to mean words on a screen. Write "The screen says..." or "The heading is...". Avoid reusing words with established interface or language meanings as unexplained shorthand.
+Do not use "copy" to mean words on a screen. Write "The screen says..." or "The heading is...". Avoid reusing words with established interface or language meanings as shorthand, even after defining them once; see `Call a value by its code name`.
 
 ## No tables
 
