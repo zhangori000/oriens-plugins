@@ -93,6 +93,7 @@ Do not characterize code before its lines appear in the reply. A label such as "
 - **Show the type you just named.** Show the declaration and a concrete value when introducing a type.
 - **Do not coin a stand-in.** Do not replace actual predicates or fields with unexplained shorthand.
 - **Call a value by its code name.** Refer to a value by its identifier every time (`upNextContent`), never by a nickname such as "the row", even one defined earlier. Words with a data-structure meaning (row, column, table, record, node, tree, list, bag, slot, tier) are reserved for that meaning. Translate nicknames from tickets, teammates, and research before writing. The full rule is under `Call a value by its code name`.
+- **Name new things for what they describe.** A name you propose (a type, field, function, or enum value) says which thing it describes and what it means, in plain words: `viewerFinishedPickedEpisode`, not `fullyWatched`. When an existing field is ambiguous, such as an API's `fully_watched`, say which thing it describes (this episode, this season, or the whole series) every time it appears. The full rule is under `Name new things for what they describe`.
 - **Unpack the call chain.** Explain each function and each call rather than compressing them into an arrow.
 
 **Prose**
@@ -347,6 +348,23 @@ A nickname for a value is a second vocabulary the reader has to keep in their he
 Wrong: "The series thunk, `fetchContentVideosMetadata`, already holds the row as `upNextContent`, so it would just pass it along."
 
 Right: "`fetchContentVideosMetadata` reads `upNextContent` from the Redux store with `const upNextContent = selectSeries(getState()).upNextContent`. `upNextContent` is the first entry of the response from `GET /content/v2/discover/up_next/{seriesId}`, which `fetchSeries` stored earlier, or `null` when that request returned no content. The change passes that same object to Katsu as one more argument."
+
+## Name new things for what they describe
+
+Any identifier you propose in a sketch, a design, or code: a type, a field, a function, a parameter, or an enum value. Also any existing field whose name leaves out what it describes.
+
+A reader learns a new name once and then reads every later line through it. A name that skips its subject makes every later line ambiguous. `fullyWatched` does not say what was fully watched: one episode, a season, or the whole series. `ContinueWatching` names a screen feature, so the reader cannot tell that the type describes the server's answer to "which episode is next?".
+
+- Name the subject and the fact. A boolean answers one yes-or-no question about one named thing, so its name contains that thing: `viewerFinishedPickedEpisode`, `viewerNeverWatchedSeries`. A number names its unit and its subject: `secondsWatchedOfPickedEpisode`, not `playheadSeconds`.
+- Name a type for the data it describes, not for the screen or feature that uses it: `NextEpisodeFromServer`, not `ContinueWatching`.
+- Name the values of a union or an enum as plain statements: `'episodePicked'` and `'nothingNext'`, not `'found'` and `'none'`. Write error codes the same way: `'PICKED_EPISODE_NOT_IN_LIST'`.
+- Long names are fine. A sketch is read far more times than it is typed.
+- When you explain an existing field you cannot rename, such as an API's `fully_watched` or `never_watched`, say which thing it describes every time it appears, in a relative clause: "`fully_watched`, which says whether the viewer finished the picked episode (not the season)". If two fields describe different things, say so side by side, because readers assume sibling fields describe the same thing.
+- When you map an existing field to a proposed one, show the mapping in one place, field by field, so that the reader sees each old name next to its new name.
+
+Wrong: "`fullyWatched` is false, so the viewer has not finished it."
+
+Right: "`viewerFinishedPickedEpisode` comes from the API's `fully_watched`, which describes only the episode the server picked. It is false, so the viewer has not finished episode 2. `viewerNeverWatchedSeries` comes from `never_watched`, which describes the whole series: it is true only when the viewer has watched nothing in it."
 
 ## Unpack the call chain
 
