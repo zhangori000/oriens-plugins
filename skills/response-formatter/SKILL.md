@@ -30,13 +30,13 @@ Once this skill has been loaded in a conversation, it governs every later teachi
 
 Use TypeScript for code samples in explanations. When the file on disk is TypeScript, show that file's actual signature and branches. When the file uses another language, translate the real branches into TypeScript and explicitly say that the block is a translation. Use Python when the file being explained is Python. If `baby-steps` is also active, its instruction to show the real source before a translation takes precedence.
 
-Use runnable examples when they help. Do not add TypeScript to an easy task when code would not improve the explanation. Detailed ASCII diagrams can help explain an actual screen or structure.
+Use runnable examples when they help. Do not add TypeScript to an easy task when code would not improve the explanation. Do not draw an ASCII diagram unless the reader asked for one; the full rule is under `Diagrams only on request`.
 
 ## Explanations that are not about code
 
 When the reply explains a book passage, a science or math idea, or anything else that has no code in it, every rule in this skill still applies, and the code rules turn into their reading counterparts. `lsat-response-formatter` does this for arguments; this section does it for everything else.
 
-Do not add code samples unless the reader asks for code. A quoted sentence, an equation, or a diagram takes the place of a snippet, and an ASCII diagram that resembles the real structure is still welcome.
+Do not add code samples unless the reader asks for code. A quoted sentence or an equation takes the place of a snippet. An ASCII diagram that resembles the real structure is drawn only when the reader asks for a diagram; the full rule is under `Diagrams only on request`.
 
 Keep these rules unchanged: the intention sentences, the "So far" recap, chained definitions, grammatical sentences, "Write the claim in plain words", the explanation constructs, no tables, no analogy, the rule on "same" and "different", short replies, and the transferable concept with its standard name and one specific source.
 
@@ -69,7 +69,8 @@ Do not characterize code before its lines appear in the reply. A label such as "
 - **Teach the transferable concept.** In any code explanation, name the algorithm, system-design idea, or computer science concept the code instantiates, by its standard name and with one specific source, then map it back onto the code. The `baby-steps` skill has the full rule.
 - **Dependency order.** Define a term before making the reader use it to understand another term.
 - **Start at the top.** Begin a walkthrough with the high-level behavior, then explain the requested layer.
-- **Keep one map.** When a walkthrough names more than about four parts, open each reply with one ASCII diagram of every part named so far, its arrows labeled with real calls, and a one-sentence glossary line per part under it. Redraw it with each new part marked. The full rule is under `Keep one map`.
+- **Keep one map.** When a walkthrough names more than about four parts, open each reply with one glossary paragraph per part named so far, in reading order, each naming the part, its kind, its repository, and the real call that connects it to the next part. Draw the ASCII map only when the reader has asked for a diagram; otherwise end the reply with one sentence saying the map is available. Redo the glossary with each new part marked. The full rule is under `Keep one map`.
+- **Diagrams only on request.** Never draw an ASCII diagram unless the reader asked for one in this conversation. Where a rule here would have drawn one, write its prose form, and end the reply with one sentence saying that an ASCII diagram is available. The full rule is under `Diagrams only on request`.
 - **Completeness.** Give every concept already introduced the same explanatory depth.
 - **Show a real payload.** Show an actual request or response shape with concrete example values.
 - **Look past the ticket's sample.** Investigate relevant existing behavior beyond the examples listed in a task.
@@ -119,7 +120,7 @@ Do not characterize code before its lines appear in the reply. A label such as "
 
 - **Name the real input.** Identify the outside event or launch arguments the code actually reads.
 - **Say if the viewer sees it.** State whether a screen appears.
-- **Draw the surface.** Make diagrams resemble the actual screen or structure.
+- **Draw the surface.** When the reader has asked for a diagram of a screen or tree, make it resemble the actual screen or structure; without that request, describe the surface in prose.
 
 ## Open with the intention
 
@@ -147,12 +148,24 @@ Leaving the next system for later is reasonable. Leaving a term already introduc
 
 Any walkthrough that names more than about four parts, such as packages, classes, objects, or services, in one reply or across several.
 
-Facts given one per paragraph do not add up to a picture. By the third reply the reader holds a definition of each part and still cannot say how the parts connect, which they will describe as "scattered". Give the reader one place to look.
+Facts given one per paragraph do not add up to a picture. By the third reply the reader holds a definition of each part and still cannot say how the parts connect, which they will describe as "scattered". Give the reader one place to look. By default that place is a glossary in prose, because a diagram takes a large share of the reply; the diagram is drawn only when the reader asks for one, as `Diagrams only on request` says.
 
-- Right after the intention sentence and the recap, draw one ASCII diagram that puts every part named so far in a single picture. Each box gives the part's name, what kind of thing it is (an npm package, a class, an interface, an object built at run time), and which repository its code is in. Label each arrow with the real call that connects two boxes, such as `new HeartbeatPluginCreator(...)` or `creator.create(events, callbacks)`. Never label an arrow with a verb such as "hands off to" or "talks to".
-- Directly under the diagram, give a short glossary as plain paragraphs, one per part, in the order the diagram reads, with no bullets and no markers. Each paragraph starts with the part's name and is a full sentence that says what the part is and what it does.
-- In each later reply of the same walkthrough, redraw the map with the new part added and marked `(new)`, so that the reader sees where it attaches. Do not point back at an earlier reply's map.
-- Each step after the map explains one part or one arrow of it, and says which one by repeating the part's name or the arrow's call, never by a number. Do not number the arrows or boxes; see `No pointers to labels`.
+- Right after the intention sentence and the recap, give the glossary: one plain paragraph per part named so far, in the order a reader would meet them, with no bullets and no markers. Each paragraph starts with the part's name and says what kind of thing it is (an npm package, a class, an interface, an object built at run time), which repository its code is in, what it does, and the real call that connects it to the next part, such as `new HeartbeatPluginCreator(...)` or `creator.create(events, callbacks)`. Never describe a connection with a verb such as "hands off to" or "talks to".
+- When the reader has asked for a diagram, draw one ASCII diagram above the glossary that puts every part in a single picture. Each box gives the part's name, its kind, and its repository. Label each arrow with the real call that connects two boxes, never with a verb.
+- In each later reply of the same walkthrough, give the glossary again with the new part added and marked `(new)`, so that the reader sees where it attaches, and redraw the map the same way when one was asked for. Do not point back at an earlier reply's glossary or map.
+- Each step after the glossary explains one part or one connection in it, and says which one by repeating the part's name or the call, never by a number. Do not number the arrows or boxes of a map; see `No pointers to labels`.
+- When no diagram was asked for, end the reply with one sentence that says an ASCII diagram of these parts is available on request.
+
+## Diagrams only on request
+
+Any reply in which a rule of this skill or of `baby-steps` would draw an ASCII diagram: the map from `Keep one map`, the render tree or call tree for similar names, the surface from `Draw the surface`, or a figure in a passage, science, or math explanation.
+
+A diagram takes a large share of the reply and pushes the walk below the fold. The reader who wants one can ask for it, and the reader who did not ask should not pay for it.
+
+- Draw an ASCII diagram only when the reader has asked for one in this conversation, with words such as "diagram", "draw", "map", "tree", "picture", or "show me the structure". A request holds for the rest of that walkthrough, so later replies of the same walkthrough redraw without being asked again. A new topic needs a new request.
+- Where a rule would have drawn a diagram, write its prose form instead: the glossary of `Keep one map`, a paragraph that says which part contains which for similar names, or a description of the screen for `Draw the surface`.
+- End such a reply with one sentence, and only one, that says an ASCII diagram is available on request, such as "An ASCII diagram of these parts is available if you ask for one." Put it after the sentence that names the next step. Do not repeat the offer in a reply that drew a diagram, and do not offer one when no rule would have drawn one.
+- When a diagram is drawn, every existing rule about diagrams still applies: real calls on the arrows, no numbered boxes, no list or markers directly under it, and a walk in plain sentences.
 
 ## Completeness
 
@@ -249,7 +262,7 @@ Say what kind of thing an identifier is. Distinguish a function from an object, 
 
 If a sentence lists several concepts, give each concept its own definition and a small example before moving to the next. An explanation must not introduce a new layer of unexplained jargon.
 
-When the reader says a term still confuses them after it was defined, for example "every time I hear 'facade' I am still confused", the definition did not work. Do not repeat it in other words. Rebuild it from what that part does in the code at hand: show the real lines that create it and use it, place it on the map from `Keep one map`, and say what the caller would have to do without it.
+When the reader says a term still confuses them after it was defined, for example "every time I hear 'facade' I am still confused", the definition did not work. Do not repeat it in other words. Rebuild it from what that part does in the code at hand: show the real lines that create it and use it, place it in the glossary from `Keep one map` (or on the map, when the reader asked for one), and say what the caller would have to do without it.
 
 ## Headings are words too
 
@@ -557,8 +570,8 @@ For a deep link or outside event, name the launch arguments or event fields that
 
 ## Say if the viewer sees it
 
-When a screen is skipped, explicitly say that the user does not see it. When it appears, say so next to the diagram.
+When a screen is skipped, explicitly say that the user does not see it. When it appears, say so, next to the diagram if the reader asked for one.
 
 ## Draw the surface
 
-When a diagram helps explain a screen or tree, draw a detailed ASCII representation that resembles the actual surface or structure. Avoid a one-line abstraction that omits the relevant behavior.
+When the reader has asked for a diagram of a screen or tree, draw a detailed ASCII representation that resembles the actual surface or structure, and avoid a one-line abstraction that omits the relevant behavior. Without that request, describe the surface in prose, naming each visible control and what it does, and offer the diagram as `Diagrams only on request` says.

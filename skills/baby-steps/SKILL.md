@@ -38,7 +38,7 @@ When there is no code, such as a book passage, a science idea, or a calculation,
 5. Give the significance: why the author needs this fact and what it sets up next.
 6. Name the next sentence or idea in one sentence, and stop.
 
-Do not add code to this kind of reply unless the reader asks for it. Diagrams, including ASCII diagrams, are still welcome.
+Do not add code to this kind of reply unless the reader asks for it. Draw an ASCII diagram only when the reader asks for one, as `response-formatter` says under `Diagrams only on request`.
 
 When the reader says they are lost at a word, such as "volts" or "potential", the next reply starts at that word and builds it from things the reader already knows. Do not reword the sentence that used it.
 
@@ -206,12 +206,12 @@ Right, for the fifth step:
 >
 > My intention with this step is to show which transition moves that state machine into `LOADING`.
 
-## Similar names: draw the tree before using either
+## Similar names: give the tree before using either
 
 Two identifiers that differ only by a suffix, a plural, or one word, such as `Switcher` and `Switch`, `Item` and `Items`, or `Provider` and `Provide`, cannot be told apart from prose alone. The reader loses which one is the parent, which one owns the data, and which one draws the screen.
 
-- Before the first sentence that uses either name, draw the render tree or call tree in ASCII. Give each node its name, its kind (route component, container, presentational child, hook, reducer), the folder it lives in, and a one-line role.
-- After the drawing, refer to each one by role plus name every time, such as "the container `MultiProfileSwitcher`" and "the child `MultiProfileSwitch`", never by name alone.
+- Before the first sentence that uses either name, state the render tree or call tree in one paragraph: for each node, its name, its kind (route component, container, presentational child, hook, reducer), the folder it lives in, which node contains it, and a one-line role. Draw that tree in ASCII only when the reader has asked for a diagram, as `response-formatter` says under `Diagrams only on request`; the example below is that on-request form.
+- After that, refer to each one by role plus name every time, such as "the container `MultiProfileSwitcher`" and "the child `MultiProfileSwitch`", never by name alone.
 - When the two names are the same word in two folders, say which folder each use refers to.
 
 Wrong: "`MultiProfileSwitcher` calls a hook and passes the value to `MultiProfileSwitch`, which captures it in state."
