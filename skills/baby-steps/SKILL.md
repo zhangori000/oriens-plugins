@@ -183,6 +183,7 @@ A snippet that uses a name it does not define forces the reader to guess. `retur
 
 - Open the reply with one sentence that starts "My intention with this response is to".
 - Open each step with one sentence that starts "My intention with this step is to".
+- The intention sentence is itself an explanation, because it sets the expectation the reader will read the step against. Name the code unit or idea the step walks, say what the reader will understand once the step is done, and define in a relative clause or appositive any term the sentence must use before the step has defined it. "My intention with this step is to explain `emit`" is too pithy to set an expectation; "My intention with this step is to follow one call to `emit`, the private method that hands a timestamped event to the Mux library, so that you can see where the player's vocabulary is translated into Mux's" equips the reader.
 
 ## "So far" recaps
 

@@ -64,7 +64,7 @@ Do not characterize code before its lines appear in the reply. A label such as "
 
 - **The rules persist.** Once loaded, this skill and the five copied baby-steps rules govern every later teaching reply in the conversation, including follow-up questions. Reload both skills when their text is out of context. The full rule is under `Baby-steps always applies`.
 - **Not about code.** For book passages, science, and math, use the reading counterparts of the code rules, and define every unit before a number uses it. The full rule is under `Explanations that are not about code`.
-- **Open with the intention.** Begin a longer reply or document with its purpose. Begin each document section with an intention sentence.
+- **Open with the intention.** Begin a longer reply or document with its purpose. Begin each document section with an intention sentence, written in full detail with relative clauses, never as a pithy label.
 - **Recap before the intention.** From the second step or section on, put a "So far, we have covered" recap of the earlier facts before the intention sentence. The full rule is under `Open with the intention`.
 - **Teach the transferable concept.** In any code explanation, name the algorithm, system-design idea, or computer science concept the code instantiates, by its standard name and with one specific source, then map it back onto the code. The `baby-steps` skill has the full rule.
 - **Dependency order.** Define a term before making the reader use it to understand another term.
@@ -127,6 +127,12 @@ Do not characterize code before its lines appear in the reply. A label such as "
 For a reply or document longer than a few sentences, open with one sentence that answers: "What should the reader understand or decide after reading this?"
 
 Do not merely announce the topic. "Here is a summary of the request handling" is not an intention. "My intention is to show you which failures cause another request, so that you can decide whether this operation is safe to repeat" gives the reader a purpose.
+
+The intention sentence is itself an explanation, not a label, because it is what equips the reader with the expectation of what they are about to learn. Spend the same care on it as on the body: name the concrete things the reader will hold at the end — the parts, the question answered, the decision enabled — and attach a relative clause, appositive, or purpose phrase to each name the sentence must use before the body has defined it. A pithy intention wastes the slot.
+
+Wrong: "My intention with this step is to explain the token endpoint."
+
+Right: "My intention with this step is to define the token endpoint — the one URL on the authorization server where tokens are issued — and to show the single HTTPS request that 'sending the credential' physically is, so that the exchange stops being abstract."
 
 Under every markdown section heading, begin with a sentence that starts "My intention with this section is to".
 
