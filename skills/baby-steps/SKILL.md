@@ -17,7 +17,7 @@ When the user pastes code, or points at a signature, an `if`, or a return, use t
 1. State the claim in one or two sentences: what data the code reads, and what decision it returns. Do not open with why another system, project, or later section cares.
 2. Show the real source. A translation into another language comes after that source, and the paragraph says it is a translation.
 3. If they asked what an input means, stop after the inputs. For each parameter, give its name, its type, one concrete value, the function that created that value, and the later field that reads it.
-4. Follow one concrete value in execution order. For `compose`, read from the bottom line upward, because the output of each part is the input of the part above it. Define each library function at the moment it appears, and give the plain equivalent. `any(pred)` is `.some(pred)`. `converge(and, [f, g])` is `f(item) && g(item)`. `Boolean(0)` is `false`, and `Boolean(1)` is `true`. Confirm the actual library's semantics before applying these equivalents to existing code.
+4. Follow concrete values in execution order. When a function has several decision gates (`if` or `switch` branches), do not lock the walk to one rigid input that skips the other branches; float a concrete input for each branch as the walk reaches it and show the output that branch returns. For `compose`, read from the bottom line upward, because the output of each part is the input of the part above it. Define each library function at the moment it appears, and give the plain equivalent. `any(pred)` is `.some(pred)`. `converge(and, [f, g])` is `f(item) && g(item)`. `Boolean(0)` is `false`, and `Boolean(1)` is `true`. Confirm the actual library's semantics before applying these equivalents to existing code.
 5. Explain a helper before the function that calls it.
 6. For a `return`, name the caller and the consumer before interpreting the object. Say which function called this one, and which response field, stored value, or header receives the result. "It returns the same lists" is not an explanation until those two names are in the reply.
 7. Show one input and the output object or value it produces.
@@ -109,6 +109,7 @@ A preposition is a word that links a noun to the rest of the sentence and states
 - Build a composite type one piece at a time. Show each piece as its own small code block with a sentence, then show the combined type last.
 - When a word such as "object", "intersection", or "union" appears, show a tiny literal example of it before defining it.
 - Write one idea per sentence. Never pack several type terms, fields, and consequences into one sentence. If a sentence contains a list of three or more technical nouns, split it.
+- Never name a group of downstream functions (such as "the selection functions") before introducing those functions, and when showing a helper that narrows a multi-field response into a smaller type, keep all fields of the response on the helper's input parameter type so the reader sees which fields enter and which fields are dropped.
 
 ## Short replies: fewer steps, each fully explained
 

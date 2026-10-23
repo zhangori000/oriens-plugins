@@ -144,6 +144,8 @@ Define a thing before its name does explanatory work. Do not introduce several u
 
 For example, first explain that an array holds an ordered collection of values. Then explain that `map` is a method on an array, which calls a function for each element and returns the results in a new array. Do not begin with "Use a higher-order array transformation" and assume the reader knows all three concepts.
 
+Never refer to a group of downstream functions before any of those functions has been introduced. For example, writing "Instead of passing the entire five-field server object into the selection functions, the package declares `SelectableProfile` and `toSelectableProfile`" before any selection function has been named leaves the reader with no foundation for what "the selection functions" are, so the reader mistakes `toSelectableProfile` itself for "selection" (selecting two fields out of five). Either introduce and name the downstream function (`resolveStoredProfile`) first, or describe the immediate conversion on its own terms without naming an unexplained consumer.
+
 ## Start at the top
 
 Start a walkthrough with the easiest high-level behavior. Explain one layer at a time and follow the depth requested by the reader.
@@ -219,6 +221,7 @@ Every block means every block:
 - A function's signature line is a line. Walk its parameters and its type parameters before the body.
 - A line is walked only when every name, keyword, and operator in it has been defined. Examples are `this`, a type parameter such as `<K extends keyof EventMap>`, the spread `...`, an arrow function `(event) => { ... }`, `switch` with `case` and `break`, `?.`, and `??`. Define each one in the walk sentence for the line where it first appears in the conversation.
 - Sentences grouped under a label, such as "The disposed check", are a walk only if they still say what each of its lines reads, calls, and returns. A label followed by a paraphrase of the outcome is not a walk.
+- When walking a function that has several decision gates (`if` or `switch` branches), do not lock the entire walk to one fixed input that makes every earlier branch say "this branch does not run for our example". Instead, float a concrete input for each decision gate as the walk reaches that branch, and show the concrete output that input produces, so the reader sees every gate fire with real values.
 - When walking every block fully would make the reply too long, show fewer blocks and name the next one in a sentence. Never keep the blocks and thin the walks.
 
 ## Show the algorithm
@@ -348,6 +351,8 @@ Right: "This line is inside the method `emit` of the class `PlayerEventBus`, so 
 When introducing an interface or type alias, show its declaration and one concrete value. If the value comes from a response, show the relevant response object too.
 
 Explain which original field supplies each resulting field. Do not substitute a phrase such as "the list field" for the actual key and the object that contains it.
+
+When a helper function narrows a multi-field response object into a smaller interface (such as narrowing a five-field element of `listResponse.profiles` into a two-field `SelectableProfile`), give the helper's input parameter the full five-field response type in the snippet rather than pre-narrowing the parameter's inline type to only the two kept fields. If `listResponse.profiles[0]` was just shown with five fields (`profile_id`, `profile_name`, `is_primary`, `is_pin_protected`, `maturity_rating`) and `toSelectableProfile` then declares its parameter as `{ profile_id: string; is_pin_protected?: boolean }`, the reader wonders why the input only has two fields and where the other three went.
 
 ## Do not coin a stand-in
 
