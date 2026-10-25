@@ -60,6 +60,8 @@ Do not characterize code before its lines appear in the reply. A label such as "
 
 Every explanation answers why, not only what. Reading a condition aloud, such as "true when A, B, and C are all true", restates code the reader can already see. For every condition, guard, reset, default value, and wait, say what problem it prevents: the concrete wrong outcome that would happen without it, in domain words, with one example. The full rule is under `Say why each condition exists`.
 
+Count before you explain. The first time a flow comes up, say how many separate operations it has (network requests, thunks, events, screens), name each one in order, and say what each returns and why the next one is needed. A reader who is not told the count assumes there is one, and every later fact lands in that wrong picture. The full rule is under `Count the separate operations first`.
+
 ## Principles
 
 **Order**
@@ -72,6 +74,7 @@ Every explanation answers why, not only what. Reading a condition aloud, such as
 - **Teach the transferable concept.** In any code explanation, name the algorithm, system-design idea, or computer science concept the code instantiates, by its standard name and with one specific source, then map it back onto the code. The `baby-steps` skill has the full rule.
 - **Dependency order.** Define a term before making the reader use it to understand another term.
 - **Start at the top.** Begin a walkthrough with the high-level behavior, then explain the requested layer.
+- **Count the operations first.** The first time a flow comes up, say how many separate operations it has, name each one, and say what each returns, before any status, selector, or condition. When the reader calls a condition pointless or backwards, check for a miscount before re-explaining the condition. The full rule is under `Count the separate operations first`.
 - **Keep one map.** When a walkthrough names more than about four parts, open each reply with one glossary paragraph per part named so far, in reading order, each naming the part, its kind, its repository, and the real call that connects it to the next part. Draw the ASCII map only when the reader has asked for a diagram; otherwise end the reply with one sentence saying the map is available. Redo the glossary with each new part marked. The full rule is under `Keep one map`.
 - **Diagrams only on request.** Never draw an ASCII diagram unless the reader asked for one in this conversation. Where a rule here would have drawn one, write its prose form, and end the reply with one sentence saying that an ASCII diagram is available. The full rule is under `Diagrams only on request`.
 - **Completeness.** Give every concept already introduced the same explanatory depth.
@@ -161,6 +164,23 @@ Never pass a normalized state object (such as `membership.status: "UNKNOWN"` or 
 Start a walkthrough with the easiest high-level behavior. Explain one layer at a time and follow the depth requested by the reader.
 
 Leaving the next system for later is reasonable. Leaving a term already introduced half-defined is not.
+
+## Count the separate operations first
+
+Any flow that takes more than one operation: two network requests in a row, a thunk that a screen starts after another thunk returns, an event that a second module answers, or a sign-in that spans several screens.
+
+A reader who is not told how many operations a flow has assumes there is one. Every later fact then lands in that one-operation picture, and correct facts start to look absurd. A login request's status going back to `IDLE` after a successful account fetch looks pointless to a reader who pictures one request, and obvious to a reader who knows there are two, each with its own status. Defining the condition more carefully does not help, because the definition is not what is missing. The count is.
+
+- The first time a flow comes up, before any status field, selector, or condition, say how many separate operations it has and name each one in the order it runs. For each one, say who starts it and on which event, what it returns or changes, and what the next operation needs that this one did not provide.
+- When one operation bundles several calls under one status, such as a thunk that makes several HTTP calls and tracks them with one status field, count it as one operation, say that it bundles several calls, and name them once.
+- Tie each status field to its operation the first time the field appears; `Give every repeated value its owner` has the rule.
+- Keep the count in every later recap of the same walkthrough, so that a reader who returns after a break gets the picture back before the details.
+- When the reader calls a condition pointless, contradictory, or backwards, first ask which picture would make their question reasonable. If that picture has fewer operations, actors, or moments than the code has, name the miscount in one sentence, such as "That question makes sense if there is one request; there are two", and rebuild the explanation from the count. Do not re-explain the condition in new words.
+- The count is part of the claim that the walk order in `baby-steps` puts first, so it does not change that order.
+
+Wrong: a reply that opens the QR sign-in with `selectIsLoginAccountUpdateSucceeded` and its three conditions, and mentions the account fetch only inside the walk of the third condition. The reader, still picturing one request, asks why a successful login would set its own status back to `IDLE`, and the next reply re-explains the three conditions.
+
+Right: "Signing in with a QR code takes two separate operations, not one. The first, the QR login request, returns tokens and the account id, which prove the login but say nothing about the subscription or the profiles. The sign-in screen then starts the second, the account fetch, which is one thunk that makes several HTTP calls, because where the screen sends the user depends on the subscription and the profiles. Each operation has its own status field: `loginWithPinStatus` describes the QR login request, and `updateAccountStateStatus` describes the account fetch."
 
 ## Keep one map
 
