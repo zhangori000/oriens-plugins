@@ -58,6 +58,8 @@ The principles below are an index. Read the full named principle before applying
 
 Do not characterize code before its lines appear in the reply. A label such as "display bug" or "data bug" comes after the real snippets, never instead of them. When two implementations differ, show each one's lines, walk both with the same concrete input, and only then say how they differ.
 
+Every explanation answers why, not only what. Reading a condition aloud, such as "true when A, B, and C are all true", restates code the reader can already see. For every condition, guard, reset, default value, and wait, say what problem it prevents: the concrete wrong outcome that would happen without it, in domain words, with one example. The full rule is under `Say why each condition exists`.
+
 ## Principles
 
 **Order**
@@ -66,6 +68,7 @@ Do not characterize code before its lines appear in the reply. A label such as "
 - **Not about code.** For book passages, science, and math, use the reading counterparts of the code rules, and define every unit before a number uses it. The full rule is under `Explanations that are not about code`.
 - **Open with the intention.** Begin a longer reply or document with its purpose. Begin each document section with an intention sentence, written in full detail with relative clauses, never as a pithy label.
 - **Recap before the intention.** From the second step or section on, put a "So far, we have covered" recap of the earlier facts before the intention sentence. The full rule is under `Open with the intention`.
+- **Recaps tell the story.** A recap is a cause-and-effect story in domain words, not a list of code facts. Identifiers come after the sentence already makes sense without them. The full rule is under `Open with the intention`.
 - **Teach the transferable concept.** In any code explanation, name the algorithm, system-design idea, or computer science concept the code instantiates, by its standard name and with one specific source, then map it back onto the code. The `baby-steps` skill has the full rule.
 - **Dependency order.** Define a term before making the reader use it to understand another term.
 - **Start at the top.** Begin a walkthrough with the high-level behavior, then explain the requested layer.
@@ -79,6 +82,7 @@ Do not characterize code before its lines appear in the reply. A label such as "
 
 - **Show the real implementation.** Preserve actual branches, fields, and writes.
 - **Show the algorithm.** Show the conditions that produce a decision, not a boolean parameter that hides them.
+- **Say why each condition exists.** For every operand of an `&&` or `||`, every guard, every reset to a default value, and every wait, state the failure it prevents with a concrete scenario. Before walking a function, say what problem the whole function solves. Reading the operators aloud is not an explanation. The full rule is under `Say why each condition exists`.
 - **Walk through every code block.** A code block is evidence, not teaching. Right under it, write one short sentence per line or branch with one concrete value. A one-line block and a function's signature line count. Define every keyword and operator a line uses. Cut any line you will not walk, and show fewer blocks rather than walk them thinly. Never follow a code block or a diagram with a list or with inline markers; walk it in plain sentences. The full rule is under `Walk through every code block`.
 - **Name the step.** Name a step for what it does before introducing its code identifier.
 - **Caller before callee.** Show how a caller uses a return value before showing the function that produces it.
@@ -95,12 +99,14 @@ Do not characterize code before its lines appear in the reply. A label such as "
 - **Show the type you just named.** Show the declaration and a concrete value when introducing a type.
 - **Do not coin a stand-in.** Do not replace actual predicates or fields with unexplained shorthand.
 - **Call a value by its code name.** Refer to a value by its identifier every time (`upNextContent`), never by a nickname such as "the row", even one defined earlier. Words with a data-structure meaning (row, column, table, record, node, tree, list, bag, slot, tier) are reserved for that meaning. Translate nicknames from tickets, teammates, and research before writing. The full rule is under `Call a value by its code name`.
+- **Give every repeated value its owner.** When the same value (`SUCCEEDED`, `IDLE`, `true`) appears in two fields or two moments, say whose value it is and what it means there every time. Name moments by the event that defines them, with its owner. The full rule is under `Give every repeated value its owner`.
 - **Name new things for what they describe.** A name you propose (a type, field, function, or enum value) says which thing it describes and what it means, in plain words: `viewerFinishedPickedEpisode`, not `fullyWatched`. When an existing field is ambiguous, such as an API's `fully_watched`, say which thing it describes (this episode, this season, or the whole series) every time it appears. The full rule is under `Name new things for what they describe`.
 - **Unpack the call chain.** Explain each function and each call rather than compressing them into an arrow.
 
 **Prose**
 
 - **Grammatical sentences.** Write sentences rather than captions.
+- **Domain sentence first, code mapping second.** Say who acts, what they do, when, and why in plain words, then name the code that does it. Never make a code construct the actor of a domain action, and never treat a boolean as a period of time. The full rule is under `Domain sentence first, code mapping second`.
 - **Write the claim in plain words.** Before judging any sentence that makes a claim, restate it as one short sentence with a subject, a verb and an object, every abstract phrase replaced by the concrete thing it refers to here, and reread that sentence before each judgment. Show the compression being done the first time. The full rule is under `Write the claim in plain words`.
 - **Explanation constructs.** Attach explanations to the nouns and actions that they explain.
 - **Say what the request does.** Say what a request returns or changes.
@@ -137,6 +143,8 @@ Right: "My intention with this step is to define the token endpoint — the one 
 Under every markdown section heading, begin with a sentence that starts "My intention with this section is to".
 
 By the fifth step or section, the reader has forgotten the first four. The intention sentence looks forward, so from the second step or section on, put a recap before it. The recap starts "So far, we have covered" and names the facts the earlier steps established, such as the construct, the value, and the concept. It does not name the step titles. When three or more steps came before, write the recap as one paragraph with inline markers, (1), (2), (3), one full sentence per earlier step. A reply that continues an earlier walkthrough starts with the same recap. The `baby-steps` skill has the full rule with wrong and right examples.
+
+A recap is a story, not an inventory. Write it in cause-and-effect order with domain words, such as "the QR login request returned, so the sign-in screen asked the server for the full account; when the account arrived, the screen moved on", and add identifiers only after the sentence already makes sense without them. A list of code facts, such as "the hook fetches while `isLoginStatusSuccessful` is `true`; it navigates once `isLoginAccountUpdateSucceeded` is `true`", hands the reader names to remember instead of a picture to hold.
 
 ## Dependency order
 
@@ -231,6 +239,22 @@ Every block means every block:
 Do not hide a predicate inside a boolean parameter. Show the actual conjunctions, comparisons, and early returns that determine the result.
 
 For example, explain which fields are checked and why a comparison is necessary. A function that merely returns a supplied flag does not demonstrate the algorithm.
+
+## Say why each condition exists
+
+Any condition, guard, early return, reset, default value, or wait in code you explain.
+
+Reading a condition aloud, such as "this is true when the user is logged in and every login status is idle", restates what the reader can already see. It answers "what", and the reader's question is "why": why this condition, why at this moment, why this value. A reader who knows `&&` learns nothing from hearing it described.
+
+- Before walking the parts of a function, say in one or two domain sentences what problem the whole function solves. "After a login request succeeds, the app holds only tokens. It still has to ask the server for the account's profiles and subscription before it can decide which screen to show."
+- For each operand of an `&&` or `||`, say what goes wrong without it: the specific wrong outcome, the moment it happens, and one concrete example.
+- For a value set back to its default (`IDLE`, `null`, `false`), say what the default means in this state machine, what pending work the reset marks as finished, and what would repeat or break if the value stayed where it was.
+- For a wait (`setTimeout`, an early `return` until something is ready, a loading guard), say what the code is waiting for and what happens if it does not wait.
+- If the reason is not visible in the code, its comments, or its history, say so plainly and say where it would have to come from (the commit, the ticket, the author). Do not invent a reason.
+
+Wrong: "`selectIsLoginAccountUpdateSucceeded` is `true` only when the account fetch succeeded, the user is logged in, and the idle check is `true`."
+
+Right: "The screen must not leave the sign-in page until it holds the account of the user who just logged in, because where it sends the user depends on that account's subscription. The account fetch's status alone cannot prove that, since it may still say `SUCCEEDED` from a fetch that ran before this login. So the selector also requires the login request's status to be back at its default, `IDLE`, which after a successful login happens only when the follow-up account fetch succeeds."
 
 ## Name the step
 
@@ -378,6 +402,21 @@ Wrong: "The series thunk, `fetchContentVideosMetadata`, already holds the row as
 
 Right: "`fetchContentVideosMetadata` reads `upNextContent` from the Redux store with `const upNextContent = selectSeries(getState()).upNextContent`. `upNextContent` is the first entry of the response from `GET /content/v2/discover/up_next/{seriesId}`, which `fetchSeries` stored earlier, or `null` when that request returned no content. The change passes that same object to Katsu as one more argument."
 
+## Give every repeated value its owner
+
+Any value that appears in more than one field, request, or moment: a status such as `SUCCEEDED` or `IDLE`, a boolean, `null`, or an id.
+
+Two fields can hold the same value with different meanings. `SUCCEEDED` on the login request and `SUCCEEDED` on the account fetch describe two different requests, and a reader who sees two bare `SUCCEEDED`s concludes that two different moments are the same moment.
+
+- Every time such a value appears in prose, attach its owner and its meaning: "the login request's status is `SUCCEEDED`, which means the login answered and nothing has acted on that answer yet". Never write "the status is `SUCCEEDED`" or "everything is positive".
+- Name moments by the event that defines them, with its owner: "the moment the QR login request returns" and "the moment the account fetch returns". Never write "the fetch has succeeded" when two requests exist.
+- The first time a status field appears, say what it describes: a request, a screen, or a fact about the user. "`loginWithPinStatus` describes the QR login request, not whether anyone is logged in."
+- In a snapshot of state, comment each field with its meaning at that moment, and put the moments side by side so the reader sees which field changed.
+
+Wrong: two snapshot comments that read "the QR login request has just succeeded" and "the fetch has succeeded", with `SUCCEEDED` in both and no word on whose `SUCCEEDED` each one is.
+
+Right: "When the QR login request returns, the login request's status is `SUCCEEDED`, meaning its answer has arrived and nothing has acted on it yet, while the account fetch's status still shows a result from before the login. When the account fetch returns, the account fetch's status is `SUCCEEDED`, meaning the new user's account is now in the store, and the login request's status is back at `IDLE`, meaning its follow-up is done."
+
 ## Name new things for what they describe
 
 Any identifier you propose in a sketch, a design, or code: a type, a field, a function, a parameter, or an enum value. Also any existing field whose name leaves out what it describes.
@@ -406,6 +445,16 @@ Do not replace those explanations with `A -> B -> C`. Show the relevant calls af
 Every sentence needs a subject and a finite verb. "Still in the editor" is a fragment; "The user is still in the editor" is a sentence.
 
 Do not use pithy fragments or compact labels that force the reader to reconstruct the meaning.
+
+## Domain sentence first, code mapping second
+
+Any sentence that describes what the program does.
+
+A sentence whose subject is a code construct, such as "the hook's decision fetches the account while `isLoginStatusSuccessful` is `true`", names neither who acts nor why, and it treats a boolean as a period of time. The reader cannot picture it.
+
+- Write the domain sentence first: who acts, what they do, when, and why, in words the reader already knows. "Right after the login request returns, the sign-in screen asks the server for the full account, because the login answer contains only tokens."
+- Then map it to the code in a separate sentence: "In code, the `Account` screen's hook reads `isLoginStatusSuccessful`, and when it is `true` the hook dispatches `updateAccountState()`."
+- A boolean is a condition at a moment, not a span of time. Write "when `isLoginStatusSuccessful` becomes `true`" or "if it is `true` at that moment", and say which event made it `true`.
 
 ## Write the claim in plain words
 
