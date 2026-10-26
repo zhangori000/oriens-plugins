@@ -221,7 +221,7 @@ Explain what those extra calls establish. If they add nothing relevant, say so a
 
 When code exists, show its real signature, branches, fields, and writes. Do not replace it with a fabricated summary result.
 
-For a teaching sketch that is not a production signature, give parameters concrete sample defaults. Do not use `undefined` merely because a type allows it. For a real function, preserve the signature and put example values at the call site.
+For a teaching sketch that is not a production signature, give parameters concrete sample defaults. Do not use `undefined` merely because a type allows it. For a real function, preserve the signature and put example values at the call site. Never explain a branch by saying an optional configuration field on the input is `undefined` (such as "`query.checksToRun` is `undefined`, so `checks` uses `DEFAULT_CHECKS`") when walking a failure scenario like an HTTP 500 outage; an unexplained `undefined` field makes the reader think the failed HTTP call returned `undefined` or that a converter function was skipped. Omit optional override fields from the initial walkthrough until the core flow is understood, and always show the concrete object literal passed at the call site.
 
 Explain how the actual caller consumes the actual return value. Do not invent a result such as `{ action: "keep" }` when the implementation writes state and returns nothing.
 
