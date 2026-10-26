@@ -108,6 +108,7 @@ This list is an index, one line per rule. Read the named section before applying
 - **Unpack the call chain**, in caller order, never as numbered blocks: `Unpack the call chain`.
 - **Introduce a function by its kind and its caller** before walking its body: `Introduce a function by its kind and its caller`.
 - **Decide whether to descend into each call**, and say the decision: `Decide whether to descend into each call`.
+- **Teach a foreign concept as its own step** before the line that uses it, and **substitute every constant** with its value: `Teach a foreign concept as its own step`.
 
 **Prose**
 
@@ -485,6 +486,22 @@ Not every call deserves its own walk, and a walk that opens every callee drowns 
 - When you later need a skipped callee's internals, descend then, and say that you are now opening what the earlier reply skipped.
 
 This rule tells an assistant to read the callee's file and judge, rather than either descending into everything or hand-waving; both failures were reported by the same reader on the same day.
+
+## Teach a foreign concept as its own step
+
+Any walked line that depends on a concept from outside the code being walked: an HTTP header, an ETag, a status code such as 304, an axios interceptor, a Redux thunk, a cookie, a cron expression.
+
+A walk that is going well breaks the moment a line leans on such a concept and the walk keeps its pace. The reader of a walk of `response.headers[ETAG_HEADER]` asked afterwards what an ETag header is and why the name was in capitals, and said they stopped reading there; every step after that was lost, including steps that were fine on their own. One undefined foreign term costs the rest of the reply.
+
+- Before the first line that uses the concept, pause the walk and give the concept its own step, with its own intention sentence. Build it in dependency order from things the reader knows: what an HTTP header is (a name and a value sent before the body, in both directions) before what the `etag` header is (a version tag of the file the server sends) before what `If-None-Match` does (the client sends the tag back and asks for a short "unchanged" answer) before what `304 Not Modified` means. Show a real exchange as `Show a real payload` requires: the actual request line and headers, and the actual response status and headers, captured if possible, with one concrete value such as `etag: "5fa57d08…"`.
+- Then say which code runs where in that exchange: which function sends the request, which code runs on the response, and only then resume the walk at the line that was waiting.
+- A library concept such as an interceptor gets the same treatment: what kind of thing it is (a function the library calls on every request or on every response), who registers it (`instance.interceptors.response.use(fn)` inside `createLrxHttpClient`), when the library calls it, what it receives, and what it must return.
+- When a walked line indexes or compares with a named constant, such as `response.headers[ETAG_HEADER]` or `status === NOT_MODIFIED_STATUS`, show the constant's declaration first (`const ETAG_HEADER = 'etag';`) and read the line with the value substituted ("`response.headers['etag']`"). Say once that all-capital names are the convention for module-level constants whose value never changes; the capitals carry no other meaning.
+- Do not describe such code as "two small pieces run inside that call" and move on. A sentence that names code without saying what it does is the exact failure.
+
+Wrong: "Two small pieces of the HTTP client run inside that GET. The response interceptor runs `const etag = response.headers[ETAG_HEADER]`."
+
+Right: a step that first shows the real response, `HTTP/2 200` with `etag: "5fa57d08…"`, defines a header and an ETag from that response, then shows `const ETAG_HEADER = 'etag';`, then walks `response.headers['etag']` with the substituted value. (Added 2026-10-26.)
 
 ## Domain sentence first, code mapping second
 
