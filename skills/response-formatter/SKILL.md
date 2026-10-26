@@ -52,7 +52,7 @@ Translate the code rules this way:
 
 ## Non-negotiables
 
-Write complete grammatical sentences with subjects and finite verbs. Concision means removing unnecessary clauses, not writing fragments that the reader must decode.
+Write complete grammatical sentences with subjects and finite verbs. Concision means removing unnecessary clauses, not writing fragments that the reader must decode. "Still in the editor" is a fragment; "The user is still in the editor" is a sentence.
 
 The principles below are an index. Read the full named principle before applying it; do not rely only on its one-line description.
 
@@ -64,72 +64,64 @@ Count before you explain. The first time a flow comes up, say how many separate 
 
 ## Principles
 
+This list is an index, one line per rule. Read the named section before applying the rule.
+
 **Order**
 
-- **The rules persist.** Once loaded, this skill and the five copied baby-steps rules govern every later teaching reply in the conversation, including follow-up questions. Reload both skills when their text is out of context. The full rule is under `Baby-steps always applies`.
-- **Not about code.** For book passages, science, and math, use the reading counterparts of the code rules, and define every unit before a number uses it. The full rule is under `Explanations that are not about code`.
-- **Open with the intention.** Begin a longer reply or document with its purpose. Begin each document section with an intention sentence, written in full detail with relative clauses, never as a pithy label.
-- **Recap before the intention.** From the second step or section on, put a "So far, we have covered" recap of the earlier facts before the intention sentence. The full rule is under `Open with the intention`.
-- **Recaps tell the story.** A recap is a cause-and-effect story in domain words, not a list of code facts. Identifiers come after the sentence already makes sense without them. The full rule is under `Open with the intention`.
-- **Teach the transferable concept.** In any code explanation, name the algorithm, system-design idea, or computer science concept the code instantiates, by its standard name and with one specific source, then map it back onto the code. The `baby-steps` skill has the full rule.
-- **Dependency order.** Define a term before making the reader use it to understand another term.
-- **Start at the top.** Begin a walkthrough with the high-level behavior, then explain the requested layer.
-- **Count the operations first.** The first time a flow comes up, say how many separate operations it has, name each one, and say what each returns, before any status, selector, or condition. When the reader calls a condition pointless or backwards, check for a miscount before re-explaining the condition. The full rule is under `Count the separate operations first`.
-- **Keep one map.** When a walkthrough names more than about four parts, open each reply with one glossary paragraph per part named so far, in reading order, each naming the part, its kind, its repository, and the real call that connects it to the next part. Draw the ASCII map only when the reader has asked for a diagram; otherwise end the reply with one sentence saying the map is available. Redo the glossary with each new part marked. The full rule is under `Keep one map`.
-- **Diagrams only on request.** Never draw an ASCII diagram unless the reader asked for one in this conversation. Where a rule here would have drawn one, write its prose form, and end the reply with one sentence saying that an ASCII diagram is available. The full rule is under `Diagrams only on request`.
-- **Completeness.** Give every concept already introduced the same explanatory depth.
-- **Show a real payload.** Show an actual request or response shape with concrete example values.
-- **Look past the ticket's sample.** Investigate relevant existing behavior beyond the examples listed in a task.
+- **The rules persist** for the whole conversation: `Baby-steps always applies`.
+- **Not about code**: the reading counterparts for passages, science, and math: `Explanations that are not about code`.
+- **Open with the intention**, put **a recap before it** from the second step on, and **tell the recap as a story**: `Open with the intention`.
+- **Teach the transferable concept** by its standard name and one source: the `baby-steps` section `Teach the transferable concept`.
+- **Dependency order**: `Dependency order`.
+- **Start at the top**: `Start at the top`.
+- **Count the operations first**: `Count the separate operations first`.
+- **Keep one map**: `Keep one map`.
+- **Diagrams only on request**: `Diagrams only on request`.
+- **Completeness**: `Completeness`.
+- **Show a real payload**: `Show a real payload`.
+- **Look past the ticket's sample**: `Look past the ticket's sample`.
 
 **Code**
 
-- **Show the real implementation.** Preserve actual branches, fields, and writes.
-- **Show the algorithm.** Show the conditions that produce a decision, not a boolean parameter that hides them.
-- **Say why each condition exists.** For every operand of an `&&` or `||`, every guard, every reset to a default value, and every wait, state the failure it prevents with a concrete scenario. Before walking a function, say what problem the whole function solves. Reading the operators aloud is not an explanation. The full rule is under `Say why each condition exists`.
-- **Walk through every code block.** A code block is evidence, not teaching. Right under it, write one short sentence per line or branch with one concrete value. A one-line block and a function's signature line count. Define every keyword and operator a line uses. Cut any line you will not walk, and show fewer blocks rather than walk them thinly. Never follow a code block or a diagram with a list or with inline markers; walk it in plain sentences. The full rule is under `Walk through every code block`.
-- **Name the step.** Name a step for what it does before introducing its code identifier.
-- **Caller before callee.** Show how a caller uses a return value before showing the function that produces it.
-- **Reasoning above the function.** Explain a branch in prose above the code, not in a long inline comment.
+- **Show the real implementation**: `Show the real implementation`.
+- **Walk through every code block**, naming each line by its code, never by its position: `Walk through every code block`.
+- **Show the algorithm**: `Show the algorithm`.
+- **Say why each condition exists**: `Say why each condition exists`.
+- **Name the step** before its identifier: `Name the step`.
+- **Caller before callee**: `Caller before callee`.
+- **Reasoning above the function**: `Reasoning above the function`.
 
 **Names**
 
-- **Define the term first.** Explain unfamiliar technical terms, libraries, and identifiers before using them. When the reader says a defined term still confuses them, rebuild it from the code instead of rewording it.
-- **Headings are words too.** A heading may use only terms defined above it. Write it as a plain statement that names the real parts and the real call. The full rule is under `Headings are words too`.
-- **Name code in this shape.** Say its kind, its name, and what it does, then show code.
-- **Show the enclosing scope.** Show the line that declares an identifier inside the construct that encloses it, say what kind of binding it is, say where the name is visible and how long the value lives, and name who creates the value and who reads it.
-- **Show the whole function, never a bare body.** Every snippet keeps its function's signature line, its nesting, and its closing brace. Replace skipped lines with a `// ...` comment that says what was skipped and why it is irrelevant here. When several functions call each other, show the caller first with the call line visible. The full rule is under `Show the enclosing scope`.
-- **Resolve `this`.** Every snippet with `this` names the class whose method encloses the line and the one object `this` is at run time. Every `this._field` gets its declaration and the line that assigns it. The full rule is under `Resolve this and every field it reaches`.
-- **Show the type you just named.** Show the declaration and a concrete value when introducing a type.
-- **Do not coin a stand-in.** Do not replace actual predicates or fields with unexplained shorthand.
-- **Call a value by its code name.** Refer to a value by its identifier every time (`upNextContent`), never by a nickname such as "the row", even one defined earlier. Words with a data-structure meaning (row, column, table, record, node, tree, list, bag, slot, tier) are reserved for that meaning. Translate nicknames from tickets, teammates, and research before writing. The full rule is under `Call a value by its code name`.
-- **Give every repeated value its owner.** When the same value (`SUCCEEDED`, `IDLE`, `true`) appears in two fields or two moments, say whose value it is and what it means there every time. Name moments by the event that defines them, with its owner. The full rule is under `Give every repeated value its owner`.
-- **Name new things for what they describe.** A name you propose (a type, field, function, or enum value) says which thing it describes and what it means, in plain words: `viewerFinishedPickedEpisode`, not `fullyWatched`. When an existing field is ambiguous, such as an API's `fully_watched`, say which thing it describes (this episode, this season, or the whole series) every time it appears. The full rule is under `Name new things for what they describe`.
-- **Unpack the call chain.** Explain each function and each call rather than compressing them into an arrow.
+- **Define the term first**: `Define the term first`.
+- **Headings are words too**: `Headings are words too`.
+- **Name code in this shape**: `Name code in this shape`.
+- **Show the enclosing scope**, and never a bare function body: `Show the enclosing scope`.
+- **Resolve `this`**: `Resolve this and every field it reaches`.
+- **Show the type you just named**: `Show the type you just named`.
+- **Do not coin a stand-in**: `Do not coin a stand-in`.
+- **Call a value by its code name**: `Call a value by its code name`.
+- **Give every repeated value its owner**: `Give every repeated value its owner`.
+- **Name new things for what they describe**: `Name new things for what they describe`.
+- **Unpack the call chain**: `Unpack the call chain`.
 
 **Prose**
 
-- **Grammatical sentences.** Write sentences rather than captions.
-- **Domain sentence first, code mapping second.** Say who acts, what they do, when, and why in plain words, then name the code that does it. Never make a code construct the actor of a domain action, and never treat a boolean as a period of time. The full rule is under `Domain sentence first, code mapping second`.
-- **Write the claim in plain words.** Before judging any sentence that makes a claim, restate it as one short sentence with a subject, a verb and an object, every abstract phrase replaced by the concrete thing it refers to here, and reread that sentence before each judgment. Show the compression being done the first time. The full rule is under `Write the claim in plain words`.
-- **Explanation constructs.** Attach explanations to the nouns and actions that they explain.
-- **Say what the request does.** Say what a request returns or changes.
-- **Write the long phrase.** Keep the real path, field, or screen name when shortening it would lose meaning.
-- **No telegram.** Write platform comparisons as complete sentences.
-- **No analogy.** Use precise technical terms rather than metaphors.
-- **Say the operation, not the workplace word.** Replace "hand-off", "wire up", "lives in", "talks to", and "owns" with the real call or declaration. Split "owns" into who declares the interface, who writes the implementation, and who constructs the object. The full rule is under `Say the operation, not the workplace word`.
-- **No borrowed slang.** Avoid ambiguous jargon and marketing shorthand.
-- **No tables.** Use prose, sentences with inline markers, or code instead of comparison tables.
-- **Inline markers, not bullets.** Enumerate inside full sentences with (1), (2), (3) for order or (a), (b), (c) for parallel items, instead of bulleted or numbered lists, so each item stays an explained sentence rather than a caption. Never directly under a code block or diagram, and never pointed back to. The full rule is under `Inline markers, not bullets`.
-- **No backticks inside inline code.** Any expression with a backtick or `${}` goes in a fenced block, never in an inline span.
-- **No bare repository adjectives.** "Shared", "core", "default", "platform": say which folder, which build, which consumers, the first time.
-- **No pointers to labels.** Never make the reader look up a number, letter, or symbol defined somewhere else, such as "at ③", "step 2", "block A", or "fact 3 above". Write the call, object, or fact itself. The full rule is under `No pointers to labels`.
-- **Name what "same" and "different" refer to.** Any sentence with "same", "different", "other", "each", or "both". Name the one thing that stays fixed and list the things that vary, then show them side by side. Search this file for the heading `Name what "same" and "different" refer to`.
+- **Grammatical sentences**: `Non-negotiables`.
+- **Domain sentence first, code mapping second**: `Domain sentence first, code mapping second`.
+- **Write the claim in plain words**: `Write the claim in plain words`.
+- **Explanation constructs** (relative clauses, appositives, cause and purpose clauses): the `baby-steps` section `Explanation constructs`.
+- **Say what the request does**, **write the long phrase**, **no telegram**, **no analogy**, and **no borrowed slang**: their sections below.
+- **Say the operation, not the workplace word**: `Say the operation, not the workplace word`.
+- **No tables** and **inline markers, not bullets**: `No tables` and `Inline markers, not bullets`.
+- **No backticks inside inline code**: `No backticks inside inline code`.
+- **No bare repository adjectives**: `No bare repository adjectives`.
+- **No pointers to labels**, including ordinals such as "the second" used as a name: `No pointers to labels`.
+- **Name what "same" and "different" refer to**: `Name what "same" and "different" refer to`.
 
 **Screens**
 
-- **Name the real input.** Identify the outside event or launch arguments the code actually reads.
-- **Say if the viewer sees it.** State whether a screen appears.
-- **Draw the surface.** When the reader has asked for a diagram of a screen or tree, make it resemble the actual screen or structure; without that request, describe the surface in prose.
+- **Name the real input**, **say if the viewer sees it**, and **draw the surface**: their sections below.
 
 ## Open with the intention
 
@@ -157,7 +149,7 @@ For example, first explain that an array holds an ordered collection of values. 
 
 Never refer to a group of downstream functions before any of those functions has been introduced. For example, writing "Instead of passing the entire five-field server object into the selection functions, the package declares `SelectableProfile` and `toSelectableProfile`" before any selection function has been introduced leaves the reader with no foundation for what "the selection functions" are, so the reader mistakes `toSelectableProfile` itself for "selection" (selecting two fields out of five). Either introduce and name the downstream function (`resolveStoredProfile`) first, or describe the immediate conversion on its own terms without naming an unexplained consumer.
 
-Never pass a normalized state object (such as `membership.status: "UNKNOWN"` or `crunchyrollEligibilityApiAnswer: "UNKNOWN"`) into a domain function without first showing the real upstream function in the application (the HTTP call, the response JSON, and the `try`/`catch` block or hook) that produces that object, followed by the exact call site in the application that constructs the domain function's input and calls the domain function. When proposing a new Katsu function that replaces existing application logic, always show the real existing application code first (just like Step 1), then show the Katsu function, and then show how the application's function calls the Katsu function. If a type or function appears without the caller that builds its input, the reader has to ask "who is calling that?" and "is that in Katsu or in the downstream app?".
+Never show a function's input, such as a normalized value like `membership.status: "UNKNOWN"`, before the real code that produces it and the call site that passes it in. When proposing a new function that replaces existing code, show the existing code first, then the new function, then the existing caller calling it. Otherwise the reader has to ask "who calls that?" and "which repository is this in?".
 
 ## Start at the top
 
@@ -243,12 +235,14 @@ Write the walk as plain sentences in paragraphs. Never write it as a bulleted li
 
 Wrong: a function named `resolve` with four `if` lines and trailing comments such as `// 1. the URL named an episode`, followed by a new paragraph that starts "The store saves the result". The comments are labels, not a walk. The reader does not know what `find(episodes, episodeId)` returns when the id is absent, why `seasonId` is checked second, or what `resumeTarget` returns.
 
-Right: the same block, followed by: "The first line asks whether the URL carried an episode id. For the sample, `episodeId` is `"EP-123"`, so `find` returns that episode object and the function returns it with the word `"episodeId"`; nothing below runs. If the URL had carried only a season id, the second line would take the first non-clip episode of that season and return the word `"seasonId"`. With neither, the third line calls `resumeTarget`, which reads each episode's progress and returns the most recently watched episode with `"resume"`, the one after it with `"upNext"`, or the last one with `"completed"`, or `null` when nothing was watched. Only then does the last line fall back to the first non-clip episode with `"seriesFallback"`. The word is what the label hook maps to the button text, so the first line firing is why the button says Start Watching."
+Right: the same block, followed by: "`if (episodeId)` asks whether the URL carried an episode id. For the sample, `episodeId` is `"EP-123"`, so `find(episodes, episodeId)` returns that episode object, and the function returns it with the word `"episodeId"`; nothing below runs. If the URL had carried only a season id, `if (seasonId)` would take the first non-clip episode of that season and return `"seasonId"`. With neither, `resumeTarget(episodes)` reads each episode's progress and returns the most recently watched episode with `"resume"`, the one after it with `"upNext"`, the last one with `"completed"`, or `null` when nothing was watched. Only when it returns `null` does the final `return` fall back to the first non-clip episode with `"seriesFallback"`. The word is what the label hook maps to the button text, so `if (episodeId)` matching is why the button says Start Watching."
 
 Every block means every block:
 
 - A one-line block is a block. A call shown on its own, such as `this._eventBus.emit(PlayerEventType.USER_INTERACTION, data);`, gets its own walk: which object receives the call, what each argument holds, and what the call returns. A sentence such as "That calls the event bus's `emit` method", which only introduces the next block, does not walk this one.
 - A function's signature line is a line. Walk its parameters and its type parameters before the body.
+- Name each line, branch, or function by quoting its code, never by its position. "The first line", "the second arrow function", and "the third" make the reader count and guess, and an ordinal followed by a verb, such as "The second receives `next`", reads as a noun doing something. Write "`if (seasonId)` takes the first episode of the season" or "the function `next => action => { ... }` takes one parameter, `next`".
+- When code nests anonymous functions, such as a curried middleware `({ dispatch, getState }) => next => action => { ... }`, first say how many functions there are and who calls each one and when, then refer to each one by its parameter: "the function that takes `next`, which Redux calls once while building the store, so that this middleware knows which function to pass actions on to".
 - A line is walked only when every name, keyword, and operator in it has been defined. Examples are `this`, a type parameter such as `<K extends keyof EventMap>`, the spread `...`, an arrow function `(event) => { ... }`, `switch` with `case` and `break`, `?.`, and `??`. Define each one in the walk sentence for the line where it first appears in the conversation.
 - Sentences grouped under a label, such as "The disposed check", are a walk only if they still say what each of its lines reads, calls, and returns. A label followed by a paraphrase of the outcome is not a walk.
 - When walking a function that has several decision gates (`if` or `switch` branches), do not lock the entire walk to one fixed input that makes every earlier branch say "this branch does not run for our example". Instead, float a concrete input for each decision gate as the walk reaches that branch, and show the concrete output that input produces, so the reader sees every gate fire with real values.
@@ -398,7 +392,7 @@ When introducing an interface or type alias, show its declaration and one concre
 
 Explain which original field supplies each resulting field. Do not substitute a phrase such as "the list field" for the actual key and the object that contains it.
 
-When a helper function narrows a multi-field response object into a smaller interface (such as narrowing a five-field element of `listResponse.profiles` into a two-field `SelectableProfile`), give the helper's input parameter the full five-field response type in the snippet rather than pre-narrowing the parameter's inline type to only the two kept fields. If `listResponse.profiles[0]` was just shown with five fields (`profile_id`, `profile_name`, `is_primary`, `is_pin_protected`, `maturity_rating`) and `toSelectableProfile` then declares its parameter as `{ profile_id: string; is_pin_protected?: boolean }`, the reader wonders why the input only has two fields and where the other three went.
+When a helper narrows a response into a smaller type, give the helper's parameter the full response type, so the reader sees which fields enter and which are dropped.
 
 ## Do not coin a stand-in
 
@@ -444,7 +438,7 @@ Any identifier you propose in a sketch, a design, or code: a type, a field, a fu
 A reader learns a new name once and then reads every later line through it. A name that skips its subject makes every later line ambiguous. `fullyWatched` does not say what was fully watched: one episode, a season, or the whole series. `ContinueWatching` names a screen feature, so the reader cannot tell that the type describes the server's answer to "which episode is next?".
 
 - Name the subject and the fact. A boolean answers one yes-or-no question about one named thing, so its name contains that thing: `viewerFinishedPickedEpisode`, `viewerNeverWatchedSeries`. A number names its unit and its subject: `secondsWatchedOfPickedEpisode`, not `playheadSeconds`.
-- Name a type for the data it describes, not for the screen or feature that uses it: `NextEpisodeFromServer`, not `ContinueWatching`. Never use truncated jargon (`Tri` for three-valued logic), vague umbrella nouns (`EligibilityFactor`, `"SERVER"`, `"STORE"`), or words that are both a verb and a noun (`FreeTrialCheck`, where "check" sounds like a function that performs an action rather than a noun). Name the type with an unambiguous noun for what it represents — such as `FreeTrialRequirement` or `FreeTrialDisqualificationReason` (`"COUNTRY_DOES_NOT_ALLOW_FREE_TRIAL" | "ALREADY_HAS_PREMIUM_SUBSCRIPTION" | "ALREADY_USED_CRUNCHYROLL_FREE_TRIAL" | "DEVICE_STORE_HAS_NO_FREE_TRIAL_PLAN"`) — and show the real code or pseudocode that evaluates each requirement before introducing a union type of requirement names.
+- Name a type for the data it describes, not for the screen or feature that uses it: `NextEpisodeFromServer`, not `ContinueWatching`. Avoid truncated jargon (`Tri`), vague umbrella nouns (`EligibilityFactor`), and words that are both a verb and a noun (`FreeTrialCheck`). Prefer an unambiguous noun such as `FreeTrialDisqualificationReason`, and show the code that evaluates each case before introducing a union of their names.
 - Name the values of a union or an enum as plain statements: `'episodePicked'` and `'nothingNext'`, not `'found'` and `'none'`. Write error codes the same way: `'PICKED_EPISODE_NOT_IN_LIST'`.
 - Long names are fine. A sketch is read far more times than it is typed.
 - When you explain an existing field you cannot rename, such as an API's `fully_watched` or `never_watched`, say which thing it describes every time it appears, in a relative clause: "`fully_watched`, which says whether the viewer finished the picked episode (not the season)". If two fields describe different things, say so side by side, because readers assume sibling fields describe the same thing.
@@ -459,12 +453,6 @@ Right: "`viewerFinishedPickedEpisode` comes from the API's `fully_watched`, whic
 If a function calls a second function, which calls a third, explain all three. For each, say what kind of code it is and what it does.
 
 Do not replace those explanations with `A -> B -> C`. Show the relevant calls after the prose when code helps.
-
-## Grammatical sentences
-
-Every sentence needs a subject and a finite verb. "Still in the editor" is a fragment; "The user is still in the editor" is a sentence.
-
-Do not use pithy fragments or compact labels that force the reader to reconstruct the meaning.
 
 ## Domain sentence first, code mapping second
 
@@ -498,26 +486,6 @@ Wrong: judging "philodendrons probably evolved the ability to warm their flowers
 Right: "The claim, in plain words, is: the heat is for the beetle. Rereading that before the choice: does this choice say anything about the heat doing the attracting? It does not."
 
 The test of a short form is that rereading it makes the next judgment easier. If it does not, the short form is still carrying an abstract word.
-
-## Explanation constructs
-
-Attach an explanation to the word or action it explains:
-
-- A relative clause begins with "which", "that", "who", or "where" and describes the preceding noun: "A Promise is an object, which represents a value that may become available later."
-- An appositive renames a noun: "`map`, a method on arrays, returns a new array."
-- A participial phrase describes a noun: "The loop, having used its last attempt, returns the failure."
-- A sentential relative clause explains a whole statement: "The loop stops early, which means that later elements are not visited."
-- A cause clause uses "because" or "since" to explain why an action occurs.
-- A condition clause uses "if", "unless", or "only if" to explain when an action occurs.
-- A time clause uses "when", "before", "after", "until", or "while" to explain ordering.
-- A contrast clause uses "although", "whereas", or "while" to distinguish behaviors.
-- A purpose phrase uses "so that" or "in order to" to explain the goal.
-- A means phrase uses "by" plus a verb ending in "-ing" to explain the mechanism.
-- A result clause uses "so" or "which means" to explain the consequence.
-
-Choose prepositions precisely. "By" states the means; "for" states the purpose; "with" and "without" state what accompanies an action; "from" and "into" describe a transformation; "per" states a unit; "on" identifies a trigger.
-
-Use "that is" or "in other words" to restate an explanation. Use "for example" or "such as" to introduce a concrete instance.
 
 ## Say what the request does
 
@@ -619,6 +587,7 @@ Any sentence, heading, diagram note, or list item that refers to something by a 
 The reader will not scroll up to resolve a label, so a label in a sentence carries no information. "The constructor runs at ⑨" tells the reader nothing unless they find the map, find ⑨, and come back. This holds inside one reply as well as across replies, because a long reply puts the map several screens above the step that cites it.
 
 - Write the thing itself every time: the call, the object, or the fact. "The constructor runs at ⑨" becomes "The constructor runs when `HeartbeatPluginCreator.create` calls `new HeartbeatPlugin(events, ...)`."
+- Ordinals and position words used as names are labels too: "the first", "the second", "the third", "the outer one", "the next line". Quote the code, or name the thing by what it is.
 - Do not number the arrows or boxes in a diagram, because a number in a diagram invites a pointer to it later. Label an arrow with its real call instead.
 - Inline markers such as (1) and (a) are fine for order inside a paragraph, such as the steps of a sequence or a recap, as long as no later sentence refers to an item by its marker. They are never fine directly under a code block or a diagram; see `Inline markers, not bullets` and `Walk through every code block`.
 - A heading such as "Step 2: `playerOrchestrator` calls `emit` on `eventBus`" may keep its number, because the words after the number say what the step is. Later text still names the content, never "see step 2".
