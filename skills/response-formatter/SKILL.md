@@ -60,6 +60,8 @@ Do not characterize code before its lines appear in the reply. A label such as "
 
 Every explanation answers why, not only what. Reading a condition aloud, such as "true when A, B, and C are all true", restates code the reader can already see. For every condition, guard, reset, default value, and wait, say what problem it prevents: the concrete wrong outcome that would happen without it, in domain words, with one example. The full rule is under `Say why each condition exists`.
 
+Never walk a function body before saying what kind of definition it is, who calls it, when, and what it returns to that caller. For every call inside the body, either walk the callee or give one sentence that says what it returns and that its inside is not needed here. The full rules are under `Introduce a function by its kind and its caller` and `Decide whether to descend into each call`.
+
 Count before you explain. The first time a flow comes up, say how many separate operations it has (network requests, thunks, events, screens), name each one in order, and say what each returns and why the next one is needed. A reader who is not told the count assumes there is one, and every later fact lands in that wrong picture. The full rule is under `Count the separate operations first`.
 
 ## Principles
@@ -103,7 +105,9 @@ This list is an index, one line per rule. Read the named section before applying
 - **Call a value by its code name**: `Call a value by its code name`.
 - **Give every repeated value its owner**: `Give every repeated value its owner`.
 - **Name new things for what they describe**: `Name new things for what they describe`.
-- **Unpack the call chain**: `Unpack the call chain`.
+- **Unpack the call chain**, in caller order, never as numbered blocks: `Unpack the call chain`.
+- **Introduce a function by its kind and its caller** before walking its body: `Introduce a function by its kind and its caller`.
+- **Decide whether to descend into each call**, and say the decision: `Decide whether to descend into each call`.
 
 **Prose**
 
@@ -454,6 +458,33 @@ Right: "`viewerFinishedPickedEpisode` comes from the API's `fully_watched`, whic
 If a function calls a second function, which calls a third, explain all three. For each, say what kind of code it is and what it does.
 
 Do not replace those explanations with `A -> B -> C`. Show the relevant calls after the prose when code helps.
+
+Organize a multi-function walk by the chain itself, in caller order, and give the whole chain once before the first body: "at boot, `initializeFeatureFlagsProxy` calls `proxyManager.initialize`, which calls `ProxyClient.initialize`, which calls `prewarm`, which calls `fetchFeatureFlags`, which calls `fetchLrxConfigFromS3`". Each later step's heading names the call that leads into it, such as "`prewarm` calls `this.fetchFeatureFlags()`". Do not organize the walk as "Block 1", "Block 2", "Block 3" chunks that jump between classes; a reader who meets `CacheManager` for the first time in "Block 3", with no sentence saying that `prewarm` in "Block 1" is what calls `cacheManager.set`, experiences the pieces as scattered and stops. Every class, object, or module that a step walks must already appear in the glossary from `Keep one map`, with the real call that reaches it. (Added 2026-10-26 after a walk of the feature-flag proxy introduced `ProxyClient`, `CacheManager`, and `LrxHttpClient` in separate numbered blocks and the reader could not say how they connected.)
+
+## Introduce a function by its kind and its caller
+
+Any function, method, or hook whose body you are about to walk.
+
+A body walked on its own answers "what do these lines do" but not "what is this thing and when does it run". The reader of a walk that opened with `private async prewarm(): Promise<boolean> {` asked afterwards: is that a method of some object, an exported module function that others call, and who calls it? Those questions come first, because every line in the body is read differently once the reader knows the body runs once at boot inside one object versus on every render.
+
+Before the body, write one or two sentences that give four facts: (1) what kind of definition it is, such as a private method of the class `ProxyClient`, an exported function of the module `LocalDefaults`, a React hook, or an arrow function stored in a `const`; (2) who calls it and at what moment, such as "`ProxyClient.initialize` calls it once, at app boot, after the config URL is resolved"; (3) what it returns to that caller, with one concrete value; and (4) for a method, which object `this` is at run time, as `Resolve this and every field it reaches` says. When the caller has not been introduced yet, introduce the caller first; `Caller before callee` already requires the order.
+
+Wrong: a code block that starts `private async prewarm(): Promise<boolean> {`, followed directly by "`const flags = await this.fetchFeatureFlags()` performs the GET".
+
+Right: "`prewarm` is a private method of the class `ProxyClient`. `ProxyClient.initialize`, which the boot code calls once through `proxyManager.initialize(config)`, calls `await this.prewarm()` right after it resolves the config URL, so `prewarm` runs once per app launch. It returns `true` when the download succeeded and `false` when the app fell back to local defaults; `initialize` only logs that result. Inside it, `this` is the one `ProxyClient` object that `ProxyManager` created." Then the block, then the line-by-line walk.
+
+## Decide whether to descend into each call
+
+Any call inside a block you are walking, such as `fetchLrxConfigFromS3(...)`, `getLocalFeatureFlags()`, or `this.cacheManager.set(flags)`.
+
+Not every call deserves its own walk, and a walk that opens every callee drowns the reader; but a call skipped silently leaves the reader unsure whether something important hides inside it. Open the callee's source before deciding, then make the decision in the reply so the reader knows which it was.
+
+- Descend, with its own introduction and walk, when the callee's branches produce the behavior being explained, when the reader asked about it, or when its return value's shape is not obvious from the call site. The `catch` branch of `fetchFeatureFlags` that handles a 304 is such a callee when the question is why flags vanished.
+- Otherwise skip it with one assurance sentence that names what goes in, what comes out with a concrete value, and that the inside is not needed here: "`fetchLrxConfigFromS3(this.lrxHttpClient, this.lrxConfig.url)` sends the GET and returns `{ fullConfig, flags }`, the parsed file and its `featureFlags` section as an array; it is plain transport with no branches that matter here, so we are not going into it."
+- Never skip a call by naming it and moving on. The assurance sentence is the minimum, and "performs the GET" without the return value is not an assurance.
+- When you later need a skipped callee's internals, descend then, and say that you are now opening what the earlier reply skipped.
+
+This rule tells an assistant to read the callee's file and judge, rather than either descending into everything or hand-waving; both failures were reported by the same reader on the same day.
 
 ## Domain sentence first, code mapping second
 
