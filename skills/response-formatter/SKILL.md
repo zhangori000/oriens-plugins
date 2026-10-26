@@ -111,6 +111,10 @@ This list is an index, one line per rule. Read the named section before applying
 - **Teach a foreign concept as its own step** before the line that uses it, and **substitute every constant** with its value: `Teach a foreign concept as its own step`.
 - **Restart at the lost sentence and name what it skipped**: `Restart at the lost sentence and name what it skipped`.
 - **Plant the fact a later step depends on**: `Plant the fact a later step depends on`.
+- **Walk before you conclude**: no conclusion in a recap, intention, or aside before the steps that earn it: `Walk before you conclude`.
+- **Show the data structures side by side** when a value lives in more than one place: `Show the data structures side by side`.
+- **Walk a chain of delegations hop by hop**, in one block, never as a prose list of names: `Walk a chain of delegations hop by hop`.
+- **Trim the block to the lines that decide the question**: `Trim the block to the lines that decide the question`.
 
 **Prose**
 
@@ -518,7 +522,86 @@ The reader says a reply lost them, and names or quotes where.
 
 Any step that establishes a fact which a later step's branch or bug turns on, such as "a 304 carries no body" when the bug is a client that threw its copy away and then got a 304.
 
-A fact stated in passing is forgotten by the time it matters, and the later step then has to re-derive it, which breaks that step's pace. When the step that establishes the fact is being written, say in one sentence that the fact is the one to hold onto, and say in domain words what later turns on it: "Keep that sentence; the bug is exactly a client that threw its copy away and then asked this way." Then, in the later step, repeat the fact in the same words instead of pointing back at the earlier step, as `No pointers to labels` requires.
+A fact stated in passing is forgotten by the time it matters, and the later step then has to re-derive it, which breaks that step's pace. When the step that establishes the fact is being written, say in one sentence that the fact is the one to hold onto: "Hold onto that: a 304 carries no body, so a client that no longer has its copy gets nothing back." Do not say what conclusion it later supports; `Walk before you conclude` forbids that. In the later step, repeat the fact in the same words instead of pointing back at the earlier step, as `No pointers to labels` requires.
+
+## Walk before you conclude
+
+Any recap, intention sentence, aside, or "one addition" that states a fact the steps have not yet walked: "the interceptor turns a 304 into a thrown error" before that line was walked, "the Katsu helpers are unaffected" before the expiry and the readers were walked, "because that decides whether this bug can hit the Series Page" before the reader has seen the bug.
+
+A reader who is being walked one step at a time reads a conclusion stated ahead of its steps as a claim they have to take on faith, and said so: "I don't like conclusions before we worked through them" and "I'd prefer a natural reading into the bug: first teach me the mechanisms so I understand behavior, and then I can naturally understand it is a bug." A conclusion ahead of its steps also makes the later walk feel like confirmation of something already decided, so the reader skims it and misses the one line that matters.
+
+- A recap contains only facts that a walked line established, stated in the same code words, and when the fact came from an earlier reply, quote the line that established it, such as "`this.cachedFullConfig = result.fullConfig` keeps the whole file". A fact the reader cannot match to a walked line reads as new, and the reader will ask "we covered this?".
+- An intention sentence says what the step will show, never what it proves. "My intention with this step is to show which of the three stores this reader reaches" is right; "...because that decides whether the bug can hit the Series Page" is wrong until the bug has been walked.
+- Do not call a thing "the bug", "the problem", "unaffected", "safe", or "what it turns on" before the steps that establish it. Walk the mechanisms in order and let the reader see the failure arrive; name it as a bug in the step where the wrong value is produced, not before.
+- When confirming a reader's summary, confirm only what they said. Add a missed fact only if it was already walked; a fact not yet walked belongs in its own later step, not in the confirmation.
+
+(Added 2026-10-26 after a reply stated the 304-to-error conversion and "unaffected" ahead of their steps, and the reader rejected the recap and the conclusion.)
+
+## Show the data structures side by side
+
+Any walkthrough in which a value is kept in more than one place: a cache, a map, a field, a store, a cookie, a file.
+
+A reader who has met two or three stores one at a time asks whether they are the same thing: "we have an etags map and also a cache, are they separate?" Prose that introduced each one on its own does not answer that, because the question is about their relation.
+
+- The first time a second store appears, and again whenever a reader asks, list every store in one block with its declaration, its owner, its key, and its real contents at one concrete moment, such as "right after the boot download":
+
+```text
+etags            Map in createLrxHttpClient      key: the config URL        value: "5fa57d08…"           expires: never
+cache            MemoryCache in Cache.ts         key: 'config:tizen'        value: { data: [flags], timestamp, ttl: 300000 }   expires: 5 min
+cachedFullConfig field of ProxyClient            no key                     value: the whole parsed JSON  expires: never
+```
+
+- Then say, in one sentence per store, which code writes it and which code reads it, with the real call.
+- After that block, every later mention of a store uses its code name, as `Call a value by its code name` requires, so the reader can find it in the block.
+
+## Walk a chain of delegations hop by hop
+
+A value reached through several functions that each do nothing but call the next: a helper that calls `getBooleanFlag`, which calls `resolveFlag`, which calls `readRemoteFlagValue`, which calls `proxyManager.getCachedConfig()`, which calls `client.getCachedConfig()`, which returns a field.
+
+Naming the hops in prose, even with an assurance that they have no interesting branches, loses the reader by the third name, and the sentence at the end ("so it reads `cachedFullConfig`") lands as a claim they did not see. The reader called such a walk "terrible" even though every sentence in it was true.
+
+- Show the hops in one code block, in caller order, each hop reduced to its signature line and the single line that calls the next hop or returns the value, with `// ...` for the rest:
+
+```ts
+export function isKatsuDefaultPlaybackTargetEnabled(): boolean {
+  return getBooleanFlag('katsuSeriesWatchTarget', false);
+}
+
+function getBooleanFlag(flagName: string, defaultValue = false): boolean {
+  const value = resolveFlag(flagName);
+  // ...
+}
+
+function resolveFlag(flagName: string) {
+  // ... the localStorage override check
+  const remote = readRemoteFlagValue(flagName);
+  // ...
+}
+
+function readRemoteFlagValue(flagName: string) {
+  const meta = proxyManager.getCachedConfig()?.featureFlags?.[flagName];
+  // ...
+}
+
+// ProxyManager
+getCachedConfig() { return this.client?.getCachedConfig() ?? null; }
+
+// ProxyClient
+getCachedConfig() { return this.cachedFullConfig; }
+```
+
+- Walk it as one chain, one sentence per hop, each sentence naming the call and the value it carries, and end on the store the chain reaches. Then the reader can say which store the chain reads, because they watched the value travel.
+
+## Trim the block to the lines that decide the question
+
+Any block shown while answering a specific question, such as "which store does this reader reach" or "why is the item missing".
+
+`Walk through every code block` requires walking every line shown, and that rule is right; the mistake is showing lines that the question does not need and then dutifully walking them. A reader called a walk of `needsRefresh`, a `mounted` guard, and `applyLocalOverrides` "way too meticulous into details that don't matter", and they were right: none of those values changes which store the reader reaches.
+
+- Before showing a block, ask of each line whether a different value on that line would change the answer to the question. If not, delete the line from the block and replace it with a `// ...` comment that says what the removed lines do, such as `// ... guards and overrides; they do not change which store is read`.
+- Keep the signature line, the line that reaches the store or makes the decision, and the `return` that carries the value out. Walk those.
+- When the reader later asks about one of the removed lines, show it then, on its own, with its own walk.
+- The test is the reader's question, not the function's importance. The same function gets a different trim for a different question.
 
 ## Domain sentence first, code mapping second
 
