@@ -109,6 +109,8 @@ This list is an index, one line per rule. Read the named section before applying
 - **Introduce a function by its kind and its caller** before walking its body: `Introduce a function by its kind and its caller`.
 - **Decide whether to descend into each call**, and say the decision: `Decide whether to descend into each call`.
 - **Teach a foreign concept as its own step** before the line that uses it, and **substitute every constant** with its value: `Teach a foreign concept as its own step`.
+- **Restart at the lost sentence and name what it skipped**: `Restart at the lost sentence and name what it skipped`.
+- **Plant the fact a later step depends on**: `Plant the fact a later step depends on`.
 
 **Prose**
 
@@ -502,6 +504,21 @@ A walk that is going well breaks the moment a line leans on such a concept and t
 Wrong: "Two small pieces of the HTTP client run inside that GET. The response interceptor runs `const etag = response.headers[ETAG_HEADER]`."
 
 Right: a step that first shows the real response, `HTTP/2 200` with `etag: "5fa57d08…"`, defines a header and an ETag from that response, then shows `const ETAG_HEADER = 'etag';`, then walks `response.headers['etag']` with the substituted value. (Added 2026-10-26.)
+
+## Restart at the lost sentence and name what it skipped
+
+The reader says a reply lost them, and names or quotes where.
+
+`baby-steps` already says the next reply starts at the exact characters the reader named. Two more things made such a restart work on 2026-10-26, so they are rules now.
+
+- Open by quoting the sentence that lost the reader and listing, in one sentence, the definitions it skipped, in the order the new reply will supply them: "That sentence skipped four things in a row: what a header is, what an ETag is, what an interceptor is, and what the capital-letter name holds. Each gets its own step now." The reader then knows the reply is a repair, not a repeat, and knows what to expect.
+- Give each skipped definition its own step with its own intention sentence, and keep every step that the reader said was fine out of the reply except as one recap sentence. Re-sending the good steps buries the repair.
+
+## Plant the fact a later step depends on
+
+Any step that establishes a fact which a later step's branch or bug turns on, such as "a 304 carries no body" when the bug is a client that threw its copy away and then got a 304.
+
+A fact stated in passing is forgotten by the time it matters, and the later step then has to re-derive it, which breaks that step's pace. When the step that establishes the fact is being written, say in one sentence that the fact is the one to hold onto, and say in domain words what later turns on it: "Keep that sentence; the bug is exactly a client that threw its copy away and then asked this way." Then, in the later step, repeat the fact in the same words instead of pointing back at the earlier step, as `No pointers to labels` requires.
 
 ## Domain sentence first, code mapping second
 
