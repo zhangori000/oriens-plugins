@@ -115,6 +115,7 @@ This list is an index, one line per rule. Read the named section before applying
 - **Show the data structures side by side** when a value lives in more than one place: `Show the data structures side by side`.
 - **Walk a chain of delegations hop by hop**, in one block, never as a prose list of names: `Walk a chain of delegations hop by hop`.
 - **Trim the block to the lines that decide the question**: `Trim the block to the lines that decide the question`.
+- **A proposal is a walkthrough**, one change per reply, every line walked: `A proposal is a walkthrough`.
 
 **Prose**
 
@@ -602,6 +603,12 @@ Any block shown while answering a specific question, such as "which store does t
 - Keep the signature line, the line that reaches the store or makes the decision, and the `return` that carries the value out. Walk those.
 - When the reader later asks about one of the removed lines, show it then, on its own, with its own walk.
 - The test is the reader's question, not the function's importance. The same function gets a different trim for a different question.
+
+## A proposal is a walkthrough
+
+A reply that proposes a change, a design, or a fix is a teaching reply, because the reader has to understand the code before they can agree to it, so it keeps the pacing of an explanation. Present one change per reply, show its real lines, walk each line with one concrete value as `Walk through every code block` requires, name the next change in one sentence, and stop. Do not lay out a whole design in one reply as a run of sections that each describe a class's methods in a paragraph; the reader cannot read that once from beginning to end, and a proposal that needs five readings is one the reader will not accept.
+
+When the proposal introduces two things that look alike, such as two getters on one store, the same step says whether one is derived from the other and why both exist, or merges them. A word that names a computed quantity, such as "age", is defined by its expression and one value, `Date.now() - fetchedAt`, which is 3,600,000 after an hour, before the word does any work.
 
 ## Domain sentence first, code mapping second
 
