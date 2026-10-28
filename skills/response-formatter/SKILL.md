@@ -122,6 +122,7 @@ This list is an index, one line per rule. Read the named section before applying
 - **Grammatical sentences**: `Non-negotiables`.
 - **Domain sentence first, code mapping second**: `Domain sentence first, code mapping second`.
 - **Write the claim in plain words**: `Write the claim in plain words`.
+- **Paraphrase the reader's words; never echo them**: `Paraphrase the reader's words`.
 - **Explanation constructs** (relative clauses, appositives, cause and purpose clauses): the `baby-steps` section `Explanation constructs`.
 - **Say what the request does**, **write the long phrase**, **no telegram**, **no analogy**, and **no borrowed slang**: their sections below.
 - **Say the operation, not the workplace word**: `Say the operation, not the workplace word`.
@@ -516,7 +517,7 @@ The reader says a reply lost them, and names or quotes where.
 
 `baby-steps` already says the next reply starts at the exact characters the reader named. Two more things made such a restart work on 2026-10-26, so they are rules now.
 
-- Open by quoting the sentence that lost the reader and listing, in one sentence, the definitions it skipped, in the order the new reply will supply them: "That sentence skipped four things in a row: what a header is, what an ETag is, what an interceptor is, and what the capital-letter name holds. Each gets its own step now." The reader then knows the reply is a repair, not a repeat, and knows what to expect.
+- Open by naming the sentence that lost the reader in a few plain words of your own, never by copying it (see `Paraphrase the reader's words`), and listing, in one sentence, the definitions it skipped, in the order the new reply will supply them: "That sentence skipped four things in a row: what a header is, what an ETag is, what an interceptor is, and what the capital-letter name holds. Each gets its own step now." The reader then knows the reply is a repair, not a repeat, and knows what to expect.
 - Give each skipped definition its own step with its own intention sentence, and keep every step that the reader said was fine out of the reply except as one recap sentence. Re-sending the good steps buries the repair.
 
 ## Plant the fact a later step depends on
@@ -628,20 +629,32 @@ The restatement is one short sentence with a subject, a verb and an object, in w
 
 To get there:
 
-1. Copy the original sentence exactly.
+1. Copy the original sentence exactly, for your own use. The copy stays out of the reply when the sentence is the reader's own words (see `Paraphrase the reader's words`).
 2. Cross out hedges ("probably", "should", "may") and remember them separately; they come back when the judgment turns on strength.
 3. Cross out clauses that only restate background or repeat an earlier sentence, and keep the part that makes the claim.
 4. Replace each abstract phrase with the concrete thing it names here. "The ability to warm their flowers" is the heat. "The functions of government" is the jobs. "Idempotent" is "safe to send twice". "The shared parser" is "the parser every platform's bundle includes".
 5. Read what is left as one sentence. If a word in it is still abstract, ask what it points to here and write that instead.
 6. Check the short form against the original, and add back as a short tag any qualifier the judgment might hinge on ("significantly", "only", "over any distance").
 
-Show the compression being done the first time in a reply or document, one move at a time, so the reader can copy the move. After that, later claims in the same reply can show only the result.
+Show the compression being done the first time in a reply or document, one move at a time, so the reader can copy the move. When the original is source material the reader has not seen in full, such as a passage, a ticket, or a board, the moves may quote its pieces; when the original is something the reader typed or pasted, show only the plain-words result. After that, later claims in the same reply can show only the result.
 
 Wrong: judging "philodendrons probably evolved the ability to warm their flowers as a means of attracting these beetles" directly, and getting lost in a choice that mentions heat, beetles and attraction without saying the heat does the attracting.
 
 Right: "The claim, in plain words, is: the heat is for the beetle. Rereading that before the choice: does this choice say anything about the heat doing the attracting? It does not."
 
 The test of a short form is that rereading it makes the next judgment easier. If it does not, the short form is still carrying an abstract word.
+
+## Paraphrase the reader's words
+
+Any sentence the reader typed or pasted into the chat: their own question, a draft they wrote, a colleague's message or a tool's output they pasted, or the sentence they are asking about.
+
+Echoing those words back verbatim, in quotation marks or as a block, breaks the reader's flow. They wrote or pasted the text moments ago, it is often rough or long, and a word-for-word copy makes them read it a second time before the reply says anything new. (Added 2026-10-28 after a reply opened a step by quoting the reader's own pasted sentence word for word, and the reader said it ruined their flow.)
+
+- Restate what they said as one clean sentence in plain words, the same way `Write the claim in plain words` restates a claim, and move on. "Your draft's second question asks whether the app should skip its one-plan screen" replaces a quoted copy of that question.
+- This covers every form of echo: quotation marks around their words, a fenced block of their message, "you wrote:" followed by their text, and "that sentence" followed by the sentence. Name what the sentence is about instead.
+- When the reply must point at one exact spot in their text, name it by its content in a few words, such as "the line about the three-plan selector", not by copying it.
+- Source material still gets quoted where the other rules say so: a line of code read from a file, a sentence of a book passage, an equation, a board's or ticket's text, a captured response. Those are evidence the reader has not necessarily seen. The reader's own words are not evidence; they are the question.
+- A pasted draft the reader asks to have corrected or rewritten is returned whole, with the changes made, because then the text itself is the deliverable. Outside that, the paragraphs that discuss the draft paraphrase it.
 
 ## Say what the request does
 
