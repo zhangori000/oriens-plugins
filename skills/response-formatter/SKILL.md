@@ -77,7 +77,7 @@ This list is an index, one line per rule. Read the named section before applying
 - **Dependency order**: `Dependency order`.
 - **Start at the top**: `Start at the top`.
 - **Count the operations first**: `Count the separate operations first`.
-- **Keep one map**: `Keep one map`.
+- **Keep one map**, and re-open it per section: `Keep one map`.
 - **Diagrams only on request**: `Diagrams only on request`.
 - **Completeness**: `Completeness`.
 - **Show a real payload**: `Show a real payload`.
@@ -108,6 +108,8 @@ This list is an index, one line per rule. Read the named section before applying
 - **Unpack the call chain**, in caller order, never as numbered blocks: `Unpack the call chain`.
 - **Introduce a function by its kind and its caller** before walking its body: `Introduce a function by its kind and its caller`.
 - **Decide whether to descend into each call**, and say the decision: `Decide whether to descend into each call`.
+- **A name is not an explanation**: a named function, hook, or earlier step gets its inputs, its output with a value, and its screen in the same paragraph: `A name is not an explanation`.
+- **Show the literal value, not a verb for it**: `Show the literal value, not a verb for it`.
 - **Teach a foreign concept as its own step** before the line that uses it, and **substitute every constant** with its value: `Teach a foreign concept as its own step`.
 - **Restart at the lost sentence and name what it skipped**: `Restart at the lost sentence and name what it skipped`.
 - **Plant the fact a later step depends on**: `Plant the fact a later step depends on`.
@@ -130,7 +132,7 @@ This list is an index, one line per rule. Read the named section before applying
 - **No backticks inside inline code**: `No backticks inside inline code`.
 - **No bare repository adjectives**: `No bare repository adjectives`.
 - **No pointers to labels**, including ordinals such as "the second" used as a name: `No pointers to labels`.
-- **Name what "same" and "different" refer to**: `Name what "same" and "different" refer to`.
+- **Name what "same" and "different" refer to**, and what "nothing", "everything", and "the rest" stand for: `Name what "same" and "different" refer to`.
 
 **Screens**
 
@@ -198,6 +200,7 @@ Facts given one per paragraph do not add up to a picture. By the third reply the
 - In each later reply of the same walkthrough, give the glossary again with the new part added and marked `(new)`, so that the reader sees where it attaches, and redraw the map the same way when one was asked for. Do not point back at an earlier reply's glossary or map.
 - Each step after the glossary explains one part or one connection in it, and says which one by repeating the part's name or the call, never by a number. Do not number the arrows or boxes of a map; see `No pointers to labels`.
 - When no diagram was asked for, end the reply with one sentence that says an ASCII diagram of these parts is available on request.
+- A section of a reply that turns to a different mechanism re-opens with that mechanism's count of operations and its own glossary; it does not inherit the previous section's map. On 2026-10-28 the third section of a reply moved from the login screens to the launch-argument pipeline and named the feed service, the system launcher, the PS5 hook, its translator, the shared parser, the router, and analytics in passing, and the reader reported that the whole section made no sense and was missing information. The count ("a launch link is written by one service, delivered by the system, and read by three functions in a row") and the glossary come before the first code line of that section.
 
 ## Diagrams only on request
 
@@ -495,6 +498,27 @@ Not every call deserves its own walk, and a walk that opens every callee drowns 
 
 This rule tells an assistant to read the callee's file and judge, rather than either descending into everything or hand-waving; both failures were reported by the same reader on the same day.
 
+## A name is not an explanation
+
+Any sentence that explains a value or a step by naming a function, hook, helper, or earlier step: "`checkoutRedirectTo` is read by `useRedirectTo('checkoutRedirectTo')`", "after the PSN account creation, the helper replaces the route with `/checkout`", "the parser carries the UTM fields onto the destination URL".
+
+The reader holds no function body in memory, not even one shown in an earlier reply, and said so on 2026-10-28 after reading "`checkoutRedirectTo` is read by `useRedirectTo('checkoutRedirectTo')`": they cannot run a hook from its name the way a machine would. A name tells the reader where to look, not what happens. `Decide whether to descend into each call` already forbids skipping a call by naming it; this rule covers the same failure when a name is used as the explanation of a value, a step, or a noun phrase.
+
+- Every function, hook, or helper named in an explaining sentence gets, in the same paragraph, either its trimmed body or an assurance sentence with three parts: what it reads from (a query parameter, a store field, a response body), what it returns with one concrete value, and whether it draws anything. "`useRedirectTo('checkoutRedirectTo')` is a hook that reads the query parameter named `checkoutRedirectTo` from the current URL, base64-decodes it, and returns the path, so on `/plan-chooser?checkoutRedirectTo=L2RldGFpbC9HNFBIMFdYVko%3D` it returns `/detail/G4PH0WXVJ`; it draws nothing."
+- A noun phrase that stands for an earlier step, such as "the PSN account creation" or "the detour", is re-expanded where it is used: which function ran, who started it, and what the viewer saw while it ran. "After `executeThirdPartyAuth` has created the account from the PlayStation code, which the viewer experiences as a loading spinner and then a toast, it replaces the route with `/checkout`."
+- A collective noun for code, such as "the parser", "the router", or "the translator", is introduced once per reply with its file, its kind, and its one-line job before it is used as a subject: "the shared parser, `getNavTargetFromDeeplink` in `deeplinkParser.ts`, turns a query string into a route path".
+- This holds across replies and across sections of one reply. A function walked yesterday, or in the previous section, is a bare name here.
+
+## Show the literal value, not a verb for it
+
+Any line that builds a string, URL, query, object, or key, such as `addRedirectTo(url, `/detail/${contentId}`, 'checkoutRedirectTo')`, `JSON.stringify(saved)`, or `build(['action=detail', ...])`.
+
+A verb such as "attached under", "carried onto", "stored under", "wired through", or "threaded into" describes the operation as the writer pictures it and leaves the reader to imagine the result. The reader called "the title's detail page is attached under `checkoutRedirectTo`" unreadable on 2026-10-28. Write the result instead.
+
+- Give one concrete input and the exact output the line produces, on its own code line: "With `contentId=G4PH0WXVJ`, the line turns `/plan-chooser?utm_source=ps5_anime_hub` into `/plan-chooser?utm_source=ps5_anime_hub&checkoutRedirectTo=L2RldGFpbC9HNFBIMFdYVko%3D`, where the last value is `/detail/G4PH0WXVJ` base64-encoded."
+- Then say who reads that value later, by name, as `Caller before callee` and `Give every repeated value its owner` require.
+- The prose may still name the operation, but only after the literal result is on the page.
+
 ## Teach a foreign concept as its own step
 
 Any walked line that depends on a concept from outside the code being walked: an HTTP header, an ETag, a status code such as 304, an axios interceptor, a Redux thunk, a cookie, a cron expression.
@@ -764,7 +788,7 @@ The reader will not scroll up to resolve a label, so a label in a sentence carri
 
 ## Name what "same" and "different" refer to
 
-Any sentence that uses a comparative word: "same", "different", "other", "another", "each", "both", "the former", "the latter".
+Any sentence that uses a comparative word: "same", "different", "other", "another", "each", "both", "the former", "the latter". The same rule covers a quantity word that stands for an unnamed thing: "nothing", "everything", "the rest", "whole", "untouched", "intact".
 
 A comparative word has no meaning on its own. "The same link" means nothing until the reader knows which link, and "different labels" means nothing until the reader knows how many there are and what each one says. When you write one of these words, do three things in the same paragraph. Name the one thing that stays fixed. Count and name the things that vary. Then show them side by side, as a code block or as one sentence with inline markers, so the reader can see the fixed part repeated and the varying part change.
 
@@ -784,6 +808,8 @@ The server ignores the query string and serves the same page to all three. The a
 
 Now "same" points at the path, "three" replaces "different", and the reader can see the variation instead of being told about it.
 
+The quantity words fail the same way. "The PlayStation path itself loses nothing" drew "????" from the reader on 2026-10-28, because "nothing" stood for a value the sentence never named. Right: "The detour through `/third-party-auth` does not clear `CheckoutController.redirectTo`, which still holds `/detail/G4PH0WXVJ` when the route comes back to `/checkout`."
+
 ## Name the real input
 
 For a deep link or outside event, name the launch arguments or event fields that the code actually reads. Do not invent a delivery channel or application.
@@ -791,6 +817,8 @@ For a deep link or outside event, name the launch arguments or event fields that
 ## Say if the viewer sees it
 
 When a screen is skipped, explicitly say that the user does not see it. When it appears, say so, next to the diagram if the reader asked for one.
+
+Every step of a flow says what is on the screen at that moment, including "nothing new: the spinner from the previous step is still up" and "Sony's purchase sheet, drawn by the system over our app". A step with no screen statement reads as a screen the reader has to imagine. On 2026-10-28 a step said "the helper replaces the route with `/checkout`" and the reader had to ask whether the account creation before it happened out of sight, and whether checkout has a visible screen; both answers belonged in the step.
 
 ## Draw the surface
 
