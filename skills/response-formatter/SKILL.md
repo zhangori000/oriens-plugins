@@ -8,6 +8,20 @@ user-invocable: true
 
 Use this skill when formatting responses or writing markdown.
 
+## Plain English first
+
+This section wins over every rule below it. On 2026-10-29 the reader said the replies had become "extremely hard to read", that this skill had been their bread and butter, and that it now seemed corrupted. The cause was not any one rule. It was a writer satisfying many mechanical rules at once, an intention sentence per step, a recap per step, a glossary per reply, parenthesized markers in place of paragraphs, and "you said X, right" confirmations, instead of writing to be understood.
+
+- Every sentence is a normal English sentence that an essay reader would accept. "Right." and "Right on the session." are fragments; "That part is right." is a sentence.
+- No scaffolding that carries no fact. One opening sentence that says what the reply explains is enough. Do not open steps with intention sentences or with "So far, we have covered" recaps. When a later step needs an earlier fact, restate that fact in one sentence where it is used.
+- Do not recite the reader's statements back before answering them. Answer each point directly, and say at the end, in one sentence, which parts were right and which were corrected.
+- One new noun per sentence. The sentence after a new noun says what it physically is, who makes it, and why the other party needs it. Why the thing exists comes before what travels. If the reader asks why a value is sent at all, or why the other side cannot send nothing, the why was missing.
+- A chain of "which" clauses inside one sentence is a long sentence. Split it into sentences, one level of definition per sentence.
+- Use the plain description before the project's name for it: "a random string Sony makes and recognizes later" first, "`auth_session_token`" second.
+- Never cite a step number from a diagram or document the reader cannot see. Name the arrow by its sender, its receiver, and what it carries.
+- Any fenced block is walked line by line directly under it, or it is cut.
+- Short paragraphs beat long paragraphs of markers. When a list has three or more items that are each more than one clause, give each item its own short paragraph.
+
 ## Baby-steps always applies
 
 This skill never runs alone. When this skill is active, load and follow the `baby-steps` skill in the same turn, even when the user named only this one. `baby-steps` sets the pace and the order (one parameter, expression, or helper per step; a recap before each step; the real source before any translation; a helper before its caller), and this skill sets the sentence-level rules. When the two disagree about order, `baby-steps` wins. The user should never have to ask for both by name.
@@ -18,9 +32,9 @@ When a reply explains nothing, such as a report of edits made to a document, a c
 
 Loading `baby-steps` takes a second skill call, because one skill cannot import another. If that call does not happen, or if the text of `baby-steps` is no longer in context for a later reply, these five rules from it still apply, because they are copied here:
 
-1. Open a teaching reply with one sentence that starts "My intention with this response is to", and open each step with one that starts "My intention with this step is to".
-2. From the second step on, put a "So far, we have covered" recap of facts, not step titles, before the step's intention sentence. A reply that continues a walkthrough opens with the same recap, and so does a side question asked in the middle of one.
-3. Define every unfamiliar term with chained relative clauses ("X is a Y, which is a Z, which does W") until the last clause uses only words the reader already knows. One clause is not enough when that clause contains another unfamiliar term.
+1. Open a teaching reply with one sentence that says what the reader will understand by the end. Do not open each step with its own intention sentence.
+2. Do not open steps with "So far, we have covered" recaps. When a step depends on a fact from an earlier reply, restate that fact in one sentence at the point where it is used.
+3. Define every unfamiliar term before using it, one level per sentence: "X is a Y. A Y is a Z that does W." Keep going until the last sentence uses only words the reader already knows.
 4. Explain one small thing per step, such as one parameter, expression, sentence, symbol, unit, or term, and follow one concrete value through it.
 5. Cover only a few steps per reply, explain each one fully, name the next step in one sentence, and stop.
 
@@ -52,7 +66,7 @@ Translate the code rules this way:
 
 ## Non-negotiables
 
-Write complete grammatical sentences with subjects and finite verbs. Concision means removing unnecessary clauses, not writing fragments that the reader must decode. "Still in the editor" is a fragment; "The user is still in the editor" is a sentence.
+Write complete grammatical sentences with subjects and finite verbs. Concision means removing unnecessary clauses, not writing fragments that the reader must decode. "Still in the editor" is a fragment; "The user is still in the editor" is a sentence. A one-word confirmation such as "Right." is a fragment too.
 
 The principles below are an index. Read the full named principle before applying it; do not rely only on its one-line description.
 
@@ -76,15 +90,16 @@ This list is an index, one line per rule. Read the named section before applying
 
 **Order**
 
+- **Plain English first** wins over everything below: `Plain English first`.
 - **The rules persist** for the whole conversation: `Baby-steps always applies`.
 - **Not about code**: the reading counterparts for passages, science, and math: `Explanations that are not about code`.
-- **Open with the intention**, put **a recap before it** from the second step on, and **tell the recap as a story**: `Open with the intention`.
+- **Open with the intention**, one sentence per reply, no recap scaffolding: `Open with the intention`.
 - **Teach the transferable concept** by its standard name and one source: the `baby-steps` section `Teach the transferable concept`.
 - **Dependency order**: `Dependency order`.
 - **Start at the top**: `Start at the top`.
 - **Count the operations first**: `Count the separate operations first`.
 - **Tell the story as one chain of hand-offs**: each paragraph one hop, the next paragraph opening with its receiver: `Tell the story as one chain of hand-offs`.
-- **Keep one map**, and re-open it per section: `Keep one map`.
+- **Keep one map**, given once, not repeated per reply: `Keep one map`.
 - **Diagrams only on request**: `Diagrams only on request`.
 - **Completeness**: `Completeness`.
 - **Show a real payload**: `Show a real payload`.
@@ -169,11 +184,11 @@ Wrong: "My intention with this step is to explain the token endpoint."
 
 Right: "My intention with this step is to define the token endpoint — the one URL on the authorization server where tokens are issued — and to show the single HTTPS request that 'sending the credential' physically is, so that the exchange stops being abstract."
 
-Under every markdown section heading, begin with a sentence that starts "My intention with this section is to".
+One intention sentence per reply is enough. Do not put one under every heading or at the top of every step; a step's first sentence should already say what the step shows.
 
-By the fifth step or section, the reader has forgotten the first four. The intention sentence looks forward, so from the second step or section on, put a recap before it. The recap starts "So far, we have covered" and names the facts the earlier steps established, such as the construct, the value, and the concept. It does not name the step titles. When three or more steps came before, write the recap as one paragraph with inline markers, (1), (2), (3), one full sentence per earlier step. A reply that continues an earlier walkthrough starts with the same recap. The `baby-steps` skill has the full rule with wrong and right examples.
+Do not open steps or replies with "So far, we have covered" recaps. When a step depends on a fact from an earlier step or reply, restate that fact in one sentence where it is used, in the same words. A reader who has to be reminded of five things at once has been given too much; cut the reply instead.
 
-A recap is a story, not an inventory. Write it in cause-and-effect order with domain words, such as "the QR login request returned, so the sign-in screen asked the server for the full account; when the account arrived, the screen moved on", and add identifiers only after the sentence already makes sense without them. A list of code facts, such as "the hook fetches while `isLoginStatusSuccessful` is `true`; it navigates once `isLoginAccountUpdateSucceeded` is `true`", hands the reader names to remember instead of a picture to hold.
+When a recap is unavoidable, it is a story, not an inventory. Write it in cause-and-effect order with domain words, such as "the QR login request returned, so the sign-in screen asked the server for the full account; when the account arrived, the screen moved on", and add identifiers only after the sentence already makes sense without them. A list of code facts, such as "the hook fetches while `isLoginStatusSuccessful` is `true`; it navigates once `isLoginAccountUpdateSucceeded` is `true`", hands the reader names to remember instead of a picture to hold.
 
 ## Dependency order
 
@@ -235,9 +250,9 @@ Any walkthrough that names more than about four parts, such as packages, classes
 
 Facts given one per paragraph do not add up to a picture. By the third reply the reader holds a definition of each part and still cannot say how the parts connect, which they will describe as "scattered". Give the reader one place to look. By default that place is a glossary in prose, because a diagram takes a large share of the reply; the diagram is drawn only when the reader asks for one, as `Diagrams only on request` says.
 
-- Right after the intention sentence and the recap, give the glossary: one plain paragraph per part named so far, in the order a reader would meet them, with no bullets and no markers. Each paragraph starts with the part's name and says what kind of thing it is (an npm package, a class, an interface, an object built at run time), which repository its code is in, what it does, and the real call that connects it to the next part, such as `new HeartbeatPluginCreator(...)` or `creator.create(events, callbacks)`. Never describe a connection with a verb such as "hands off to" or "talks to".
+- Give the glossary once, the first time a reply names more than four parts: one plain paragraph per part, in the order a reader would meet them, with no bullets and no markers. Each paragraph starts with the part's name and says what kind of thing it is (an npm package, a class, an interface, an object built at run time), which repository its code is in, what it does, and the real call that connects it to the next part, such as `new HeartbeatPluginCreator(...)` or `creator.create(events, callbacks)`. Never describe a connection with a verb such as "hands off to" or "talks to".
 - When the reader has asked for a diagram, draw one ASCII diagram above the glossary that puts every part in a single picture. Each box gives the part's name, its kind, and its repository. Label each arrow with the real call that connects two boxes, never with a verb.
-- In each later reply of the same walkthrough, give the glossary again with the new part added and marked `(new)`, so that the reader sees where it attaches, and redraw the map the same way when one was asked for. Do not point back at an earlier reply's glossary or map.
+- A later reply of the same walkthrough does not repeat the glossary. It introduces a new part in one sentence where that part first appears, saying what it is and what it does, and redraws the map only when the reader asked for one.
 - Each step after the glossary explains one part or one connection in it, and says which one by repeating the part's name or the call, never by a number. Do not number the arrows or boxes of a map; see `No pointers to labels`.
 - When no diagram was asked for, end the reply with one sentence that says an ASCII diagram of these parts is available on request.
 - A section of a reply that turns to a different mechanism re-opens with that mechanism's count of operations and its own glossary; it does not inherit the previous section's map. On 2026-10-28 the third section of a reply moved from the login screens to the launch-argument pipeline and named the feed service, the system launcher, the PS5 hook, its translator, the shared parser, the router, and analytics in passing, and the reader reported that the whole section made no sense and was missing information. The count ("a launch link is written by one service, delivered by the system, and read by three functions in a row") and the glossary come before the first code line of that section.
@@ -394,6 +409,8 @@ Explain a branch in the paragraph above the function. Keep the function body foc
 Use precise computer science terminology, but define unfamiliar terms before using them. Libraries, infrastructure names, interfaces, callbacks, headers, query strings, and path parameters all count.
 
 Say what kind of thing an identifier is. Distinguish a function from an object, a method, a library, and a declaration.
+
+A definition is not complete until it says why the thing exists: who makes it, who needs it, and what would fail without it. "A session token is a random string" is half a definition. "Sony's API server makes it when it stores what Crunchyroll's server told it, and the console carries it to Sony's page so that the page can find that stored bundle; without it the page would not know which sign-in the viewer belongs to" is the whole one. When the reader asks why a value is sent at all, or why the other side cannot send nothing, the why was missing. (Added 2026-10-29.)
 
 If a sentence lists several concepts, give each concept its own definition and a small example before moving to the next. An explanation must not introduce a new layer of unexplained jargon.
 
@@ -908,6 +925,7 @@ A bullet invites a fragment. Once a line starts with a dot, the writer stops wri
 - Mark items inside a sentence or a paragraph with parenthesized markers: (1), (2), (3) when the order matters, such as steps or a recap, and (a), (b), (c) when it does not, such as parallel options or caveats.
 - Each item is a full clause with its own subject and verb, explained as deeply as it would be in a paragraph. A fragment with a marker in front of it is still a fragment.
 - When an item needs more than one sentence, give it its own paragraph that starts with its marker, and write that paragraph in full.
+- A paragraph that packs five or six markers, each carrying a new noun, is as hard to read as a bulleted list. When the items are long, give each its own short paragraph without a marker.
 - Start the markers again at (1) or (a) in each paragraph or section. Do not nest one set of markers inside another.
 - Never refer back to an item by its marker, as in "see (2)". Write the thing itself; see `No pointers to labels`.
 - Do not use markers directly under a code block or a diagram. Walk those in plain sentences in execution order; see `Walk through every code block`.
@@ -966,7 +984,7 @@ Any paragraph that resolves something the reader asked earlier: "that answers qu
 By the time the answer arrives, the reader has forgotten the question. A pointer such as "that answers question 3" sends them scrolling, and a reader who does not scroll reads the paragraph as a fact with no purpose. The reader said: "I don't remember my question, just restate it in very readable terms and tell me what it answers."
 
 - Open the paragraph with the question itself, in plain words, as a full sentence: "You asked whether the PSN id goes into the same row as the tokens."
-- Give the answer in the next sentence, in the same words the question used: "It does, and the link request is the one that writes it."
+- Give the answer in the next sentence, as a full sentence in the same words the question used: "It does, and the link request is the one that writes it." A confirmation is a sentence too: "That part is right" or "Yes, the backend checks its own records first", never "Right." or "Right on the session." When the reader recites a flow back, do not echo each of their sentences before judging it; answer each point directly and say in one sentence at the end which parts were right and which were corrected. (Added 2026-10-29.)
 - Never write "that answers", "this is the answer to", "as you asked", "your question", or a question's number in place of the question. `No pointers to labels` already bans ordinals as names; a question number is one more label.
 - When one paragraph resolves two questions, restate each one before its answer, as two short paragraphs.
 
