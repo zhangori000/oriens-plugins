@@ -105,6 +105,7 @@ This list is an index, one line per rule. Read the named section before applying
 - **Do not coin a stand-in**: `Do not coin a stand-in`.
 - **Call a value by its code name**: `Call a value by its code name`.
 - **Give every repeated value its owner**: `Give every repeated value its owner`.
+- **Name every actor; no bare "our", "we", or "the app"**: a cast list before a flow, then the cast-list name in every sentence: `Name every actor; no bare "our", "we", or "the app"`.
 - **Name new things for what they describe**: `Name new things for what they describe`.
 - **Unpack the call chain**, in caller order, never as numbered blocks: `Unpack the call chain`.
 - **Introduce a function by its kind and its caller** before walking its body: `Introduce a function by its kind and its caller`.
@@ -309,7 +310,7 @@ A function name is a label its author chose, not a description of what happens. 
 
 Wrong: "`AutolinkAuthCode` routes `playstation` to a function named `onlyCreateNewAccounts`, and that function registers the account and returns the login code without writing any token row. The second request is the PUT from `linkAccount` in the app, and the service trades it with Sony again in `SetTokenByAuthCode`."
 
-Right: "For PlayStation the service takes a create-only path. It trades the code with Sony, reads the PSN id and the email out of the ID token, and if neither is already known it creates the account and returns a Crunchyroll login code. It stores no Sony token on this path. The link request, which the app sends after login with a second code, is the one that trades with Sony again and writes the token row. In code, the create-only path is `onlyCreateNewAccounts`, and the link request is handled by `SetTokenByAuthCode`, both in `service/auto_link.go`."
+Right: "For PlayStation, Crunchyroll's third-party-oauth service takes a create-only path. It trades the code with Sony's PSN token server, reads the PSN id and the email out of the ID token, and if neither is already known it creates the account through Crunchyroll's accounts API and returns a Crunchyroll login code. It stores no Sony token on this path. The link request, which the Tetsuo app sends after login with a second code, is the one that makes third-party-oauth trade with Sony's PSN token server again and write the token row. In code, the create-only path is `onlyCreateNewAccounts`, and the link request is handled by `SetTokenByAuthCode`, both in `service/auto_link.go`."
 
 ## Caller before callee
 
@@ -465,6 +466,24 @@ Two fields can hold the same value with different meanings. `SUCCEEDED` on the l
 Wrong: two snapshot comments that read "the QR login request has just succeeded" and "the fetch has succeeded", with `SUCCEEDED` in both and no word on whose `SUCCEEDED` each one is.
 
 Right: "When the QR login request returns, the login request's status is `SUCCEEDED`, meaning its answer has arrived and nothing has acted on it yet, while the account fetch's status still shows a result from before the login. When the account fetch returns, the account fetch's status is `SUCCEEDED`, meaning the new user's account is now in the store, and the login request's status is back at `IDLE`, meaning its follow-up is done."
+
+## Name every actor; no bare "our", "we", or "the app"
+
+Any sentence in a flow that crosses programs, machines, or companies: "our service trades the code with Sony", "the app sends the code", "we store the token".
+
+"Our", "we", "the app", "the service", and "the backend" each have several candidates once a flow has two companies and three programs. A reader asked "who is OUR? who is the app?" after a walk that used both words in every paragraph. Each bare word makes the reader pick a candidate, and a wrong pick silently breaks every later sentence, because the reader then assigns each action to the wrong machine.
+
+- Before the first step of a flow, give a cast list: one line per actor with its proper name, the company or team that owns it, the kind of program it is, and the machine it runs on. "The Tetsuo app: Crunchyroll's PS5 app, JavaScript, built by LRX Core, running on the console in the viewer's home."
+- In every later sentence, call each actor by its cast-list name. Never write "the app", "the service", "the backend", "our side", "we", "us", or "our" while more than one program or company is in the flow. Write "Crunchyroll's third-party-oauth service" and "Sony's PSN token server", not "our service" and "Sony".
+- A company name alone is not an actor. "Sony" here is at least two organizations, SIE for PlayStation and Sony DX for Sony Account, and several servers. Name the program or server: "Sony's PSN token server", "Sony DX's M-DCIM service".
+- People are actors too. When a flow has two people, such as Alex and Sam sharing one console, say which one acts; "the user" names neither.
+- Possessives follow the same rule: "the Tetsuo app's request" and "third-party-oauth's MySQL table", not "our request" and "our table".
+- A repeated full name is cheaper than a wrong guess. Do not shorten to "the app" in the third paragraph because the first paragraph named it; the reader may have started at the third paragraph.
+- Inside the walk directly under a code block, where a method reads `this`, the identifier does the naming, as `Resolve this and every field it reaches` says.
+
+Wrong: "The app sends the code. Our service trades it with Sony and writes the row."
+
+Right: "The Tetsuo app sends the code to Crunchyroll's third-party-oauth service. third-party-oauth trades the code with Sony's PSN token server, then writes the row into third-party-oauth's own MySQL table."
 
 ## Name new things for what they describe
 
