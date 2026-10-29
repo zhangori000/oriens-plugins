@@ -90,6 +90,7 @@ This list is an index, one line per rule. Read the named section before applying
 - **Show the algorithm**: `Show the algorithm`.
 - **Say why each condition exists**: `Say why each condition exists`.
 - **Name the step** before its identifier: `Name the step`.
+- **Translate a flow's function names into actions**, at most one identifier per prose sentence: `Translate a flow's function names into actions`.
 - **Caller before callee**: `Caller before callee`.
 - **Reasoning above the function**: `Reasoning above the function`.
 
@@ -292,6 +293,23 @@ Right: "The screen must not leave the sign-in page until it holds the account of
 Name a sequence step for its action before introducing a codebase identifier. "After the password succeeds, remove the saved PIN" gives the reader an action to follow.
 
 A teaching function may use a simpler name when necessary, but its ordering, branches, and operations must remain faithful to the real implementation.
+
+## Translate a flow's function names into actions
+
+Any flow that crosses several functions, services, or machines, where each step has a code name: `AutolinkAuthCode`, `onlyCreateNewAccounts`, `GetUserId`, `SetTokenByAuthCode`.
+
+A function name is a label its author chose, not a description of what happens. A sentence that carries three such labels gives the reader three things to look up and no action to picture. A reader given "`AutolinkAuthCode` routes `playstation` to `onlyCreateNewAccounts`, and the service trades it with Sony again in `SetTokenByAuthCode`" said they "completely didn't understand", and named the cause: "too many syntax stuff".
+
+- Name every step in prose by the action it performs, with its actor and its target, derived from the function's own body: "the service trades the code with Sony", "the create-only path registers the account and returns a login code", "the link request writes the token row". The action phrase must be something the function's lines visibly do, so it is a description, not a coined label; `Do not coin a stand-in` still forbids inventing a name for a predicate or a set of fields.
+- Give each identifier one mapping sentence per section, after the action has been described: "In code, the create-only path is `onlyCreateNewAccounts` in `service/auto_link.go`." After that sentence, the prose uses the action phrase, and the identifier appears only in code blocks and in the walk directly under a block, where the lines are in view.
+- A prose sentence carries at most one identifier. Two identifiers in one sentence mean the sentence is a code map, not an explanation; split it into a domain sentence and a mapping sentence as `Domain sentence first, code mapping second` requires.
+- Use the same action phrase for the same function every time. A function that is "the link request" in one paragraph and "the token writer" in the next has become two things.
+- When a flow forks, name each path by the decision that picks it and by what it does: "the PlayStation path, which only creates accounts" and "the Amazon path, which also links to an existing account by email". Never name a path only by its function.
+- This rule is for functions, requests, and paths, which are actions. `Call a value by its code name` is for values, which are things, and it still holds: `partnerProfile.UserId` stays `partnerProfile.UserId`, while the function that fills it is "the step that reads the ID token".
+
+Wrong: "`AutolinkAuthCode` routes `playstation` to a function named `onlyCreateNewAccounts`, and that function registers the account and returns the login code without writing any token row. The second request is the PUT from `linkAccount` in the app, and the service trades it with Sony again in `SetTokenByAuthCode`."
+
+Right: "For PlayStation the service takes a create-only path. It trades the code with Sony, reads the PSN id and the email out of the ID token, and if neither is already known it creates the account and returns a Crunchyroll login code. It stores no Sony token on this path. The link request, which the app sends after login with a second code, is the one that trades with Sony again and writes the token row. In code, the create-only path is `onlyCreateNewAccounts`, and the link request is handled by `SetTokenByAuthCode`, both in `service/auto_link.go`."
 
 ## Caller before callee
 
