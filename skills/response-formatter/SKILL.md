@@ -104,6 +104,8 @@ This list is an index, one line per rule. Read the named section before applying
 
 - **Define the term first**: `Define the term first`.
 - **Headings are words too**: `Headings are words too`.
+- **Rule names stay out of the reply**; never "Count first" as a heading or a sentence: `Rule names stay out of the reply`.
+- **A state phrase is a stored fact**; "signed in with X" is defined by who holds which token: `A state phrase is a stored fact`.
 - **Name code in this shape**: `Name code in this shape`.
 - **Show the enclosing scope**, and never a bare function body: `Show the enclosing scope`.
 - **Resolve `this`**: `Resolve this and every field it reaches`.
@@ -402,6 +404,30 @@ Write a heading as a plain statement of what the section shows, naming the real 
 Wrong: "Step 3: the hand-off happens in two stages, and the plugin gets five things". "Hand-off" was never defined, and "five things" names nothing.
 
 Right: "Step 3: the facade calls `new HeartbeatPluginCreator(...)`, and later player-core calls `create(...)` on that object". This works only once the facade and player-core have been defined above it.
+
+## Rule names stay out of the reply
+
+Any heading, bold lead, or sentence that repeats the name of a rule in this skill: "Count first.", "The cast.", "Hand-off 1", "Walk before you conclude".
+
+The reader has never read this skill, so a rule's name is a label with nothing behind it. "Count first" opened a paragraph and the reader asked what it meant and called the sentences under it fluff. The rule tells the writer what to do; the reply shows only the result. A count is a plain sentence: "Signing in this way takes five requests." A cast is a paragraph that names people and services. A hand-off is a paragraph that names a sender, a message, and a receiver. None of them is announced by its rule name.
+
+- Before sending, search the draft for the skill's section names and for the bold leads that mirror them, and replace each with the content it stands for or delete it.
+- A sentence that only announces what the next sentences will do ("takes five hand-offs that the Tetsuo app takes part in") is fluff when the next sentences show it anyway. Cut it.
+
+(Added 2026-10-29.)
+
+## A state phrase is a stored fact
+
+Any phrase that names a state of a person or an account: "signed in with M-DCIM", "linked", "authenticated", "has consent", "is Premium".
+
+Such a phrase sounds like something the person did, so the reader asks what the person sees and who injected what. Under every such phrase sits one stored fact: a token, a row, or a flag, held by one named party. "Signed in with M-DCIM" means that Crunchyroll's account backend holds a Sony refresh token for Alex that M-DCIM still accepts, and nothing else.
+
+- The first time a state phrase appears, give its stored fact in the same sentence: which party holds which value, and who checks it.
+- When the check is a request, show the request as a hand-off (`Tell the story as one chain of hand-offs`): who sends what to whom, what the receiver looks up, and the two possible answers.
+- When one party issues a value to another (a session token, a client id, a scope), the next sentence says what the receiver does with it and why it could not do without it. `Say what the receiver does with each field` has the form. A value issued "for later" with no stated use raises the question "why does it need that?", which the reader asked.
+- When none of this exists in code yet, say so in the sentence that introduces the state, not after the walk.
+
+(Added 2026-10-29.)
 
 ## Name code in this shape
 
