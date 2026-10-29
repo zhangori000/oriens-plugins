@@ -48,19 +48,19 @@ If the user asks what the inputs are, then who calls a function, then who reads 
 
 Summarizing the business result before executing the signature skips the requested explanation. A shorter retelling of the same conclusion does not repair a skipped step.
 
-## The core rule: define recursively, one sentence per level
+## The core rule: define recursively with relative clauses
 
-Define every term before using it, and define the terms inside that definition too, until every word is one the reader already knows. Put each level in its own sentence. A relative clause, which begins with "which", "that", "who", or "where", may carry one level; a chain of four of them inside one sentence is a sentence nobody can read, and the reader said so on 2026-10-29.
+A relative clause is a clause that begins with "which", "that", "who", or "where" and describes the noun before it. Use relative clauses to define every term, and keep chaining them until every word in the definition is one the reader already knows.
 
-Stop only when the last sentence uses plain words. Do not stop after one level when the definition itself contains an unexplained term.
+Stop only when the last clause uses plain words. Do not stop after one level when the definition itself contains an unexplained term.
 
 One level is not enough:
 
 "`map` is a higher-order function."
 
-Recursive, one level per sentence, is right:
+Recursive is right:
 
-"`map` is a method on arrays. A method is a function attached to a value. `map` takes another function as its argument, which makes it a higher-order function, meaning any function that accepts or returns another function. `map` calls that argument once per element and returns a new array that holds each result in the same order."
+"`map` is a method on arrays, which is a function attached to every array, which takes another function as its argument, which makes `map` a higher-order function, which is any function that accepts or returns another function. `map` calls that argument once per element and returns a new array, which holds each result in the same order."
 
 ## Explanation constructs
 
@@ -182,15 +182,31 @@ A snippet that uses a name it does not define forces the reader to guess. `retur
 
 ## Intention sentences
 
-- Open the reply with one sentence that says what the reader will understand by the end. It may start "My intention with this response is to", but a plain sentence that says the same thing is better.
-- Do not open each step with its own intention sentence. A step's first sentence should already say what it shows. (Changed 2026-10-29 after the reader said the per-step scaffolding made replies unreadable.)
+- Open the reply with one sentence that starts "My intention with this response is to".
+- Open each step with one sentence that starts "My intention with this step is to".
 - The intention sentence is itself an explanation, because it sets the expectation the reader will read the step against. Name the code unit or idea the step walks, say what the reader will understand once the step is done, and define in a relative clause or appositive any term the sentence must use before the step has defined it. "My intention with this step is to explain `emit`" is too pithy to set an expectation; "My intention with this step is to follow one call to `emit`, the private method that hands a timestamped event to the Mux library, so that you can see where the player's vocabulary is translated into Mux's" equips the reader.
 
 ## "So far" recaps
 
-Do not open steps or replies with a "So far, we have covered" paragraph. The reader does not want to be told what they were told; they want the next fact. When a step depends on a fact from an earlier step or reply, restate that one fact in one sentence at the point where it is used, in the same words as before, and move on. If a step would need five earlier facts restated, the reply is covering too much; cut it.
+The reader forgets the earlier steps by the time a later step arrives. An intention sentence looks forward to the current step. A "So far" recap looks back at the facts the earlier steps established, so that the reader does not have to scroll up.
 
-(Changed 2026-10-29. Until then this section required a recap paragraph before every step from the second on, and the reader said the result was unreadable.)
+- From the second step on, open each step with a recap that starts "So far, we have covered".
+- Open a reply that continues an earlier walkthrough the same way, so that the recap also covers the steps from earlier replies.
+- Recap facts, not topics. Each earlier step gets one clause or sentence that names the concrete thing it established, such as the file, the construct, the value, or the function that wrote the value.
+- When three or more steps came before, write the recap as one paragraph with inline markers, (1), (2), (3), with one grammatical sentence per earlier step, instead of one long run-on sentence or a bulleted list. `response-formatter` has the full rule under `Inline markers, not bullets`.
+- The recap does not replace "Re-introduce names; do not rely on memory." When the current step uses a name, still give that name's code reminder.
+
+Wrong: "So far, we have covered the file, the component, and the hook."
+
+That sentence lists step titles. The reader still has to scroll up to learn which file and which component.
+
+Right, for the third step: "So far, we have covered that `isUpdatingAccount` is a local `const` inside a React function component, which React calls again on every re-render, and that its value comes from the Redux store, which is the app's client-side copy of server data."
+
+Right, for the fifth step:
+
+> So far, we have covered these facts: (1) `isUpdatingAccount` is a local `const` inside a React function component, which React calls again on every re-render; (2) its value comes from a selector, which is a pure function that reads one field out of the Redux store; (3) `useAppSelector` subscribes the component to that field, which is the observer pattern, so the store notifies the component and the component re-renders; and (4) the field is a four-state request lifecycle (`IDLE`, `LOADING`, `SUCCEEDED`, `FAILED`), which is a small finite state machine, and the selector returns `true` only in `LOADING`.
+>
+> My intention with this step is to show which transition moves that state machine into `LOADING`.
 
 ## Similar names: give the tree before using either
 
