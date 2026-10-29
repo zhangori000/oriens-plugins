@@ -62,6 +62,8 @@ Every explanation answers why, not only what. Reading a condition aloud, such as
 
 Never walk a function body before saying what kind of definition it is, who calls it, when, and what it returns to that caller. For every call inside the body, either walk the callee or give one sentence that says what it returns and that its inside is not needed here. The full rules are under `Introduce a function by its kind and its caller` and `Decide whether to descend into each call`.
 
+Everyday infrastructure words are terms. Host, environment, backend, endpoint, callback, redirect, parameter, field, body, token, client id, and scope each get defined by what they physically are in this flow, with the concrete value, the first time they appear; the full rule is under `Everyday infrastructure words are terms`. Before sending, scan the draft for a bare actor word ("the backend", "the app", "the service", "the parameter", "the status") and for one of these words used without its definition; each one is a sentence that will come back as a question.
+
 Count before you explain. The first time a flow comes up, say how many separate operations it has (network requests, thunks, events, screens), name each one in order, and say what each returns and why the next one is needed. A reader who is not told the count assumes there is one, and every later fact lands in that wrong picture. The full rule is under `Count the separate operations first`.
 
 ## Principles
@@ -120,6 +122,10 @@ This list is an index, one line per rule. Read the named section before applying
 - **Walk a chain of delegations hop by hop**, in one block, never as a prose list of names: `Walk a chain of delegations hop by hop`.
 - **Trim the block to the lines that decide the question**: `Trim the block to the lines that decide the question`.
 - **A proposal is a walkthrough**, one change per reply, every line walked: `A proposal is a walkthrough`.
+- **Everyday infrastructure words are terms** (host, environment, callback, parameter, token): `Everyday infrastructure words are terms`.
+- **Say what the receiver does with each field** it is sent: `Say what the receiver does with each field`.
+- **Say the usual purpose before a reuse** of a token, error, or status: `Say the usual purpose before a reuse`.
+- **Resolve an apparent contradiction at the step that raises it**: `Resolve an apparent contradiction at the step that raises it`.
 
 **Prose**
 
@@ -674,6 +680,53 @@ A reply that proposes a change, a design, or a fix is a teaching reply, because 
 
 When the proposal introduces two things that look alike, such as two getters on one store, the same step says whether one is derived from the other and why both exist, or merges them. A word that names a computed quantity, such as "age", is defined by its expression and one value, `Date.now() - fetchedAt`, which is 3,600,000 after an hour, before the word does any work.
 
+## Everyday infrastructure words are terms
+
+Any word that names a piece of a system and that engineers use without thinking: host, domain, environment, sandbox, staging, backend, frontend, server, endpoint, callback, redirect, parameter, field, body, header, token, refresh token, access token, client id, scope.
+
+`Define the term first` lists libraries, interfaces, headers, and query strings, and the writer applied it to those while treating "host", "test environment", "callback", and "parameter" as plain English. On 2026-10-29 one reply drew a question at each of those four ("what is a host?", "what is a test environment?", "parameter to what?", "what does callback on the backend mean?"), and the reader said every paragraph had a problem. The reader knows these words exist. What they lack is what the word physically is in this flow.
+
+- The first time such a word appears in a reply, define it by what it physically is here, with the concrete value from the flow: "the host is the part of the address between `https://` and the first slash, `account.sp-int.cassia.io`, which names the server that answers the request".
+- Say which thing it belongs to: whose server, which request, which body. "The parameter" is wrong; "one field in the body of the `POST /v2/clients/auth_session` request that Crunchyroll's account backend sends to the M-DCIM Backend" is right.
+- A credential word (token, code, client id, secret) is defined by three facts: who issues it, who presents it to whom, and how long it lives.
+- An environment is defined as a complete second copy of a system, with its own servers, database, hostnames, credentials, and test accounts, run for a stated purpose, with its name and the real system's name side by side.
+- A callback or redirect is defined as an address on the receiving party's server, registered in advance, to which the sending party makes the browser go, with the values appended to it shown.
+- `Re-introduce names; do not rely on memory` holds for these words too; an earlier reply's definition does not carry.
+
+Wrong: "Its test environment is named `sp-int`. Its pages come from the host `account.sp-int.cassia.io`."
+
+Right: "Sony DX runs a second, complete copy of M-DCIM for developers, with its own servers, database, and test accounts. Such a copy is called an environment, and this one is named `sp-int`. The copy's pages are served from `account.sp-int.cassia.io`. That string is the host: the part of the address between `https://` and the first slash, which names the server that answers."
+
+## Say what the receiver does with each field
+
+Any sentence in which one actor sends another actor a value: an address, a version string, a status, an id.
+
+"The backend sends M-DCIM the URLs of Crunchyroll's terms" tells the reader that a value moved and nothing about why. On 2026-10-29 the reader asked whether Crunchyroll was really sending Sony the addresses of Crunchyroll's own documents, and for what. `Say why each condition exists` covers conditions; a field that crosses a boundary needs the same why.
+
+- For each field sent, say in the same sentence or the next what the receiver does with it and what it could not do without it: "M-DCIM's page turns `sp_tosua_url` into a QR code, because the page is Sony's and holds no copy of Crunchyroll's terms."
+- When several fields travel together, give each its own clause. Never write "plus the URLs".
+- If the receiver's use is not in the source, say so and name the diagram or document that would hold it.
+
+## Say the usual purpose before a reuse
+
+A mechanism used for a second purpose: a refresh token whose refusal signals changed terms, an error response that carries a list of required agreements, an HTTP 304 used as a cache signal.
+
+A reader who knows the usual purpose reads the reuse as a non sequitur. On 2026-10-29 a reply said a backend "checks the M-DCIM refresh token to learn whether the user must re-accept the Sony account terms", and the reader asked what a refresh token, which gets a new access token, has to do with terms.
+
+- Define the mechanism by its usual purpose first, with its concrete values: the access token that expires after five minutes, the refresh token that outlives it and is used only to get the next access token.
+- Then state the reuse as a rule the other party added, and quote the line that makes it work, such as the diagram guard "refresh_token has been expired or ToSUA/PP updated" and the response `error=invalid grant`.
+- Then say what the caller cannot tell apart because of the reuse, such as expiry versus changed terms, when the source leaves the two joined.
+
+## Resolve an apparent contradiction at the step that raises it
+
+A step that uses one thing to reach another when an earlier step or reply said the two are different, such as a PSN authorization code that opens a Sony account page after "the PSN account and the Sony account are different accounts".
+
+The reader holds the earlier fact and reads the step as a reversal. On 2026-10-29 the reader asked whether the writer now claimed the same PSN code reaches a Sony consent page. The writer knew the relation, a second code for M-DCIM's own client id, and did not say it where the step raised it.
+
+- At that step, say in one sentence that it looks like a contradiction, restating the earlier fact in the same words.
+- Then name the relation under `Name what "same" and "different" refer to`: the one thing that stays fixed (here the console function that issues codes) and the things that vary (the client id and the scope), shown side by side.
+- Then say how the receiver turns one into the other, such as "M-DCIM looks up, or creates, the Sony account that belongs to the PSN account the code proves".
+
 ## Domain sentence first, code mapping second
 
 Any sentence that describes what the program does.
@@ -739,7 +792,7 @@ Do not use metaphors or cute nicknames for technical behavior. Use precise terms
 
 ## Say the operation, not the workplace word
 
-Some words borrowed from offices and buildings describe a relationship without saying which operation creates it. Examples are "hand-off", "hands it", "wire up", "plumbing", "glue", "lives in", "sits behind", "talks to", "flows into", "holds", "carries", and "owns". A reader who does not already know the code cannot turn them back into an operation. These words break the `No analogy` rule more often than any other kind, because they sound technical.
+Some words borrowed from offices and buildings describe a relationship without saying which operation creates it. Examples are "hand-off", "hands it", "wire up", "plumbing", "glue", "lives in", "lives under", "sits behind", "sits under", "on top of", "talks to", "flows into", "holds", "carries", and "owns". A reader who does not already know the code cannot turn them back into an operation. These words break the `No analogy` rule more often than any other kind, because they sound technical.
 
 Replace each one with the operation: which function calls which function with which arguments, or which file declares what.
 
