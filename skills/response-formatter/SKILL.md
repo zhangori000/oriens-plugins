@@ -64,6 +64,8 @@ Never walk a function body before saying what kind of definition it is, who call
 
 Everyday infrastructure words are terms. Host, environment, backend, endpoint, callback, redirect, parameter, field, body, token, client id, and scope each get defined by what they physically are in this flow, with the concrete value, the first time they appear; the full rule is under `Everyday infrastructure words are terms`. Before sending, scan the draft for a bare actor word ("the backend", "the app", "the service", "the parameter", "the status") and for one of these words used without its definition; each one is a sentence that will come back as a question.
 
+Tell a flow as one chain of hand-offs. Each paragraph is one hop: a sender, the thing it sends, and the receiver, in that order, and the next paragraph opens with that receiver receiving it. An actor enters the story only as the receiver of a hop, never by appearing as the subject of a sentence out of nowhere. A fact a later hop needs is written out again at that hop, never pointed at with "topic 3", "step 1", or "the earlier reply". The reader should hold the whole flow after one reply, not after seven; the full rule is under `Tell the story as one chain of hand-offs`.
+
 Count before you explain. The first time a flow comes up, say how many separate operations it has (network requests, thunks, events, screens), name each one in order, and say what each returns and why the next one is needed. A reader who is not told the count assumes there is one, and every later fact lands in that wrong picture. The full rule is under `Count the separate operations first`.
 
 ## Principles
@@ -79,6 +81,7 @@ This list is an index, one line per rule. Read the named section before applying
 - **Dependency order**: `Dependency order`.
 - **Start at the top**: `Start at the top`.
 - **Count the operations first**: `Count the separate operations first`.
+- **Tell the story as one chain of hand-offs**: each paragraph one hop, the next paragraph opening with its receiver: `Tell the story as one chain of hand-offs`.
 - **Keep one map**, and re-open it per section: `Keep one map`.
 - **Diagrams only on request**: `Diagrams only on request`.
 - **Completeness**: `Completeness`.
@@ -91,6 +94,7 @@ This list is an index, one line per rule. Read the named section before applying
 - **Walk through every code block**, naming each line by its code, never by its position: `Walk through every code block`.
 - **Show the algorithm**: `Show the algorithm`.
 - **Say why each condition exists**: `Say why each condition exists`.
+- **Explain or cut a drive-by mechanism** raised inside a relative clause: `Explain or cut a drive-by mechanism`.
 - **Name the step** before its identifier: `Name the step`.
 - **Translate a flow's function names into actions**, at most one identifier per prose sentence: `Translate a flow's function names into actions`.
 - **Caller before callee**: `Caller before callee`.
@@ -105,6 +109,7 @@ This list is an index, one line per rule. Read the named section before applying
 - **Resolve `this`**: `Resolve this and every field it reaches`.
 - **Show the type you just named**: `Show the type you just named`.
 - **Do not coin a stand-in**: `Do not coin a stand-in`.
+- **Introduce a channel by its owner, its reach, and its limit**; never "pipe 1": `Introduce a channel by its owner, its reach, and its limit`.
 - **Call a value by its code name**: `Call a value by its code name`.
 - **Give every repeated value its owner**: `Give every repeated value its owner`.
 - **Name every actor; no bare "our", "we", or "the app"**: a cast list before a flow, then the cast-list name in every sentence: `Name every actor; no bare "our", "we", or "the app"`.
@@ -139,7 +144,7 @@ This list is an index, one line per rule. Read the named section before applying
 - **No tables** and **inline markers, not bullets**: `No tables` and `Inline markers, not bullets`.
 - **No backticks inside inline code**: `No backticks inside inline code`.
 - **No bare repository adjectives**: `No bare repository adjectives`.
-- **No pointers to labels**, including ordinals such as "the second" used as a name: `No pointers to labels`.
+- **No pointers to labels**, including ordinals such as "the second", topic and step numbers, and "the earlier reply": `No pointers to labels`.
 - **Restate the question before answering it**; never "that answers question 3": `Restate the question before answering it`.
 - **Map code to the story in the story's order**, one block, one entry per step: `Map code to the story in the story's order`.
 - **Name what "same" and "different" refer to**, and what "nothing", "everything", and "the rest" stand for: `Name what "same" and "different" refer to`.
@@ -198,6 +203,25 @@ A reader who is not told how many operations a flow has assumes there is one. Ev
 Wrong: a reply that opens the QR sign-in with `selectIsLoginAccountUpdateSucceeded` and its three conditions, and mentions the account fetch only inside the walk of the third condition. The reader, still picturing one request, asks why a successful login would set its own status back to `IDLE`, and the next reply re-explains the three conditions.
 
 Right: "Signing in with a QR code takes two separate operations, not one. The first, the QR login request, returns tokens and the account id, which prove the login but say nothing about the subscription or the profiles. The sign-in screen then starts the second, the account fetch, which is one thunk that makes several HTTP calls, because where the screen sends the user depends on the subscription and the profiles. Each operation has its own status field: `loginWithPinStatus` describes the QR login request, and `updateAccountStateStatus` describes the account fetch."
+
+## Tell the story as one chain of hand-offs
+
+Any flow with more than one actor: an app, an SDK, a server, a second server, a table.
+
+A paragraph that opens with an actor the previous paragraph never handed anything to breaks the story. "third-party-oauth then spends the code" made the reader ask how third-party-oauth came into the picture, even though a request body addressed to it sat in the paragraph above; the paragraph above never said that the Tetsuo app sends that body to third-party-oauth, so the receiver appeared from nowhere. The reader said the story must flow linearly, that every important noun and verb needs its description at the point it is used, and that a picture which took seven replies to assemble should have arrived in one.
+
+- Each paragraph of a flow is one hop, written in this order: the sender, the thing sent (a request, a code, a token, a row), and the receiver. "The Tetsuo app sends this body to third-party-oauth."
+- The next paragraph's subject is that receiver, and its first sentence says what it received before saying what it does: "third-party-oauth receives the body. It takes the code out of the field `third_party_auth_code` and spends it."
+- An actor enters the story only as the receiver of a hop. When it first receives something, one sentence says what it is and who owns it, in the cast list's words, even when a cast list above already said so. The cast list is a reference; the hop is where the reader meets the actor.
+- Every noun that carries the story (an actor, a message, a value, a table, a screen, a channel) is introduced at the hop where it first appears, with what it physically is and who owns it, before that hop uses it. `Everyday infrastructure words are terms` and `Define the term first` give the form.
+- A fact a later hop depends on is written out in full at that hop. `No pointers to labels` bans "topic 3", "step 1", "the second flow", and "the earlier reply" as substitutes for the fact.
+- Before sending, read only the first sentence of every paragraph in order. Each one must name a subject that the paragraph before it handed something to. Where one does not, add the hand-off sentence to the paragraph above or move the paragraph.
+
+Wrong: "Here is the body of the create request. [body] The field `client_id` is ... third-party-oauth then spends the code."
+
+Right: "The Tetsuo app sends this body to third-party-oauth, Crunchyroll's Go service on Crunchyroll's AWS. [body] The field `client_id` is ... third-party-oauth receives this body. It takes the code out of the field `third_party_auth_code` and spends it by sending one HTTPS POST to Sony's PSN token server."
+
+(Added 2026-10-29 after the reader needed seven replies to assemble a flow whose actors kept appearing without a hand-off.)
 
 ## Keep one map
 
@@ -296,6 +320,18 @@ Reading a condition aloud, such as "this is true when the user is logged in and 
 Wrong: "`selectIsLoginAccountUpdateSucceeded` is `true` only when the account fetch succeeded, the user is logged in, and the idle check is `true`."
 
 Right: "The screen must not leave the sign-in page until it holds the account of the user who just logged in, because where it sends the user depends on that account's subscription. The account fetch's status alone cannot prove that, since it may still say `SUCCEEDED` from a fetch that ran before this login. So the selector also requires the login request's status to be back at its default, `IDLE`, which after a successful login happens only when the follow-up account fetch succeeds."
+
+## Explain or cut a drive-by mechanism
+
+Any relative clause or aside attached to a walked line that raises a check, a rule, or a requirement the reader has not met: "the address registered for this client at Sony, which Sony requires to match the one in force when the code was issued".
+
+Such a clause names a mechanism (here, redirect-address matching) without saying what two values are compared, who compares them, what happens on a mismatch, or what mistake the comparison prevents. The reader marked the clause with question marks. A relative clause can define a noun; it cannot carry a new rule.
+
+- Either give the mechanism two or three sentences of its own: the two values compared, with one example each; the party that compares them; what happens when they differ; and the mistake or attack the comparison prevents. Or cut the clause and say in one sentence that the line is not needed for the current question.
+- Test for a drive-by: the clause contains "requires", "must match", "validates", "checks", "ensures", or "is compared", and the reader has not yet seen both sides of the comparison.
+- `Say why each condition exists` covers a condition that is itself the walked line. This rule covers a condition smuggled into the description of some other line.
+
+(Added 2026-10-29.)
 
 ## Name the step
 
@@ -443,6 +479,19 @@ When a helper narrows a response into a smaller type, give the helper's paramete
 Do not invent labels such as "the tile rule" to replace a predicate, a key, or several fields. Show the actual condition or fields when they matter.
 
 Do not open a discussion of every field that a type leaves out. Stay with the object and behavior being explained.
+
+## Introduce a channel by its owner, its reach, and its limit
+
+Any flow in which one actor can reach other actors over more than one path: an SDK inside an app and the app's own HTTP client; a Webview and the app's own fetch; a WebSocket and a REST client.
+
+A coined label such as "pipe 1" and "pipe 2" leaves the reader translating labels back to things. The reader said the two pipes "kinda made sense" and then supplied the explanation that was missing: one path is the console's SDK, which talks only to Sony and never to Crunchyroll; the other is the Tetsuo app's Crunchyroll HTTP client, which carries every Crunchyroll API call.
+
+- Name each path by the component that owns it, in the cast list's words: "the console's SDK", "the Tetsuo app's Crunchyroll HTTP client". `Do not coin a stand-in` already bans "pipe 1".
+- For each path, one sentence gives three things: what it physically is (a library loaded inside the app; an HTTP client object inside the app), the one party it reaches, and the party it cannot reach.
+- Then say which message travels which path, by the message's name: "The authorization code comes back through the console's SDK. The create request goes out through the Tetsuo app's Crunchyroll HTTP client."
+- Do this before the first hop that uses either path, so that every later hand-off can name its path in the cast list's words.
+
+(Added 2026-10-29.)
 
 ## Call a value by its code name
 
@@ -876,6 +925,7 @@ The reader will not scroll up to resolve a label, so a label in a sentence carri
 - Do not number the arrows or boxes in a diagram, because a number in a diagram invites a pointer to it later. Label an arrow with its real call instead.
 - Inline markers such as (1) and (a) are fine for order inside a paragraph, such as the steps of a sequence or a recap, as long as no later sentence refers to an item by its marker. They are never fine directly under a code block or a diagram; see `Inline markers, not bullets` and `Walk through every code block`.
 - A heading such as "Step 2: `playerOrchestrator` calls `emit` on `eventBus`" may keep its number, because the words after the number say what the step is. Later text still names the content, never "see step 2".
+- Topic numbers, queue positions, step numbers, and reply pointers are labels too: "both come from topic 3", "step 1 put the token on the server", "the second flow", "the earlier reply". The reader does not keep a numbered map of the conversation, and said so. Write the fact: "the row that third-party-oauth wrote when the Tetsuo app sent the link request". (Added 2026-10-29.)
 - Repeating the call or fact costs a few words. Making the reader scroll costs their place in the explanation.
 
 ## Restate the question before answering it
