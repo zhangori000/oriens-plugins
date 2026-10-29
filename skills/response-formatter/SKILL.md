@@ -134,6 +134,8 @@ This list is an index, one line per rule. Read the named section before applying
 - **No backticks inside inline code**: `No backticks inside inline code`.
 - **No bare repository adjectives**: `No bare repository adjectives`.
 - **No pointers to labels**, including ordinals such as "the second" used as a name: `No pointers to labels`.
+- **Restate the question before answering it**; never "that answers question 3": `Restate the question before answering it`.
+- **Map code to the story in the story's order**, one block, one entry per step: `Map code to the story in the story's order`.
 - **Name what "same" and "different" refer to**, and what "nothing", "everything", and "the rest" stand for: `Name what "same" and "different" refer to`.
 
 **Screens**
@@ -822,6 +824,31 @@ The reader will not scroll up to resolve a label, so a label in a sentence carri
 - Inline markers such as (1) and (a) are fine for order inside a paragraph, such as the steps of a sequence or a recap, as long as no later sentence refers to an item by its marker. They are never fine directly under a code block or a diagram; see `Inline markers, not bullets` and `Walk through every code block`.
 - A heading such as "Step 2: `playerOrchestrator` calls `emit` on `eventBus`" may keep its number, because the words after the number say what the step is. Later text still names the content, never "see step 2".
 - Repeating the call or fact costs a few words. Making the reader scroll costs their place in the explanation.
+
+## Restate the question before answering it
+
+Any paragraph that resolves something the reader asked earlier: "that answers question 3", "this is the answer to your MySQL confusion", "as you asked".
+
+By the time the answer arrives, the reader has forgotten the question. A pointer such as "that answers question 3" sends them scrolling, and a reader who does not scroll reads the paragraph as a fact with no purpose. The reader said: "I don't remember my question, just restate it in very readable terms and tell me what it answers."
+
+- Open the paragraph with the question itself, in plain words, as a full sentence: "You asked whether the PSN id goes into the same row as the tokens."
+- Give the answer in the next sentence, in the same words the question used: "It does, and the link request is the one that writes it."
+- Never write "that answers", "this is the answer to", "as you asked", "your question", or a question's number in place of the question. `No pointers to labels` already bans ordinals as names; a question number is one more label.
+- When one paragraph resolves two questions, restate each one before its answer, as two short paragraphs.
+
+Wrong: "That row answers question 3. Alex's PSN account id lands in the row's `identity_provider_user_id` column."
+
+Right: "You asked whether the PSN id goes into the same row as the two tokens. It does. Alex's PSN account id lands in the row's `identity_provider_user_id` column, beside the refresh token and the access token."
+
+## Map code to the story in the story's order
+
+Any "mapping to code" or "in code" passage that follows a flow told in plain words.
+
+A mapping written as a prose list of identifiers, "the create request is handled by `onlyCreateNewAccounts`, the link request by `SetTokenByAuthCode`, the trade by `retrieveAccessToken`", reads as four names the reader must hold at once, and the reader said it "doesn't make sense either". The story gave them an order and actors; the mapping threw both away.
+
+- Put the mapping in one code block, in the order the story told the steps, one entry per step. Each entry is the real route or signature line, trimmed, with a comment that repeats the step's plain name and its actor: `// request 1, the create request: the Tetsuo app -> third-party-oauth`.
+- Under the block, one sentence per entry, in the same order, naming the file. Not a paragraph that mentions all of them.
+- Do not add identifiers the story did not need. A helper the story never mentioned does not appear in the mapping.
 
 ## Name what "same" and "different" refer to
 
