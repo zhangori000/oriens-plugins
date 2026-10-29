@@ -80,11 +80,13 @@ When the reader asks for code, the walk is the full one from before, because it 
 
 ### 4.3 Every system is pinned to its data structure
 
-The reader is an engineer and a system designer. A category word such as "account", "service", or "identity" is hard to hold; a database row is easy. Everything in computing resolves to a data structure, so when a system, an account, or a service is introduced, the reply says what it most likely is at the machine level: a service with an HTTP API, backed by a database, holding these records (a user record, a consent record, a link record, a session record, a registry of allowed clients), and what the verbs do to those records (signing in is a lookup, creating is an insert, consenting is an insert into the consent record, linking is an insert into the link record).
+The reader is a computer scientist and a system designer. A category word such as "account", "service", or "identity" is hard to hold; a table with a key is easy. Everything in computing resolves to a data structure, so when a system, an account, or a service is introduced, the reply says what it most likely is at the machine level, one sentence per store, and does not hold back on naming more stores or more API calls when they are there.
 
-Use evidence from the material where it exists, such as an endpoint path, a field name, an environment name, or a "create if not exists" step, and say that it is evidence. Where there is none, say that the picture is an inference from how such systems are built. Two systems are shown to be separate by the mechanism that separates them: when one must register with the other as a client to read anything, they are two databases, because one database never registers with itself.
+Each store gets four facts in its sentence: its owner (which company's service, and whether it is a second table in the same database or a separate service), its kind (a relational table, a document collection, a key-value item, or a signed token that needs no store), its key (what it is looked up by), and its writer and reader (which actor inserts, which actor reads, on which event). One more clause says whether the kind matters: "any store would do", or "relational, because sign-in needs a unique email". A token is never assumed to be a column on the user row; the sentence says where it most likely lives and why. A refresh token is its own item with an expiry and attributes, and a five-minute access token is usually a signed token that is never stored.
 
-This grounding is woven into the sentence that introduces the system (section 5.4); it is not a separate "records" paragraph.
+Use evidence from the material where it exists, such as an endpoint path, a field name, a key prefix, an environment name, or a "create if not exists" step, and say that it is evidence. Where there is none, say that the picture is an inference from common practice. Two systems are shown to be separate by the mechanism that separates them: when one must register with the other as a client to read anything, they are two databases, because one database never registers with itself.
+
+This grounding is woven into the sentences that introduce the system (section 5.4); it is not a separate "records" paragraph. Succinct means one sentence per store, so that the reader can ask for more.
 
 ## 5. How each sentence is written
 
@@ -92,7 +94,7 @@ The sentence is the unit. Everything a reader needs to understand a sentence is 
 
 ### 5.1 Grammar
 
-Write complete grammatical sentences with a subject and a finite verb. No fragments, no one-word confirmations, no "Right." or "Right on the session." A reply opens with its intention sentence, not a recitation of what the reader just said; the reader's words are paraphrased once if needed and never echoed.
+Write complete grammatical sentences with a subject and a finite verb. No fragments, no one-word confirmations, no "Right." or "Right on the session." A sentence carries at most one relative clause or appositive; when a thought needs two, it is two sentences, and a sentence whose clauses are separated by three or more commas is split. A reply opens with its intention sentence, not a recitation of what the reader just said; the reader's words are paraphrased once if needed and never echoed.
 
 ### 5.2 Nouns
 
@@ -122,7 +124,13 @@ Resolve an apparent contradiction in the sentence that raises it. If one sentenc
 
 Name what "same", "different", "nothing", "everything", and "the rest" refer to, in the same paragraph.
 
-### 5.6 What a sentence never does
+### 5.6 Adjectives, adverbs, and prepositions
+
+Every modifier carries information or is cut. An adjective says which one of several: "the stored refresh token" separates it from the one just minted, whereas "the big diagram" says nothing. An adverb says how, when, or how much, with a concrete value where one exists: "every five minutes", "server to server", "once per sign-up". Never "basically", "simply", "just", "essentially", "very", "really", or "quickly". A preposition states the exact relation between two nouns, chosen from the list in `baby-steps`: "by" for means, "for" for purpose, "with" for accompaniment, "from" and "into" for a transformation, "per" for a unit, "on" for a trigger, "in" for a container, "at" for a point, "through" for a channel, "keyed by" for a lookup. "A row in the user table of the PlayStation Network" places the row inside a table inside a service; "a row for the PlayStation Network" does not.
+
+These modifiers are how the weaving in section 5.4 is done. A prepositional phrase places a thing in its owner, an adjective picks one of two neighbours, and an adverb gives the frequency or the channel, so that the sentence reads smoothly and still says everything.
+
+### 5.7 What a sentence never does
 
 No analogy. No borrowed slang. No workplace words for technical relations, such as "sits under" or "lives on top of"; say the operation. No backticks inside inline code.
 
@@ -144,7 +152,7 @@ When the reader asks for a local markdown note so that another session can read 
 
 Before sending a teaching reply, check each of these and fix the reply if one fails.
 
-The reply teaches one piece, or it is an intake reply with a piece list and questions. The piece's prerequisites are checked off, and no name appears that the reader has not checked off or that this reply does not define. If the reader sent several questions, the reply names the one picture under them and answers each question where the teaching reaches it. Every actor has its cast-list name. No "step N", "section N", "earlier", or "as we saw". Every verb that names an action between actors carries its mechanism and its reason, and an inferred reason is marked as one. Every named system is pinned to the records it keeps, with evidence or a marked inference, inside the sentence that introduces it. No bold-labelled paragraphs, no glossary blocks, no "what X means" asides. Every fenced block is English pseudocode or a walked code block, and it is vertical, one fact per line. Real code appears only because the reader asked. The reply asks what the model does not know, at most three questions, each with a recommended answer. The queue is at the end, with the current piece marked as waiting for a checkmark. The reader could finish the reply in two minutes.
+The reply teaches one piece, or it is an intake reply with a piece list and questions. The piece's prerequisites are checked off, and no name appears that the reader has not checked off or that this reply does not define. If the reader sent several questions, the reply names the one picture under them and answers each question where the teaching reaches it. Every actor has its cast-list name. No "step N", "section N", "earlier", or "as we saw". Every verb that names an action between actors carries its mechanism and its reason, and an inferred reason is marked as one. Every named system is pinned to the records it keeps, with evidence or a marked inference, inside the sentence that introduces it, and every store named has its owner, its kind, its key, and its writer. No sentence carries two relative clauses. Every adjective, adverb, and preposition carries information. No bold-labelled paragraphs, no glossary blocks, no "what X means" asides. Every fenced block is English pseudocode or a walked code block, and it is vertical, one fact per line. Real code appears only because the reader asked. The reply asks what the model does not know, at most three questions, each with a recommended answer. The queue is at the end, with the current piece marked as waiting for a checkmark. The reader could finish the reply in two minutes.
 
 ## 9. The rules last for the whole conversation
 
