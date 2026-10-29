@@ -34,7 +34,7 @@ A molecule (an exchange in the reply) is one thing that passes between two atoms
 
 An organism (a flow in the reply) is one flow of several molecules in time order: a sign-in, a consent flow, a launch-time check. Teaching an organism means telling it as one chain of hand-offs, using only atoms and molecules already checked off, and counting its separate operations first.
 
-Inside a system, relationships come before storage. The first piece about any system names the actors and the one question each asks the others, as a "who asks whom for what" map; the second names the permissions to ask, such as a registration, and the human process that created each permission (who asked whom, what was handed back); only then come the tables. Tables taught first raise "who writes this and why" on every row, and those are relationship questions that should already be answered.
+Inside a system, relationships come before storage. The first piece about any system names the actors and the one question each asks the others, as a "who asks whom for what" map, where each arrow carries five things: who asks, whom, over what channel, what travels on the arrow, and who can read what travels (a value that crosses several actors is marked at each hop as read there or only carried there); the second names the permissions to ask, such as a registration, and the human process that created each permission (who asked whom, what was handed back); only then come the tables. Tables taught first raise "who writes this and why" on every row, and those are relationship questions that should already be answered.
 
 A row that is written "once, when the company registers" has a human process behind it, and the reply names that process: an engineer at one company asks the other company, someone at the other company creates the row, and an id and a secret come back. "Registered" is not a mechanism until that process is said.
 
@@ -127,6 +127,8 @@ A word the material uses in its own vocabulary for an actor, such as "service pr
 ### 5.3 Verbs
 
 A verb that names an action between two actors is a term, the same as a noun. "Authorize", "link", "bind", "redirect", "mint", "exchange", "validate", "consent", and "store" each hide a mechanism. Before sending, read each such verb and ask whether a careful engineer outside this project would know what physically happens. If not, the same sentence carries the mechanism: "the console asks the viewer to authorize Crunchyroll, that is, to say yes in a dialog that lets Crunchyroll read the email and the id on the PlayStation Network account".
+
+A value that passes through more than one actor gets, at every hop, one of two words: the actor reads it, or the actor only carries it. A code that the console mints, the app carries, M-DCIM carries, and the PlayStation Network reads is described with those four words, so that the reader never has to ask how a middle actor understands it.
 
 Then the same sentence, or the next, carries the reason the actor does it, with "because" or "so that", whenever the reason is known from the material or can be inferred from how such systems and laws work. A sentence that reports an action without its reason leaves the reader asking why on the next turn. When the reason is an inference, the sentence says so in a parenthetical or a trailing clause: "which is an inference from privacy law, since the thread never states Sony Interactive Entertainment's reasoning".
 
