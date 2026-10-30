@@ -59,3 +59,7 @@ One entry per teaching reply. The hypothesis is written before the reply is sent
    Result of 12: confirmed; the reader undid the inserted row, found the undated row, and changed it.
 
 13. Hypothesis (status question about the Oct 29 evening meeting): a direct answer, not decided, with what the evening meeting was and its four next steps, each with an owner, lets the reader keep the row's wording as written. Result: pending.
+
+   Result of 13: refuted in part. The status answer held, but the reader said the sign-up row's outcome text was too long to finish, asked for decisions instead of proposals, and pointed out that the retitle-and-redate ask for the 12/2 and 12/11 rows had been parked in the note and never delivered, which read as forgetting. Changes: section 1, Move 3, the queue carries undelivered asks; Move 1, decisions give the text to type, cell text under forty words; section 8 updated.
+
+14. Hypothesis (decision reply): four rows as text to type, each cell under forty words, each date with a one-clause reason, and two risks for Igor, lets the reader fill the lane in one pass. Result: pending.
