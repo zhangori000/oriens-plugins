@@ -177,3 +177,7 @@ One entry per teaching reply. The hypothesis is written before the reply is sent
    Result of 41: confirmed. The reader restated hops 1 to 5 correctly, named the one fact they had lacked (the PlayStation terms already cover sharing with Sony companies, so no screen for M-DCIM's code), and said it should have surfaced five replies earlier; "skip" was called an easy word that hides that fact. Changes: check 0, the one lacking fact is found before drafting and opens the reply; "skips" and "bypasses" added to the non-mechanism verbs.
 
 42. Hypothesis (the full flow end to end): the one fact the reader lacks is that after Agree the redirect goes to Jeffrey's backend, not the Tetsuo app, and how the app learns it is done is not in the material; stating that first, then the numbered list from Start Free Trial to checkout, about 320 words because the reader asked for the whole list, gets a checkmark. Result: pending.
+
+   Result of 42: confirmed. The reader checked off the full flow and asked for the next deep-dive item.
+
+43. Hypothesis (Crunchyroll's pushback): the one fact is that if M-DCIM draws the page, every rule Crunchyroll runs at sign-up today must either run on M-DCIM's server or come back through the redirect as an error, and Crunchyroll changes those rules often; stating that first, then the three speakers' concerns as what happens in the flow the reader holds, under 250 words, gets a checkmark. Result: pending.
