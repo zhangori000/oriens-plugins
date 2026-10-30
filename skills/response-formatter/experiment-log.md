@@ -181,3 +181,7 @@ One entry per teaching reply. The hypothesis is written before the reply is sent
    Result of 42: confirmed. The reader checked off the full flow and asked for the next deep-dive item.
 
 43. Hypothesis (Crunchyroll's pushback): the one fact is that if M-DCIM draws the page, every rule Crunchyroll runs at sign-up today must either run on M-DCIM's server or come back through the redirect as an error, and Crunchyroll changes those rules often; stating that first, then the three speakers' concerns as what happens in the flow the reader holds, under 250 words, gets a checkmark. Result: pending.
+
+   Result of 43: refuted. Three speakers in one reply, two undefined concepts (banned accounts, email tumbling), "each such change needs Sony DX" with no story of where the rule runs today, and no motivation. The reader asked that queue items list their atoms before the molecules and that one person be taken at a time. Change: check 2, one speaker per reply, atoms queued before each position.
+
+44. Hypothesis (sign-up rules today, then Steeve's first concern): teaching where Crunchyroll's sign-up checks run today with the two checks defined as stories, then Steeve's concern as what changes at steps 9 to 12, under 250 words, gets a checkmark. Result: pending.
