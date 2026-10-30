@@ -135,3 +135,5 @@ One entry per teaching reply. The hypothesis is written before the reply is sent
    Result of 31: confirmed in the sense that no follow-up came; the reader chose not to change the sheet and asked for the next piece. No rule change.
 
 32. Hypothesis (Sony DX's addition as one flow): telling today's sign-up first as the base in one paragraph, then the addition as what it inserts and where, by triggers, with the count said once, attributed, under 300 words and no block, using only checked-off pieces, lets the reader check the flow off or ask one placement question. Result: pending.
+
+   Result of 32: not checked off. The reader did not question the flow itself but challenged the attribution sentence, which called the pre-sync position "the checkbox plan" and said the three had "settled on" it. On re-reading the raw lines the substance held (keep today's flow, capture Sony consent, no Sony account for MVP, migrate later), but the coined label hid the "no Sony account" half and made the reader suspect a misread. Change: section 5.7, a proposal is named by the material's own words, never a label coined from one part.
