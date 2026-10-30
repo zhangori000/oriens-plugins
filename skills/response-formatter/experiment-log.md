@@ -141,3 +141,7 @@ One entry per teaching reply. The hypothesis is written before the reply is sent
    Result of the deep-dive takeaways reply (no hypothesis was logged for it; a process lapse): refuted. Eight bullets of two to three sentences, about 420 words, were reported as hard to read; the reader asked for queue items taken one at a time so that follow-ups stay cheap. Change: section 1, a meeting the reader missed gets an intake reply, a numbered queue of one-line takeaways and the first one taught in under 100 words.
 
 33. Hypothesis (deep-dive takeaways as a queue): a numbered list of nine one-line takeaways in LRX Core order, then the first one (Authorized Apps stays) in under 100 words with what it means for the Tetsuo app, lets the reader check it off and pull the next with at most one follow-up. Result: pending.
+
+   Result of 33: refuted on one point. The queue form worked (no complaint about length), but item 1 named the cards "steps 06 and 07", a pointer into Robert's board that the reader has not read, and the reader asked what they are. Change: section 5.5, board card numbers are labels; a card is named by what it is and who draws it.
+
+34. Hypothesis (translating cards 06 and 07): naming each card by what the viewer sees and who draws it, then restating item 1 in one sentence with those names, in under 120 words, closes item 1. Result: pending.
