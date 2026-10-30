@@ -47,3 +47,7 @@ One entry per teaching reply. The hypothesis is written before the reply is sent
 9. Lapse: the device id link reply was sent without a hypothesis written first. Result: the reader checked the piece off and said everything made sense. One sentence, "it rewrites that item on every token refresh and profile switch", reported an action without its reason, and the reader filed "what does that mean, and why" for later, which is the failure section 5.3 predicts. No rule change; the pre-send scan already lists it, and the lapse was in applying it. The question goes in the queue.
 
 10. Hypothesis (reply answering how to add a dependency in the sheet, and whether a lane may depend on its own rows): a direct answer with the sheet's own example of a same-lane dependency settles both in one read, and the MASS note's location is one sentence. Result: pending.
+
+   Result of 10: confirmed; the reader found the chip and asked to continue, and asked for shorter replies so that they can steer.
+
+11. Hypothesis (sign-up piece, about 200 words of story and then the row as a four-line list): telling what exists in production first, then the one checkbox the counter-proposal adds, lets the reader accept a title, deliverable, dependencies, and date for the undated sign-up row in one read. Risk: the row proposal reads as a conclusion before the story earns it; guard is story first, proposal last, nothing in the proposal that the story did not say. Result: pending.
