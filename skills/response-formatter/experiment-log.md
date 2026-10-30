@@ -99,3 +99,7 @@ One entry per teaching reply. The hypothesis is written before the reply is sent
    Result of 22: confirmed. The reader restated the whole code path in their own words, with the motivation, and asked only whether the code reaches M-DCIM through Crunchyroll or directly.
 
 23. Hypothesis (why Crunchyroll keeps its own code): motivation first, Crunchyroll's backend must learn that Alex paid Sony, then "entitlement" and "grant" defined in the sentences that use them, with the read shown as one short block and SIE's statement as the evidence, lets the reader accept the second Allow sheet. Result: pending.
+
+   Result of 23: confirmed with a restatement of the trade and one new queued piece: the reader wants "the Tetsuo app opens M-DCIM's web page" taught on its own. The restatement was right; the reply's shortcut "trades the code for the email" hid that the trade returns tokens and the email is read with them, which the restatement exposed.
+
+24. Hypothesis (confirming the trade restatement): saying yes, then the one refinement that the trade returns tokens and the data is read with the tokens, in a five-line block, closes it without opening a new piece. Result: pending.
