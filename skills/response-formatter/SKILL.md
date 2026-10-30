@@ -12,9 +12,9 @@ Load `baby-steps` in the same turn. It sets the pace of a code walk (one paramet
 
 The file has one hierarchy. Section 1 is the loop a teaching conversation runs. Section 2 says what one piece of teaching is. Section 3 is how the reader's messages are read. Section 4 is what one reply contains. Section 5 is how each sentence is written. Section 6 is layout. Sections 7 to 9 are notes, the pre-send scan, and persistence.
 
-## 0. The gate: seven checks before any teaching reply is sent
+## 0. The gate: nine checks before any teaching reply is sent
 
-This section exists because the long rules below were not being applied under pressure: on 2026-10-30 the replies drifted to 400 words, coined names ("Allow sheet", "the checkbox plan", "the second code"), used verbs with no mechanism ("hands the email", "sits inside a framework"), and introduced alternatives the reader could not place. The reader asked for a significant change. These seven checks are the operative gate. Sections 1 to 9 are the reference behind them. A reply that fails a check is cut and rewritten before it is sent, not after the reader complains.
+This section exists because the long rules below were not being applied under pressure: on 2026-10-30 the replies drifted to 400 words, coined names ("Allow sheet", "the checkbox plan", "the second code"), used verbs with no mechanism ("hands the email", "sits inside a framework"), and introduced alternatives the reader could not place. The reader asked for a significant change. These nine checks are the operative gate. Sections 1 to 9 are the reference behind them. A reply that fails a check is cut and rewritten before it is sent, not after the reader complains.
 
 **Check 1, the budget is counted, not guessed.** The reply's prose is written to a scratch file and counted with `wc -w` before it is sent. A reply that answers a confusion is at most 150 words of prose. A reply that teaches a piece is at most 250. The queue is not counted. Over budget, cut sentences until it fits; never shrink by compressing sentences into telegrams. A reply that rebuilds a flow of hops (a molecule) takes the 250 budget even when it answers a confusion, because a hop list cut to 150 words dropped the session token from the page request and the trade that happens before the page is drawn, and the reader said brevity that drops facts is worse than length.
 
@@ -28,7 +28,11 @@ This section exists because the long rules below were not being applied under pr
 
 **Check 6, motivation before mechanism, and claims become mechanisms.** The sentence before a mechanism says the wrong outcome it prevents. A claim copied from a transcript or a summary ("SIE hands M-DCIM the email without asking Alex") is restated as the hops that make it true, with the inferred part marked, or it is attributed to its speaker and left at that. A sentence the reader called bad is replaced by the rebuilt one; the reply never quotes it back and explains it. Every mechanism that comes from the material names its source: which meeting, who said it, and whether it was a test, a claim, or a decision.
 
-**Check 7, no pointer and no self-posed riddle.** Nothing is named by position (reply, step, card number) or by a label the reader has not read. A question the reply asks itself is defined before it is answered, or it is cut.
+**Check 7, the first paragraph is the foundation.** The reader decides in the first paragraph whether the reply is worth reading. So the first paragraph carries no noun the reader has not checked off unless that sentence defines it with its owner and the reason it exists ("M-DCIM's PlayStation client id, the public id on M-DCIM's own row in the PlayStation Network's apps table, which exists so the console can mint codes addressed to M-DCIM"). A paragraph that opens with a string of new nouns ("a session token and M-DCIM's PlayStation client id") fails even when a later paragraph defines them. The most foundational hop comes first, with the most explanation, and the reply shrinks from the end, never from the start.
+
+**Check 8, every request has its answer as a hop, and every answer has its use as the next hop.** "Jeffrey's backend sends X to M-DCIM; M-DCIM answers with Y" is two hops; "the Tetsuo app then calls getAuthCode with that client id" is a failure if the hop in which Jeffrey's backend answered the Tetsuo app with the client id was never written. A chain of requests is complete only when every string an actor uses arrived in a hop the reply wrote.
+
+**Check 9, no pointer and no self-posed riddle.** Nothing is named by position (reply, step, card number) or by a label the reader has not read. A question the reply asks itself is defined before it is answered, or it is cut.
 
 ## 1. The loop
 
