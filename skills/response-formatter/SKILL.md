@@ -1,6 +1,6 @@
 ---
 name: response-formatter
-description: "Read this before explanations, teaching replies, and markdown. Experimental version of 2026-10-29. When the reader hands over something large (a Slack thread, a sequence diagram, a transcript, a long document), the first reply lists its foundational pieces in learning order and asks which to start with, instead of explaining. Each later reply teaches one piece in plain English, ends with the queue of pieces left, and waits for the reader's checkmark. Several questions from the reader are answered through the one confusion under them, not one by one. Every system is pinned to the database rows it most likely is. Definitions, mechanisms, and reasons ride inside the sentence that first needs them, never as a headlined paragraph. Processes are shown as English pseudocode; real code and its line-by-line walk come only when the reader asks. Loading it also loads baby-steps. An experiment log next to this file holds one hypothesis per reply and the result, and the file changes after each result. The previous version is archived next to this file."
+description: "Read this before explanations, teaching replies, and markdown. Experimental version of 2026-10-29; section 0 (added 2026-10-30) is a seven-check gate with a counted word budget, the project's fixed names, the allowed verbs between actors, and the hop form, and it is applied before every teaching reply. When the reader hands over something large (a Slack thread, a sequence diagram, a transcript, a long document), the first reply lists its foundational pieces in learning order and asks which to start with, instead of explaining. Each later reply teaches one piece in plain English, ends with the queue of pieces left, and waits for the reader's checkmark. Several questions from the reader are answered through the one confusion under them, not one by one. Every system is pinned to the database rows it most likely is. Definitions, mechanisms, and reasons ride inside the sentence that first needs them, never as a headlined paragraph. Processes are shown as English pseudocode; real code and its line-by-line walk come only when the reader asks. Loading it also loads baby-steps. An experiment log next to this file holds one hypothesis per reply and the result, and the file changes after each result. The previous version is archived next to this file."
 user-invocable: true
 ---
 
@@ -11,6 +11,24 @@ This is a rewrite that Orien asked for on 2026-10-29, after the previous version
 Load `baby-steps` in the same turn. It sets the pace of a code walk (one parameter, expression, or helper per step) and the definition style (chained relative clauses). This file sets what a reply contains and how a large input is divided. Its walk order for code applies once the reader has asked for code; until then, section 4.2 applies.
 
 The file has one hierarchy. Section 1 is the loop a teaching conversation runs. Section 2 says what one piece of teaching is. Section 3 is how the reader's messages are read. Section 4 is what one reply contains. Section 5 is how each sentence is written. Section 6 is layout. Sections 7 to 9 are notes, the pre-send scan, and persistence.
+
+## 0. The gate: seven checks before any teaching reply is sent
+
+This section exists because the long rules below were not being applied under pressure: on 2026-10-30 the replies drifted to 400 words, coined names ("Allow sheet", "the checkbox plan", "the second code"), used verbs with no mechanism ("hands the email", "sits inside a framework"), and introduced alternatives the reader could not place. The reader asked for a significant change. These seven checks are the operative gate. Sections 1 to 9 are the reference behind them. A reply that fails a check is cut and rewritten before it is sent, not after the reader complains.
+
+**Check 1, the budget is counted, not guessed.** The reply's prose is written to a scratch file and counted with `wc -w` before it is sent. A reply that answers a confusion is at most 150 words of prose. A reply that teaches a piece is at most 250. The queue is not counted. Over budget, cut sentences until it fits; never shrink by compressing sentences into telegrams.
+
+**Check 2, one mechanism per reply.** The reply carries one mechanism. Alternatives, other forms, comparisons, and "the two other ways" each go to the queue as their own line. A reader who asked one question is not given three flows.
+
+**Check 3, every noun uses the material's name.** For this project the fixed names are: the Tetsuo app (LRX Core's console app); Jeffrey's account backend; the PlayStation Network (SIE's); M-DCIM (Sony DX's account service); the Authorized Apps screen (the console draws it; Alex presses Allow; never "Allow sheet", "sheet", or "card 06"); the PlayStation code for Crunchyroll, the PlayStation code for M-DCIM, and the M-DCIM code (never "the second code", "the client code"); the console door (where Alex consents and a code is minted) and the company door (the token endpoint where a company trades a code with its secret), both defined on first use in a reply; M-DCIM's terms page, in a web view inside the Tetsuo app; the session token; Robert's board cards by their titles, with the number as an aside. A name not on this list and not in the material is a coinage and is replaced.
+
+**Check 4, every verb between two actors is one of these or is expanded.** Sends a request to; answers with; writes a row; reads a row; mints a code; trades a code for tokens; reads a value with a token; draws a screen; answers with an address the web view then requests (a redirect). "Hands", "passes", "shares", "provides", "gives access", "integrates", "links", "binds", "leverages", and "sits inside" are not mechanisms and are rewritten as a hop or cut.
+
+**Check 5, the hop form.** A mechanism is told as hops in time order, one hop per sentence, each with sender, receiver, what is carried, and what comes back. Two hops never share a sentence. A new mechanism is built from hops the reader has already checked off, named by what they do.
+
+**Check 6, motivation before mechanism, and claims become mechanisms.** The sentence before a mechanism says the wrong outcome it prevents. A claim copied from a transcript or a summary ("SIE hands M-DCIM the email without asking Alex") is restated as the hops that make it true, with the inferred part marked, or it is attributed to its speaker and left at that.
+
+**Check 7, no pointer and no self-posed riddle.** Nothing is named by position (reply, step, card number) or by a label the reader has not read. A question the reply asks itself is defined before it is answered, or it is cut.
 
 ## 1. The loop
 
@@ -192,7 +210,7 @@ The queue at the end of a reply is a three-line list under the single word "Queu
 
 When the reader asks for a local markdown note so that another session can read it, the note has a header with Kind, Written by, and the date, in the form the reader's workspace uses; the piece list and the queue under their own headings; and the record or the facts in the order the material gives them. Headings are words a reader understands without the thread. A later edit adds an Edited by line with the date and what changed.
 
-## 8. Pre-send scan
+## 8. Pre-send scan (reference; section 0 is the gate)
 
 Before sending a teaching reply, run the noun audit and then check each of these. The noun audit is an actual pass, not a feeling: list every noun and verb-term in the draft, and for each one write where the reader got it, meaning a checked-off piece, a definition earlier in this reply, or nowhere. A "nowhere" is either defined in place, cut, or moved to the queue; a made-up identifier in pseudocode counts as a noun. Then check each of these and fix the reply if one fails.
 
