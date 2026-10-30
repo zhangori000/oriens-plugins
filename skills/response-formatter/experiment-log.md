@@ -95,3 +95,7 @@ One entry per teaching reply. The hypothesis is written before the reply is sent
    Result of 21: confirmed. The reader restated the reason in their own words, asked a precise follow-up about whether minting notifies M-DCIM or only writes a record, and asked that the motivation rule be encoded. Change: section 2, a concept's motivation comes first; section 8 updated.
 
 22. Hypothesis (notify or record): saying that minting only writes the codes row and returns the string to the console, that M-DCIM learns of it only because the Tetsuo app carries it, and why a push would not work, with the motivation first, answers the question in one read. Result: pending.
+
+   Result of 22: confirmed. The reader restated the whole code path in their own words, with the motivation, and asked only whether the code reaches M-DCIM through Crunchyroll or directly.
+
+23. Hypothesis (why Crunchyroll keeps its own code): motivation first, Crunchyroll's backend must learn that Alex paid Sony, then "entitlement" and "grant" defined in the sentences that use them, with the read shown as one short block and SIE's statement as the evidence, lets the reader accept the second Allow sheet. Result: pending.
