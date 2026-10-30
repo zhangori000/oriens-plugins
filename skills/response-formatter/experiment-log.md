@@ -41,3 +41,9 @@ One entry per teaching reply. The hypothesis is written before the reply is sent
    Result of 7: no checkmark and no objection; the reader changed the goal before reading for understanding. The new goal is a deliverable, Igor's Depends on column for the CR App rows, due the same morning, and the reader said the reason for learning M-DCIM was always to set milestones and dependencies. Change: section 1, Move 1, the piece list is built backwards from a named goal, and when the reader is short on time the intake offers the deliverable's draft first. The two-flow story stays in the queue as waiting.
 
 8. Hypothesis (intake reply for the goal): a piece list of five items, each tied to the CR App row it decides, plus an offer to draft the eight Depends on cells now, lets the reader answer with one word and reach Igor's deadline. Risk: the list reads as a catalogue if a piece is not tied to a row; guard is one row name per piece. Result: pending.
+
+   Result of 8: confirmed; the reader answered the first two questions with yes by proceeding, and asked for the sheet-state note as well.
+
+9. Lapse: the device id link reply was sent without a hypothesis written first. Result: the reader checked the piece off and said everything made sense. One sentence, "it rewrites that item on every token refresh and profile switch", reported an action without its reason, and the reader filed "what does that mean, and why" for later, which is the failure section 5.3 predicts. No rule change; the pre-send scan already lists it, and the lapse was in applying it. The question goes in the queue.
+
+10. Hypothesis (reply answering how to add a dependency in the sheet, and whether a lane may depend on its own rows): a direct answer with the sheet's own example of a same-lane dependency settles both in one read, and the MASS note's location is one sentence. Result: pending.
