@@ -63,3 +63,7 @@ One entry per teaching reply. The hypothesis is written before the reply is sent
    Result of 13: refuted in part. The status answer held, but the reader said the sign-up row's outcome text was too long to finish, asked for decisions instead of proposals, and pointed out that the retitle-and-redate ask for the 12/2 and 12/11 rows had been parked in the note and never delivered, which read as forgetting. Changes: section 1, Move 3, the queue carries undelivered asks; Move 1, decisions give the text to type, cell text under forty words; section 8 updated.
 
 14. Hypothesis (decision reply): four rows as text to type, each cell under forty words, each date with a one-clause reason, and two risks for Igor, lets the reader fill the lane in one pass. Result: pending.
+
+   Result of 14: refuted on one word. The reader asked what "Hub id" is; it was a name coined in a title for the string the sheet already calls the MASS token, one turn after the rule against coined shorthand was added. Change: section 5.2, a thing the material names keeps the material's name in every title, cell, and sentence; section 8 updated. The four rows otherwise stood.
+
+15. Hypothesis (one-line correction): giving the two corrected cells as text to type, with the sheet's own noun, closes the question without reopening the rows. Result: pending.
