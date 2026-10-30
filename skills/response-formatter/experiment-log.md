@@ -83,3 +83,7 @@ One entry per teaching reply. The hypothesis is written before the reply is sent
    Result of 18: confirmed. The reader restated the two proofs correctly and asked whether the PlayStation Network's code handles the two cases separately. One refinement owed: the viewer does not mint; the console asks on the viewer's behalf.
 
 19. Hypothesis (two endpoints as two short defs): showing the PlayStation Network's two handlers, one checking the viewer's session and one checking the secret, with a sentence per line in prose above, confirms the reader's picture and names the standard terms (authorization endpoint, token endpoint). Risk: the block tempts a line-by-line walk the reader did not ask for; guard is prose that explains each line in one clause and nothing more. Result: pending.
+
+   Result of 19: confirmed; the reader checked the two doors off.
+
+20. Hypothesis (two codes and two Allow sheets): telling the two getAuthCode calls as two separate requests for two clients, with the evidence that M-DCIM's code did not raise the Allow sheet in Jeffrey's Oct 29 test and that SIE keeps Crunchyroll's for Pay with PlayStation, answers the coexistence question in one read. Risk: the reason Crunchyroll still needs its own code when M-DCIM already has the email must be said as the attack or breakage it prevents. Result: pending.
