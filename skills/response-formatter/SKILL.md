@@ -26,7 +26,7 @@ This section exists because the long rules below were not being applied under pr
 
 **Check 5, the hop form.** A mechanism is told as hops in time order, one hop per sentence, each with sender, receiver, what is carried, and what comes back. Two hops never share a sentence. A new mechanism is built from hops the reader has already checked off, named by what they do.
 
-**Check 6, motivation before mechanism, and claims become mechanisms.** The sentence before a mechanism says the wrong outcome it prevents. A claim copied from a transcript or a summary ("SIE hands M-DCIM the email without asking Alex") is restated as the hops that make it true, with the inferred part marked, or it is attributed to its speaker and left at that.
+**Check 6, motivation before mechanism, and claims become mechanisms.** The sentence before a mechanism says the wrong outcome it prevents. A claim copied from a transcript or a summary ("SIE hands M-DCIM the email without asking Alex") is restated as the hops that make it true, with the inferred part marked, or it is attributed to its speaker and left at that. A sentence the reader called bad is replaced by the rebuilt one; the reply never quotes it back and explains it. Every mechanism that comes from the material names its source: which meeting, who said it, and whether it was a test, a claim, or a decision.
 
 **Check 7, no pointer and no self-posed riddle.** Nothing is named by position (reply, step, card number) or by a label the reader has not read. A question the reply asks itself is defined before it is answered, or it is cut.
 
