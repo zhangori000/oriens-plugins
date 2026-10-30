@@ -131,3 +131,7 @@ One entry per teaching reply. The hypothesis is written before the reply is sent
    Result of 30: confirmed. The reader accepted no new row and asked for the 12/9 row's deliverable to be sharpened so Igor can decide the split himself. No rule change.
 
 31. Hypothesis (sharpened cell): one cell text under 50 words that names both options and carries Igor's split question, plus a two-line Slack message, lets the reader type and move on without a follow-up. Result: pending.
+
+   Result of 31: confirmed in the sense that no follow-up came; the reader chose not to change the sheet and asked for the next piece. No rule change.
+
+32. Hypothesis (Sony DX's addition as one flow): telling today's sign-up first as the base in one paragraph, then the addition as what it inserts and where, by triggers, with the count said once, attributed, under 300 words and no block, using only checked-off pieces, lets the reader check the flow off or ask one placement question. Result: pending.
