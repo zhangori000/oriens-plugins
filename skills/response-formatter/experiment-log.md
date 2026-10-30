@@ -149,3 +149,7 @@ One entry per teaching reply. The hypothesis is written before the reply is sent
    Result of 34: confirmed. The reader restated item 1 in their own words and asked what card 05 is.
 
 35. Hypothesis (card 05): describing the screen by what the viewer sees on it, where it sits, who draws it on the board versus who offered to draw it, and its exploratory tag, in under 130 words, lets the reader pull item 2 next. Result: pending.
+
+   Result of 35: confirmed with a correction on size: the reader called 120 words too brief to carry engineering and motivation and allowed about double. Change: section 6, the floor is that every named mechanism carries its motivation.
+
+36. Hypothesis (is card 05 possible as drawn): answering yes for the drawn form (Crunchyroll screen, email shown, before the Allow sheet), then the three forms that remain and which company can show the email in each, with the reason in each case, in about 250 words, lets the reader check it off and pull item 2, which it already half covers. Result: pending.
