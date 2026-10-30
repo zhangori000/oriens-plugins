@@ -79,3 +79,7 @@ One entry per teaching reply. The hypothesis is written before the reply is sent
    Result of 17: confirmed. The reader restated the pair correctly, said the "without it, anyone could" sentence is what made it memorable, asked the standard name for a registered company, and asked for the nuance between the console needing no secret and the trade needing one. Change: section 5.3, every security mechanism carries the attack it stops in "without it" form; section 8 updated.
 
 18. Hypothesis (the two proofs): saying that minting the code proves who the viewer is, because the console is signed in as Alex, and trading the code proves who the company is, because only the company holds the secret, each with its "without it" attack, resolves the nuance in one read. Result: pending.
+
+   Result of 18: confirmed. The reader restated the two proofs correctly and asked whether the PlayStation Network's code handles the two cases separately. One refinement owed: the viewer does not mint; the console asks on the viewer's behalf.
+
+19. Hypothesis (two endpoints as two short defs): showing the PlayStation Network's two handlers, one checking the viewer's session and one checking the secret, with a sentence per line in prose above, confirms the reader's picture and names the standard terms (authorization endpoint, token endpoint). Risk: the block tempts a line-by-line walk the reader did not ask for; guard is prose that explains each line in one clause and nothing more. Result: pending.
