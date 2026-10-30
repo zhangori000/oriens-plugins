@@ -67,3 +67,7 @@ One entry per teaching reply. The hypothesis is written before the reply is sent
    Result of 14: refuted on one word. The reader asked what "Hub id" is; it was a name coined in a title for the string the sheet already calls the MASS token, one turn after the rule against coined shorthand was added. Change: section 5.2, a thing the material names keeps the material's name in every title, cell, and sentence; section 8 updated. The four rows otherwise stood.
 
 15. Hypothesis (one-line correction): giving the two corrected cells as text to type, with the sheet's own noun, closes the question without reopening the rows. Result: pending.
+
+   Result of 15: confirmed; the reader finished every row and asked to return to teaching, with a widened goal: end-to-end knowledge for PRs and coordination (Edwin on deep-link fields, Jeffrey and Edwin on the MASS token contract, Jeffrey on M-DCIM), starting with M-DCIM.
+
+16. Hypothesis (Sony DX's addition to the app, told as the app's share and as questions for Jeffrey): a story by triggers from Start Free Trial, one short block of the app's calls with the open points marked, and a list of the questions to ask Jeffrey, gives the reader something to use in the conversation with Jeffrey. Risk: the block re-introduces names from the earlier timeline (session token, M-DCIM's PlayStation client id) that must be re-defined in the sentence that uses them; guard is one clause each. Result: pending.
