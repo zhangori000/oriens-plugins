@@ -127,3 +127,7 @@ One entry per teaching reply. The hypothesis is written before the reply is sent
    Result of 29: confirmed. The reader asked no further question about the accounts and moved to the deliverable: whether the M-DCIM understanding changes the sheet and what LRX Core codes and communicates. The queue's sentence form was reported as annoying. Change: section 6, the queue is a three-line list under "Queue"; section 8 updated.
 
 30. Hypothesis (sheet and PR map): saying no new row today with the reason from the typed 12/9 row, giving the tentative row's text to type for when the choice lands, then two short lists (what LRX Core codes by row, whom to tell what) and the one open question for Jeffrey, under about 450 words, lets the reader act without a follow-up about scope. Result: pending.
+
+   Result of 30: confirmed. The reader accepted no new row and asked for the 12/9 row's deliverable to be sharpened so Igor can decide the split himself. No rule change.
+
+31. Hypothesis (sharpened cell): one cell text under 50 words that names both options and carries Igor's split question, plus a two-line Slack message, lets the reader type and move on without a follow-up. Result: pending.
