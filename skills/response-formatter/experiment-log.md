@@ -145,3 +145,7 @@ One entry per teaching reply. The hypothesis is written before the reply is sent
    Result of 33: refuted on one point. The queue form worked (no complaint about length), but item 1 named the cards "steps 06 and 07", a pointer into Robert's board that the reader has not read, and the reader asked what they are. Change: section 5.5, board card numbers are labels; a card is named by what it is and who draws it.
 
 34. Hypothesis (translating cards 06 and 07): naming each card by what the viewer sees and who draws it, then restating item 1 in one sentence with those names, in under 120 words, closes item 1. Result: pending.
+
+   Result of 34: confirmed. The reader restated item 1 in their own words and asked what card 05 is.
+
+35. Hypothesis (card 05): describing the screen by what the viewer sees on it, where it sits, who draws it on the board versus who offered to draw it, and its exploratory tag, in under 130 words, lets the reader pull item 2 next. Result: pending.
