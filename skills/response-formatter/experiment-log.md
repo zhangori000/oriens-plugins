@@ -119,3 +119,7 @@ One entry per teaching reply. The hypothesis is written before the reply is sent
    Result of 27: confirmed. The reader restated the motivation for the getAuthCode call as an attack (anyone anywhere could open the page and accept) and asked for the next piece. No rule change.
 
 28. Hypothesis (how the Tetsuo app opens M-DCIM's page): confirming the attack with one refinement in three sentences, then the page-open piece under 250 words, attributed to Sony DX's Oct 29 proposal and Jeffrey's proof of concept, told by triggers, with the session token taught with what it proves and what it cannot prove and its "without it" attack, and the count said once, lets the reader check it off without a question about the session token or M-DCIM's PlayStation client id. Result: pending.
+
+   Result of 28: mostly confirmed. The reader asked no question about the session token or the client id; the one question was which account "finds or creates Alex's Sony account" creates, because three companies each hold an account for Alex and the verb named no table or key. Change: section 5.3, "finds or creates", "looks up", and "registers" carry their table, key, and inserted row.
+
+29. Hypothesis (which account is created): naming the three accounts by owner, saying which are read, created, and by whom, with the lookup key for M-DCIM's user table and the undecided order of Crunchyroll's account creation, under 200 words, closes the question. Result: pending.
