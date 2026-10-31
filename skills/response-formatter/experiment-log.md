@@ -201,3 +201,20 @@ One entry per teaching reply. The hypothesis is written before the reply is sent
 
 46. Hypothesis (the dilemma's constraint): stating that Sony owes Crunchyroll nothing, that the sign-up still ends in a Crunchyroll account and a free trial, and that the only code running before the Sony account exists is M-DCIM's, under 150 words, resolves the confusion. Result: pending.
 
+
+   Result of 8: understood. The reader did not question the MIDI-message fact or the Settings row, closed Settings, and moved to the next click, where they asked a why question about the browser (Sounds versus Instruments). No stumble reported; the 150-word counted budget and the "stays as it is" line are confirmed.
+
+9. Hypothesis (reply on why the browser has both Sounds and Instruments when the track is a MIDI track): the one fact is that both lists put the same kind of device on a MIDI track; Instruments lists Live's synths bare, Sounds lists those same synths with settings already dialed in and tagged by how they sound. The sentence most likely to lose the reader is the one that says a preset "contains" an instrument, because the reader may picture a recording. Guard: say that a Sounds entry is an instrument plus the knob positions saved, and that the sound is still made live from the keys. Budget: 150 words, counted. Result: pending.
+
+   Result of 9: understood. The reader did not question the Sounds-versus-Instruments fact and asked a new question about the screen's columns. The 150-word budget is confirmed again.
+
+10. Hypothesis (reply on what each vertical column in Live's Session view means): the one fact is that a column is a track, one player in the band, with its own instrument, its own clips stacked down the column, and its own volume at the bottom. The sentence most likely to lose the reader is the one naming the grey boxes as clip slots, because the reader has not yet put anything in one. Guard: say what a box holds in the reader's own terms (a loop you record or draw) and that empty boxes do nothing. Budget: 150 words, counted. Result: pending.
+
+   Result of 10: understood. The reader did not question the column explanation and asked for a procedure next (a drum and bass tutorial, what to add first). Budget confirmed.
+
+11. Hypothesis (procedure reply: the first thing to add for a drum and bass track in Live): under section 3.1 this is numbered steps, drums first at 174 BPM, ending with a one-bar loop playing. The step most likely to lose the reader is drawing notes in the clip editor, because the editor's rows and grid have not been seen yet. Guard: name what appears after the double-click (a grid with drum names down the left) and place each hit by beat number and row name, with the Draw-mode key named. Budget: 250 words, counted. Result: pending.
+
+   Result of 46: confirmed. The reader restated the dilemma correctly in his own words (Sony writes the account, redirects, Crunchyroll refuses, Sony's account already exists, bad experience).
+
+47. Hypothesis (confirming a correct restatement): a reply that says yes in its first sentence, adds only the one fact the restatement lacked (what Alex sees on screen, and that the Sony account outlives the refusal), and stays under 120 words, gets a checkmark and a move to the next queue item. Result: pending.
+
