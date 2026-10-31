@@ -185,3 +185,8 @@ One entry per teaching reply. The hypothesis is written before the reply is sent
    Result of 43: refuted. Three speakers in one reply, two undefined concepts (banned accounts, email tumbling), "each such change needs Sony DX" with no story of where the rule runs today, and no motivation. The reader asked that queue items list their atoms before the molecules and that one person be taken at a time. Change: check 2, one speaker per reply, atoms queued before each position.
 
 44. Hypothesis (sign-up rules today, then Steeve's first concern): teaching where Crunchyroll's sign-up checks run today with the two checks defined as stories, then Steeve's concern as what changes at steps 9 to 12, under 250 words, gets a checkmark. Result: pending.
+
+   Result of 44: refuted before the content was judged. The reply named moments as "step 9", "step 10", "step 12"; the reader could not follow and said the step lingo blocked understanding. Change: check 9 now names steps by their event, with a literal grep for "step N" on the draft.
+
+45. Hypothesis (same content, events instead of step numbers): the sign-up checks atom plus Steeve's first concern, with every moment named by actor and action and no step number, under 250 words, gets a checkmark. Result: pending.
+

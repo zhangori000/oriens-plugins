@@ -34,7 +34,7 @@ This section exists because the long rules below were not being applied under pr
 
 **Check 8, every request has its answer as a hop, and every answer has its use as the next hop.** "Jeffrey's backend sends X to M-DCIM; M-DCIM answers with Y" is two hops; "the Tetsuo app then calls getAuthCode with that client id" is a failure if the hop in which Jeffrey's backend answered the Tetsuo app with the client id was never written. A chain of requests is complete only when every string an actor uses arrived in a hop the reply wrote.
 
-**Check 9, no pointer and no self-posed riddle.** Nothing is named by position (reply, step, card number) or by a label the reader has not read. A question the reply asks itself is defined before it is answered, or it is cut.
+**Check 9, no pointer and no self-posed riddle.** Nothing is named by position (reply, step, card number) or by a label the reader has not read. A numbered list the reader checked off earlier does not license "step 9" or "at steps 9 to 12" later: a step is named by its event, with the actor and the action ("when Alex presses Agree on M-DCIM's terms page", "when the redirect reaches Jeffrey's backend"). A step number may follow that event name as an aside, never replace it. The scan is literal: `grep -n -i 'step [0-9]'` on the draft must return nothing. A question the reply asks itself is defined before it is answered, or it is cut.
 
 ## 1. The loop
 
