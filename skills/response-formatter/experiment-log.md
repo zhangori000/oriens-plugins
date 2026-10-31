@@ -240,3 +240,12 @@ One entry per teaching reply. The hypothesis is written before the reply is sent
 
 50. Hypothesis (Steeve's second concern): first the atom of what M-DCIM's terms page shows and the two buttons, then why Sony DX locks the email, then Steeve's objection as the two viewers it strands and his counter (link by id, let the email be edited), under 250 words, one speaker's position, gets a checkmark. Result: pending.
 
+
+   Result of 13: refuted at the first sentence, not the scene sentence. The reader asked what a clip is and what a loop is, the two nouns the first sentence used as if known, and then asked whether the eight boxes are storage, which means the "alternatives, one at a time" sentence did not land as a picture. Section 5.2 broken again: "clip" and "loop" were glossed by apposition but not defined from checked-off things. Confirmed, and a pattern across results 12 and 13: the reader is at the level where every Live noun needs its own plain definition.
+
+14. Hypothesis (reply defining clip and loop and answering whether the boxes are storage): the one fact is that a clip is a saved pattern with a length, a loop is a clip that starts again when it reaches its end, and yes, the eight boxes are eight storage places for eight patterns of which the track plays one at a time. The sentence most likely to lose the reader is the one on length, because bars have not been defined. Guard: define a bar as four beats at the top of the grid they saw. Budget: 150 words, counted. Result: pending.
+
+   Result of 50: confirmed ("ok i see continue").
+
+51. Hypothesis (Igor's concern): the atom of how LRX Core debugs a failed PS5 sign-up today (whose logs, whose deploy), then Igor's two points as what changes when the page is Sony DX's, with OpCo defined, under 250 words, gets a checkmark. Result: pending.
+
