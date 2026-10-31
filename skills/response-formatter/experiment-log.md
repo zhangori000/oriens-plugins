@@ -231,3 +231,12 @@ One entry per teaching reply. The hypothesis is written before the reply is sent
 
 49. Hypothesis (a counter-argument from the other side): naming the product (what it is, who owns it), restating Sony DX's claim as a mechanism in the flow the reader holds, and then saying why it does not meet Steeve's point, under 200 words, gets a checkmark. Result: pending.
 
+
+   Result of 12: refuted at the predicted sentence. The reader stopped at the grey box with a circle and asked what each one represents. The guard only named the circle; it did not say what the box is, so section 5.2 (a noun is defined in the sentence that first uses it) was the rule broken, not a missing rule. Confirmed: naming a control on the screen is not defining it.
+
+13. Hypothesis (reply on what the grey boxes with circles are): the one fact is that each box is an empty place for one loop, and the circle is a record button that appears because the track is armed. The sentence most likely to lose the reader is the one about rows across tracks (scenes), because it introduces a second noun. Guard: one sentence, tied to the numbered triangles on the right that the reader can see. Budget: 150 words, counted. Result: pending.
+
+   Result of 49: confirmed ("Got it, continue").
+
+50. Hypothesis (Steeve's second concern): first the atom of what M-DCIM's terms page shows and the two buttons, then why Sony DX locks the email, then Steeve's objection as the two viewers it strands and his counter (link by id, let the email be edited), under 250 words, one speaker's position, gets a checkmark. Result: pending.
+
