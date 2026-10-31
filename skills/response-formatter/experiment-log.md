@@ -222,3 +222,12 @@ One entry per teaching reply. The hypothesis is written before the reply is sent
 
 48. Hypothesis (sourcing a taught mechanism): answering with what the speaker literally said, quoted short, and marking which part of the taught story is my inference and which is his words, under 150 words, keeps the checkmark. Result: pending.
 
+
+   Result of 11: partly confirmed. The reader did the tempo and kit steps (174, the 505 Core Kit on track 1) and stopped, asking what to do now, although the remaining steps were in the same list. So a six-step list was read as far as the first thing that changed the screen, and the reader came back with a screenshot instead of continuing. No sentence was questioned. Lesson for section 3.1, not yet a rule: a step whose result fills the screen with new controls (the Drum Rack's sixteen pads) ends the reader's run, so the list after such a step is better re-sent with the names the reader's own screen now shows.
+
+12. Hypothesis (reply after the 505 kit is loaded): the reader will continue when the steps use the pad names on their own screen (Bassdrum, Snaredrum, Closed Hi Hat) instead of Kick and hat. The step most likely to lose them is the double-click on the slot, because the slots in that column now show circles, not squares. Guard: name the circle. Budget: 150 words, counted. Result: pending.
+
+   Result of 48: confirmed. The reader welcomed inference explicitly ("i welcome u") and asked what the Sony Pictures Core answer means.
+
+49. Hypothesis (a counter-argument from the other side): naming the product (what it is, who owns it), restating Sony DX's claim as a mechanism in the flow the reader holds, and then saying why it does not meet Steeve's point, under 200 words, gets a checkmark. Result: pending.
+
