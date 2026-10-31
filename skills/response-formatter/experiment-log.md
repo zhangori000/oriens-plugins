@@ -218,3 +218,7 @@ One entry per teaching reply. The hypothesis is written before the reply is sent
 
 47. Hypothesis (confirming a correct restatement): a reply that says yes in its first sentence, adds only the one fact the restatement lacked (what Alex sees on screen, and that the Sony account outlives the refusal), and stays under 120 words, gets a checkmark and a move to the next queue item. Result: pending.
 
+   Result of 47: confirmed. The reader accepted and asked whether Steeve said this at the deep dive, a sourcing question.
+
+48. Hypothesis (sourcing a taught mechanism): answering with what the speaker literally said, quoted short, and marking which part of the taught story is my inference and which is his words, under 150 words, keeps the checkmark. Result: pending.
+
