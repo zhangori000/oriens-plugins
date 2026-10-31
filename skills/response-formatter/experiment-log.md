@@ -190,3 +190,14 @@ One entry per teaching reply. The hypothesis is written before the reply is sent
 
 45. Hypothesis (same content, events instead of step numbers): the sign-up checks atom plus Steeve's first concern, with every moment named by actor and action and no step number, under 250 words, gets a checkmark. Result: pending.
 
+
+## 2026-10-31
+
+   Result of 7: refuted, at a different sentence. The reader did not reach the Out/In sentence. They stopped at "each row is one direction of one cable", asked what it meant, and said the reply as a whole was too much; they asked for the minimum a beginner needs after plugging the keyboard in. Two existing rules were broken under the pressure of five questions: section 5.7's ban on analogies (a MIDI port is not a cable, and the reader could not map the word onto the screen), and check 1's budget (the reply ran about 550 words of prose against 150, covering three systems: ports, checkboxes, and the keyboard's buttons, which the second risk in the hypothesis had named). Both rules are confirmed, not changed; the lesson logged is that the mitigation "click first, then the picture" did not stop the picture from growing to three systems.
+
+8. Hypothesis (reply to a reader who says they are confused and asks what a beginner should know after plugging a MIDI keyboard in): the one fact under the confusion is that the keyboard makes no sound and only sends a small "this key went down" message, which an instrument inside Live turns into sound, so the Settings screen is only about letting Live receive that message. The sentence most likely to lose the reader is the one that names the Settings row as the keyboard, because the row's name "FLkey Mini (MIDI Out)" still contains the word Out. Guard: check 7, the row is named as "your keyboard" in the same sentence, and nothing else on the screen is explained beyond "stays as it is". Budget: 150 words, counted. Result: pending.
+
+   Result of 45: not checked off. The reader asked why Sony would re-implement Crunchyroll's checks, since Sony is its own company. The dilemma was stated without its constraint: the lacking fact is that a clean refusal must run before the Sony account is written, and M-DCIM's server is the only code that runs then, and Sony has no reason to refuse a viewer who is only a problem for Crunchyroll. Change: check 9, a dilemma names its constraint and who would do each option.
+
+46. Hypothesis (the dilemma's constraint): stating that Sony owes Crunchyroll nothing, that the sign-up still ends in a Crunchyroll account and a free trial, and that the only code running before the Sony account exists is M-DCIM's, under 150 words, resolves the confusion. Result: pending.
+
