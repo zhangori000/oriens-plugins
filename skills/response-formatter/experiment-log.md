@@ -249,3 +249,12 @@ One entry per teaching reply. The hypothesis is written before the reply is sent
 
 51. Hypothesis (Igor's concern): the atom of how LRX Core debugs a failed PS5 sign-up today (whose logs, whose deploy), then Igor's two points as what changes when the page is Sony DX's, with OpCo defined, under 250 words, gets a checkmark. Result: pending.
 
+
+   Result of 14: confirmed; the reader said "ok i get it now" and asked for the next steps. Checkmark on clip, loop, and clip slots. The plain-definition-per-noun approach at 150 words is what works at this reader's level.
+
+15. Hypothesis (procedure reply re-sending the four drum loop clicks with the screen's own names): the step most likely to lose the reader is placing a hit "halfway between beats 3 and 4", because the grid's half-beat lines have not been named. Guard: say the grid has thin lines between the numbered beats and the hit goes on the second thin line after 3. Budget: 150 words, counted. Result: pending.
+
+   Result of 51: two follow-ups. "The page's code" was used without saying what a web page's code is, and the checkbox point was one line with no atom (the page's three checkboxes were never taught). Change: check 3, the terms page is defined as the HTML and JavaScript M-DCIM's server sends, and the three checkboxes are named before any one of them is discussed.
+
+52. Hypothesis (page code, then checkboxes): defining the page as the document M-DCIM's server answers with, then the three checkboxes as an atom, then Igor's checkbox-2 questions and the answers he got (undefined; Phase 2, 2H FY27), under 280 words, gets a checkmark. Result: pending.
+
