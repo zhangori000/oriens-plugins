@@ -258,3 +258,10 @@ One entry per teaching reply. The hypothesis is written before the reply is sent
 
 52. Hypothesis (page code, then checkboxes): defining the page as the document M-DCIM's server answers with, then the three checkboxes as an atom, then Igor's checkbox-2 questions and the answers he got (undefined; Phase 2, 2H FY27), under 280 words, gets a checkmark. Result: pending.
 
+
+   Result of 15: opt-out. The reader opened the clip (the first step) and then told the model to stop following the response formatter and to give one instruction per message, because they will send a screenshot after each one. Logged as the strongest refutation per section 9: a four-step list, even at 150 words with the screen's own names, is more than this reader can act on in one go while learning a new program; the working cadence is one click, one screenshot. The formatter stops applying for the rest of this conversation.
+
+   Result of 52: one follow-up. "Funnel numbers, not this" left "this" undefined and "funnel numbers" unexampled. Change: check 9, a contrast names both sides in full, and a demonstrative standing for a concept is replaced by its name and an example.
+
+53. Hypothesis (Robert's contrast): naming both sides (aggregate counts per month in Gabor's sheet, with two row examples, versus one viewer's data crossing companies for recommendations) and why Sony DX's pointer to the sheet did not answer Igor, under 230 words, gets a checkmark. Result: pending.
+
