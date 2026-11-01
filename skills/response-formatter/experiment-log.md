@@ -397,3 +397,7 @@ One entry per teaching reply. The hypothesis is written before the reply is sent
 
 86. Hypothesis (three nouns and one term): defining each of the four in its own short paragraph, with the sheet's meaning of baseline set beside the reader's, under 250 words, gets a checkmark. Result: pending.
 
+   Result of 86: confirmed; the reader restated SDO correctly and asked whether all three companies write and Sony's analysts read.
+
+87. Hypothesis (confirming with the slide's caption): yes, with the correction that the slide gives read access to SIE's and Crunchyroll's analysts too, and the join key named, under 120 words, gets a checkmark. Result: pending.
+
