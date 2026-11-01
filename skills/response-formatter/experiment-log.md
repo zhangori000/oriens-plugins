@@ -457,3 +457,7 @@ One entry per teaching reply. The hypothesis is written before the reply is sent
 
 101. Hypothesis (the column placed): a column as one named field of a table in SDO, the press table as SIE's copy and the app-open table as Crunchyroll's copy, both in Sony DX's store, under 120 words, gets a checkmark. Result: pending.
 
+   Result of 101: refuted. SDO, SIE's store, the copy, and Crunchyroll's event store were named without their kind; section 4.3 was not applied. Change: check 7b, a store gets its section 4.3 facts the first time it is named, with evidence marked.
+
+102. Hypothesis (four stores pinned): Snowflake as one database holding many tables, SDO as a database in it (slide evidence), SIE's console log as Snowflake (slide evidence), the copy as a scheduled job with the two common mechanisms named and marked inferred, and Crunchyroll's event store as cr-events-service with its engine unknown, under 260 words, gets a checkmark. Result: pending.
+
