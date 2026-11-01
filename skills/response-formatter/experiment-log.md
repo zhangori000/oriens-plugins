@@ -341,3 +341,7 @@ One entry per teaching reply. The hypothesis is written before the reply is sent
 
 72. Hypothesis (confirming with precision): yes to the screen, then the exact status of "M-DCIM later" (the pre-sync's migrate-later idea, Sony DX's opposition, Sree's stronger doubt), under 150 words, gets a checkmark. Result: pending.
 
+   Result of 72: confirmed; the reader restated the web view as client and server correctly and asked whether Steeve wants to own M-DCIM.
+
+73. Hypothesis (separating the screen from the service): saying that Steeve wants the screen and the sign-up decision, never M-DCIM itself, then the one shape in which both hold (Crunchyroll draws the screen, Jeffrey's backend creates the Sony account by a server-to-server request to M-DCIM), marked as an inference with its open question, under 200 words, gets a checkmark. Result: pending.
+
