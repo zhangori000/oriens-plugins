@@ -369,3 +369,7 @@ One entry per teaching reply. The hypothesis is written before the reply is sent
 
 79. Hypothesis (the empty lookup): stating that M-DCIM's grants table is written only by Create on M-DCIM's page, that Carol's laptop sign-up wrote only Jeffrey's accounts table, and that no process copies rows between the two companies, under 130 words, gets a checkmark. Result: pending.
 
+   Result of 79: confirmed ("continue").
+
+80. Hypothesis (the Confluence scenario table): the three inputs and the one decision first, then the rows grouped by outcome kind with one example each, then Jeffrey's subscription rule, under 280 words, gets a checkmark. Result: pending.
+
