@@ -461,3 +461,7 @@ One entry per teaching reply. The hypothesis is written before the reply is sent
 
 102. Hypothesis (four stores pinned): Snowflake as one database holding many tables, SDO as a database in it (slide evidence), SIE's console log as Snowflake (slide evidence), the copy as a scheduled job with the two common mechanisms named and marked inferred, and Crunchyroll's event store as cr-events-service with its engine unknown, under 260 words, gets a checkmark. Result: pending.
 
+   Result of 102: confirmed with two follow-ups: whether apps write to Snowflake directly, and whether SIE's store is also Snowflake. The reader asked that follow-up questions be spliced into the queue. Change: Move 3, remaining questions become queue lines.
+
+103. Hypothesis (one question answered, one spliced): apps never write to Snowflake in the request path; events go to a collector and a loader writes batches, with the latency reason, under 170 words, with the SIE question as the next queue line, gets a checkmark. Result: pending.
+
