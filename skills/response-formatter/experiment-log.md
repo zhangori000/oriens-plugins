@@ -437,3 +437,7 @@ One entry per teaching reply. The hypothesis is written before the reply is sent
 
 96. Hypothesis (Charles's split): the one rule that sorts every KPI (can it be computed from rows that already exist in the two datasources, or does it need a Crunchyroll row joined to an SIE row), two examples on each side from the sheet rows the reader has in his Oct 23 notes, and what each side costs him, under 230 words, gets a checkmark. Result: pending.
 
+   Result of 96: refuted on one phrase. "Computed from rows that already exist in the two datasources" was read as a computation across both tables, and "needs a join" had no literal example. Change: check 9, a plural of introduced things is replaced by the one meant, and a computed number is shown from its rows.
+
+97. Hypothesis (two worked numbers): days per month from four literal viewership rows for one account, then handoff success rate from three SIE press rows and two Crunchyroll app-open rows joined on the id, under 200 words, gets a checkmark. Result: pending.
+
