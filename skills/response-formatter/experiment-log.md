@@ -333,3 +333,7 @@ One entry per teaching reply. The hypothesis is written before the reply is sent
 
 70. Hypothesis (screen count): the new viewer's screens in time order for Crunchyroll's version, the checkbox placed on the one screen it sits on, then the same count for Sony DX's version to show that the M-DCIM page replaces a screen rather than removing one, marked as unverified against the Tetsuo app's code, under 220 words, gets a checkmark. Result: pending.
 
+   Result of 70: refuted. The screen list put Crunchyroll's account screen before the Authorized Apps screen, but the account screen shows the PlayStation email, which Jeffrey's backend can only read after the Authorized Apps trade. The reader caught the dependency. Change: check 8, screens are ordered by the hop that fetched what they show.
+
+71. Hypothesis (corrected order): admitting the error, then the four screens with the hop between the Authorized Apps screen and the account screen written out, under 200 words, gets a checkmark. Result: pending.
+
