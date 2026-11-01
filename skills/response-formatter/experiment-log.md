@@ -349,3 +349,7 @@ One entry per teaching reply. The hypothesis is written before the reply is sent
 
 74. Hypothesis (consent as a record someone holds): saying that M-DCIM would hold only Crunchyroll's assertion (a field in the request), that a consent record is evidence a company must be able to show a regulator, and that this is the real reason Sony DX wants its own page, under 180 words, gets a checkmark. Result: pending.
 
+   Result of 74: confirmed; the reader moved to an engineering question (what the Tetsuo app must change under each outcome) and asked to publish this skill to GitHub, which happened as 1.6.0.
+
+75. Hypothesis (frontend changes per outcome): three outcomes, each as the calls the Tetsuo app adds or changes, with the web view named as the one large cost and the one fact LRX Core should raise (controller focus and logs inside an iframe), under 280 words, gets a checkmark. Result: pending.
+
