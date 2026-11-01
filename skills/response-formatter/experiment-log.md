@@ -297,3 +297,7 @@ One entry per teaching reply. The hypothesis is written before the reply is sent
 
 61. Hypothesis (the moment named by its button): restating that the email reaches M-DCIM's server when it trades the PlayStation code for M-DCIM, before the page is drawn and before checkbox 3, and why that matters for the security review (it is there even if Alex presses Skip), under 150 words, gets a checkmark. Result: pending.
 
+   Result of 61: confirmed; the reader asked when the web view opens and whether a flow was settled.
+
+62. Hypothesis (two questions, one short answer each): the web view's opening placed as hops in the flow the reader holds, then "not settled" with what was decided and what is open, then one labeled inference of the likely outcome with its reasons, under 260 words, gets a checkmark. Result: pending.
+
