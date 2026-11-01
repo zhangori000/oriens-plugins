@@ -421,3 +421,7 @@ One entry per teaching reply. The hypothesis is written before the reply is sent
 
 92. Hypothesis (the join rebuilt): the two rows restated, then what a join is (a query keeping two rows together when a named column matches), then the only condition available without the id (same Sony id and app open within thirty seconds) and the case it gets wrong, then the condition with the id, under 200 words, gets a checkmark. Result: pending.
 
+   Result of 92: confirmed ("got it"); the reader asked who mints the handoff id and whether Edwin's feed would have to carry a million prebuilt uuids.
+
+93. Hypothesis (who mints, and when): the one fact that the id is per click, not per feed item, so it is minted on the console at click time by the Hub's own code (SIE's), and Edwin Nazarian's feed carries only the static parts of the launch string, with the two Edwins told apart, under 220 words, gets a checkmark. Result: pending.
+
