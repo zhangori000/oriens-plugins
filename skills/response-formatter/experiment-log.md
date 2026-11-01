@@ -479,3 +479,7 @@ One entry per teaching reply. The hypothesis is written before the reply is sent
    Result of 105: confirmed ("so far so good"). The reader asked the queue line to drop "waiting for your checkmark", name the next couple of items, and tell the reader plainly that a queue exists and can be asked about; a compact learned sentence may open the reply instead. Change: section 6 queue line rewritten; check 8 updated.
 
 106. Hypothesis (Sony id as join key for "same person"): one sentence on which checked-off pieces it builds on, then the query condition press.sonyId = appOpen.sonyId with two literal rows from each table, where each table's sonyId column comes from (SIE's identity row; Crunchyroll's accounts table column written at link time), and the one gap (how the app-open row gets a sonyId is the next piece), under 220 words, gets a checkmark. Result: pending.
+
+   Result of 106: confirmed ("Continue"), with one question spliced in: whether the Sony id join assumes the M-DCIM agree flow. No rule change.
+
+107. Hypothesis (M-DCIM question, then property vs mapping table): answering that the join needs only a Sony id column on both tables, that today's Authorized Apps link writes a PlayStation account id, and that whether that id is the Sony id rests on Ogasawara's one-row claim (no M-DCIM flow assumed unless M-DCIM mints a different id), then the two ways each as hops with who does the work, under 250 words, gets a checkmark. Result: pending.
