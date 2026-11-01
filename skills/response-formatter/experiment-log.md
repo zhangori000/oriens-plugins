@@ -321,3 +321,7 @@ One entry per teaching reply. The hypothesis is written before the reply is sent
 
 67. Hypothesis (Jeffrey's assumption as hops): one returning viewer, the same opening hops the reader holds, then M-DCIM's grants-table lookup replacing the page with an immediate redirect, then Jeffrey's backend finding the row by the Sony id column and answering with a Crunchyroll token, marked as Jeffrey's assumption, under 250 words, gets a checkmark. Result: pending.
 
+   Result of 67: confirmed ("continue").
+
+68. Hypothesis (Steeve's "depends on who owns that screen"): showing that the skip in Jeffrey's assumption is a lookup on M-DCIM's server, and that if Crunchyroll draws the screen the same lookup moves to Jeffrey's accounts table by the PlayStation id column after the Authorized Apps trade, under 200 words, gets a checkmark. Result: pending.
+
