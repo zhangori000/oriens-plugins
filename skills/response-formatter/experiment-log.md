@@ -377,3 +377,7 @@ One entry per teaching reply. The hypothesis is written before the reply is sent
 
 81. Hypothesis (Carol resumed): from the drawn Create page, her Create press as hops ending in the write to the Sony id column, then Log In as the button that bypasses M-DCIM with no write, under 230 words, gets a checkmark. Result: pending.
 
+   Result of 81: one follow-up on Jeffrey's quoted phrase "pick a different method", which the reply quoted without saying what a login method is on the Tetsuo app's login screen. Change: none new; check 3 already requires the definition, and the quote stood in for it.
+
+82. Hypothesis (login methods): naming the login screen's methods (email and password, QR code, and the proposed Sign in with PlayStation), then Carol's path back to that screen, under 130 words, gets a checkmark. Result: pending.
+
