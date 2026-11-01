@@ -212,7 +212,16 @@ A fixed-width block never has side-by-side columns, because a narrow screen wrap
 
 A teaching reply is under about 300 words, and a reply that answers a confusion is under about 250 words with no block (the reader later raised a 120-word reply to about 250, because a reply that only names things leaves no engineering and no motivation to ask about; the floor is that every mechanism named carries its motivation), because the reader reported that a long reply is dangerous when they are already confused: it gives them more to be confused by. When one message carries several questions, the reply answers the one confusion under them and gives each other question one sentence or a queue entry, never a paragraph each; answering every question in full is how a reply reaches seven hundred words.
 
-The queue at the end of a reply is a three-line list under the single word "Queue", not a sentence: the first line starts "Waiting for your checkmark:" and names the piece just taught; the second starts "Next:" and names one piece; the third starts "After:" and lists the rest, comma-separated, in order. The sentence form, "the queue: waiting for your checkmark, X; then Y; then Z, W, V", was reported as annoying to read because the colons, commas, and semicolons had to be parsed before the names could be.
+The queue at the end of a reply is a short block under the single word "Queue", one line per state, each line a full sentence that starts with an emoji so the eye can find the state without reading:
+
+✅ Learned: the last two or three pieces checked off, named by what they established.
+🔍 Waiting for your checkmark: the piece this reply taught.
+➡️ Next, we will look at one piece, in a sentence.
+📋 After that come the remaining pieces, in a sentence, in order.
+
+The earlier sentence form with colons and semicolons was reported as annoying, and the three-line "Next:" and "After:" fragments were reported as hard to read because they were not sentences. A line never holds a fragment.
+
+A reply that defines two things of a kind in one paragraph ("the user key" and "the handoff key") is two pieces; each key, and each way of carrying a key, is its own queue line. A word from the material ("user ID linking", "key") is defined on first use with what it is at the table level (a join key is the column a query matches on, which is not the table's primary key), because "the user key" was asked about as if it were a primary key or a row.
 
 ## 7. Notes written for other sessions
 

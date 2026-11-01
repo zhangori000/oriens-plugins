@@ -449,3 +449,7 @@ One entry per teaching reply. The hypothesis is written before the reply is sent
 
 99. Hypothesis (the two join keys): the user id key as the Sony id column already taught, with the gap (unlinked viewers), then the handoff id key as the per-click column already taught, then Charles's two ways to carry a key (a property on existing events, or a mapping table) shown with literal rows for the mapping table, under 240 words, gets a checkmark. Result: pending.
 
+   Result of 99: refuted. "The user key" was undefined (join key versus primary key versus row), "sits on SIE's rows" named no table, "one identity row" was stated as fact when it is Ogasawara's deep-dive claim, and the paragraph held two keys and two carrying mechanisms. The reader also asked for a queue with emojis and full sentences. Change: section 6, the queue is four emoji-led sentences with a Learned line; two things of a kind are two pieces; "key" defined at the table level.
+
+100. Hypothesis (join key alone): defining a join key as the column a query matches on, against the primary key, with one two-table example, and nothing else, under 150 words, gets a checkmark. Result: pending.
+
