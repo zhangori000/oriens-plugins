@@ -305,3 +305,7 @@ One entry per teaching reply. The hypothesis is written before the reply is sent
 
 63. Hypothesis (dates and escalation): each named leader introduced with their company and role on first mention, the public date versus the internal date, and the mandate as a concrete rule about who decides, under 230 words, gets a checkmark. Result: pending.
 
+   Result of 63: confirmed ("continue").
+
+64. Hypothesis (next steps): five actions each with owner, date in both zones where a date exists, and what it decides for LRX Core, plus the one fact that engineering is away at the Engineering Summit the week of November 2, under 230 words, gets a checkmark and closes the deep-dive items. Result: pending.
+
