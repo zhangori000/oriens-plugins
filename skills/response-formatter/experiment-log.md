@@ -277,3 +277,7 @@ One entry per teaching reply. The hypothesis is written before the reply is sent
 
 56. Hypothesis (Create Account(s)): the atom that the Sony account and the PlayStation account are one identity row with a terms-accepted mark, then the shadow Crunchyroll account, then why "(s)", then SIE's timeline gap as Ogasawara's reason for the screen, under 250 words, gets a checkmark. Result: pending.
 
+   Result of 56: confirmed ("ok continue").
+
+57. Hypothesis (Skip plus different email): the atom of what a link is in Jeffrey's backend (a column on the account row holding the Sony or PlayStation account id), then Jeffrey's question with one concrete viewer, then Ogasawara's same-email versus different-email answer and the Day 1 deferral, under 250 words, gets a checkmark. Result: pending.
+
