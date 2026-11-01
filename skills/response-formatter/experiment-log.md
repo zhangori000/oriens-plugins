@@ -405,3 +405,7 @@ One entry per teaching reply. The hypothesis is written before the reply is sent
 
 88. Hypothesis (the column and the server): the Sony id as a column on the rows each company copies into SDO, with the nightly join in Crunchyroll's datasource build shown as the hop that adds it, Datadog named as a different store, and the metadata server as the slide's label for a title catalog export, under 220 words, gets a checkmark. Result: pending.
 
+   Result of 88: confirmed; the reader asked which of this is his ownership.
+
+89. Hypothesis (ownership split): naming the owner of each store or hop just taught (datasources and the SDO copy to Charles's team, the Sony id column to Jeffrey's backend, runtime events and their properties to LRX Core), with Igor's own sentence as the source, under 150 words, gets a checkmark. Result: pending.
+
