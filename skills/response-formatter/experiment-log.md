@@ -281,3 +281,7 @@ One entry per teaching reply. The hypothesis is written before the reply is sent
 
 57. Hypothesis (Skip plus different email): the atom of what a link is in Jeffrey's backend (a column on the account row holding the Sony or PlayStation account id), then Jeffrey's question with one concrete viewer, then Ogasawara's same-email versus different-email answer and the Day 1 deferral, under 250 words, gets a checkmark. Result: pending.
 
+   Result of 57: refuted. "Write the ids into that yahoo row" was used before any table or row had been shown, and the scenario added a refusal step (Create refused for a tumbled variant) that the question did not need, so the reader lost the thread. Change: check 7b, a row needs its table with two literal rows, and a scenario carries only the steps the question needs.
+
+58. Hypothesis (the yahoo case rebuilt): showing the accounts table with two literal rows and the PlayStation id column, then the simplest scenario (Alex presses Log In with the yahoo account, no refusal step), then the one write that "link" means and Ogasawara's rule against it, under 250 words, gets a checkmark. Result: pending.
+
