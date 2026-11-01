@@ -269,3 +269,7 @@ One entry per teaching reply. The hypothesis is written before the reply is sent
 
 54. Hypothesis (Jeffrey's concern): the atom of what his PoC is (the flow the reader holds, built weeks ago, many consent screens), then the two error cases he named and where their answer travels in the PoC versus the single page, then Nakamura's reply and the agreed next step, under 250 words, gets a checkmark. Result: pending.
 
+   Result of 54: refuted on one sentence. The two error paths were folded into a single "either ... or" sentence with "sent from ... to" and "ride back through the redirect as an error parameter", and the reader could not parse it. Change: check 9, each option of a dilemma is its own hop list, one request per sentence.
+
+55. Hypothesis (the two error paths as hops): confirming the meeting, then the constraint (the Create press goes to M-DCIM's server, not Jeffrey's backend), then each path as three or four one-request sentences with the new API or the query-string parameter named, under 250 words, gets a checkmark. Result: pending.
+
