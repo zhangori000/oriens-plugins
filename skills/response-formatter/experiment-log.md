@@ -401,3 +401,7 @@ One entry per teaching reply. The hypothesis is written before the reply is sent
 
 87. Hypothesis (confirming with the slide's caption): yes, with the correction that the slide gives read access to SIE's and Crunchyroll's analysts too, and the join key named, under 120 words, gets a checkmark. Result: pending.
 
+   Result of 87: two follow-ups. "The anime metadata server" was a slide label used as if defined, and "the Sony account id present on both" named no row and no column, so the reader asked whether it goes in a schema or in Datadog. Change: none new; checks 3 and 7b already cover a label and a column.
+
+88. Hypothesis (the column and the server): the Sony id as a column on the rows each company copies into SDO, with the nightly join in Crunchyroll's datasource build shown as the hop that adds it, Datadog named as a different store, and the metadata server as the slide's label for a title catalog export, under 220 words, gets a checkmark. Result: pending.
+
