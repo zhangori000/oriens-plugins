@@ -345,3 +345,7 @@ One entry per teaching reply. The hypothesis is written before the reply is sent
 
 73. Hypothesis (separating the screen from the service): saying that Steeve wants the screen and the sign-up decision, never M-DCIM itself, then the one shape in which both hold (Crunchyroll draws the screen, Jeffrey's backend creates the Sony account by a server-to-server request to M-DCIM), marked as an inference with its open question, under 200 words, gets a checkmark. Result: pending.
 
+   Result of 73: confirmed with a sharp follow-up: how would M-DCIM know the terms were accepted without its page. The lacking fact is who holds the consent evidence.
+
+74. Hypothesis (consent as a record someone holds): saying that M-DCIM would hold only Crunchyroll's assertion (a field in the request), that a consent record is evidence a company must be able to show a regulator, and that this is the real reason Sony DX wants its own page, under 180 words, gets a checkmark. Result: pending.
+
