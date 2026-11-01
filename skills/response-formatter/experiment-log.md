@@ -381,3 +381,7 @@ One entry per teaching reply. The hypothesis is written before the reply is sent
 
 82. Hypothesis (login methods): naming the login screen's methods (email and password, QR code, and the proposed Sign in with PlayStation), then Carol's path back to that screen, under 130 words, gets a checkmark. Result: pending.
 
+   Result of 82: confirmed ("cont"); Carol's piece checked off by moving on.
+
+83. Hypothesis (Steeve's alignment and Sree's doubt): Sree introduced by what the message says of him and nothing more, "the other friction screens" named as the Authorized Apps screen and Pay with PlayStation, and Sree's count shown as a screen list under the aligned position (Crunchyroll keeps its own screen, so M-DCIM's page is a fifth), under 230 words, gets a checkmark. Result: pending.
+
