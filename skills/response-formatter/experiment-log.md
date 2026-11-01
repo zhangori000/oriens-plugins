@@ -389,3 +389,7 @@ One entry per teaching reply. The hypothesis is written before the reply is sent
 
 84. Hypothesis (intake of the telemetry thread): a piece list built backwards from the reader's goal (he is Igor's named contact for Tetsuo app events), nine lines in dependency order, a recommended first piece with one reason, and three questions with recommended answers, gets a one-word answer rather than a question about the list. Result: pending.
 
+   Result of 84: confirmed ("yes, start with the datasources and SDO").
+
+85. Hypothesis (datasources and SDO): motivation first (without them every KPI needs a new app event), then each datasource as a table with its row grain and two literal rows, then SDO as the Sony DX store the Oct 8 slide drew, with the name marked unexpanded, then the daily copy as the hop, under 250 words, gets a checkmark. Result: pending.
+
