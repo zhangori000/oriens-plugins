@@ -365,3 +365,7 @@ One entry per teaching reply. The hypothesis is written before the reply is sent
 
 78. Hypothesis (restart at the button): defining the button and the fact that M-DCIM's page is the only door M-DCIM has, so a login through it lands a never-seen viewer on the Create page, then Carol in three hops, under 150 words, with one question asking where the thread was lost, gets a checkmark or a named word. Result: pending.
 
+   Result of 78: the reader asked why the grants lookup finds nothing when Carol has a Crunchyroll account. The lacking fact is that each company's table is written only by that company's own events, and Carol's laptop sign-up wrote only Jeffrey's table. Change: check 7b, an empty lookup names the table's writer and event.
+
+79. Hypothesis (the empty lookup): stating that M-DCIM's grants table is written only by Create on M-DCIM's page, that Carol's laptop sign-up wrote only Jeffrey's accounts table, and that no process copies rows between the two companies, under 130 words, gets a checkmark. Result: pending.
+
