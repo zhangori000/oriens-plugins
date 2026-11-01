@@ -309,3 +309,7 @@ One entry per teaching reply. The hypothesis is written before the reply is sent
 
 64. Hypothesis (next steps): five actions each with owner, date in both zones where a date exists, and what it decides for LRX Core, plus the one fact that engineering is away at the Engineering Summit the week of November 2, under 230 words, gets a checkmark and closes the deep-dive items. Result: pending.
 
+   Result of 64: confirmed by moving on; the reader pasted George Yu's Slack thread with Jeffrey's and Steeve's replies and asked for queue items.
+
+65. Hypothesis (intake of a Slack thread): a numbered queue of six pieces in dependency order (the three board flows first, since every later line names one of them), each under twelve words, then the first piece taught in under 100 words, gets a "continue" rather than a question. Result: pending.
+
