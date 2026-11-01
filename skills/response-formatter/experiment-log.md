@@ -417,3 +417,7 @@ One entry per teaching reply. The hypothesis is written before the reply is sent
 
 91. Hypothesis (answering a design proposal): stating the one fact that decides it (the id must be the same string on SIE's row and Crunchyroll's row, so the side that fires first must mint it), showing the join that fails with an app-minted id, and naming which KPIs launchSource alone does cover, under 220 words, gets a checkmark. Result: pending.
 
+   Result of 91: refuted on one sentence. "Cannot pair them except by guessing from player id and time" used "pair" with no query condition and "guessing" with no condition at all, and skipped the intermediate fact that an analyst joins two tables by a column. Change: check 4, data verbs are written as the query condition with the column named.
+
+92. Hypothesis (the join rebuilt): the two rows restated, then what a join is (a query keeping two rows together when a named column matches), then the only condition available without the id (same Sony id and app open within thirty seconds) and the case it gets wrong, then the condition with the id, under 200 words, gets a checkmark. Result: pending.
+
