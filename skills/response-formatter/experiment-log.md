@@ -433,3 +433,7 @@ One entry per teaching reply. The hypothesis is written before the reply is sent
 
 95. Hypothesis (a procedure answer): the contract split into its two owners (SIE for the append, Edwin Nazarian for the static part), the reader's role as the consumer who writes down what he needs, three named contacts with what each decides, and a short posting the reader could type, under 220 words, gets a checkmark or a posted message. Result: pending.
 
+   Result of 95: confirmed ("got it").
+
+96. Hypothesis (Charles's split): the one rule that sorts every KPI (can it be computed from rows that already exist in the two datasources, or does it need a Crunchyroll row joined to an SIE row), two examples on each side from the sheet rows the reader has in his Oct 23 notes, and what each side costs him, under 230 words, gets a checkmark. Result: pending.
+
