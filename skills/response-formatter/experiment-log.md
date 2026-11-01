@@ -329,3 +329,7 @@ One entry per teaching reply. The hypothesis is written before the reply is sent
 
 69. Hypothesis (naming the absence): saying that in Crunchyroll's counter-proposal M-DCIM is not in sign-in or sign-up at MVP, with the one place Sony DX would later appear (the migration from the checkbox list), under 130 words, gets a checkmark. Result: pending.
 
+   Result of 69: confirmed; the reader asked when the checkbox runs and how many screens a viewer sees.
+
+70. Hypothesis (screen count): the new viewer's screens in time order for Crunchyroll's version, the checkbox placed on the one screen it sits on, then the same count for Sony DX's version to show that the M-DCIM page replaces a screen rather than removing one, marked as unverified against the Tetsuo app's code, under 220 words, gets a checkmark. Result: pending.
+
