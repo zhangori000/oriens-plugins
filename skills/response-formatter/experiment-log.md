@@ -393,3 +393,7 @@ One entry per teaching reply. The hypothesis is written before the reply is sent
 
 85. Hypothesis (datasources and SDO): motivation first (without them every KPI needs a new app event), then each datasource as a table with its row grain and two literal rows, then SDO as the Sony DX store the Oct 8 slide drew, with the name marked unexpanded, then the daily copy as the hop, under 250 words, gets a checkmark. Result: pending.
 
+   Result of 85: refuted. Snowflake, Iceberg, and "conversion row" were used undefined, and "platform baseline" was used with the sheet's meaning while the reader held the everyday meaning. Change: check 3, quoted technology names are defined on first use.
+
+86. Hypothesis (three nouns and one term): defining each of the four in its own short paragraph, with the sheet's meaning of baseline set beside the reader's, under 250 words, gets a checkmark. Result: pending.
+
