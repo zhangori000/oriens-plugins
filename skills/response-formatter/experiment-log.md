@@ -373,3 +373,7 @@ One entry per teaching reply. The hypothesis is written before the reply is sent
 
 80. Hypothesis (the Confluence scenario table): the three inputs and the one decision first, then the rows grouped by outcome kind with one example each, then Jeffrey's subscription rule, under 280 words, gets a checkmark. Result: pending.
 
+   Result of 80: refuted on pacing. "Continue" after the empty-lookup repair was read as a checkmark on Carol's whole piece, and the next queue item was taught; the reader wanted the rest of Carol's piece. Change: Move 4, "continue" after a repair resumes the piece, not the queue.
+
+81. Hypothesis (Carol resumed): from the drawn Create page, her Create press as hops ending in the write to the Sony id column, then Log In as the button that bypasses M-DCIM with no write, under 230 words, gets a checkmark. Result: pending.
+
