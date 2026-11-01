@@ -353,3 +353,7 @@ One entry per teaching reply. The hypothesis is written before the reply is sent
 
 75. Hypothesis (frontend changes per outcome): three outcomes, each as the calls the Tetsuo app adds or changes, with the web view named as the one large cost and the one fact LRX Core should raise (controller focus and logs inside an iframe), under 280 words, gets a checkmark. Result: pending.
 
+   Result of 75: refuted. The web-view outcome listed five additions in one sentence (listener, redirect, final request), and the reader said it overloaded him. Change: check 2, an inventory of changes is a queue, each entry taught as hops.
+
+76. Hypothesis (the end of the web-view flow as hops): the iframe's address as the one thing the Tetsuo app can watch, then the three redirects and requests from Agree to the return address, then why one more request to Jeffrey's backend is needed for the Crunchyroll token, marked inferred, under 250 words, gets a checkmark. Result: pending.
+
