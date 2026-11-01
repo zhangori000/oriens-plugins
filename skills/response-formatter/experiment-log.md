@@ -301,3 +301,7 @@ One entry per teaching reply. The hypothesis is written before the reply is sent
 
 62. Hypothesis (two questions, one short answer each): the web view's opening placed as hops in the flow the reader holds, then "not settled" with what was decided and what is open, then one labeled inference of the likely outcome with its reasons, under 260 words, gets a checkmark. Result: pending.
 
+   Result of 62: confirmed ("continue to next in q").
+
+63. Hypothesis (dates and escalation): each named leader introduced with their company and role on first mention, the public date versus the internal date, and the mandate as a concrete rule about who decides, under 230 words, gets a checkmark. Result: pending.
+
