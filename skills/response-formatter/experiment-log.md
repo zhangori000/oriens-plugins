@@ -313,3 +313,7 @@ One entry per teaching reply. The hypothesis is written before the reply is sent
 
 65. Hypothesis (intake of a Slack thread): a numbered queue of six pieces in dependency order (the three board flows first, since every later line names one of them), each under twelve words, then the first piece taught in under 100 words, gets a "continue" rather than a question. Result: pending.
 
+   Result of 65: refuted on the first piece. "Signed-in subscriber flow" was named without saying that every board flow starts from a Hub link opening the Tetsuo app and is keyed by what the console already stores for Crunchyroll. Change: none to the file yet; the fact goes in the repair.
+
+66. Hypothesis (the repair): stating that all three flows begin when a Hub link opens the Tetsuo app and differ only by what the console already holds (a Crunchyroll token, an account but no token, nothing), under 130 words, gets a checkmark. Result: pending.
+
