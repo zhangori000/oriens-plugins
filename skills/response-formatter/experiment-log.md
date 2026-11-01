@@ -293,3 +293,7 @@ One entry per teaching reply. The hypothesis is written before the reply is sent
 
 60. Hypothesis (InfoSec audit): saying first that the queue's "item 6" was already taught inside item 4, then the atom of what a security review of another company's service is, then what of Crunchyroll's would sit on Sony DX's servers, then the exchange and its owner, under 220 words, gets a checkmark. Result: pending.
 
+   Result of 60: one follow-up. "Before any Crunchyroll consent" was a coined label for the moment Alex ticks checkbox 3 and presses Create. Change: check 3, consent moments are named by their checkbox or button.
+
+61. Hypothesis (the moment named by its button): restating that the email reaches M-DCIM's server when it trades the PlayStation code for M-DCIM, before the page is drawn and before checkbox 3, and why that matters for the security review (it is there even if Alex presses Skip), under 150 words, gets a checkmark. Result: pending.
+
