@@ -285,3 +285,7 @@ One entry per teaching reply. The hypothesis is written before the reply is sent
 
 58. Hypothesis (the yahoo case rebuilt): showing the accounts table with two literal rows and the PlayStation id column, then the simplest scenario (Alex presses Log In with the yahoo account, no refusal step), then the one write that "link" means and Ogasawara's rule against it, under 250 words, gets a checkmark. Result: pending.
 
+   Result of 58: confirmed. The reader followed the table and asked why Ogasawara said no, a motivation question.
+
+59. Hypothesis (a position whose source gave no reason): saying first that the transcript holds no stated consequence, then one labeled inference built from the consent the reader already holds (Alex accepted the Sony terms as one email), then why the stakes are low for Day 1, under 200 words, gets a checkmark. Result: pending.
+
