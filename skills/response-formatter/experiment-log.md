@@ -337,3 +337,7 @@ One entry per teaching reply. The hypothesis is written before the reply is sent
 
 71. Hypothesis (corrected order): admitting the error, then the four screens with the hop between the Authorized Apps screen and the account screen written out, under 200 words, gets a checkmark. Result: pending.
 
+   Result of 71: confirmed ("got it"); the reader restated Steeve's position and asked whether M-DCIM is Day 2.
+
+72. Hypothesis (confirming with precision): yes to the screen, then the exact status of "M-DCIM later" (the pre-sync's migrate-later idea, Sony DX's opposition, Sree's stronger doubt), under 150 words, gets a checkmark. Result: pending.
+
