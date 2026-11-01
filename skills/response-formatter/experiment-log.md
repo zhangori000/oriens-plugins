@@ -409,3 +409,7 @@ One entry per teaching reply. The hypothesis is written before the reply is sent
 
 89. Hypothesis (ownership split): naming the owner of each store or hop just taught (datasources and the SDO copy to Charles's team, the Sony id column to Jeffrey's backend, runtime events and their properties to LRX Core), with Igor's own sentence as the source, under 150 words, gets a checkmark. Result: pending.
 
+   Result of 89: confirmed with a follow-up: are Charles, Alan, and Edwin Crunchyroll people, what do their commits show, and does their code depend on what the Tetsuo app emits, implying PRs on the reader's side.
+
+90. Hypothesis (the dependency as a contract): naming each person with the evidence found (Slack handle, commit repos), then the chain as hops (the Tetsuo app sends events through Segment, the schema lives in cr-events-schemas, their SQL in cdifly reads the stored events), then the reader's PRs as the emit side of that contract, under 250 words, gets a checkmark. Result: pending.
+
