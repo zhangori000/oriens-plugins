@@ -493,3 +493,7 @@ One entry per teaching reply. The hypothesis is written before the reply is sent
    Result of 108: confirmed ("Much better"). No rule change.
 
 109. Hypothesis (Ogasawara's one-row claim): the claim attributed to the Oct 29 deep dive, the two possible pictures of SIE's store shown as literal rows (one identity row holding both ids as columns, versus a PlayStation row and a Sony row in two tables), which picture he claimed, and the one thing it decides for the join (whether the id the account endpoint answers equals the id the console logs on the press row), marked where inferred, under 250 words, gets a checkmark. Result: pending.
+
+   Result of 109: refuted on the one-row picture: labelling the identity table "(SIE)" with a sonyTermsAccepted mark implied SIE's table holds every Sony product's users; the reader pointed out Sony Account is group-wide. Change: check 7d added (owner only with evidence; group-wide things get the pictures the phrase allows, owner marked unknown).
+
+110. Hypothesis (Sony Account's scope repaired): the evidence that Sony Account is group-wide (deep dive line on the SDC framework), the three pictures Ogasawara's phrase allows (a group-level identity store that PSN rows already live in; a PSN store that is being promoted to serve as the Sony Account store; two stores with a link row), the owner marked unknown in each, and the one fact that holds in all three (joining Sony Account for a PSN user sets a terms mark rather than creating a second credential), under 250 words, gets a checkmark. Result: pending.
