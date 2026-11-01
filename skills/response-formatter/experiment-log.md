@@ -361,3 +361,7 @@ One entry per teaching reply. The hypothesis is written before the reply is sent
 
 77. Hypothesis (existing viewer who never saw the page): one viewer, the grants lookup finding nothing so the page is drawn, then Create as hops ending in the write to the Sony id column, then Log In as the other button with no link, under 250 words, gets a checkmark. Result: pending.
 
+   Result of 77: lost ("??? try again", no word named). The reply used "Sign in with PlayStation" as if the reader held it; it is a proposed button that does not exist in today's Tetsuo app, and the reply never said that the same M-DCIM page serves both sign-up and this login. Change: check 3, the button is a fixed name with its definition.
+
+78. Hypothesis (restart at the button): defining the button and the fact that M-DCIM's page is the only door M-DCIM has, so a login through it lands a never-seen viewer on the Create page, then Carol in three hops, under 150 words, with one question asking where the thread was lost, gets a checkmark or a named word. Result: pending.
+
