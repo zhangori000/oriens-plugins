@@ -453,3 +453,7 @@ One entry per teaching reply. The hypothesis is written before the reply is sent
 
 100. Hypothesis (join key alone): defining a join key as the column a query matches on, against the primary key, with one two-table example, and nothing else, under 150 words, gets a checkmark. Result: pending.
 
+   Result of 100: refuted on "column": the reply never said which table in which store the column belongs to. Change: check 7b, a row or column names its table, its store, and the store's owner.
+
+101. Hypothesis (the column placed): a column as one named field of a table in SDO, the press table as SIE's copy and the app-open table as Crunchyroll's copy, both in Sony DX's store, under 120 words, gets a checkmark. Result: pending.
+
