@@ -214,7 +214,7 @@ A teaching reply is under about 300 words, and a reply that answers a confusion 
 
 The queue at the end of a reply is a short block under the single word "Queue", one line per state, each line a full sentence that starts with an emoji so the eye can find the state without reading:
 
-✅ Learned: the last two or three pieces checked off, named by what they established.
+✅ Learned: the last two or three pieces checked off, named by what they established, then "and earlier:" followed by the older checked-off pieces compacted to one short name each ("the two doors, the three codes, the 14-step flow, the deep-dive items, Jeffrey's Slack points"), so the whole session is visible on one line and the reader can ask for any of them.
 🔍 Waiting for your checkmark: the piece this reply taught.
 ➡️ Next, we will look at one piece, in a sentence.
 📋 After that come the remaining pieces, in a sentence, in order.

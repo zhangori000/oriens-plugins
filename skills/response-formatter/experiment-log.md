@@ -465,3 +465,7 @@ One entry per teaching reply. The hypothesis is written before the reply is sent
 
 103. Hypothesis (one question answered, one spliced): apps never write to Snowflake in the request path; events go to a collector and a loader writes batches, with the latency reason, under 170 words, with the SIE question as the next queue line, gets a checkmark. Result: pending.
 
+   Result of 103: confirmed; the reader asked that the Learned line also compact everything earlier in the session.
+
+104. Hypothesis (SIE's store): confirming the slide label, then what the console writes to (SIE's telemetry collector, by the same collector-then-loader shape) and that the slide does not say whether SIE's Snowflake and SDO are one account, under 150 words, gets a checkmark. Result: pending.
+
