@@ -441,3 +441,7 @@ One entry per teaching reply. The hypothesis is written before the reply is sent
 
 97. Hypothesis (two worked numbers): days per month from four literal viewership rows for one account, then handoff success rate from three SIE press rows and two Crunchyroll app-open rows joined on the id, under 200 words, gets a checkmark. Result: pending.
 
+   Result of 97: confirmed; the reader worked out the missing def row himself and asked how a query sees both tables.
+
+98. Hypothesis (confirming where the query runs): yes, the query runs in SDO because both tables were copied there, which is the reason SDO exists, plus the definition of an app-open row as the event the Tetsuo app sends on start, under 120 words, gets a checkmark. Result: pending.
+
