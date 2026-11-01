@@ -413,3 +413,7 @@ One entry per teaching reply. The hypothesis is written before the reply is sent
 
 90. Hypothesis (the dependency as a contract): naming each person with the evidence found (Slack handle, commit repos), then the chain as hops (the Tetsuo app sends events through Segment, the schema lives in cr-events-schemas, their SQL in cdifly reads the stored events), then the reader's PRs as the emit side of that contract, under 250 words, gets a checkmark. Result: pending.
 
+   Result of 90: confirmed; the reader proposed a design (launchSource plus an app-minted uuid) in place of a handoff id in the deep link.
+
+91. Hypothesis (answering a design proposal): stating the one fact that decides it (the id must be the same string on SIE's row and Crunchyroll's row, so the side that fires first must mint it), showing the join that fails with an app-minted id, and naming which KPIs launchSource alone does cover, under 220 words, gets a checkmark. Result: pending.
+
