@@ -357,3 +357,7 @@ One entry per teaching reply. The hypothesis is written before the reply is sent
 
 76. Hypothesis (the end of the web-view flow as hops): the iframe's address as the one thing the Tetsuo app can watch, then the three redirects and requests from Agree to the return address, then why one more request to Jeffrey's backend is needed for the Crunchyroll token, marked inferred, under 250 words, gets a checkmark. Result: pending.
 
+   Result of 76: confirmed ("cont").
+
+77. Hypothesis (existing viewer who never saw the page): one viewer, the grants lookup finding nothing so the page is drawn, then Create as hops ending in the write to the Sony id column, then Log In as the other button with no link, under 250 words, gets a checkmark. Result: pending.
+
