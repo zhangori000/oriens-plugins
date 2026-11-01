@@ -429,3 +429,7 @@ One entry per teaching reply. The hypothesis is written before the reply is sent
 
 94. Hypothesis (append shown literally): the launch string before and after the Hub adds its key, with one made-up uuid, and where that string then goes, under 130 words, gets a checkmark. Result: pending.
 
+   Result of 94: confirmed ("cool"); the reader asked who to contact to make SIE append the id, given his milestone is the contract and neither he nor Edwin writes the append.
+
+95. Hypothesis (a procedure answer): the contract split into its two owners (SIE for the append, Edwin Nazarian for the static part), the reader's role as the consumer who writes down what he needs, three named contacts with what each decides, and a short posting the reader could type, under 220 words, gets a checkmark or a posted message. Result: pending.
+
