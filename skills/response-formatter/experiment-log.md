@@ -325,3 +325,7 @@ One entry per teaching reply. The hypothesis is written before the reply is sent
 
 68. Hypothesis (Steeve's "depends on who owns that screen"): showing that the skip in Jeffrey's assumption is a lookup on M-DCIM's server, and that if Crunchyroll draws the screen the same lookup moves to Jeffrey's accounts table by the PlayStation id column after the Authorized Apps trade, under 200 words, gets a checkmark. Result: pending.
 
+   Result of 68: one follow-up. The Crunchyroll-owned flow was told without saying that M-DCIM has no hop in it, and the reader asked where M-DCIM went. Change: check 5, an actor absent from a rebuilt flow is named as absent, with the reason.
+
+69. Hypothesis (naming the absence): saying that in Crunchyroll's counter-proposal M-DCIM is not in sign-in or sign-up at MVP, with the one place Sony DX would later appear (the migration from the checkbox list), under 130 words, gets a checkmark. Result: pending.
+
