@@ -317,3 +317,7 @@ One entry per teaching reply. The hypothesis is written before the reply is sent
 
 66. Hypothesis (the repair): stating that all three flows begin when a Hub link opens the Tetsuo app and differ only by what the console already holds (a Crunchyroll token, an account but no token, nothing), under 130 words, gets a checkmark. Result: pending.
 
+   Result of 66: confirmed ("continue").
+
+67. Hypothesis (Jeffrey's assumption as hops): one returning viewer, the same opening hops the reader holds, then M-DCIM's grants-table lookup replacing the page with an immediate redirect, then Jeffrey's backend finding the row by the Sony id column and answering with a Crunchyroll token, marked as Jeffrey's assumption, under 250 words, gets a checkmark. Result: pending.
+
