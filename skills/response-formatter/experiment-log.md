@@ -445,3 +445,7 @@ One entry per teaching reply. The hypothesis is written before the reply is sent
 
 98. Hypothesis (confirming where the query runs): yes, the query runs in SDO because both tables were copied there, which is the reason SDO exists, plus the definition of an app-open row as the event the Tetsuo app sends on start, under 120 words, gets a checkmark. Result: pending.
 
+   Result of 98: confirmed ("got it").
+
+99. Hypothesis (the two join keys): the user id key as the Sony id column already taught, with the gap (unlinked viewers), then the handoff id key as the per-click column already taught, then Charles's two ways to carry a key (a property on existing events, or a mapping table) shown with literal rows for the mapping table, under 240 words, gets a checkmark. Result: pending.
+
