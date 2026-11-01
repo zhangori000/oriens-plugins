@@ -425,3 +425,7 @@ One entry per teaching reply. The hypothesis is written before the reply is sent
 
 93. Hypothesis (who mints, and when): the one fact that the id is per click, not per feed item, so it is minted on the console at click time by the Hub's own code (SIE's), and Edwin Nazarian's feed carries only the static parts of the launch string, with the two Edwins told apart, under 220 words, gets a checkmark. Result: pending.
 
+   Result of 93: confirmed on the pre-generation question; one follow-up on "appends a fresh handoff id". Change: check 4, string verbs are shown as before-and-after strings.
+
+94. Hypothesis (append shown literally): the launch string before and after the Hub adds its key, with one made-up uuid, and where that string then goes, under 130 words, gets a checkmark. Result: pending.
+
