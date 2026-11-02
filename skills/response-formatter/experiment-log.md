@@ -645,3 +645,9 @@ One entry per teaching reply. The hypothesis is written before the reply is sent
    4. Charles's question whether both columns need one code list — not yet
 
 140. Hypothesis (gap line 1b): the source IP on every HTTP request, the geolocation table that maps IP ranges to countries, where the lookup most likely runs (the CloudFront edge in front of Crunchyroll's backends, which can add a viewer-country header, or the backend itself with a MaxMind-style database), marked inferred, and why it can be wrong (VPN, carrier address), under 200 words, gets a checkmark. Result: pending.
+
+   Result of 140: confirmed ("got it"). No rule change.
+
+   Gap list (country codes): 1 and 1b checked off; 2 (meaning of the KPI phrase) this reply; 3 (SIE's region column, unknown) folded into 4 as the first of its two open questions, since it is one sentence.
+
+141. Hypothesis (gap line 2): the phrase exists only in Charles's quotation of Shiho's KPI document, the two readings it allows (a country where Crunchyroll is not offered; a language the app does not offer), what row each reading would need, and the one sentence that only the document can settle, under 180 words, gets a checkmark. Result: pending.
