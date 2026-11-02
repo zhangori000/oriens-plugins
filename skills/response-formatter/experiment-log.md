@@ -711,3 +711,5 @@ One entry per teaching reply. The hypothesis is written before the reply is sent
    Result of 152: no explicit checkmark; the reader moved to Charles's point 2.1. No rule change.
 
 153. Hypothesis (point 2.1): "property/attribute" as a key in an event's properties map that becomes a column, "line up" as a join condition, the point as a work item with the four columns it covers (Sony id, handoff id, content id, country) and the two implementations (property on the event; mapping table), under 150 words, gets a checkmark. Result: pending.
+
+   Result of 153: the reader stopped the walk ("ok whatever") and asked for the thread to be recorded and the Anime Hub notes organized for future queries. Delivered 2026-11-02: slack/2026-10-22-kpi-definitions-and-telemetry-thread.md (record, settled facts, open questions with owners, piece list), GLOSSARY.md, PEOPLE.md, OPEN-QUESTIONS.md, and a "How to query these notes" guide plus a timeline in ps5-anime-hub/README.md. No teaching reply; no hypothesis pending.
