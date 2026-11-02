@@ -507,3 +507,7 @@ One entry per teaching reply. The hypothesis is written before the reply is sent
    Result of 111: confirmed ("got it"). No rule change.
 
 112. Hypothesis (does the join depend on the M-DCIM flow): the answer turns on which id SIE writes on the press row copied to SDO; two literal press rows (one with p-81, one with s-81), the hops by which Crunchyroll holds each id (p-81 from today's Authorized Apps trade; s-81 only from trading the M-DCIM code at M-DCIM's company door), and the question with its owners (Gabor or Bal for the press row's column, Shiho for which id "Sony account id" means), under 250 words, gets a checkmark. Result: pending.
+
+   Result of 112: refuted. "The press row that SIE copies into SDO" was a noun stack with the copy program hidden; "the join does not depend on the M-DCIM flow" came before any recap of that flow; and the reader diagnosed a pattern: first replies on a new piece lean on earlier names, repairs define things. Also: the intake reply must not list every piece. Change: Move 1 rewritten (no piece list; teach the first piece at once); check 0b added (first reply of a piece re-states definitions; no "depends on the Y flow" before Y's hops; noun stacks unpacked).
+
+113. Hypothesis (repair, the M-DCIM flow recapped): the M-DCIM flow laid out as hops from Alex pressing Agree on M-DCIM's terms page to Jeffrey's backend writing the Sony Account id column, then the dependence sentence rebuilt against that, under 250 words, gets a checkmark. Result: pending.
