@@ -657,3 +657,7 @@ One entry per teaching reply. The hypothesis is written before the reply is sent
    Gap list (country codes): 1, 1b, 2 checked off; 3 and 4 this reply.
 
 142. Hypothesis (Charles's country-code question): his sentence quoted, the two columns shown as rows (Crunchyroll's countryCode "US", evidence; SIE's region column with its format unknown), what "line up" means as a condition (equal strings, or a translation table from one list to the other), why the market reading may need only Crunchyroll's column, and the two owners of the open question, under 220 words, gets a checkmark. Result: pending.
+
+   Result of 142: refuted at "Crunchyroll's column" (a company as possessor of a cell), "in evidence" (jargon), and "the token" (not re-introduced). Change: C5 added; scan.sh flags company-possessive data words, "each side", and "in evidence".
+
+143. Hypothesis (redo): the two columns named by table and writer, the token re-introduced, no company possessives, under 230 words, gets a checkmark. Result: pending.

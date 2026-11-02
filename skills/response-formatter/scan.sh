@@ -9,6 +9,7 @@ chk '\b(hands|passes|shares|provides|gives access|integrates|leverages|bypasses|
 chk 'nothing more|the whole (point|dependence)|that is all|exactly one place'
 chk 'the row for|sheet row'
 chk 'sibling table|Allow sheet|the second code|code for Crunchyroll'
+chk "(Crunchyroll|SIE|Sony DX|Sony|M-DCIM)'s (column|row|value|side)|each side|in evidence"
 awk '/^```/{inb=!inb; next} inb && (gsub(/\([A-Za-z\x27 ,-]+\)/,"&")>=2 || gsub(/[A-Za-z_]+: /,"&")>=6)' "$f" | grep -q . && { echo "side-by-side block line"; bad=1; }
 echo "prose words: $(grep -v '^📋' "$f" | grep -v '^```' | wc -w)"
 exit $bad
