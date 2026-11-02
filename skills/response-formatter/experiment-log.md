@@ -699,3 +699,7 @@ One entry per teaching reply. The hypothesis is written before the reply is sent
    Gap list (Igor's reply): all nouns checked off (milestone sheet, enrichment of existing events, Hub eventing, started-from-Hub flag); no splice.
 
 150. Hypothesis (Igor's reply): Shiho's earlier answer in one sentence for context (Sony DX prototypes the unified dashboard), then Igor's three bullets each as what it asks of whom, with "enrichment of existing events" tied to the handoffId and countryCode properties already taught, the flag tied to the launch arguments, and the milestone-sheet placeholder as the deliverable, under 230 words, gets a checkmark. Result: pending.
+
+   Result of 150: no checkmark yet; the reader began re-reading Charles's reply from its first sentence and pulled the datasources as a re-teach. No rule change.
+
+151. Hypothesis (the two datasources, re-taught): "datasource" pinned as a warehouse table built by SQL for analysts, each of the two shown with two literal rows and its writer, "certified" defined, who "them" is in Charles's sentence, and the inference marked (built in cdifly from raw event tables; engine unnamed; read through Tableau and the daily copy to SDO), under 250 words, gets a checkmark. Result: pending.
