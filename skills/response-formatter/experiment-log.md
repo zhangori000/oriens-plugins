@@ -598,3 +598,7 @@ One entry per teaching reply. The hypothesis is written before the reply is sent
    Result of 131: confirmed ("got it"). No rule change.
 
 132. Hypothesis (Hub-originated trial starts): Charles's question quoted (how to tell Hub-generated trial and subscription starts from ordinary PS5 ones), the subscriptions datasource row re-stated, his two ways in his order (a journey rule over existing rows; a promo code or SKU on the Hub-initiated signup), each with the row it produces and who does the work, and his last sentence (SKU way is trackable inside the subscriptions datasource alone), under 230 words, gets a checkmark. Result: pending.
+
+   Result of 132: refuted. The piece opened with no picture of the thread ("Charles's next question in the same reply"), "subscriptions datasource" was not pinned to a kind of store, and "within a day of a Hub press" was not walked with rows. Change: check 0d added (thread cue and store pinning at the top of every piece from material).
+
+133. Hypothesis (redo with the cue): the thread placed (Shiho's Oct 22 KPI definitions, Igor's Oct 30 ask, Charles's Oct 31 reply as CR's data lead answering which KPIs need what), the subscriptions datasource pinned as a warehouse table built by SQL, the journey rule walked with a press row and a trial-start row 20 hours apart, then the SKU way, under 260 words, gets a checkmark. Result: pending.
