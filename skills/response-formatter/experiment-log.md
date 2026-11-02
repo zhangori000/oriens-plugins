@@ -707,3 +707,7 @@ One entry per teaching reply. The hypothesis is written before the reply is sent
    Result of 151: no explicit checkmark; the reader moved to the next sentence of Charles's reply. No rule change.
 
 152. Hypothesis ("other metrics" and "journey type"): "other" as the KPIs outside the two groups Charles named in his sub-point (platform baseline, conversion), listed by name from Shiho's categories as Charles quotes them; "journey" as a metric whose formula needs one row from SIE's tables and one from Crunchyroll's for the same viewer or the same click, shown with the press row and the app-open row; "user level" as the Sony id pairing and "session level" as the handoff id pairing, under 200 words, gets a checkmark. Result: pending.
+
+   Result of 152: no explicit checkmark; the reader moved to Charles's point 2.1. No rule change.
+
+153. Hypothesis (point 2.1): "property/attribute" as a key in an event's properties map that becomes a column, "line up" as a join condition, the point as a work item with the four columns it covers (Sony id, handoff id, content id, country) and the two implementations (property on the event; mapping table), under 150 words, gets a checkmark. Result: pending.
