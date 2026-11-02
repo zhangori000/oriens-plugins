@@ -624,3 +624,13 @@ One entry per teaching reply. The hypothesis is written before the reply is sent
    Result of 137: confirmed ("got it"). No rule change.
 
 138. Hypothesis (country codes): placed as Charles's third sub-point, the KPI "unsupported market or language state rate" explained as the share of Hub presses that land on a Tetsuo screen saying the service is not offered, the two country columns (SIE's console region on the press row; Crunchyroll's geo-IP country on the app event) shown as rows that disagree in format, and Charles's question as whether both sides must write the same code list, under 220 words, gets a checkmark. Result: pending.
+
+   Result of 138: refuted. No gap list was written; "each side" was undefined; and "the Tetsuo app has a screen that says so" was asserted without checking the code (there is none; the app reads countryCode from the token). Change: A2 now requires the gap list as numbered lines in the log before any hypothesis; D0 added (verify screens, events, and fields in the app code before asserting them).
+
+   Gap list for country codes:
+   1. What the app knows about the viewer's country, and where that value comes from (verified: token.countryCode from Jeffrey's backend's token answer) — not yet (this reply)
+   2. What "unsupported market or language state" means in the KPI definitions — unread document; not yet
+   3. What SIE writes about region on the press row — unknown, question for Gabor or Bal; not yet
+   4. Whether the two columns must share one code list (Charles's question) — not yet
+
+139. Hypothesis (gap line 1): the countryCode read from the token, with the hop that delivers it (the Tetsuo app's POST to Jeffrey's backend's token endpoint at sign-in, whose answer carries countryCode), the helper that reads it, and the retraction of the screen claim in one sentence, under 200 words, gets a checkmark. Result: pending.
