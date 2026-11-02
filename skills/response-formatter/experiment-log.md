@@ -570,3 +570,7 @@ One entry per teaching reply. The hypothesis is written before the reply is sent
    Result of 124: refuted. The mapping table was defined abstractly before the problem it solves, the copy sentence was not tied to why the table exists, and the block put three tables side by side, which section 6 already forbade and the gate did not catch. Change: check 1b added (stacked, labelled blocks with a literal scan); check 6 gains the "what the query cannot do without it" opening for a new table.
 
 125. Hypothesis (repair): opening with the two rows that cannot be paired (cr-1001 on app_open, s-81 on tile_press), the one place where the fact "cr-1001 is s-81" exists (Jeffrey's accounts row), the mapping table as that fact copied into SDO, three stacked blocks and the two-condition query walked one condition at a time, under 250 words, gets a checkmark. Result: pending.
+
+   Result of 125: refuted. The reader holds the problem (no shared column) and the source (Jeffrey's row holds both ids), but "mapping table" was still undefined as a structure (is it a hash map?) and the two-condition pairing written as ON clauses was unreadable. Change: check 7a added (nearest in-memory structure; queries walked as a loop over one row before any SQL).
+
+126. Hypothesis (repair): the mapping table as a hash map stored as rows, then the pairing as a Python-shaped loop that walks Alex's app-open row through the map to the press row, under 200 words, gets a checkmark. Result: pending.
