@@ -665,3 +665,13 @@ One entry per teaching reply. The hypothesis is written before the reply is sent
    Result of 143: asked whether Charles himself was hypothesizing that the Hub lacks a country; the model's own unknown had been read as his. Change: D5 extended, the model's unknowns are labelled as the model's.
 
 144. Hypothesis (weighing the reading): Charles's sentence asks only whether the KPI requires matching codes across the two companies' telemetry; the "does the press row carry a country" unknown was mine, under 100 words, gets a checkmark. Result: pending.
+
+   Result of 144: confirmed ("got it"). No rule change.
+
+   Gap list (Charles's third point):
+   1. what events the Tetsuo app sends today, verified in src/entities/analytics/event/track (45 classes) — not yet (this reply)
+   2. Charles's sorting rule (existing events versus new ones for novel journeys) and the sync he proposes — this reply, second half
+   3. the step metrics with no steps defined — next reply
+   4. Igor's reply — after
+
+145. Hypothesis (existing app events): the event classes named from the code with the funnel-relevant names listed, what "leverage existing events" means as a row the analyst already gets, one example of a novel journey needing a new event, and the sync Charles proposes with the people named, under 250 words, gets a checkmark. Result: pending.
