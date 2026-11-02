@@ -634,3 +634,14 @@ One entry per teaching reply. The hypothesis is written before the reply is sent
    4. Whether the two columns must share one code list (Charles's question) — not yet
 
 139. Hypothesis (gap line 1): the countryCode read from the token, with the hop that delivers it (the Tetsuo app's POST to Jeffrey's backend's token endpoint at sign-in, whose answer carries countryCode), the helper that reads it, and the retraction of the screen claim in one sentence, under 200 words, gets a checkmark. Result: pending.
+
+   Result of 139: refuted at "the backend decides on its side": the reader asked how a backend could know a country at all. Also, the sentence admitting the invented screen was read as careless; the rule D0 stands, the admission stays short. Change: D4b added.
+
+   Gap list (country codes), updated:
+   1. token.countryCode and the helper that reads it — checked off
+   1b. how Jeffrey's backend gets a country from a request (geo-IP) — not yet (this reply)
+   2. what "unsupported market or language state" means — unread document; not yet
+   3. what SIE writes about region on the press row — unknown; not yet
+   4. Charles's question whether both columns need one code list — not yet
+
+140. Hypothesis (gap line 1b): the source IP on every HTTP request, the geolocation table that maps IP ranges to countries, where the lookup most likely runs (the CloudFront edge in front of Crunchyroll's backends, which can add a viewer-country header, or the backend itself with a MaxMind-style database), marked inferred, and why it can be wrong (VPN, carrier address), under 200 words, gets a checkmark. Result: pending.
