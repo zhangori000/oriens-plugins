@@ -606,3 +606,7 @@ One entry per teaching reply. The hypothesis is written before the reply is sent
    Result of 133: refuted at the journey rule: the reader could not see why tile_press has anything to do with the subscriptions datasource, because the reply never said both tables are in SDO and never walked the rule as a loop. Also asked: are KPIs nouns or formulas; what Igor asked for; the first point; how trial starts are counted; whether the warehouse is written by scheduled jobs. Change: check 1c amended so it never drops the loop walk for a two-table rule.
 
 134. Hypothesis (repair): the four short answers in one sentence each, then the journey rule as a loop over subscriptions rows in SDO looking up tile_press rows in SDO by Sony id and time, walked with one row, under 250 words, gets a checkmark. Result: pending.
+
+   Result of 134: refuted. The reader read every line of the loop correctly and understood nothing, because the change column, the month, and the 24-hour window were never motivated, and no sentence followed the block. Change: check 7e added (columns defined before the block; one motivated sentence per line; constants attributed).
+
+135. Hypothesis (repair): the subscriptions table as an event log with four rows for one viewer, what change means and why the table has that shape, the month as the KPI's reporting period, then the rule in one sentence, the block, and one sentence per line with the 24 hours attributed to Charles's "x days" as an unchosen number, under 280 words, gets a checkmark. Result: pending.
