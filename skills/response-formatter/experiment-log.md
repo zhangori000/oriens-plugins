@@ -550,3 +550,7 @@ One entry per teaching reply. The hypothesis is written before the reply is sent
    Result of 119: confirmed ("got it"). No rule change.
 
 120. Hypothesis (what a join is): a join as one SQL query that reads two tables and returns rows made by pairing a row of each where a condition holds, shown with two three-row tables, the condition, and the result table, then the one property that matters (an unmatched row returns nothing, so an empty id column makes every press unmatched), under 220 words, gets a checkmark. Result: pending.
+
+   Result of 120: confirmed ("got it"). No rule change.
+
+121. Hypothesis (Crunchyroll's chain): the Tetsuo app's Segment gateway class calling track with userId and properties, the POST to Segment's collector (Segment is a company whose hosted collector plays the role SIE's own collector played), Segment's own loader writing to Crunchyroll's warehouse (where cr-events-service and cdifly fit, with what is unknown marked), and the copy into SDO as the app_open table, each hop one sentence, under 250 words, gets a checkmark. Result: pending.
