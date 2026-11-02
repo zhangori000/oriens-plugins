@@ -661,3 +661,7 @@ One entry per teaching reply. The hypothesis is written before the reply is sent
    Result of 142: refuted at "Crunchyroll's column" (a company as possessor of a cell), "in evidence" (jargon), and "the token" (not re-introduced). Change: C5 added; scan.sh flags company-possessive data words, "each side", and "in evidence".
 
 143. Hypothesis (redo): the two columns named by table and writer, the token re-introduced, no company possessives, under 230 words, gets a checkmark. Result: pending.
+
+   Result of 143: asked whether Charles himself was hypothesizing that the Hub lacks a country; the model's own unknown had been read as his. Change: D5 extended, the model's unknowns are labelled as the model's.
+
+144. Hypothesis (weighing the reading): Charles's sentence asks only whether the KPI requires matching codes across the two companies' telemetry; the "does the press row carry a country" unknown was mine, under 100 words, gets a checkmark. Result: pending.
