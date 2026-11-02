@@ -534,3 +534,7 @@ One entry per teaching reply. The hypothesis is written before the reply is sent
    Result of 115: confirmed ("got it"). No rule change.
 
 116. Hypothesis (the receiving server): the server as a program on an SIE machine listening at one address, what it does with each POST (checks shape, appends one line to a file on its disk, answers 200), why it appends to a file rather than writing Snowflake (Snowflake accepts rows slowly and in bulk; the console must not wait), and the file shown with two lines, marked inferred, under 200 words, gets a checkmark. Result: pending.
+
+   Result of 116: confirmed ("got it"). No rule change.
+
+117. Hypothesis (the loader): a scheduled program on an SIE machine that every few minutes reads the files the collector finished, sends them to Snowflake with one bulk load command, and the table that results (name, store, owner, columns, two rows), with why bulk beats row-by-row and what "a table in Snowflake" is, under 220 words, gets a checkmark. Result: pending.
