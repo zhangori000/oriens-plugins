@@ -689,3 +689,7 @@ One entry per teaching reply. The hypothesis is written before the reply is sent
    Result of 147: clearer, but asked why it was not sent first (B4 now covers that) and what the point was: the piece gave definitions without the hole they fill. Change: D4a added.
 
 148. Hypothesis (the hole): the KPI's purpose in one sentence, the SQL skeleton Charles's team would write with the step names as blanks, and why the blanks come from Shiho's document, not the code, under 170 words, gets a checkmark. Result: pending.
+
+   Result of 148: accepted; the reader pulled the SELECT statement as the next piece (a reader-requested code walk, baby-steps order). No rule change.
+
+149. Hypothesis (the SELECT walked): the statement read in execution order (FROM, WHERE, then SELECT with DISTINCT and COUNT), each clause run against the eleven rows with the rows that survive shown, the output number, then the second run and the division, under 250 words, gets a checkmark. Result: pending.
