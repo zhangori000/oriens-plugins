@@ -586,3 +586,7 @@ One entry per teaching reply. The hypothesis is written before the reply is sent
    Result of 128: restated correctly (join on the handoff id) after the reader worked past the verb "separate"; the verb was not a mechanism. Change: check 4, "separate", "distinguish", "tell apart", "attaches" added, and query verbs written as what the condition returns.
 
 129. Hypothesis (receipt confirmation): the phrase's source (Gabor's sheet row for deep-link handoff success rate says Crunchyroll supplies a "receipt confirmation"), what it is (Crunchyroll's row that says the handoff arrived), and Charles's two ways to supply it (a new event sent by the Tetsuo app on arrival, or the handoffId property on the existing app_open event), with the row each produces, under 150 words, gets a checkmark. Result: pending.
+
+   Result of 129: refuted. "Row" meant a sheet entry and a table row in the same paragraph; the source was attributed to Gabor's sheet when the phrase comes from Charles's reply quoting the KPI definitions; and "the analyst counts an app_open row with a matching handoffId as the confirmation" was not walked with numbers. Change: check 3, "row" reserved for table rows; quoted phrases attributed to the quoting message, with the unread document named.
+
+130. Hypothesis (repair): the phrase placed in Charles's reply, "receipt confirmation" defined as the evidence that the launch arrived, and the success rate computed with Charles's three presses and two opens under each of the two ways, under 200 words, gets a checkmark. Result: pending.
