@@ -566,3 +566,7 @@ One entry per teaching reply. The hypothesis is written before the reply is sent
    Result of 123: confirmed ("got it"). No rule change.
 
 124. Hypothesis (the Sony id through a mapping table): a mapping table defined as a two-column table whose only job is to translate one id to another, the copy of accountId and sonyId from Jeffrey's accounts table into SDO, the two-condition join written out with three tiny tables and the result, who does the work and the privacy cost, and the one-sentence contrast with the property way, under 250 words, gets a checkmark. Result: pending.
+
+   Result of 124: refuted. The mapping table was defined abstractly before the problem it solves, the copy sentence was not tied to why the table exists, and the block put three tables side by side, which section 6 already forbade and the gate did not catch. Change: check 1b added (stacked, labelled blocks with a literal scan); check 6 gains the "what the query cannot do without it" opening for a new table.
+
+125. Hypothesis (repair): opening with the two rows that cannot be paired (cr-1001 on app_open, s-81 on tile_press), the one place where the fact "cr-1001 is s-81" exists (Jeffrey's accounts row), the mapping table as that fact copied into SDO, three stacked blocks and the two-condition query walked one condition at a time, under 250 words, gets a checkmark. Result: pending.
