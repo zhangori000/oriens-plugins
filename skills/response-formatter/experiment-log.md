@@ -651,3 +651,9 @@ One entry per teaching reply. The hypothesis is written before the reply is sent
    Gap list (country codes): 1 and 1b checked off; 2 (meaning of the KPI phrase) this reply; 3 (SIE's region column, unknown) folded into 4 as the first of its two open questions, since it is one sentence.
 
 141. Hypothesis (gap line 2): the phrase exists only in Charles's quotation of Shiho's KPI document, the two readings it allows (a country where Crunchyroll is not offered; a language the app does not offer), what row each reading would need, and the one sentence that only the document can settle, under 180 words, gets a checkmark. Result: pending.
+
+   Result of 141: confirmed ("got it"). No rule change.
+
+   Gap list (country codes): 1, 1b, 2 checked off; 3 and 4 this reply.
+
+142. Hypothesis (Charles's country-code question): his sentence quoted, the two columns shown as rows (Crunchyroll's countryCode "US", evidence; SIE's region column with its format unknown), what "line up" means as a condition (equal strings, or a translation table from one list to the other), why the market reading may need only Crunchyroll's column, and the two owners of the open question, under 220 words, gets a checkmark. Result: pending.
