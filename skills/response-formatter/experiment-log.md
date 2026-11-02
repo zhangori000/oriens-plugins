@@ -517,3 +517,16 @@ One entry per teaching reply. The hypothesis is written before the reply is sent
    Result of 113: refuted at "Alex ticks checkbox 3" (the reader did not hold that the checkboxes are on M-DCIM's page) and at "press table ... matches against accounts.sonyId" (the press table was named without definition, and the accounts table in Jeffrey's backend was written as a join partner of a table in SDO, which it is not). Change: check 3, checkboxes re-stated with their page's owner each time; a query condition names both tables and the store, and a backend column is only ever a source.
 
 114. Hypothesis (repair): the three checkboxes placed on M-DCIM's page with their owners, then the press table defined again and the query written as the two SDO tables with the accounts column as the source of one of them, under 250 words, gets a checkmark. Result: pending.
+
+   Result of 114: refuted. The reader could not follow "SIE's copy program writes those rows from SIE's own Snowflake" or "the join runs in SDO", because the hops from a press on the console to a row in SDO were skipped, and "join" was never defined. Change: check 0c added, the gap list.
+
+   Gap list for "the press table in SDO", each a queue line:
+   1. the Hub's code on the console records the press and sends it (this reply)
+   2. SIE's collector receives it and writes a file
+   3. SIE's loader writes the file's lines into a table in SIE's Snowflake
+   4. SIE's copy program writes that table's new rows into a table in SDO
+   5. what a join is, with two tiny tables
+   6. the same chain on Crunchyroll's side: Tetsuo app → Segment → cr-events-service → copy into SDO
+   then: the Sony id as a property on the event, through a mapping table, the handoff id as the join key, and the rest.
+
+115. Hypothesis (the press recorded on the console): the Hub as a program running on the PS5, its press handler building one JSON record, the HTTP POST it sends to SIE's collector address, and the 200 that comes back, marked inferred where the Hub's code is not in hand, under 200 words, gets a checkmark. Result: pending.
