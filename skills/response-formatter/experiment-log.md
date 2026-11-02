@@ -554,3 +554,7 @@ One entry per teaching reply. The hypothesis is written before the reply is sent
    Result of 120: confirmed ("got it"). No rule change.
 
 121. Hypothesis (Crunchyroll's chain): the Tetsuo app's Segment gateway class calling track with userId and properties, the POST to Segment's collector (Segment is a company whose hosted collector plays the role SIE's own collector played), Segment's own loader writing to Crunchyroll's warehouse (where cr-events-service and cdifly fit, with what is unknown marked), and the copy into SDO as the app_open table, each hop one sentence, under 250 words, gets a checkmark. Result: pending.
+
+   Result of 121: refuted at "gateway" (a class name used as if the pattern were known) and at "the last hop" (a positional pointer). Change: check 3, pattern-named classes defined as the pattern on first use, imported packages placed; check 9, "the last/first/next hop" added to the banned pointers.
+
+122. Hypothesis (repair): the gateway pattern defined with its reason and mapped onto the class, the npm package placed, and the copy into SDO named by sender, receiver, and what is carried, under 150 words, gets a checkmark. Result: pending.
