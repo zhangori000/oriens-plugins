@@ -530,3 +530,7 @@ One entry per teaching reply. The hypothesis is written before the reply is sent
    then: the Sony id as a property on the event, through a mapping table, the handoff id as the join key, and the rest.
 
 115. Hypothesis (the press recorded on the console): the Hub as a program running on the PS5, its press handler building one JSON record, the HTTP POST it sends to SIE's collector address, and the 200 that comes back, marked inferred where the Hub's code is not in hand, under 200 words, gets a checkmark. Result: pending.
+
+   Result of 115: confirmed ("got it"). No rule change.
+
+116. Hypothesis (the receiving server): the server as a program on an SIE machine listening at one address, what it does with each POST (checks shape, appends one line to a file on its disk, answers 200), why it appends to a file rather than writing Snowflake (Snowflake accepts rows slowly and in bulk; the console must not wait), and the file shown with two lines, marked inferred, under 200 words, gets a checkmark. Result: pending.
