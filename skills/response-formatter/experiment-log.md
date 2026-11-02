@@ -538,3 +538,7 @@ One entry per teaching reply. The hypothesis is written before the reply is sent
    Result of 116: confirmed ("got it"). No rule change.
 
 117. Hypothesis (the loader): a scheduled program on an SIE machine that every few minutes reads the files the collector finished, sends them to Snowflake with one bulk load command, and the table that results (name, store, owner, columns, two rows), with why bulk beats row-by-row and what "a table in Snowflake" is, under 220 words, gets a checkmark. Result: pending.
+
+   Result of 117: confirmed ("got it"). No rule change.
+
+118. Hypothesis (the copy into SDO): SDO re-stated as Sony DX's own Snowflake account (slide evidence), why a copy is needed (two accounts, Sony DX's analysts cannot query SIE's), the two common mechanisms (Snowflake data sharing: SIE grants read on the table and no bytes move; or a scheduled program that unloads new rows to files and SDO loads them), which one the material supports (neither named), and the resulting table in SDO with two rows, under 230 words, gets a checkmark. Result: pending.
