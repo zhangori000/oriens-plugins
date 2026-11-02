@@ -693,3 +693,9 @@ One entry per teaching reply. The hypothesis is written before the reply is sent
    Result of 148: accepted; the reader pulled the SELECT statement as the next piece (a reader-requested code walk, baby-steps order). No rule change.
 
 149. Hypothesis (the SELECT walked): the statement read in execution order (FROM, WHERE, then SELECT with DISTINCT and COUNT), each clause run against the eleven rows with the rows that survive shown, the output number, then the second run and the division, under 250 words, gets a checkmark. Result: pending.
+
+   Result of 149: confirmed ("continue"). No rule change.
+
+   Gap list (Igor's reply): all nouns checked off (milestone sheet, enrichment of existing events, Hub eventing, started-from-Hub flag); no splice.
+
+150. Hypothesis (Igor's reply): Shiho's earlier answer in one sentence for context (Sony DX prototypes the unified dashboard), then Igor's three bullets each as what it asks of whom, with "enrichment of existing events" tied to the handoffId and countryCode properties already taught, the flag tied to the launch arguments, and the milestone-sheet placeholder as the deliverable, under 230 words, gets a checkmark. Result: pending.
