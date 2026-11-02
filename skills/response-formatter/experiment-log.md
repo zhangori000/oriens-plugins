@@ -574,3 +574,7 @@ One entry per teaching reply. The hypothesis is written before the reply is sent
    Result of 125: refuted. The reader holds the problem (no shared column) and the source (Jeffrey's row holds both ids), but "mapping table" was still undefined as a structure (is it a hash map?) and the two-condition pairing written as ON clauses was unreadable. Change: check 7a added (nearest in-memory structure; queries walked as a loop over one row before any SQL).
 
 126. Hypothesis (repair): the mapping table as a hash map stored as rows, then the pairing as a Python-shaped loop that walks Alex's app-open row through the map to the press row, under 200 words, gets a checkmark. Result: pending.
+
+   Result of 126: restated at the goal's depth (Jeffrey's table holds the account-to-Sony mapping; SDO must hold tables sharing a join key such as the Sony id) and the reader asked to move on; the loop walk was deeper than the goal needs. Change: check 1c added, depth stops at the reader's goal.
+
+127. Hypothesis (handoff id as the join key for "same click"): the gap the Sony id leaves (two presses, one open, which press led to it), the handoff id as a string the Hub mints per press, written on the press row and carried in the launch string, read by the Tetsuo app and sent as a property on app_open, the two rows that then match, and who must do what, under 200 words, gets a checkmark. Result: pending.
