@@ -614,3 +614,9 @@ One entry per teaching reply. The hypothesis is written before the reply is sent
    Result of 135: not yet checked; the reader instead reported (a) the other session not seeing the pushed skill, (b) the SKU way dropped from the queue after the repair, (c) the gate broken by accretion. Change: section 0 rewritten as six groups A to F in writing order with every rule kept; A4 added (queue rewritten on every splice and repair, "next" names the remainder of the current piece); F2 now runs scan.sh; plugin bumped to 1.7.0 so the plugin copy refreshes. Experiment: scan.sh on the refused draft112 flagged "depends on the M-DCIM flow" and the budget overrun; on the accepted draft115 it found nothing.
 
 136. Hypothesis (the SKU way, the remainder of Charles's second point): placed as the second of his two ways, the subscriptions row with a Hub-specific sku value, the hops that put it there (launch arguments say Hub, checkout asks the PlayStation Store for that product, the receipt names it, the row records it), and who does what, under 200 words, gets a checkmark. Result: pending.
+
+   Result of 136: confirmed ("got it"). No rule change.
+
+   Gap note for catalog alignment: country codes are a second thing of the same kind (a column that must agree on both sides), so they are their own piece after this one.
+
+137. Hypothesis (catalog alignment): placed as Charles's third sub-point under properties needed to line up data, the problem shown with an exposure row on SIE's side and a viewership row on Crunchyroll's side that name the same series by different ids, the content id as a third join key, the DSC named as unexpanded with Edwin Nazarian's feed service as the inferred place the Hub's ids come from, and who must do what, under 250 words, gets a checkmark. Result: pending.
