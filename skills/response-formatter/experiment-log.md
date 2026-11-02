@@ -602,3 +602,7 @@ One entry per teaching reply. The hypothesis is written before the reply is sent
    Result of 132: refuted. The piece opened with no picture of the thread ("Charles's next question in the same reply"), "subscriptions datasource" was not pinned to a kind of store, and "within a day of a Hub press" was not walked with rows. Change: check 0d added (thread cue and store pinning at the top of every piece from material).
 
 133. Hypothesis (redo with the cue): the thread placed (Shiho's Oct 22 KPI definitions, Igor's Oct 30 ask, Charles's Oct 31 reply as CR's data lead answering which KPIs need what), the subscriptions datasource pinned as a warehouse table built by SQL, the journey rule walked with a press row and a trial-start row 20 hours apart, then the SKU way, under 260 words, gets a checkmark. Result: pending.
+
+   Result of 133: refuted at the journey rule: the reader could not see why tile_press has anything to do with the subscriptions datasource, because the reply never said both tables are in SDO and never walked the rule as a loop. Also asked: are KPIs nouns or formulas; what Igor asked for; the first point; how trial starts are counted; whether the warehouse is written by scheduled jobs. Change: check 1c amended so it never drops the loop walk for a two-table rule.
+
+134. Hypothesis (repair): the four short answers in one sentence each, then the journey rule as a loop over subscriptions rows in SDO looking up tile_press rows in SDO by Sony id and time, walked with one row, under 250 words, gets a checkmark. Result: pending.
