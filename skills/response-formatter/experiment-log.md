@@ -703,3 +703,7 @@ One entry per teaching reply. The hypothesis is written before the reply is sent
    Result of 150: no checkmark yet; the reader began re-reading Charles's reply from its first sentence and pulled the datasources as a re-teach. No rule change.
 
 151. Hypothesis (the two datasources, re-taught): "datasource" pinned as a warehouse table built by SQL for analysts, each of the two shown with two literal rows and its writer, "certified" defined, who "them" is in Charles's sentence, and the inference marked (built in cdifly from raw event tables; engine unnamed; read through Tableau and the daily copy to SDO), under 250 words, gets a checkmark. Result: pending.
+
+   Result of 151: no explicit checkmark; the reader moved to the next sentence of Charles's reply. No rule change.
+
+152. Hypothesis ("other metrics" and "journey type"): "other" as the KPIs outside the two groups Charles named in his sub-point (platform baseline, conversion), listed by name from Shiho's categories as Charles quotes them; "journey" as a metric whose formula needs one row from SIE's tables and one from Crunchyroll's for the same viewer or the same click, shown with the press row and the app-open row; "user level" as the Sony id pairing and "session level" as the handoff id pairing, under 200 words, gets a checkmark. Result: pending.
