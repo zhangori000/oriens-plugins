@@ -578,3 +578,7 @@ One entry per teaching reply. The hypothesis is written before the reply is sent
    Result of 126: restated at the goal's depth (Jeffrey's table holds the account-to-Sony mapping; SDO must hold tables sharing a join key such as the Sony id) and the reader asked to move on; the loop walk was deeper than the goal needs. Change: check 1c added, depth stops at the reader's goal.
 
 127. Hypothesis (handoff id as the join key for "same click"): the gap the Sony id leaves (two presses, one open, which press led to it), the handoff id as a string the Hub mints per press, written on the press row and carried in the launch string, read by the Tetsuo app and sent as a property on app_open, the two rows that then match, and who must do what, under 200 words, gets a checkmark. Result: pending.
+
+   Result of 127: refuted at the opening sentence "the Sony id answers 'same person' and nothing more", an aphorism with no rows in it. Change: check 1d added, no aphorism sentences, with a scan list.
+
+128. Hypothesis (redo): opening with the two press rows and one open row and what the Sony id join returns for them, then the handoff id as the per-press string, the rows, and who does what, with no slogan sentence, under 220 words, gets a checkmark. Result: pending.
