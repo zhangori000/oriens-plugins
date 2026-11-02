@@ -503,3 +503,7 @@ One entry per teaching reply. The hypothesis is written before the reply is sent
    Result of 110: asked at "group-level": the word "group" was undefined. Change: check 3, company-structure words defined on first use with the real companies.
 
 111. Hypothesis (group defined): Sony Group Corporation as the parent, the subsidiaries named from the material, and "group-level store" as one owned by the parent or a shared unit that every subsidiary reads, with M-DCIM's owner as the open question, under 150 words, gets a checkmark. Result: pending.
+
+   Result of 111: confirmed ("got it"). No rule change.
+
+112. Hypothesis (does the join depend on the M-DCIM flow): the answer turns on which id SIE writes on the press row copied to SDO; two literal press rows (one with p-81, one with s-81), the hops by which Crunchyroll holds each id (p-81 from today's Authorized Apps trade; s-81 only from trading the M-DCIM code at M-DCIM's company door), and the question with its owners (Gabor or Bal for the press row's column, Shiho for which id "Sony account id" means), under 250 words, gets a checkmark. Result: pending.
