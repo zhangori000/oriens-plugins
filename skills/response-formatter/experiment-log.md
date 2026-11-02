@@ -685,3 +685,7 @@ One entry per teaching reply. The hypothesis is written before the reply is sent
    Result of 146: refuted. The opening sentence was Charles's meta-complaint before the metric was defined; the error rate and drop-off were "illustrated" with one viewer and no numbers; "the query does that arithmetic" named no program. Change: B4 added.
 
 147. Hypothesis (redo): the funnel as four named steps, four viewers' rows, drop-off and error rate computed as counts, then Charles's ask in one sentence, under 250 words, gets a checkmark. Result: pending.
+
+   Result of 147: clearer, but asked why it was not sent first (B4 now covers that) and what the point was: the piece gave definitions without the hole they fill. Change: D4a added.
+
+148. Hypothesis (the hole): the KPI's purpose in one sentence, the SQL skeleton Charles's team would write with the step names as blanks, and why the blanks come from Shiho's document, not the code, under 170 words, gets a checkmark. Result: pending.
