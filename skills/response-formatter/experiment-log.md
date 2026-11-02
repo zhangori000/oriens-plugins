@@ -675,3 +675,9 @@ One entry per teaching reply. The hypothesis is written before the reply is sent
    4. Igor's reply — after
 
 145. Hypothesis (existing app events): the event classes named from the code with the funnel-relevant names listed, what "leverage existing events" means as a row the analyst already gets, one example of a novel journey needing a new event, and the sync Charles proposes with the people named, under 250 words, gets a checkmark. Result: pending.
+
+   Result of 145: confirmed ("ok cool"); the reader asked for thread progress, printed as the emoji list on request. No rule change.
+
+   Gap list (step metrics): 1. what "drop-off by funnel step" and "error rate by step" compute, as a formula over rows — not yet (this reply); 2. what the Tetsuo app's events can already mark as steps (Login Selected → Requested → Succeeded/Failed, Free Trial Selected → Requested → Started/Failed) — this reply; 3. Charles's ask for the step list — this reply.
+
+146. Hypothesis (step metrics): the two KPI names as formulas over ordered rows, shown with one viewer's three rows, the app's Selected/Requested/Succeeded/Failed event triples as ready-made steps, and Charles's ask that someone name the steps, under 230 words, gets a checkmark. Result: pending.
