@@ -620,3 +620,7 @@ One entry per teaching reply. The hypothesis is written before the reply is sent
    Gap note for catalog alignment: country codes are a second thing of the same kind (a column that must agree on both sides), so they are their own piece after this one.
 
 137. Hypothesis (catalog alignment): placed as Charles's third sub-point under properties needed to line up data, the problem shown with an exposure row on SIE's side and a viewership row on Crunchyroll's side that name the same series by different ids, the content id as a third join key, the DSC named as unexpanded with Edwin Nazarian's feed service as the inferred place the Hub's ids come from, and who must do what, under 250 words, gets a checkmark. Result: pending.
+
+   Result of 137: confirmed ("got it"). No rule change.
+
+138. Hypothesis (country codes): placed as Charles's third sub-point, the KPI "unsupported market or language state rate" explained as the share of Hub presses that land on a Tetsuo screen saying the service is not offered, the two country columns (SIE's console region on the press row; Crunchyroll's geo-IP country on the app event) shown as rows that disagree in format, and Charles's question as whether both sides must write the same code list, under 220 words, gets a checkmark. Result: pending.
