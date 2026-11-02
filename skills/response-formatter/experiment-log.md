@@ -594,3 +594,7 @@ One entry per teaching reply. The hypothesis is written before the reply is sent
    Result of 130: refuted on order and attribution: the second way was given before the first and labelled afterwards, so the reader waited for it; the three presses and two opens were called Charles's numbers when they were the model's example. Change: check 6b added.
 
 131. Hypothesis (answering the two questions): the KPI name and the two ways are from Charles's reply, the success-rate arithmetic is the model's example, and the second way restated in two sentences as the one already given, under 120 words, gets a checkmark. Result: pending.
+
+   Result of 131: confirmed ("got it"). No rule change.
+
+132. Hypothesis (Hub-originated trial starts): Charles's question quoted (how to tell Hub-generated trial and subscription starts from ordinary PS5 ones), the subscriptions datasource row re-stated, his two ways in his order (a journey rule over existing rows; a promo code or SKU on the Hub-initiated signup), each with the row it produces and who does the work, and his last sentence (SKU way is trackable inside the subscriptions datasource alone), under 230 words, gets a checkmark. Result: pending.
