@@ -681,3 +681,7 @@ One entry per teaching reply. The hypothesis is written before the reply is sent
    Gap list (step metrics): 1. what "drop-off by funnel step" and "error rate by step" compute, as a formula over rows — not yet (this reply); 2. what the Tetsuo app's events can already mark as steps (Login Selected → Requested → Succeeded/Failed, Free Trial Selected → Requested → Started/Failed) — this reply; 3. Charles's ask for the step list — this reply.
 
 146. Hypothesis (step metrics): the two KPI names as formulas over ordered rows, shown with one viewer's three rows, the app's Selected/Requested/Succeeded/Failed event triples as ready-made steps, and Charles's ask that someone name the steps, under 230 words, gets a checkmark. Result: pending.
+
+   Result of 146: refuted. The opening sentence was Charles's meta-complaint before the metric was defined; the error rate and drop-off were "illustrated" with one viewer and no numbers; "the query does that arithmetic" named no program. Change: B4 added.
+
+147. Hypothesis (redo): the funnel as four named steps, four viewers' rows, drop-off and error rate computed as counts, then Charles's ask in one sentence, under 250 words, gets a checkmark. Result: pending.
