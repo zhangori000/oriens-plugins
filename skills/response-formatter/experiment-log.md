@@ -558,3 +558,7 @@ One entry per teaching reply. The hypothesis is written before the reply is sent
    Result of 121: refuted at "gateway" (a class name used as if the pattern were known) and at "the last hop" (a positional pointer). Change: check 3, pattern-named classes defined as the pattern on first use, imported packages placed; check 9, "the last/first/next hop" added to the banned pointers.
 
 122. Hypothesis (repair): the gateway pattern defined with its reason and mapped onto the class, the npm package placed, and the copy into SDO named by sender, receiver, and what is carried, under 150 words, gets a checkmark. Result: pending.
+
+   Result of 122: confirmed ("got it"). No rule change.
+
+123. Hypothesis (the Sony id as a property on the event): "property" defined as one key in the map the gateway's trackEvent takes, the hops by which the Tetsuo app would hold the id at runtime (Jeffrey's backend answers the login request with it; the app keeps it in memory), the row that results in app_open with a sonyId column, the schema change in cr-events-schemas, and who does the work, under 230 words, gets a checkmark. Result: pending.
