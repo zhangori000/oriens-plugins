@@ -590,3 +590,7 @@ One entry per teaching reply. The hypothesis is written before the reply is sent
    Result of 129: refuted. "Row" meant a sheet entry and a table row in the same paragraph; the source was attributed to Gabor's sheet when the phrase comes from Charles's reply quoting the KPI definitions; and "the analyst counts an app_open row with a matching handoffId as the confirmation" was not walked with numbers. Change: check 3, "row" reserved for table rows; quoted phrases attributed to the quoting message, with the unread document named.
 
 130. Hypothesis (repair): the phrase placed in Charles's reply, "receipt confirmation" defined as the evidence that the launch arrived, and the success rate computed with Charles's three presses and two opens under each of the two ways, under 200 words, gets a checkmark. Result: pending.
+
+   Result of 130: refuted on order and attribution: the second way was given before the first and labelled afterwards, so the reader waited for it; the three presses and two opens were called Charles's numbers when they were the model's example. Change: check 6b added.
+
+131. Hypothesis (answering the two questions): the KPI name and the two ways are from Charles's reply, the success-rate arithmetic is the model's example, and the second way restated in two sentences as the one already given, under 120 words, gets a checkmark. Result: pending.
