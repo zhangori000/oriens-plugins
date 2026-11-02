@@ -562,3 +562,7 @@ One entry per teaching reply. The hypothesis is written before the reply is sent
    Result of 122: confirmed ("got it"). No rule change.
 
 123. Hypothesis (the Sony id as a property on the event): "property" defined as one key in the map the gateway's trackEvent takes, the hops by which the Tetsuo app would hold the id at runtime (Jeffrey's backend answers the login request with it; the app keeps it in memory), the row that results in app_open with a sonyId column, the schema change in cr-events-schemas, and who does the work, under 230 words, gets a checkmark. Result: pending.
+
+   Result of 123: confirmed ("got it"). No rule change.
+
+124. Hypothesis (the Sony id through a mapping table): a mapping table defined as a two-column table whose only job is to translate one id to another, the copy of accountId and sonyId from Jeffrey's accounts table into SDO, the two-condition join written out with three tiny tables and the result, who does the work and the privacy cost, and the one-sentence contrast with the property way, under 250 words, gets a checkmark. Result: pending.
