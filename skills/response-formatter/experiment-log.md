@@ -582,3 +582,7 @@ One entry per teaching reply. The hypothesis is written before the reply is sent
    Result of 127: refuted at the opening sentence "the Sony id answers 'same person' and nothing more", an aphorism with no rows in it. Change: check 1d added, no aphorism sentences, with a scan list.
 
 128. Hypothesis (redo): opening with the two press rows and one open row and what the Sony id join returns for them, then the handoff id as the per-press string, the rows, and who does what, with no slogan sentence, under 220 words, gets a checkmark. Result: pending.
+
+   Result of 128: restated correctly (join on the handoff id) after the reader worked past the verb "separate"; the verb was not a mechanism. Change: check 4, "separate", "distinguish", "tell apart", "attaches" added, and query verbs written as what the condition returns.
+
+129. Hypothesis (receipt confirmation): the phrase's source (Gabor's sheet row for deep-link handoff success rate says Crunchyroll supplies a "receipt confirmation"), what it is (Crunchyroll's row that says the handoff arrived), and Charles's two ways to supply it (a new event sent by the Tetsuo app on arrival, or the handoffId property on the existing app_open event), with the row each produces, under 150 words, gets a checkmark. Result: pending.
