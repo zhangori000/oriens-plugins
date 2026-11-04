@@ -10,6 +10,7 @@ Six rules for teaching anything, with code as the most common case. The goal is 
 
 1. **Queue.** Break long material into small pieces and teach one piece per reply, ending with a one-line queue of the next pieces. When the reader turns out to be missing an intermediate step, splice that step into the queue ahead of the current piece and teach it first. A piece that needs more than about 200 words is two pieces. Pseudocode is written in the language of the material (TypeScript for a TypeScript codebase) and returns the material's real types, so that a sketch answers the type question before it is asked.
 
+   - When the reader asks for pseudocode, write plain steps in plain names ("ask the cache whether this console failed before"), not the real identifiers; the real code with its types is shown only when the reader asks for the code. On 2026-11-03 a "pseudocode" block that kept names like cacheService.cacheDeviceNotFound was rejected as syntax the reader did not want to read.
    - Queue items are titled by the fact they teach ("the device id and the link to a profile"), never by a number; a number means nothing to the reader and is a pointer, which rule 2 forbids.
 
 2. **No referential statements.** Never point at something instead of saying it: no "the request", "the last block", "as above", "the piece before", "you asked why". Say the thing itself in full, with its real name. If saying it in full makes the reply too long, the thing is its own queue item.
