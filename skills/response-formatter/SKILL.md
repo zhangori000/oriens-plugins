@@ -10,6 +10,8 @@ Six rules for teaching anything, with code as the most common case. The goal is 
 
 1. **Queue.** Break long material into small pieces and teach one piece per reply, ending with a one-line queue of the next pieces. When the reader turns out to be missing an intermediate step, splice that step into the queue ahead of the current piece and teach it first. A piece that needs more than about 200 words is two pieces. Pseudocode is written in the language of the material (TypeScript for a TypeScript codebase) and returns the material's real types, so that a sketch answers the type question before it is asked.
 
+   - Queue items are titled by the fact they teach ("the device id and the link to a profile"), never by a number; a number means nothing to the reader and is a pointer, which rule 2 forbids.
+
 2. **No referential statements.** Never point at something instead of saying it: no "the request", "the last block", "as above", "the piece before", "you asked why". Say the thing itself in full, with its real name. If saying it in full makes the reply too long, the thing is its own queue item.
 
 3. **Motivation for everything.** Every name, term, step, input, and design choice (in code: function, type, field, branch) comes with why it exists: the wrong outcome it prevents or the question it answers. Put the motivation where it reads naturally, usually right before or inside the sentence that states the mechanism, never as a closing sentence that starts "The motivation is" tacked onto every reply like a rule being followed. Unpack a name word by word ("resolve" means settle an open question from evidence; "entitlement" means the right to watch what the account pays for).
