@@ -1,12 +1,12 @@
 ---
 name: response-formatter
-description: Read this before explanations and teaching replies, and keep following it for every later teaching reply in the conversation. Simple version of 2026-11-02, five rules. Break long material into a queue of small pieces taught one per reply, expand every statement that points at something instead of saying it, give the motivation for every name and every piece of logic, re-give the background context so the reader knows why this piece matters, and keep a list of specific bad examples as the last rule. The two earlier versions are archived next to this file.
+description: Read this before explanations and teaching replies, and keep following it for every later teaching reply in the conversation. Simple version of 2026-11-02, six rules. Break long material into a queue of small pieces taught one per reply, expand every statement that points at something instead of saying it, give the motivation for every name and every piece of logic, re-give the background context so the reader knows why this piece matters, and keep a list of specific bad examples as the last rule. The two earlier versions are archived next to this file.
 user-invocable: true
 ---
 
 # Response formatter (simple, 2026-11-02)
 
-Five rules for teaching anything, with code as the most common case. The goal is that each reply can be understood on its own and questioned cheaply.
+Six rules for teaching anything, with code as the most common case. The goal is that each reply can be understood on its own and questioned cheaply.
 
 1. **Queue.** Break long material into small pieces and teach one piece per reply, ending with a one-line queue of the next pieces. When the reader turns out to be missing an intermediate step, splice that step into the queue ahead of the current piece and teach it first. A piece that needs more than about 200 words is two pieces. Pseudocode is written in the language of the material (TypeScript for a TypeScript codebase) and returns the material's real types, so that a sketch answers the type question before it is asked.
 
@@ -16,7 +16,9 @@ Five rules for teaching anything, with code as the most common case. The goal is
 
 4. **Background context.** Open each reply with the goal we are working toward (the row, the ticket, the fear) and the one question this piece answers for that goal, in two sentences. Do not recap everything established so far; a cumulative list of facts was reported as useless. Re-give only the one or two earlier facts this piece builds on, at the sentence that uses them.
 
-5. **Specific examples.** A log of past bad examples with the sentence that failed and what should have been written. Newest last; a session appends its own lines and never rewrites the section, because other sessions add here in parallel.
+5. **Fundamentals first.** When the reader hands over a broad task, list every fundamental they would need to understand it, put those on the queue in dependency order, and teach them before the task itself. The reader skips the ones they already know.
+
+6. **Specific examples.** A log of past bad examples with the sentence that failed and what should have been written. Newest last; a session appends its own lines and never rewrites the section, because other sessions add here in parallel.
    - Failed: "A series panel shows panel.title. The series metadata has no title field." (outcome bullets about a function whose inputs, `metadata` and `item`, were never defined). Should have been: define each input first (what it is, which package its type comes from, who built it), then walk the function line by line.
    - Failed: the analytics-hook reply showed `mediaId: item?.id`, `mediaType: item.type` and explained them before saying why they mattered; the reader asked "what is the point of telling me all this?". Should have been: first sentence states the claim the code proves ("analytics reads the raw panel, so Katsu cards must never replace it"), then show only the line that proves it.
    - Failed: after showing the `Endpoint` interface, "To make the fields concrete, take the call `addToWatchlist(client, { accountId: "ACC-1", ... })`", where `addToWatchlist` was never introduced, so the reader could not tell whether it had anything to do with `Endpoint`. Should have been: say how the example connects to the thing just defined before using it ("`add` is one object of type `Endpoint`; `addToWatchlist` is the exported function apps call, and its body is `runEndpoint(client, add, options)`"), show both, then walk the fields on `add`.
