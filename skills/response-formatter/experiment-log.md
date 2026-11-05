@@ -832,3 +832,6 @@ One entry per teaching reply. The hypothesis is written before the reply is sent
    Result of 181: restated correctly ("binaries, the hardware runs the binary; the PC sends bytes over the network") and asked to confirm the picture.
 
 182. Hypothesis (what an update download is, 2026-11-05): confirm the reader's picture, add the two facts it lacks: the file is signed by Sony and verified before install, and the two directions (console pulls from Sony; PC pushes to the kit's listening program) both end in the same install. Guard: check 2 (one mechanism).
+
+### 2026-11-05 Kevin 4:54 PM paste (intake, not taught)
+Hypothesis: the reader queues pastes; a reply that teaches the paste unasked loses him. Guard: rule 1 (queue only) and the Nov 5 no-checkmark bullet. Reply says what the message changes for the pending Kevin question, queues the rest.
