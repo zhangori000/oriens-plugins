@@ -808,3 +808,7 @@ One entry per teaching reply. The hypothesis is written before the reply is sent
    Result of 175: lost; the reader quoted the two paragraphs ("Two configurations" and "How the row appears") and asked for them again without naming a word. Likely cause: "row" used without its table (check 7b), and the hops compressed into one paragraph.
 
 176. Hypothesis (retry of configuration, 2026-11-05): show the two tables with literal rows, then tell one kit's story as numbered hops with sender, receiver, what is carried, what comes back. Guard: check 7b (a row needs its table, two literal rows) and check 5.
+
+   Result of 176: the reader said continue, no checkmark claimed.
+
+177. Hypothesis (cache and refresh rate, then Kevin 1:29 PM, 2026-11-05): the reader may not connect "1hr minimum refresh rate" to a cache in SIE's backend between the Hub and Igor's service; the reply teaches the cache as an atom (motivation: not calling a partner on every Home screen draw), then reads Kevin's message as a trade. Risk: two pieces in one reply; kept to one mechanism with the message as its example. Guard: check 2.
