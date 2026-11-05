@@ -812,3 +812,7 @@ One entry per teaching reply. The hypothesis is written before the reply is sent
    Result of 176: the reader said continue, no checkmark claimed.
 
 177. Hypothesis (cache and refresh rate, then Kevin 1:29 PM, 2026-11-05): the reader may not connect "1hr minimum refresh rate" to a cache in SIE's backend between the Hub and Igor's service; the reply teaches the cache as an atom (motivation: not calling a partner on every Home screen draw), then reads Kevin's message as a trade. Risk: two pieces in one reply; kept to one mechanism with the message as its example. Guard: check 2.
+
+   Result of 177: continue, no checkmark claimed.
+
+178. Hypothesis (title id vs console id, then DevNet, 2026-11-05): the reader may conflate PPSA01926 (the app's name to Sony, in every deep link) with the kit's identity (one machine, in the allow table). Reply teaches both as atoms with their owner and where each appeared already, and DevNet as the portal where both are registered. Guard: section 2 atom rule ("what it is not", the neighbour it is confused with).
