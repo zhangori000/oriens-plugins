@@ -796,3 +796,7 @@ One entry per teaching reply. The hypothesis is written before the reply is sent
    Result of 172: not read as the next piece; the reader said he did not yet understand what comes before cold boot (what is set up on each side, and how the Hub appears on our kits). Queue order was wrong: "please setup on CR side" should have come before cold boot vs resume.
 
 173. Hypothesis (what the CR side sets up, 2026-11-05): the one fact the reader lacks is that the Anime Hub row appears on a console only when SIE's backend tells that console to draw it, so nothing Crunchyroll does makes the row appear; our part is to have a kit SIE can point at the sandbox and the CR app installed on it. Risk: listing steps Kevin has not given as if known. Guard: check 6 (mark inference), check 0.
+
+   Result of 173: asked. The reader named three words he does not hold: "sandbox", "copy", and the verb "pointed at", and asked whether SIE needs a hardware identifier. He also asked for a brainstormed list of other fundamentals he may lack. Rule confirmed: "environment", "deployment", and "pointed at" are atoms for this reader and must be taught before the sandbox piece.
+
+174. Hypothesis (sandbox, copy, pointed at, 2026-11-05): teach the three as one atom, a running copy of a program with its own address and data, using the Tetsuo app's own staging and production as the example the reader already works with. Risk: "environment" and "deployment" both appear; define each once. Guard: section 2 atom rule and check 3.
