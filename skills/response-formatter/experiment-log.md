@@ -804,3 +804,7 @@ One entry per teaching reply. The hypothesis is written before the reply is sent
    Result of 174: restated with one error. The reader restated copy, sandbox, and pointed at correctly, declined client vs backend, and offered his own picture of configuration: Kevin changes the console's setting over the network by console id. The error is the direction of the write.
 
 175. Hypothesis (configuration, two places, 2026-11-05): the fact under the reader's picture is that there are two configurations, one on the console (which address) that we change with the kit's own tools, and one on SIE's servers (who gets the Hub row, which feeds) that Kevin writes; the reader merged them into one network call to the console. Risk: contradicting the reader too bluntly, or leaving the inferred parts unmarked. Guard: check 6 and the "weigh questions, no reversals" memory.
+
+   Result of 175: lost; the reader quoted the two paragraphs ("Two configurations" and "How the row appears") and asked for them again without naming a word. Likely cause: "row" used without its table (check 7b), and the hops compressed into one paragraph.
+
+176. Hypothesis (retry of configuration, 2026-11-05): show the two tables with literal rows, then tell one kit's story as numbered hops with sender, receiver, what is carried, what comes back. Guard: check 7b (a row needs its table, two literal rows) and check 5.
