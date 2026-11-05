@@ -820,3 +820,7 @@ One entry per teaching reply. The hypothesis is written before the reply is sent
    Result of 178: continue, no checkmark claimed.
 
 179. Hypothesis (cold boot vs resume, second pass in its right place, 2026-11-05): now that the kit, Target Manager, and the Hub launch path are taught, the reader can hold two code paths in the CR app; the reply keeps the same hops as the first pass but opens with the viewer's situation. Guard: check 6 (motivation first).
+
+   Result of 179: lost. Two replies read Kevin's "your hub" differently (the app's own page, then the Anime Hub), and the reader asked "is he assuming our sandbox contains the anime hub strand?" The possessive "your" was never resolved: the sandbox is SIE's, the hub is SIE's, and "your" means "the one fed by you".
+
+180. Hypothesis (what Kevin did, 2026-11-05): state ownership first (sandbox and hub both SIE's; "your" = fed by Crunchyroll), then the one edit as a row in the sandbox's hub configuration pointing at Igor's address. Guard: check 7b (show the row with its table) and check 6 (mark inference).
