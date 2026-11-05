@@ -828,3 +828,7 @@ One entry per teaching reply. The hypothesis is written before the reply is sent
    Result of 180: understood enough to ask the next question (what SDK Manager is and how kits get preview system software); the reader also banned the word "hop".
 
 181. Hypothesis (SDK Manager and system updates on kits, 2026-11-05): the one fact is that a retail console takes system software only from Sony's update servers, while a kit also accepts a system software file installed from the PC; SDK Manager is the program that downloads that file. Source: cr-game-consoles-app docs/ps5/overview.md. Guard: check 3 (material names), section 2 (what it is not).
+
+   Result of 181: restated correctly ("binaries, the hardware runs the binary; the PC sends bytes over the network") and asked to confirm the picture.
+
+182. Hypothesis (what an update download is, 2026-11-05): confirm the reader's picture, add the two facts it lacks: the file is signed by Sony and verified before install, and the two directions (console pulls from Sony; PC pushes to the kit's listening program) both end in the same install. Guard: check 2 (one mechanism).
