@@ -816,3 +816,7 @@ One entry per teaching reply. The hypothesis is written before the reply is sent
    Result of 177: continue, no checkmark claimed.
 
 178. Hypothesis (title id vs console id, then DevNet, 2026-11-05): the reader may conflate PPSA01926 (the app's name to Sony, in every deep link) with the kit's identity (one machine, in the allow table). Reply teaches both as atoms with their owner and where each appeared already, and DevNet as the portal where both are registered. Guard: section 2 atom rule ("what it is not", the neighbour it is confused with).
+
+   Result of 178: continue, no checkmark claimed.
+
+179. Hypothesis (cold boot vs resume, second pass in its right place, 2026-11-05): now that the kit, Target Manager, and the Hub launch path are taught, the reader can hold two code paths in the CR app; the reply keeps the same hops as the first pass but opens with the viewer's situation. Guard: check 6 (motivation first).
