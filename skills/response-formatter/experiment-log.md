@@ -824,3 +824,7 @@ One entry per teaching reply. The hypothesis is written before the reply is sent
    Result of 179: lost. Two replies read Kevin's "your hub" differently (the app's own page, then the Anime Hub), and the reader asked "is he assuming our sandbox contains the anime hub strand?" The possessive "your" was never resolved: the sandbox is SIE's, the hub is SIE's, and "your" means "the one fed by you".
 
 180. Hypothesis (what Kevin did, 2026-11-05): state ownership first (sandbox and hub both SIE's; "your" = fed by Crunchyroll), then the one edit as a row in the sandbox's hub configuration pointing at Igor's address. Guard: check 7b (show the row with its table) and check 6 (mark inference).
+
+   Result of 180: understood enough to ask the next question (what SDK Manager is and how kits get preview system software); the reader also banned the word "hop".
+
+181. Hypothesis (SDK Manager and system updates on kits, 2026-11-05): the one fact is that a retail console takes system software only from Sony's update servers, while a kit also accepts a system software file installed from the PC; SDK Manager is the program that downloads that file. Source: cr-game-consoles-app docs/ps5/overview.md. Guard: check 3 (material names), section 2 (what it is not).
