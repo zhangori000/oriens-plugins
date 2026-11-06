@@ -838,3 +838,6 @@ Hypothesis: the reader queues pastes; a reply that teaches the paste unasked los
 
 ### 2026-11-06 PR 24 models.ts buttonDeepLink walk
 Hypothesis: the reader will lose the thread at encodeURIComponent (why the arg is wrapped) unless the reply shows the same link before and after encoding. Guard: rule 2 (say it in full) and baby-steps one-input-one-output.
+
+### 2026-11-06 datasource vs SDO piece
+Hypothesis: the reader will lose the thread at "certified datasource" unless it is defined as a table built from the app events, with the app events as the raw input he already knows. Guard: rule 3 (motivation and chain from known things), mark inferred parts.
