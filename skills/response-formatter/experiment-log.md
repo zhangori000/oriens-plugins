@@ -841,3 +841,6 @@ Hypothesis: the reader will lose the thread at encodeURIComponent (why the arg i
 
 ### 2026-11-06 datasource vs SDO piece
 Hypothesis: the reader will lose the thread at "certified datasource" unless it is defined as a table built from the app events, with the app events as the raw input he already knows. Guard: rule 3 (motivation and chain from known things), mark inferred parts.
+
+### 2026-11-06 queue re-planning
+Result: refuted. Reader asked why Kafka, what the app calls, what a warehouse is; queue kept saying "Segment in full". Rule added to rule 1: re-plan the queue from the reader's questions and show proposed items. Version 1.7.51.
