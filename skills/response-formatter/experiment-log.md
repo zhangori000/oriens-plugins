@@ -835,3 +835,6 @@ One entry per teaching reply. The hypothesis is written before the reply is sent
 
 ### 2026-11-05 Kevin 4:54 PM paste (intake, not taught)
 Hypothesis: the reader queues pastes; a reply that teaches the paste unasked loses him. Guard: rule 1 (queue only) and the Nov 5 no-checkmark bullet. Reply says what the message changes for the pending Kevin question, queues the rest.
+
+### 2026-11-06 PR 24 models.ts buttonDeepLink walk
+Hypothesis: the reader will lose the thread at encodeURIComponent (why the arg is wrapped) unless the reply shows the same link before and after encoding. Guard: rule 2 (say it in full) and baby-steps one-input-one-output.
