@@ -855,3 +855,8 @@ Result of prior reply: asked. "Free trial versus paid" was used with no definiti
 ### 2026-11-09, what LRX Core owes for sign-up attribution (Claude, model: Claude Fable 5.2)
 Hypothesis: the reader loses the thread at "base properties" unless it is defined as the one object the analytics builder copies into every event; section 0 check 7 guards it. Risk two: a list of owed work reads as a deficit list; state it as planned work.
 Result: pending.
+Result (LRX Core attribution piece): reader skipped the checkmark and asked for the Slack draft directly; "base properties" drew no question. Then asked what "method" is in the draft: a field name was used beside an event name with no definition. Refuted on check 7 for drafts: a draft the reader must post is held to the same define-on-first-use rule. No rule text changed.
+
+### 2026-11-09, method field, referrer column, backend analytics (Claude, model: Claude Fable 5.2)
+Hypothesis: the reader loses the thread where two backend services appear together (PlayStation membership service, subscription processor); each gets one defining clause on first use. Check 3 and check 7 guard it.
+Result: pending.
