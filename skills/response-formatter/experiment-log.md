@@ -851,3 +851,7 @@ Result: asked. Reader did not checkmark; asked whether each event waits on the b
 
 ### 2026-11-09 days problem, reader weighs it
 Result of prior reply: asked. "Free trial versus paid" was used with no definition (check 7 failure), and the reader argued the blank Thursday event is correct behaviour. Code supports him: every event carries a stored anonymousId, so the window is a warehouse join. Hypothesis for this reply: the loss point is "anonymous ID"; define it by who makes it, where it is kept, and why it exists. No rule change; check 7 already covers the undefined term.
+
+### 2026-11-09, what LRX Core owes for sign-up attribution (Claude, model: Claude Fable 5.2)
+Hypothesis: the reader loses the thread at "base properties" unless it is defined as the one object the analytics builder copies into every event; section 0 check 7 guards it. Risk two: a list of owed work reads as a deficit list; state it as planned work.
+Result: pending.
