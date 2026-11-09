@@ -847,3 +847,4 @@ Result: refuted. Reader asked why Kafka, what the app calls, what a warehouse is
 
 ### 2026-11-09 sign-ups in the PS5 app
 Hypothesis: the reader holds "sign-up" as one event; the one fact he lacks is that it is two (account created, plan started), and that the PlayStation account path records a login, not a registration. Most likely loss: the three ways to create an account read as three mechanisms. Guard: check 0 (one fact first), check 2 (each way one sentence, no walk).
+Result: asked. Reader did not checkmark; asked whether each event waits on the backend, how the backend records a sign-up, and who Charles expects to act. Goal restated: answer Charles's Slack message. Queue rebuilt backwards from that reply (rule 1, goal-first intake). No rule change.
