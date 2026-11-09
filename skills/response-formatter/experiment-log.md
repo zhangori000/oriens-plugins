@@ -844,3 +844,6 @@ Hypothesis: the reader will lose the thread at "certified datasource" unless it 
 
 ### 2026-11-06 queue re-planning
 Result: refuted. Reader asked why Kafka, what the app calls, what a warehouse is; queue kept saying "Segment in full". Rule added to rule 1: re-plan the queue from the reader's questions and show proposed items. Version 1.7.51.
+
+### 2026-11-09 sign-ups in the PS5 app
+Hypothesis: the reader holds "sign-up" as one event; the one fact he lacks is that it is two (account created, plan started), and that the PlayStation account path records a login, not a registration. Most likely loss: the three ways to create an account read as three mechanisms. Guard: check 0 (one fact first), check 2 (each way one sentence, no walk).
