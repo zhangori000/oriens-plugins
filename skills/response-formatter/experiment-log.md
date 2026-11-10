@@ -915,3 +915,8 @@ Result (big picture, then what the backend route needs): the big picture drew no
 ### 2026-11-09, two messages and two programs (Claude, model: Claude Fable 5.2)
 Hypothesis: the one fact the reader lacks is that there are two messages: the subscription processor builds the first and sends it to membership's internal bus, and a second membership program receives it, builds a second message by copying fields, and sends that to the company-wide bus. Risk: "the written definition of the second message" (the schema) is a new noun; say what it is and who checks against it, and mark the check as inferred. Rules 2 and 3 guard it.
 Result: pending.
+Result (two messages and two programs): no question on the two messages; the reader skipped ahead to the reply to Charles and to Charles's request about page, impression and click events. Read as landed or no longer needed. No rule text changed.
+
+### 2026-11-09, reply to Charles, and what his page, impression and click request asks (Claude, model: Claude Fable 5.2)
+Hypothesis: two asks in one message, so each gets a short piece. Risk one: the Slack draft uses names Charles uses (cr-events, launch_source) while the teaching part must stay in plain words. Risk two: "impression" and "click" are analytics words; each gets one sentence saying what happens on screen when the app sends it, and why Charles wants the mark on it. Rules 3 and 5 guard it.
+Result: pending.
