@@ -865,3 +865,8 @@ Result (method, referrer, backend analytics): reader asked what a subscription r
 ### 2026-11-09, Charles's reply on cr-events (Claude, model: Claude Fable 5.2)
 Hypothesis: "cr-events" is the one fact the reader lacks; define it in the first paragraph with its owner and what flows through it. Check 0 and check 7 guard it.
 Result: pending.
+Result (cr-events reply): reader asked what "storage" is and who "a consumer" is, and told the rest to wait. Two generic nouns in the definition itself had no concrete name (which storage product, what kind of thing subscribes). Refutes the hypothesis in part: the term was defined, but with nouns one level too abstract. Confirms check 3 and check 7: a definition names the real product and the real program. He also parked the remaining paragraphs, so the reply carried more than one piece. No rule text changed.
+
+### 2026-11-09, storage and consumer (Claude, model: Claude Fable 5.2)
+Hypothesis: the reader loses the thread at "view" and "S3 bucket" unless each gets one plain clause; a third risk is listing three consumers when he asked about one. Check 7 and check 2 guard it.
+Result: pending.
