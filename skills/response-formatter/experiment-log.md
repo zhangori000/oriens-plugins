@@ -920,3 +920,8 @@ Result (two messages and two programs): no question on the two messages; the rea
 ### 2026-11-09, reply to Charles, and what his page, impression and click request asks (Claude, model: Claude Fable 5.2)
 Hypothesis: two asks in one message, so each gets a short piece. Risk one: the Slack draft uses names Charles uses (cr-events, launch_source) while the teaching part must stay in plain words. Risk two: "impression" and "click" are analytics words; each gets one sentence saying what happens on screen when the app sends it, and why Charles wants the mark on it. Rules 3 and 5 guard it.
 Result: pending.
+Result (reply to Charles, and what his page, impression and click request asks): the teaching part drew no question. The Slack draft failed: the reader said it assumed Charles's knowledge of the backend service instead of describing what is going on. Cause: the draft reused the session's shorthand ("store purchase path", "internal message", "the publisher") for a recipient who was not in the session. Rule 6 gained one example (a message drafted for a third person in the session's own shorthand). Version 1.7.54. Model switched to Claude Fable 5.1 at this point.
+
+### 2026-11-09, Slack draft to Charles written from his side (Claude, model: Claude Fable 5.1)
+Hypothesis: the draft lands if it starts from what Charles reads (the subscription event view in Databricks), walks back to the cause in four plain sentences with each program named by its job, marks it as a code read, and ends with a question he can answer from Databricks. Risk: the draft grows past 200 words; cut the membership-change list to one sentence. Rule 6, newest example, guards it.
+Result: pending.
