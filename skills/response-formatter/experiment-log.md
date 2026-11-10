@@ -905,3 +905,8 @@ Result (where the referrer claim comes from): asked. "A first PlayStation purcha
 ### 2026-11-09, row exists or not, and the exact code locations (Claude, model: Claude Fable 5.2)
 Hypothesis: the one fact the reader lacks is that the code asks whether a database row for this account and product already exists; give one concrete story for each answer. Risk: four identifiers in one reply; each gets its file and what it runs inside. Check 0 and check 5 guard it.
 Result: pending.
+Result (row exists or not, and the exact code locations): lost. The reader rejected the real method and file names ("people name things badly", wants readable English) and said he had lost the big picture entirely. Two causes: the reply answered "which repo, what part" with identifiers instead of job, service and owner; and five narrow follow-up answers in a row dropped rule 4's goal sentence. Also found this session had been running on a stale copy of the skill: checkmark lines and a bulleted queue, both already banned. Rule 6 gained two examples (real identifiers in a teaching reply; big picture lost after narrow answers). Version 1.7.52.
+
+### 2026-11-09, big picture, then what the backend route needs (Claude, model: Claude Fable 5.2)
+Hypothesis: the one fact the reader lacks is the goal sentence itself: Charles wants to count subscriptions that came from the Hub, the mark can ride on app events or on the backend's announcement, and the last replies only tested whether the backend announcement exists for PlayStation. Risk: "announcement" replaces the event name; say once that it is the message the backend sends to the rest of the company. Rule 4 and the new rule 6 examples guard it.
+Result: pending.
