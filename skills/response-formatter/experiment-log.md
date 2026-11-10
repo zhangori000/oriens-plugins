@@ -895,3 +895,8 @@ Result (whether a PlayStation purchase reaches cr-events): asked. Reader rebuilt
 ### 2026-11-09, two buses and where the fields live (Claude, model: Claude Fable 5.2)
 Hypothesis: the one fact the reader lacks is that `cr-mem-benefits-stream` and `cr-events` are two bus names and a program, the lambda, sits between them; a bus never sends to a bus. Risk: the JSON example carries a field he has not seen; every key gets one sentence. Check 0 and the every-shown-line rule guard it.
 Result: pending.
+Result (two buses and where the fields live): the buses and the lambda between them drew no question. Lost at the closing sentence "the object has `account_uuid` and neither of the other two": "neither of the other two" is a pointer by position, and the claim gave no source, so the reader asked whether it was observed on Tizen or Samsung accounts. Confirms check 9 (no pointer; name both fields in full) and check 6 (every claim names its source: code read, not a device observation). No rule text changed.
+
+### 2026-11-09, where the referrer claim comes from (Claude, model: Claude Fable 5.2)
+Hypothesis: the one fact the reader lacks is that the claim comes from reading the subscription processor's code, and the code splits by who charges the customer, not by device. Risk: "first-party" and "third-party" are undefined; say "Crunchyroll charges the card itself" and "a store charges". Check 0 and check 3 guard it.
+Result: pending.
