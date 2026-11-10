@@ -875,3 +875,8 @@ Result (storage and consumer): no question on "view" or "S3 bucket". Reader aske
 ### 2026-11-09, SubscriptionStateChanged and publish (Claude, model: Claude Fable 5.2)
 Hypothesis: the reader loses the thread if "publish" is explained without saying the Tetsuo app does not call it, since he asked "a method that we import". Second risk: package and repo slugs with no plain role. Check 3 and check 6 guard it.
 Result: pending.
+Result (SubscriptionStateChanged and publish): the event made sense, no question on it. Reader asked whether services "import from cr-events" and whether putEvents is a network request underneath. The name cr-events had been used for two things, the client library and the hosted bus, without separating them. Confirms check 3 (one name, one thing) and check 5 (the call expanded to sender, receiver, what is carried, what comes back). No rule text changed.
+
+### 2026-11-09, library versus bus (Claude, model: Claude Fable 5.2)
+Hypothesis: the one fact the reader lacks is that cr-events is two things, a library copied into the service and a message service hosted at Amazon; state it in the first paragraph. Risk: "EventBridge" and "bus" need one plain clause each. Check 0 and check 7 guard it.
+Result: pending.
