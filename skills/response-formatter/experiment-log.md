@@ -925,3 +925,8 @@ Result (reply to Charles, and what his page, impression and click request asks):
 ### 2026-11-09, Slack draft to Charles written from his side (Claude, model: Claude Fable 5.1)
 Hypothesis: the draft lands if it starts from what Charles reads (the subscription event view in Databricks), walks back to the cause in four plain sentences with each program named by its job, marks it as a code read, and ends with a question he can answer from Databricks. Risk: the draft grows past 200 words; cut the membership-change list to one sentence. Rule 6, newest example, guards it.
 Result: pending.
+Result (Slack draft to Charles written from his side): the reader did not comment on the draft. He pasted a second assistant's replies on the same thread and said they respond much better, and asked for notes on why. Nine differences recorded as a rule 6 example (opener names material and one earlier fact; numbered points with bold titles; literal worked examples; the thread's own vocabulary in code font; people introduced inline; words defined in place; confirm a right instinct first; no meta-talk; one thread message per piece). Version 1.7.55.
+
+### 2026-11-09, draft reply to Charles's page, impression and click request, in the preferred shape (Claude, model: Claude Fable 5.1)
+Hypothesis: the reply lands if it uses the thread's names (Loaded a Screen, Container Viewed, Panel Selected, launch_source, handoff_id, Alchemy) in code font, three numbered points with bold titles, one concrete example each, and no sentence about the skill. Risk: the Katsu path is only partly verified; one clause marks it. Rule 6, newest example, guards it.
+Result: pending.
