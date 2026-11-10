@@ -935,3 +935,8 @@ Result (draft reply to Charles's page, impression and click request, in the pref
 ### 2026-11-09, the one Slack message that merges both drafts, in chained sentences (Claude, model: Claude Fable 5.1)
 Hypothesis: the piece lands if every sentence carries owner, definition and consequence together, and the Slack draft merges the code finding with the anonymousId lookback and the Alchemy catalog note in Charles's vocabulary. Risk: chained sentences run long; cap each at about forty words. Rule 6, newest example, guards it.
 Result: pending.
+Result (the one Slack message that merges both drafts): no comment on the piece or the draft; the reader moved to a new Slack screenshot. Read as landed.
+
+### 2026-11-10, why Igor says "our side" about the disabled strands (Claude, model: Claude Fable 5.1)
+Hypothesis: a short factual question; the answer weighs Igor's words against who owns the hub config (the hub sits in Crunchyroll's own Partners account, edited by someone on 10/30), gives both readings with evidence, and ends with the question and its owner. Chained sentences, no meta. Rule 6, last two examples, guard it.
+Result: pending.
