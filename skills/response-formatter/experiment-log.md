@@ -930,3 +930,8 @@ Result (Slack draft to Charles written from his side): the reader did not commen
 ### 2026-11-09, draft reply to Charles's page, impression and click request, in the preferred shape (Claude, model: Claude Fable 5.1)
 Hypothesis: the reply lands if it uses the thread's names (Loaded a Screen, Container Viewed, Panel Selected, launch_source, handoff_id, Alchemy) in code font, three numbered points with bold titles, one concrete example each, and no sentence about the skill. Risk: the Katsu path is only partly verified; one clause marks it. Rule 6, newest example, guards it.
 Result: pending.
+Result (draft reply to Charles's page, impression and click request, in the preferred shape): the reader said the surface rules were not it; something is fundamentally different in the sentence structure of the other assistant's replies. Found: clipped bare-fact sentences versus chained sentences with owners on every noun, relative-clause definitions in place, condition-action-consequence together, repeated full noun phrases, parenthetical glosses, question-shaped point titles. Rule 6 gained that example. Version 1.7.56.
+
+### 2026-11-09, the one Slack message that merges both drafts, in chained sentences (Claude, model: Claude Fable 5.1)
+Hypothesis: the piece lands if every sentence carries owner, definition and consequence together, and the Slack draft merges the code finding with the anonymousId lookback and the Alchemy catalog note in Charles's vocabulary. Risk: chained sentences run long; cap each at about forty words. Rule 6, newest example, guards it.
+Result: pending.
