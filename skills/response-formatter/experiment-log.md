@@ -885,3 +885,8 @@ Result (library versus bus): understood; reader restated the send and the ID ans
 ### 2026-11-09, EventBridge and the PlayStation purchase backend (Claude, model: Claude Fable 5.2)
 Hypothesis: the reader loses the thread at "rule" unless it is told as something a receiver registers beforehand; and the purchase question needs the plain split that Sony charges and Crunchyroll only checks. Two questions in one message, so the second gets a short direct answer and its mechanism goes to the queue. Check 2 and check 6 guard it.
 Result: pending.
+Result (EventBridge and the PlayStation purchase backend): understood; reader gave the checkmark on EventBridge and restated that the PlayStation membership service does not send to it, then asked to continue. Confirms check 2 (second question answered short, mechanism queued) and the rule-as-registered-beforehand wording. No rule text changed.
+
+### 2026-11-09, whether a PlayStation purchase reaches cr-events (Claude, model: Claude Fable 5.2)
+Hypothesis: the one fact the reader lacks is that another program does send a message for the purchase, but it is dropped before cr-events. Risk: a second bus name and the `subscriptions` list arrive in the same reply; each gets one plain clause, and the second bus is told as "membership's internal bus, analytics does not read it". Second risk: verified versus inferred blur together. Check 0, check 5 and check 6 guard it.
+Result: pending.
