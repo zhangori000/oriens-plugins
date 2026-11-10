@@ -860,3 +860,8 @@ Result (LRX Core attribution piece): reader skipped the checkmark and asked for 
 ### 2026-11-09, method field, referrer column, backend analytics (Claude, model: Claude Fable 5.2)
 Hypothesis: the reader loses the thread where two backend services appear together (PlayStation membership service, subscription processor); each gets one defining clause on first use. Check 3 and check 7 guard it.
 Result: pending.
+Result (method, referrer, backend analytics): reader asked what a subscription record is and what "no Hub source" means; two nouns used without owner and table. Confirms check 7b (a row needs its table). He then chose to send the account-join message alone. No rule text changed.
+
+### 2026-11-09, Charles's reply on cr-events (Claude, model: Claude Fable 5.2)
+Hypothesis: "cr-events" is the one fact the reader lacks; define it in the first paragraph with its owner and what flows through it. Check 0 and check 7 guard it.
+Result: pending.
