@@ -900,3 +900,8 @@ Result (two buses and where the fields live): the buses and the lambda between t
 ### 2026-11-09, where the referrer claim comes from (Claude, model: Claude Fable 5.2)
 Hypothesis: the one fact the reader lacks is that the claim comes from reading the subscription processor's code, and the code splits by who charges the customer, not by device. Risk: "first-party" and "third-party" are undefined; say "Crunchyroll charges the card itself" and "a store charges". Check 0 and check 3 guard it.
 Result: pending.
+Result (where the referrer claim comes from): asked. "A first PlayStation purchase" was a coined label for a code branch; the reader could not tell what was being bought or what a non-first case is. "One part of the code" and "that part" named no repo, file, method, runtime or owner; the reader said he thinks in terms of code executing at runtime and who owns it. Confirms check 3 (a coined name is replaced by the event) and check 5 (which program, on which machine, called what). For this reader a code claim names repo, file, method, the process it runs in, and the owning team. No rule text changed.
+
+### 2026-11-09, row exists or not, and the exact code locations (Claude, model: Claude Fable 5.2)
+Hypothesis: the one fact the reader lacks is that the code asks whether a database row for this account and product already exists; give one concrete story for each answer. Risk: four identifiers in one reply; each gets its file and what it runs inside. Check 0 and check 5 guard it.
+Result: pending.
