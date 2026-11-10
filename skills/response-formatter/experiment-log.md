@@ -870,3 +870,8 @@ Result (cr-events reply): reader asked what "storage" is and who "a consumer" is
 ### 2026-11-09, storage and consumer (Claude, model: Claude Fable 5.2)
 Hypothesis: the reader loses the thread at "view" and "S3 bucket" unless each gets one plain clause; a third risk is listing three consumers when he asked about one. Check 7 and check 2 guard it.
 Result: pending.
+Result (storage and consumer): no question on "view" or "S3 bucket". Reader asked what SubscriptionStateChanged is ("you keep referencing that"), which backend services publish, and whether "publish" is an imported method. An event name was used across three replies with only a field list, never one example message; and a verb between two actors ("publishes") was not expanded to the call. Confirms check 4 (verbs expanded) and the atom rule (one concrete example). No rule text changed.
+
+### 2026-11-09, SubscriptionStateChanged and publish (Claude, model: Claude Fable 5.2)
+Hypothesis: the reader loses the thread if "publish" is explained without saying the Tetsuo app does not call it, since he asked "a method that we import". Second risk: package and repo slugs with no plain role. Check 3 and check 6 guard it.
+Result: pending.
