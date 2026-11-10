@@ -880,3 +880,8 @@ Result (SubscriptionStateChanged and publish): the event made sense, no question
 ### 2026-11-09, library versus bus (Claude, model: Claude Fable 5.2)
 Hypothesis: the one fact the reader lacks is that cr-events is two things, a library copied into the service and a message service hosted at Amazon; state it in the first paragraph. Risk: "EventBridge" and "bus" need one plain clause each. Check 0 and check 7 guard it.
 Result: pending.
+Result (library versus bus): understood; reader restated the send and the ID answer, then asked to be taught EventBridge itself and whether the PlayStation purchase backend does both the entitlement check and the purchase. Confirms check 0: the two-things split was the missing fact. No rule text changed.
+
+### 2026-11-09, EventBridge and the PlayStation purchase backend (Claude, model: Claude Fable 5.2)
+Hypothesis: the reader loses the thread at "rule" unless it is told as something a receiver registers beforehand; and the purchase question needs the plain split that Sony charges and Crunchyroll only checks. Two questions in one message, so the second gets a short direct answer and its mechanism goes to the queue. Check 2 and check 6 guard it.
+Result: pending.
